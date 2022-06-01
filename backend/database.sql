@@ -23,30 +23,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `item`
+-- Structure de la table `product`
 --
 
-CREATE TABLE `item` (
+CREATE TABLE `product` (
   `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
+  `name` varchar(50) NOT NULL,
+  `brand` varchar(50) NOT NULL,
+  `description` varchar(500) NOT NULL,
+  `category` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `item`
+-- Contenu de la table `product`
 --
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
+INSERT INTO `product` (`id`, `name`, `brand`, `description`, `category`) VALUES
+(1, "Biscuit Rose", "Maison Fossier", "Créé en 1691, le Biscuit Rose de Reims est un des fleurons de la Ville de Reims. Toujours associé au champagne autrefois, il est un symbole de la fête. Aujourd’hui, il est aussi utilisé dans de nombreuses recettes. Outre sa couleur rose, il est caractérisé par une texture craquante et fondante.", "Epicerie"),
+(2, "Boots 1460", "Dr. Martens", "Nos boots Original ont été pensées pour les travailleurs. Mais dans les décennies qui ont suivies, elles ont été adoptées, réinventées et détournées par plusieurs contre-cultures. Et elles ont été portées de toutes les façons possibles. Mais rien n'a changé dans leur conception, pas même leurs fameuses surpiqûres jaunes. Nous fabriquons les 1460. Mais vous les rendez iconiques.", "Chaussures"),
+(3, "Risk", "Hasbro", "Risk : le jeu de conquête stratégique ! Risk est un jeu de guerre et de stratégie qui est connu à travers le monde depuis de nombreuses années. Ce jeu de société vous placera à la tête d'une armée possédant une couleur et vous devrez réussir une mission que vous aurez tirée au sort au début de la partie. Mais, même si vous vous démontrez être un fin stratège, vos actions auront parfois de malheureuses répercussions pour la suite de la partie.Il vous faudra être patient, observateur et surtout posséder un bon esprit d'analyse.", "Jeu de société");
 
 --
 -- Index pour les tables exportées
 --
 
 --
--- Index pour la table `item`
+-- Index pour la table `product`
 --
-ALTER TABLE `item`
+ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -54,10 +58,10 @@ ALTER TABLE `item`
 --
 
 --
--- AUTO_INCREMENT pour la table `item`
+-- AUTO_INCREMENT pour la table `product`
 --
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `product`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
