@@ -83,7 +83,7 @@ CREATE TABLE `keyword` (
 
 INSERT INTO `keyword` (`id`, `keyword_name`) VALUES
 (1, "biscuit"),
-(2, "epiceries"),
+(2, "epicerie"),
 (3, "rose"),
 (4, "reims"),
 (5, "fossier"),
