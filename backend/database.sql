@@ -64,3 +64,35 @@ ALTER TABLE `product`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `affiliation`
+--
+
+CREATE TABLE `affiliation` (
+  `keyword_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_affiliation_keyword
+        FOREIGN KEY (keyword_id)
+        REFERENCES keyword(id),
+  `product_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_affiliation_product
+        FOREIGN KEY (product_id)
+        REFERENCES product(id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `affiliation`
+--
+
+INSERT INTO `affiliation` (`keyword_id`, `product_id`) VALUES
+(1, 2),
+(2, 3),
+(3, 8);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
