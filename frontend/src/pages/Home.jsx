@@ -3,12 +3,13 @@ import { useRef } from "react";
 export default function Home() {
   const searchValue = useRef();
 
-  const handleClick = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     console.warn(searchValue.current.value);
   };
 
   return (
-    <>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="search">
         <input
           id="search"
@@ -18,9 +19,7 @@ export default function Home() {
           ref={searchValue}
         />
       </label>
-      <button type="button" onClick={handleClick}>
-        🔎
-      </button>
-    </>
+      <button type="submit">🔎</button>
+    </form>
   );
 }
