@@ -1,6 +1,7 @@
 const express = require("express");
 
 const { ItemController } = require("./controllers");
+const { ProductController } = require("./controllers");
 
 const router = express.Router();
 
@@ -10,10 +11,10 @@ router.put("/items/:id", ItemController.edit);
 router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
-router.get("/products", ItemController.browse);
-router.get("/products/:id", ItemController.read);
-router.put("/products/:id", ItemController.edit);
-router.post("/products", ItemController.add);
-router.delete("/products/:id", ItemController.delete);
+router.get("/products", ProductController.browse);
+router.get("/products/:id", ProductController.read);
+router.put("/products/:id", ProductController.edit);
+router.post("/products", ProductController.add);
+router.delete("/products/:id", ProductController.delete);
 
 module.exports = router;
