@@ -5,7 +5,9 @@ export default function Home() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.warn(searchValue.current.value);
+    /*
+    Placeholder for future functionality
+    */
   };
 
   return (
