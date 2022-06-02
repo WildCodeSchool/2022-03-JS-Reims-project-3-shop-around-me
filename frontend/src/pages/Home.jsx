@@ -9,9 +9,16 @@ export default function Home() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      className="flex rounded-3xl border-solid border border-gray-200 w-min p-2 hover:bg-gray-100"
+      onSubmit={handleSubmit}
+    >
       <label htmlFor="search">
         <input
+          className="text-gray-500
+          placeholder-gray-300
+          border-none bg-transparent focus:outline-none
+          ml-2 mr-2 min-w-[40vw] min-h-[5vh]"
           id="search"
           type="text"
           name="search"
