@@ -145,3 +145,70 @@ ALTER TABLE `keyword`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `affiliation`
+--
+
+CREATE TABLE `affiliation` (
+  `product_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_affiliation_product
+        FOREIGN KEY (product_id)
+        REFERENCES product(id),
+  `keyword_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_affiliation_keyword
+        FOREIGN KEY (keyword_id)
+        REFERENCES keyword(id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `affiliation`
+--
+
+INSERT INTO `affiliation` (`product_id`, `keyword_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(1, 7),
+(1, 8),
+(1, 9),
+(1, 10),
+(1, 11),
+(1, 12),
+(1, 13),
+(1, 14),
+(1, 15),
+(1, 16),
+(2, 17),
+(2, 18),
+(2, 19),
+(2, 20),
+(2, 21),
+(2, 23),
+(2, 25),
+(2, 27),
+(3, 29),
+(3, 30),
+(3, 31),
+(3, 32),
+(3, 33),
+(3, 34),
+(3, 35),
+(3, 36),
+(3, 37),
+(3, 38),
+(3, 39),
+(3, 40),
+(3, 17),
+(3, 18);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
