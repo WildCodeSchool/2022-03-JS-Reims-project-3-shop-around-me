@@ -34,9 +34,7 @@ function LoginForm() {
         />
       </label>
       <br />
-      <button type="submit" value="Login">
-        Connexion
-      </button>
+      <input type="submit" value="Login" />
     </form>
   );
 }
