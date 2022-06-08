@@ -1,3 +1,4 @@
+const Joi = require("joi");
 const models = require("../models");
 
 class UserController {
@@ -53,18 +54,26 @@ class UserController {
 
   static add = (req, res) => {
     const user = req.body;
-
-    // TODO validations (length, format...)
-
-    models.user
-      .insert(user)
-      .then(([result]) => {
-        res.status(201).send({ ...user, id: result.insertId });
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
+    const validationErrors = (data, forCreation = true) => {
+      const presence = forCreation ? "required" : "optional";
+      return Joi.object({
+        email: Joi.string().email().min(8).max(100).presence(presence),
+        password: Joi.string().min(8).max(50).presence(presence),
+      }).validate(data, { abortEarly: false }).error;
+    };
+    if (validationErrors(user)) {
+      res.status(422).json(validationErrors(user));
+    } else {
+      models.user
+        .insert(user)
+        .then(([result]) => {
+          res.status(201).send({ ...user, id: result.insertId });
+        })
+        .catch((err) => {
+          console.error(err);
+          res.sendStatus(500);
+        });
+    }
   };
 
   static delete = (req, res) => {
