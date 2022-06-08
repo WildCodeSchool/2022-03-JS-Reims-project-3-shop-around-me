@@ -53,15 +53,21 @@ class UserController {
 
   static add = (req, res) => {
     const user = req.body;
-    models.user
-      .insert(user)
-      .then(([result]) => {
-        res.status(201).send({ ...user, id: result.insertId });
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
+    models.user.findByEmail(user.email).then((existingUserWithEmail) => {
+      if (existingUserWithEmail)
+        res.status(409).json({ message: "This email is already used" });
+      else {
+        models.user
+          .insert(user)
+          .then(([result]) => {
+            res.status(201).send({ ...user, id: result.insertId });
+          })
+          .catch((err) => {
+            console.error(err);
+            res.sendStatus(500);
+          });
+      }
+    });
   };
 
   static delete = (req, res) => {
