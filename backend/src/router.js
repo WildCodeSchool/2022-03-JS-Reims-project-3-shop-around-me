@@ -1,9 +1,12 @@
 const express = require("express");
+const { hashPassword } = require("./services/PasswordHashing");
+const { validateUser } = require("./validators/UserValidator");
 
 const {
   ItemController,
   KeywordController,
   ProductController,
+  UserController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -25,5 +28,11 @@ router.get("/products/:id", ProductController.read);
 router.put("/products/:id", ProductController.edit);
 router.post("/products", ProductController.add);
 router.delete("/products/:id", ProductController.delete);
+
+router.get("/users", UserController.browse);
+router.get("/users/:id", UserController.read);
+router.put("/users/:id", UserController.edit);
+router.post("/users", validateUser, hashPassword, UserController.add);
+router.delete("/users/:id", UserController.delete);
 
 module.exports = router;
