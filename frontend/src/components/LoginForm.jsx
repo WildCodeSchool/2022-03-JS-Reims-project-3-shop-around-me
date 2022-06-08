@@ -1,5 +1,4 @@
 import { useState } from "react";
-import axios from "axios";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -7,23 +6,6 @@ function LoginForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (email && password) {
-      axios
-        .post(
-          `${import.meta.env.VITE_BACKEND_URL}/users/login`,
-          { email, password },
-          { withCredentials: true }
-        )
-        .then((res) => res.data)
-        .then((data) => {
-          alert("Successfully logged in");
-        })
-        .catch((err) => {
-          alert(err.response.data.error);
-        });
-    } else {
-      alert("Merci d'entrer votre email et votre mot de passe");
-    }
   };
 
   return (
