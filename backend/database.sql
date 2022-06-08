@@ -222,7 +222,7 @@ INSERT INTO `affiliation` (`product_id`, `keyword_id`) VALUES
 CREATE TABLE `user` (
   `id` int(11) UNSIGNED NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
