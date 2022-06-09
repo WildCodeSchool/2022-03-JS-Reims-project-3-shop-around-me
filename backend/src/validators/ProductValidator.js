@@ -5,7 +5,7 @@ const validateProduct = (req, res, next) => {
   const validationErrors = (data, forCreation = true) => {
     const presence = forCreation ? "required" : "optional";
     return Joi.object({
-      name: Joi.string().min(3).max(50).presence(presence),
+      name: Joi.string().min(2).max(50).presence(presence),
       brand: Joi.string().min(2).max(50).presence(presence),
     }).validate(product, { abortEarly: false }).error;
   };
