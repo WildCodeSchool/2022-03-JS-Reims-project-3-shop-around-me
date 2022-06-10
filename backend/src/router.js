@@ -1,6 +1,7 @@
 const express = require("express");
 const { hashPassword } = require("./services/PasswordHashing");
 const { validateUser } = require("./validators/UserValidator");
+const { validateKeyword } = require("./validators/KeywordValidator");
 
 const {
   ItemController,
@@ -19,8 +20,8 @@ router.delete("/items/:id", ItemController.delete);
 
 router.get("/keywords", KeywordController.browse);
 router.get("/keywords/:id", KeywordController.read);
-router.put("/keywords/:id", KeywordController.edit);
-router.post("/keywords", KeywordController.add);
+router.put("/keywords/:id", validateKeyword, KeywordController.edit);
+router.post("/keywords", validateKeyword, KeywordController.add);
 router.delete("/keywords/:id", KeywordController.delete);
 
 router.get("/products", ProductController.browse);
