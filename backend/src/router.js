@@ -29,6 +29,20 @@ router.put("/products/:id", ProductController.edit);
 router.post("/products", ProductController.add);
 router.delete("/products/:id", ProductController.delete);
 
+router.get("/products/:product_id/keywords", ProductController.browse);
+router.get(
+  "/products/:product_id/keywords/:keyword_id",
+  ProductController.read
+);
+router.post(
+  "/products/:product_id/keywords/:keyword_id",
+  ProductController.add
+);
+router.delete(
+  "products/:product_id/keywords/:keyword_id",
+  ProductController.delete
+);
+
 router.get("/users", UserController.browse);
 router.get("/users/:id", UserController.read);
 router.put("/users/:id", UserController.edit);
