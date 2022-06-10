@@ -11,7 +11,7 @@ function SearchBar() {
     */
   };
   return (
-    <div className="grid place-items-center h-screen bg-taupe-100">
+    <div className="grid place-items-center h-screen">
       <div className="flex flex-col justify-center items-center">
         <img src={logo} alt="logo" className="max-w-xs m-4" />
         <form
