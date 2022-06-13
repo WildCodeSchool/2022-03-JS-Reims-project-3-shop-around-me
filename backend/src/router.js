@@ -7,6 +7,7 @@ const {
   KeywordController,
   ProductController,
   UserController,
+  AffiliationController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -29,18 +30,16 @@ router.put("/products/:id", ProductController.edit);
 router.post("/products", ProductController.add);
 router.delete("/products/:id", ProductController.delete);
 
-router.get("/products/:product_id/keywords", ProductController.browse);
-router.get(
-  "/products/:product_id/keywords/:keyword_id",
-  ProductController.read
-);
+router.get("/affiliations", AffiliationController.browse);
+router.get("/affiliations/products/:id", AffiliationController.readProducts);
+router.get("/affiliations/keywords/:id", AffiliationController.readKeywords);
 router.post(
-  "/products/:product_id/keywords/:keyword_id",
-  ProductController.add
+  "/affiliations/products/:product_id/keywords/:keyword_id",
+  AffiliationController.add
 );
 router.delete(
-  "products/:product_id/keywords/:keyword_id",
-  ProductController.delete
+  "/affiliations/products/:product_id/keywords/:keyword_id",
+  AffiliationController.delete
 );
 
 router.get("/users", UserController.browse);
