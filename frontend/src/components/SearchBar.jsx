@@ -1,15 +1,25 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import axios from "axios";
 import logo from "@assets/images/logo.png";
 
-function SearchBar() {
+export default function SearchBar() {
   const searchValue = useRef();
+
+  const [results, setResults] = useState([]);
+  const getResults = () => {
+    axios
+      .get("http://localhost:5000/products/")
+      .then((response) => response.data)
+      .then((data) => {
+        setResults(data);
+      });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    /*
-    Placeholder for future functionality
-    */
+    getResults();
   };
+
   return (
     <div className="grid place-items-center h-screen">
       <div className="flex flex-col justify-center items-center">
@@ -34,8 +44,20 @@ function SearchBar() {
           <button type="submit">🔎</button>
         </form>
       </div>
+      <ul>
+        {results
+          .filter((result) => result.name.includes(searchValue.current.value))
+          .map((result) => (
+            <li
+              key={result.id}
+              className="text-[#4F4E47] bg-white
+              ml-4 mr-4 min-w-[40vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
+            >
+              Nom du produit : {result.name} <br /> Marque : {result.brand}{" "}
+              <br /> Description : {result.description}
+            </li>
+          ))}
+      </ul>
     </div>
   );
 }
-
-export default SearchBar;
