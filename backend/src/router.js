@@ -3,6 +3,7 @@ const { hashPassword } = require("./services/PasswordHashing");
 const { validateUser } = require("./validators/UserValidator");
 const { validateKeyword } = require("./validators/KeywordValidator");
 const { validateProduct } = require("./validators/ProductValidator");
+const { validateAffiliation } = require("./validators/AffiliationValidator");
 
 const {
   ItemController,
@@ -33,7 +34,7 @@ router.post("/products", validateProduct, ProductController.add);
 router.delete("/products/:id", ProductController.delete);
 
 router.get("/affiliations", AffiliationController.browse);
-router.post("/affiliations", AffiliationController.add);
+router.post("/affiliations", validateAffiliation, AffiliationController.add);
 router.delete(
   "/affiliations/products/:product_id/keywords/:keyword_id",
   AffiliationController.delete
