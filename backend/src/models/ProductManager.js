@@ -3,6 +3,13 @@ const AbstractManager = require("./AbstractManager");
 class ProductManager extends AbstractManager {
   static table = "product";
 
+  findSearch(research) {
+    return this.connection.query(
+      `select * from  ${this.table} WHERE name LIKE ? OR brand LIKE ?`,
+      [`%${research}%`, `%${research}%`]
+    );
+  }
+
   insert(product) {
     return this.connection.query(
       `insert into ${ProductManager.table} (name, brand, description) values (?, ?, ?)`,
