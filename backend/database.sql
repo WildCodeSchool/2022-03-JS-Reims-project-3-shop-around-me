@@ -29,18 +29,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `product` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(50) NOT NULL,
-  `brand` varchar(50) NOT NULL,
-  `description` varchar(500)
+  `brand` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `product`
 --
 
-INSERT INTO `product` (`id`, `name`, `brand`, `description`) VALUES
-(1, "Biscuit Rose", "Maison Fossier", "Créé en 1691, le Biscuit Rose de Reims est un des fleurons de la Ville de Reims. Toujours associé au champagne autrefois, il est un symbole de la fête. Aujourd’hui, il est aussi utilisé dans de nombreuses recettes. Outre sa couleur rose, il est caractérisé par une texture craquante et fondante."),
-(2, "Boots 1460", "Dr. Martens", "Nos boots Original ont été pensées pour les travailleurs. Mais dans les décennies qui ont suivies, elles ont été adoptées, réinventées et détournées par plusieurs contre-cultures. Et elles ont été portées de toutes les façons possibles. Mais rien n'a changé dans leur conception, pas même leurs fameuses surpiqûres jaunes. Nous fabriquons les 1460. Mais vous les rendez iconiques."),
-(3, "Risk", "Hasbro", "Risk : le jeu de conquête stratégique ! Risk est un jeu de guerre et de stratégie qui est connu à travers le monde depuis de nombreuses années. Ce jeu de société vous placera à la tête d'une armée possédant une couleur et vous devrez réussir une mission que vous aurez tirée au sort au début de la partie. Mais, même si vous vous démontrez être un fin stratège, vos actions auront parfois de malheureuses répercussions pour la suite de la partie.Il vous faudra être patient, observateur et surtout posséder un bon esprit d'analyse.");
+INSERT INTO `product` (`id`, `name`, `brand`) VALUES
+(1, "Biscuit Rose", "Maison Fossier"),
+(2, "Risk", "Hasbro"),
+(3, "Boots 1460", "Dr. Martens");
 
 --
 -- Index pour les tables exportées

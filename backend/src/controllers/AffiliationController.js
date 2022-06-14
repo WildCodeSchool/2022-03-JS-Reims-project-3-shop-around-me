@@ -13,14 +13,14 @@ class AffiliationController {
       });
   };
 
-  static read = (req, res) => {
+  static readProducts = (req, res) => {
     models.affiliation
-      .find(req.params.id)
+      .findProducts(req.query.search)
       .then(([rows]) => {
         if (rows[0] == null) {
           res.sendStatus(404);
         } else {
-          res.send(rows[0]);
+          res.send(rows);
         }
       })
       .catch((err) => {
@@ -36,8 +36,8 @@ class AffiliationController {
 
     models.affiliation
       .insert(affiliation)
-      .then(([result]) => {
-        res.status(201).send({ ...affiliation, id: result.insertId });
+      .then(() => {
+        res.status(201).send({ ...affiliation });
       })
       .catch((err) => {
         console.error(err);
@@ -47,7 +47,7 @@ class AffiliationController {
 
   static delete = (req, res) => {
     models.affiliation
-      .delete(req.params.id)
+      .delete(req.params.product_id, req.params.keyword_id)
       .then(() => {
         res.sendStatus(204);
       })

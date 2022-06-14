@@ -31,12 +31,8 @@ router.post("/products", ProductController.add);
 router.delete("/products/:id", ProductController.delete);
 
 router.get("/affiliations", AffiliationController.browse);
-router.get("/affiliations/products/:id", AffiliationController.readProducts);
-router.get("/affiliations/keywords/:id", AffiliationController.readKeywords);
-router.post(
-  "/affiliations/products/:product_id/keywords/:keyword_id",
-  AffiliationController.add
-);
+router.get("/affiliations/products", AffiliationController.readProducts);
+router.post("/affiliations", AffiliationController.add);
 router.delete(
   "/affiliations/products/:product_id/keywords/:keyword_id",
   AffiliationController.delete
