@@ -2,7 +2,11 @@
 import { useForm } from "react-hook-form";
 
 export default function InscriptionForm() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const onSubmit = (data) => {
     alert(JSON.stringify(data));
   };
@@ -17,9 +21,16 @@ export default function InscriptionForm() {
           {...register("firstName", {
             required: true,
             minLength: 3,
-            maxLength: 80,
+            maxLength: 50,
           })}
         />
+        {errors?.firstName?.type === "required" && <p>Ce champ est requis.</p>}
+        {errors?.firstName?.type === "minLength" && (
+          <p>Votre prénom ne peut pas faire moins de 3 caractères.</p>
+        )}
+        {errors?.firstName?.type === "maxLength" && (
+          <p>Votre prénom ne peut pas exceder 50 caractères.</p>
+        )}
       </label>
       <label htmlFor="lastName">
         Nom
@@ -29,9 +40,16 @@ export default function InscriptionForm() {
           {...register("lastNname", {
             required: true,
             minLength: 3,
-            maxLength: 100,
+            maxLength: 80,
           })}
         />
+        {errors?.lastName?.type === "required" && <p>Ce champ est requis.</p>}
+        {errors?.lastName?.type === "minLength" && (
+          <p>Votre nom ne peut pas faire moins de 3 caractères.</p>
+        )}
+        {errors?.lastName?.type === "maxLength" && (
+          <p>Votre nom ne peut pas exceder 80 caractères.</p>
+        )}
       </label>
       <label htmlFor="birthDate">
         Date de naissance
@@ -40,6 +58,7 @@ export default function InscriptionForm() {
           placeholder="01/01/2000"
           {...register("birthDate", { require: true })}
         />
+        {errors?.birthdate?.type === "required" && <p>Ce champ est requis.</p>}
       </label>
       <label htmlFor="gender">
         Genre
@@ -50,6 +69,7 @@ export default function InscriptionForm() {
           <option value="other">Autre</option>
           <option value="not-tell">Ne se prononce pas</option>
         </select>
+        {errors?.gender?.type === "required" && <p>Ce champ est requis.</p>}
       </label>
       <label htmlFor="city">
         Ville
@@ -58,6 +78,12 @@ export default function InscriptionForm() {
           placeholder="Paris"
           {...register({ required: false, minLength: 3, maxLength: 80 })}
         />
+        {errors?.city?.type === "minLength" && (
+          <p>Le nom de votre ville ne peut pas faire moins de 3 caractères.</p>
+        )}
+        {errors?.city?.type === "maxLength" && (
+          <p>Le nom de votre ville ne peut pas exceder 80 caractères.</p>
+        )}
       </label>
       <label htmlFor="zipcode">
         Code postal
@@ -67,9 +93,15 @@ export default function InscriptionForm() {
           {...register("zipcode", {
             required: false,
             minLength: 4,
-            maxLength: 5,
+            maxLength: 8,
           })}
         />
+        {errors?.zipcode?.type === "minLength" && (
+          <p>Votre code postal ne peut pas faire moins de 4 caractères.</p>
+        )}
+        {errors?.zipcode?.type === "maxLength" && (
+          <p>Votre code postal ne peut pas faire plus de 8 caractères.</p>
+        )}
       </label>
       <label htmlFor="email">
         Email
@@ -84,6 +116,13 @@ export default function InscriptionForm() {
               /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
           })}
         />
+        {errors?.email?.type === "required" && <p>Ce champ est requis.</p>}
+        {errors?.email?.type === "minLength" && (
+          <p>Votre adresse mail est trop courte.</p>
+        )}
+        {errors?.email?.type === "maxLength" && (
+          <p>Votre adresse mail est trop longue.</p>
+        )}
       </label>
       <label htmlFor="password">
         Mot de passe
@@ -95,6 +134,13 @@ export default function InscriptionForm() {
             maxLength: 100,
           })}
         />
+        {errors?.password?.type === "required" && <p>Ce champ est requis.</p>}
+        {errors?.password?.type === "minLength" && (
+          <p>Votre mot de passe est trop court.</p>
+        )}
+        {errors?.password?.type === "maxLength" && (
+          <p>Votre mot de passe est trop long.</p>
+        )}
       </label>
       <input type="submit" />
     </form>
