@@ -29,6 +29,14 @@ export default function InscriptionForm() {
           <option value="female">Femme</option>
         </select>
       </label>
+      <label htmlFor="city">
+        Ville
+        <input type="text" name="city" ref={register({ require: true })} />
+      </label>
+      <label htmlFor="zipcode">
+        Code postal
+        <input type="text" name="zipcode" ref={register({ require: true })} />
+      </label>
       <label htmlFor="email">
         Email
         <input type="text" name="email" ref={register({ required: true })} />
