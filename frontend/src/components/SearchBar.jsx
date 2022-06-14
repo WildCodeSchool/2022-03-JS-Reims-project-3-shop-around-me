@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import logo from "@assets/images/logo.png";
+import logo from "../assets/images/logo.png";
 
 function SearchBar() {
   const searchValue = useRef();
