@@ -9,6 +9,7 @@ const {
   KeywordController,
   ProductController,
   UserController,
+  AffiliationController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -30,6 +31,13 @@ router.get("/products/:id", ProductController.read);
 router.put("/products/:id", validateProduct, ProductController.edit);
 router.post("/products", validateProduct, ProductController.add);
 router.delete("/products/:id", ProductController.delete);
+
+router.get("/affiliations", AffiliationController.browse);
+router.post("/affiliations", AffiliationController.add);
+router.delete(
+  "/affiliations/products/:product_id/keywords/:keyword_id",
+  AffiliationController.delete
+);
 
 router.get("/users", UserController.browse);
 router.get("/users/:id", UserController.read);
