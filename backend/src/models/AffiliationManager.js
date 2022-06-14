@@ -3,12 +3,6 @@ const AbstractManager = require("./AbstractManager");
 class AffiliationManager extends AbstractManager {
   static table = "affiliation";
 
-  findProducts(search) {
-    return this.connection.query(
-      `select * from product inner join ${this.table} on product.id = product_id inner join keyword on keyword.id = keyword_id where keyword_name like '%${search}%'`
-    );
-  }
-
   findAll() {
     return this.connection.query(`select * from  ${this.table}`);
   }

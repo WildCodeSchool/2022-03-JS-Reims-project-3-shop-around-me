@@ -33,7 +33,6 @@ router.post("/products", validateProduct, ProductController.add);
 router.delete("/products/:id", ProductController.delete);
 
 router.get("/affiliations", AffiliationController.browse);
-router.get("/affiliations/products", AffiliationController.readProducts);
 router.post("/affiliations", AffiliationController.add);
 router.delete(
   "/affiliations/products/:product_id/keywords/:keyword_id",
