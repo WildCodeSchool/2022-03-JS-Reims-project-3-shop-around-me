@@ -7,15 +7,40 @@ export default function InscriptionForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" name="firstName" ref={register({ required: true })} />
-      <input type="text" name="lastName" ref={register({ required: true })} />
-      <input type="date" name="birthdate" ref={register({ require: true })} />
-      <select name="gender" id="">
-        <option value="female">Femme</option>
-      </select>
-      <input type="text" name="email" ref={register({ required: true })} />
-      <input type="password" name="password" />
-
+      <label htmlFor="firstName">
+        Prénom
+        <input
+          type="text"
+          name="firstName"
+          ref={register({ required: true })}
+        />
+      </label>
+      <label htmlFor="lastName">
+        Nom
+        <input type="text" name="lastName" ref={register({ required: true })} />
+      </label>
+      <label htmlFor="birthDate">
+        Date de naissance
+        <input type="date" name="birthDate" ref={register({ require: true })} />
+      </label>
+      <label htmlFor="gender">
+        Genre
+        <select name="gender" id="">
+          <option value="female">Femme</option>
+        </select>
+      </label>
+      <label htmlFor="email">
+        Email
+        <input type="text" name="email" ref={register({ required: true })} />
+      </label>
+      <label htmlFor="password">
+        Mot de passe
+        <input
+          type="password"
+          name="password"
+          ref={register({ required: true })}
+        />
+      </label>
       <input type="submit" />
     </form>
   );
