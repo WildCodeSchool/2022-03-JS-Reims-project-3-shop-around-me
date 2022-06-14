@@ -9,7 +9,9 @@ export default function SearchBar() {
   const getResults = () => {
     axios
       .get(
-        `http://localhost:5001/products/?search=${searchValue.current.value}`
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/products/?search=${searchValue.current.value}`
       )
       .then((response) => response.data)
       .then((data) => {
