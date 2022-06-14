@@ -1,13 +1,22 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
 
+const wait = function (duration = 1000) {
+  return new Promise((resolve) => {
+    window.setTimeout(resolve, duration);
+  });
+};
 export default function InscriptionForm() {
   const {
     register,
     handleSubmit,
+    formState,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
+  const { isSubmitting } = formState;
+
+  const onSubmit = async (data) => {
+    await wait(2000);
     alert(JSON.stringify(data));
   };
 
@@ -142,7 +151,7 @@ export default function InscriptionForm() {
           <p>Votre mot de passe est trop long.</p>
         )}
       </label>
-      <input type="submit" />
+      <input type="submit" disabled={isSubmitting} />
     </form>
   );
 }
