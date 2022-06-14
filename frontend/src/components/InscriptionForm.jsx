@@ -31,6 +31,7 @@ export default function InscriptionForm() {
             required: true,
             minLength: 3,
             maxLength: 50,
+            pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
           })}
         />
         {errors?.firstName?.type === "required" && <p>Ce champ est requis.</p>}
@@ -50,6 +51,7 @@ export default function InscriptionForm() {
             required: true,
             minLength: 3,
             maxLength: 80,
+            pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
           })}
         />
         {errors?.lastName?.type === "required" && <p>Ce champ est requis.</p>}
@@ -65,7 +67,11 @@ export default function InscriptionForm() {
         <input
           type="date"
           placeholder="01/01/2000"
-          {...register("birthDate", { require: true })}
+          {...register("birthDate", {
+            require: true,
+            pattern:
+              /\s+(?:0[1-9]|[12][0-9]|3[01])[-/.](?:0[1-9]|1[012])[-/.](?:19\d{2}|20[01][0-9]|2020)\b/,
+          })}
         />
         {errors?.birthdate?.type === "required" && <p>Ce champ est requis.</p>}
       </label>
@@ -85,7 +91,12 @@ export default function InscriptionForm() {
         <input
           type="text"
           placeholder="Paris"
-          {...register({ required: false, minLength: 3, maxLength: 80 })}
+          {...register({
+            required: false,
+            minLength: 3,
+            maxLength: 80,
+            pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
+          })}
         />
         {errors?.city?.type === "minLength" && (
           <p>Le nom de votre ville ne peut pas faire moins de 3 caractères.</p>
@@ -103,6 +114,7 @@ export default function InscriptionForm() {
             required: false,
             minLength: 4,
             maxLength: 8,
+            pattern: /^[0-9]{4}$/,
           })}
         />
         {errors?.zipcode?.type === "minLength" && (
@@ -121,8 +133,7 @@ export default function InscriptionForm() {
             required: true,
             minLength: 10,
             maxLength: 100,
-            pattern:
-              /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            pattern: /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,5}/i,
           })}
         />
         {errors?.email?.type === "required" && <p>Ce champ est requis.</p>}
@@ -141,6 +152,8 @@ export default function InscriptionForm() {
             required: true,
             minLength: 8,
             maxLength: 100,
+            pattern:
+              /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
           })}
         />
         {errors?.password?.type === "required" && <p>Ce champ est requis.</p>}
