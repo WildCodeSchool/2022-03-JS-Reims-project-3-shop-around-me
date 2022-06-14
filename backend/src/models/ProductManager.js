@@ -5,8 +5,8 @@ class ProductManager extends AbstractManager {
 
   findByQuery(search) {
     return this.connection.query(
-      `select * from ${this.table} inner join affiliation on product.id = product_id inner join keyword on keyword.id = keyword_id where keyword_name like ?`,
-      [`%${search}%`]
+      `select distinct product_id, product.name, product.brand from ${this.table} inner join affiliation on product.id = product_id inner join keyword on keyword.id = keyword_id where keyword_name like ? or product.name LIKE ? or product.brand LIKE ?`,
+      [`%${search}%`, `%${search}%`, `%${search}%`]
     );
   }
 

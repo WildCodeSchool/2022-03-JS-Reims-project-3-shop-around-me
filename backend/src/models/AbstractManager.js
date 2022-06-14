@@ -14,12 +14,6 @@ class AbstractManager {
     return this.connection.query(`select * from  ${this.table}`);
   }
 
-  findSearch(research) {
-    return this.connection.query(
-      `select * from  ${this.table} WHERE name LIKE '%${research}%' OR brand LIKE '%${research}%'`
-    );
-  }
-
   delete(id) {
     return this.connection.query(`delete from ${this.table} where id = ?`, [
       id,

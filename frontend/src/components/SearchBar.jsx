@@ -9,7 +9,7 @@ export default function SearchBar() {
   const getResults = () => {
     axios
       .get(
-        `http://localhost:5000/products/?search=${searchValue.current.value}`
+        `http://localhost:5001/products/?search=${searchValue.current.value}`
       )
       .then((response) => response.data)
       .then((data) => {
@@ -53,8 +53,7 @@ export default function SearchBar() {
             className="text-[#4F4E47] bg-white
               ml-4 mr-4 min-w-[40vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
           >
-            Nom du produit : {result.name} <br /> Marque : {result.brand} <br />{" "}
-            Description : {result.description}
+            Nom du produit : {result.name} <br /> Marque : {result.brand} <br />
           </li>
         ))}
       </ul>
