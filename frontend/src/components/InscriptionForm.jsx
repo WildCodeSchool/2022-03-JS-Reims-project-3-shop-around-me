@@ -41,6 +41,9 @@ export default function InscriptionForm() {
         {errors?.firstName?.type === "maxLength" && (
           <p>Votre prénom ne peut pas exceder 50 caractères.</p>
         )}
+        {errors?.firstName?.type === "pattern" && (
+          <p>Ce champ n'accèpte pas la saisie de caractères spéciaux.</p>
+        )}
       </label>
       <label htmlFor="lastName">
         Nom
@@ -61,6 +64,9 @@ export default function InscriptionForm() {
         {errors?.lastName?.type === "maxLength" && (
           <p>Votre nom ne peut pas exceder 80 caractères.</p>
         )}
+        {errors?.lastName?.type === "pattern" && (
+          <p>Ce champ n'accèpte pas la saisie de caractères spéciaux.</p>
+        )}
       </label>
       <label htmlFor="birthDate">
         Date de naissance
@@ -74,6 +80,9 @@ export default function InscriptionForm() {
           })}
         />
         {errors?.birthdate?.type === "required" && <p>Ce champ est requis.</p>}
+        {errors?.birthdate?.type === "pattern" && (
+          <p>Merci de respecter le format suivant : "jj/mm/aaaa".</p>
+        )}
       </label>
       <label htmlFor="gender">
         Genre
@@ -104,6 +113,9 @@ export default function InscriptionForm() {
         {errors?.city?.type === "maxLength" && (
           <p>Le nom de votre ville ne peut pas exceder 80 caractères.</p>
         )}
+        {errors?.city?.type === "pattern" && (
+          <p>Ce champs n'accepte pas les caractères spéciaux.</p>
+        )}
       </label>
       <label htmlFor="zipcode">
         Code postal
@@ -122,6 +134,9 @@ export default function InscriptionForm() {
         )}
         {errors?.zipcode?.type === "maxLength" && (
           <p>Votre code postal ne peut pas faire plus de 8 caractères.</p>
+        )}
+        {errors?.zipcode?.type === "pattern" && (
+          <p>Ce champs n'accepte pas les caractères spéciaux.</p>
         )}
       </label>
       <label htmlFor="email">
@@ -143,6 +158,9 @@ export default function InscriptionForm() {
         {errors?.email?.type === "maxLength" && (
           <p>Votre adresse mail est trop longue.</p>
         )}
+        {errors?.email?.type === "pattern" && (
+          <p>Votre adresse mail n'est pas valide.</p>
+        )}
       </label>
       <label htmlFor="password">
         Mot de passe
@@ -162,6 +180,9 @@ export default function InscriptionForm() {
         )}
         {errors?.password?.type === "maxLength" && (
           <p>Votre mot de passe est trop long.</p>
+        )}
+        {errors?.password?.type === "pattern" && (
+          <p>Votre mot de passe n'est pas valide.</p>
         )}
       </label>
       <input type="submit" disabled={isSubmitting} />
