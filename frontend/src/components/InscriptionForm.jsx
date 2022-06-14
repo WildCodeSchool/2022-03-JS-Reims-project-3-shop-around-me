@@ -12,17 +12,23 @@ export default function InscriptionForm() {
     handleSubmit,
     formState,
     formState: { errors },
+    setError,
   } = useForm();
-  const { isSubmitting } = formState;
+
+  const { isSubmitting, isSubmitSuccessful } = formState;
 
   const onSubmit = async (data) => {
     await wait(2000);
+    setError("email", "email", "Email already exists");
     alert(JSON.stringify(data));
   };
 
   return (
     <>
       <h2>Incription</h2>
+      {isSubmitSuccessful && (
+        <div className="alert alert-success">Formulaire envoyé</div>
+      )}
       <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="firstName">
           Prénom
