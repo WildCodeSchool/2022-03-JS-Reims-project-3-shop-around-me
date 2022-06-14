@@ -3,7 +3,7 @@ const AbstractManager = require("./AbstractManager");
 class ProductManager extends AbstractManager {
   static table = "product";
 
-  findSearch(research) {
+  findByQuery(research) {
     return this.connection.query(
       `select * from  ${this.table} WHERE name LIKE ? OR brand LIKE ?`,
       [`%${research}%`, `%${research}%`]

@@ -3,7 +3,7 @@ const models = require("../models");
 class ProductController {
   static browse = (req, res) => {
     models.product
-      .findSearch(req.query.search)
+      .findByQuery(req.query.search)
       .then(([rows]) => {
         res.send(rows);
       })
