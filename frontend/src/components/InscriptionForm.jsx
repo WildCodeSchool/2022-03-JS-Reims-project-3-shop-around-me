@@ -27,7 +27,9 @@ export default function InscriptionForm() {
     <>
       <h2>Incription</h2>
       {isSubmitSuccessful && (
-        <div className="alert alert-success">Formulaire envoyé</div>
+        <div className="alert alert-success">
+          Votre inscription a été prise en compte
+        </div>
       )}
       <form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-wrap -mx-3 mb-6">
