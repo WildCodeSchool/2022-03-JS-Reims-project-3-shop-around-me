@@ -46,7 +46,11 @@ CREATE TABLE `shop` (
 --
 
 INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `adress`, `opening_hours`, `website`, `email`, `phone`, `fb_page`, `insta_page`, `x`, `y`) VALUES
-(1, "Magasin Fossier", "Maison Fossier", "Biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "lundi, 14:00–19:00 / mardi, 10:00–19:00 / mercredi, 10:00–19:00 / jeudi, 10:00–19:00 / vendredi, 10:00–19:00 / samedi, 10:00–19:00 / dimanche, Fermé", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", "4.030856132507324", "49.25590515136719");
+(1, "Magasin Fossier", "Maison Fossier", "Biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "lundi, 14:00–19:00 / mardi, 10:00–19:00 / mercredi, 10:00–19:00 / jeudi, 10:00–19:00 / vendredi, 10:00–19:00 / samedi, 10:00–19:00 / dimanche, Fermé", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", "4.030856132507324", "49.25590515136719"),
+(2, "MicroMania", "MicroMania", "Jeux Vidéo", "15 Rue de l'Étape, 51100 Reims", null, "https://www.micromania.fr/?utm_source=Yext&utm_medium=GMB", null, "0326882420", null, null, "4.0261652", "49.2553803"),
+(3, "La Petite Malle", "La Petite Malle", "Jeux", "39 Rue Jeanne d'Arc, 51100 Reims", null, "https://www.alchimiste-games.fr/", null, "0981823129", null, null, "4.0241589", "49.254687"),
+(4, "HEROES SANCTUARY", "HEROES SANCTUARY", "Cadeaux", "113 Rue de Vesle, 51100 Reims", null, null, null, "0981823129", "https://www.facebook.com/heroessanctuaryreims", null, "4.025441", "49.2524162"),
+(5, "Li6 Trottinette & Co Reims", "li6", "Trottinette", "160 Rue de Vesle, 51100 Reims", null, "https://li6.fr/", null, "0351422672", null, null, "4.0222744", "49.2516389");
 
 --
 -- Index pour les tables exportées
