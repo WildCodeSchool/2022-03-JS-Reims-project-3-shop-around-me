@@ -26,12 +26,17 @@ export default function InscriptionForm() {
 
   return (
     <div className="grid place-items-center h-screen bg-white">
-      <h2 className="block uppercase tracking-wide text-gray-700 text-s font-bold mb-2">
+      <h2 className="block uppercase tracking-wide text-gray-700 text-s font-bold mb-1">
         Incription
       </h2>
       {isSubmitSuccessful && (
-        <div className="alert alert-success">
-          Votre inscription a été prise en compte
+        <div
+          className="bg-lime-100 border border-lime-400 text-lime-700 px-4 py-3 rounded"
+          role="alert"
+        >
+          <span className="block sm:inline">
+            Votre inscription a été prise en compte.
+          </span>
         </div>
       )}
       <form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
