@@ -37,8 +37,8 @@ CREATE TABLE `shop` (
   `phone` varchar (15),
   `fb_page` varchar(255),
   `insta_page` varchar(255),
-  `X` float NOT NULL,
-  `Y` float NOT NULL
+  `x` float NOT NULL,
+  `y` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
