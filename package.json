@@ -17,5 +17,8 @@
   "devDependencies": {
     "concurrently": "^7.0.0",
     "husky": "^7.0.0"
+  },
+  "dependencies": {
+    "react-hook-form": "^7.32.1"
   }
 }
