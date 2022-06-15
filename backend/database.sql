@@ -29,23 +29,24 @@ CREATE TABLE `shop` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(50) NOT NULL,
   `brand` varchar(50) NOT NULL,
-  `category` varchar(50),
+  `type` varchar(50),
   `adress` varchar(100) NOT NULL,
-  `schedules` varchar(255),
+  `opening_hours` varchar(255),
   `website` varchar(100),
   `email` varchar(100),
+  `phone` varchar (15),
   `fb_page` varchar(255),
   `insta_page` varchar(255),
-  `longitude` float NOT NULL,
-  `latitude` float NOT NULL
+  `X` float NOT NULL,
+  `Y` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `shop`
 --
 
-INSERT INTO `shop` (`id`, `name`, `brand`, `category`, `adress`, `schedules`, `website`, `email`, `fb_page`, `insta_page`, `longitude`, `latitude`) VALUES
-(1, "Magasin Fossier", "Maison Fossier", "Biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "lundi, 14:00–19:00 / mardi, 10:00–19:00 / mercredi, 10:00–19:00 / jeudi, 10:00–19:00 / vendredi, 10:00–19:00 / samedi, 10:00–19:00 / dimanche, Fermé", "http://www.fossier.fr/", "fossier@fossier.fr", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", "4.030856132507324", "49.25590515136719");
+INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `adress`, `opening_hours`, `website`, `email`, `phone`, `fb_page`, `insta_page`, `X`, `Y`) VALUES
+(1, "Magasin Fossier", "Maison Fossier", "Biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "lundi, 14:00–19:00 / mardi, 10:00–19:00 / mercredi, 10:00–19:00 / jeudi, 10:00–19:00 / vendredi, 10:00–19:00 / samedi, 10:00–19:00 / dimanche, Fermé", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", "4.030856132507324", "49.25590515136719");
 
 --
 -- Index pour les tables exportées
