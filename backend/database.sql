@@ -19,6 +19,59 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `shop_around_me`
 --
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `shop`
+--
+
+CREATE TABLE `shop` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `brand` varchar(50) NOT NULL,
+  `category` varchar(50),
+  `adress` varchar(100) NOT NULL,
+  `schedules` varchar(255),
+  `website` varchar(100),
+  `email` varchar(100),
+  `fb_page` varchar(255),
+  `insta_page` varchar(255),
+  `longitude` int NOT NULL,
+  `latitude` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `shop`
+--
+
+INSERT INTO `shop` (`id`, `name`, `brand`) VALUES
+(1, "Biscuit Rose", "Maison Fossier"),
+(2, "Risk", "Hasbro"),
+(3, "Boots 1460", "Dr. Martens");
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `shop`
+--
+ALTER TABLE `shop`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `shop`
+--
+ALTER TABLE `shop`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 -- --------------------------------------------------------
 
