@@ -19,6 +19,57 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `shop_around_me`
 --
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `shop`
+--
+
+CREATE TABLE `shop` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `brand` varchar(50) NOT NULL,
+  `category` varchar(50),
+  `adress` varchar(100) NOT NULL,
+  `schedules` varchar(255),
+  `website` varchar(100),
+  `email` varchar(100),
+  `fb_page` varchar(255),
+  `insta_page` varchar(255),
+  `longitude` float NOT NULL,
+  `latitude` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `shop`
+--
+
+INSERT INTO `shop` (`id`, `name`, `brand`, `category`, `adress`, `schedules`, `website`, `email`, `fb_page`, `insta_page`, `longitude`, `latitude`) VALUES
+(1, "Magasin Fossier", "Maison Fossier", "Biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "lundi, 14:00–19:00 / mardi, 10:00–19:00 / mercredi, 10:00–19:00 / jeudi, 10:00–19:00 / vendredi, 10:00–19:00 / samedi, 10:00–19:00 / dimanche, Fermé", "http://www.fossier.fr/", "fossier@fossier.fr", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", "4.030856132507324", "49.25590515136719");
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `shop`
+--
+ALTER TABLE `shop`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `shop`
+--
+ALTER TABLE `shop`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 -- --------------------------------------------------------
 
