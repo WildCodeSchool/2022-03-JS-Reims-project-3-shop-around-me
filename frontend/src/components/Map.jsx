@@ -33,7 +33,7 @@ function Map() {
         <Marker position={shopPosition}>
           <Popup>The shop</Popup>
         </Marker>
-        {!userGeolocation.error && userGeolocation.latitude && (
+        {userPosition && (
           <Marker position={userPosition}>
             <Popup>Your position.</Popup>
           </Marker>
