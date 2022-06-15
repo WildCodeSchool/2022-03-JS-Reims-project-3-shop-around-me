@@ -1,7 +1,12 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
 
 export default function LoginForm() {
-  const { handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const onSubmit = (data) => {
     console.warn(JSON.stringify(data));
@@ -17,8 +22,16 @@ export default function LoginForm() {
           Email
           <input
             type="text"
+            {...register("email", {
+              required: true,
+            })}
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           />
+          {errors?.email?.type === "required" && (
+            <p className="text-red-600 normal-case text-xs font-normal italic">
+              Ce champ est requis.
+            </p>
+          )}
         </label>
         <label
           htmlFor="password"
@@ -27,8 +40,16 @@ export default function LoginForm() {
           Mot de passe
           <input
             type="password"
+            {...register("password", {
+              required: true,
+            })}
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           />
+          {errors?.password?.type === "required" && (
+            <p className="text-red-600 normal-case text-xs font-normal italic">
+              Ce champ est requis.
+            </p>
+          )}
         </label>
         <input type="submit" />
       </form>
