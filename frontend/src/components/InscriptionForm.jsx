@@ -12,11 +12,12 @@ export default function InscriptionForm() {
 
   const { isSubmitting, isSubmitSuccessful } = formState;
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (email, password) => {
     try {
       const resp = await axios.post(
         `${process.env.REACT_APP_API_URL}/api/users`,
-        data
+        email,
+        password
       );
       console.warn(resp.data);
     } catch (err) {
@@ -26,7 +27,7 @@ export default function InscriptionForm() {
 
   return (
     <div className="grid place-items-center h-screen bg-white">
-      <h2 className="block uppercase tracking-wide text-gray-700 text-s font-bold mb-1">
+      <h2 className="block uppercase tracking-wide text-gray-700 text-s font-bold">
         Incription
       </h2>
       {isSubmitSuccessful && (
