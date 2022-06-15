@@ -14,7 +14,7 @@ export default function LoginForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
         <label
           htmlFor="email"
           className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
