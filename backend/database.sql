@@ -220,6 +220,12 @@ INSERT INTO `affiliation` (`product_id`, `keyword_id`) VALUES
 
 CREATE TABLE `user` (
   `id` int(11) UNSIGNED NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `birthDate` date NOT NULL,
+  `gender` varchar(20) NOT NULL,
+  `city`varchar(80),
+  `zipcode`varchar(8),
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
