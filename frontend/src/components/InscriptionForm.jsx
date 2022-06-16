@@ -10,7 +10,7 @@ export default function InscriptionForm() {
     formState: { errors },
   } = useForm();
 
-  const { isSubmitting, isSubmitSuccessful } = formState;
+  const { isSubmitSuccessful } = formState;
 
   const onSubmit = async (data) => {
     try {
@@ -333,7 +333,7 @@ export default function InscriptionForm() {
             </p>
           )}
         </label>
-        <input type="submit" disabled={isSubmitting} />
+        <input type="submit" />
       </form>
     </div>
   );
