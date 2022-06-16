@@ -12,12 +12,11 @@ export default function InscriptionForm() {
 
   const { isSubmitting, isSubmitSuccessful } = formState;
 
-  const onSubmit = async (email, password) => {
+  const onSubmit = async (data) => {
     try {
       const resp = await axios.post(
         `${process.env.REACT_APP_API_URL}/api/users`,
-        email,
-        password
+        data
       );
       console.warn(resp.data);
     } catch (err) {
