@@ -472,6 +472,12 @@ INSERT INTO `affiliation` (`product_id`, `keyword_id`) VALUES
 
 CREATE TABLE `user` (
   `id` int(11) UNSIGNED NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `birthdate` date NOT NULL,
+  `gender` varchar(20) NOT NULL,
+  `zipcode` varchar(8),
+  `city` varchar(80),
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -480,8 +486,8 @@ CREATE TABLE `user` (
 -- Contenu de la table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `password`) VALUES
-(1, "nibor@wild.com", "$argon2id$v=19$m=65536,t=5,p=1$kyt4+/e/n/CfttAPLi0Fqw$axBWlUeK/GKrTE5tXYY5mgT20+KxGklsKudf3F7qGFg");
+INSERT INTO `user` (`id`, `firstname`, `lastname`, `birthdate`, `gender`, `zipcode`, `city`, `email`, `password`) VALUES
+(1, "Nibor", "Valjen", "1995-03-14", "male", "51100", "Reims", "nibor@wild.com", "$argon2id$v=19$m=65536,t=5,p=1$kyt4+/e/n/CfttAPLi0Fqw$axBWlUeK/GKrTE5tXYY5mgT20+KxGklsKudf3F7qGFg");
 
 --
 -- Index pour les tables exportées
