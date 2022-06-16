@@ -35,13 +35,7 @@ const validateUser = (req, res, next) => {
         .max(100)
         .presence(presence)
         .pattern(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,5}/i),
-      password: Joi.string()
-        .min(8)
-        .max(50)
-        .presence(presence)
-        .pattern(
-          /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
-        ),
+      password: Joi.string().min(8).max(50).presence(presence),
     }).validate(user, { abortEarly: false }).error;
   };
 
