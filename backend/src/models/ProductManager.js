@@ -12,15 +12,15 @@ class ProductManager extends AbstractManager {
 
   insert(product) {
     return this.connection.query(
-      `insert into ${ProductManager.table} (name, brand, description) values (?, ?, ?)`,
-      [product.name, product.brand, product.description]
+      `insert into ${ProductManager.table} (name, brand) values (?, ?)`,
+      [product.name, product.brand]
     );
   }
 
   update(product) {
     return this.connection.query(
-      `update ${ProductManager.table} set name = ?, brand = ?, description = ? where id = ?`,
-      [product.name, product.brand, product.description, product.id]
+      `update ${ProductManager.table} set name = ?, brand = ? where id = ?`,
+      [product.name, product.brand, product.id]
     );
   }
 }
