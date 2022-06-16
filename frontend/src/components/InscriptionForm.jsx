@@ -44,37 +44,37 @@ export default function InscriptionForm() {
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-firstName"
+              htmlFor="grid-firstname"
             >
               Prénom
               <input
                 type="text"
                 placeholder="Jane"
-                {...register("firstName", {
+                {...register("firstname", {
                   required: true,
                   minLength: 2,
                   maxLength: 50,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
                 })}
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-firstName"
+                id="grid-firstname"
               />
-              {errors?.firstName?.type === "required" && (
+              {errors?.firstname?.type === "required" && (
                 <p className="text-red-600 normal-case text-xs font-normal italic">
                   Ce champ est requis.
                 </p>
               )}
-              {errors?.firstName?.type === "minLength" && (
+              {errors?.firstname?.type === "minLength" && (
                 <p className="text-red-600 normal-case text-xs font-normal italic">
                   Votre prénom ne peut pas faire moins de 2 caractères.
                 </p>
               )}
-              {errors?.firstName?.type === "maxLength" && (
+              {errors?.firstname?.type === "maxLength" && (
                 <p className="text-red-600 normal-case text-xs font-normal italic">
                   Votre prénom ne peut pas exceder 50 caractères.
                 </p>
               )}
-              {errors?.firstName?.type === "pattern" && (
+              {errors?.firstname?.type === "pattern" && (
                 <p className="text-red-600 normal-case text-xs font-normal italic">
                   Ce champ n'accèpte pas la saisie de caractères spéciaux.
                 </p>
@@ -84,37 +84,37 @@ export default function InscriptionForm() {
           <div className="w-full md:w-1/2 px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-lastName"
+              htmlFor="grid-lastname"
             >
               Nom
               <input
                 type="text"
                 placeholder="Doe"
-                {...register("lastName", {
+                {...register("lastname", {
                   required: true,
                   minLength: 2,
                   maxLength: 50,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
                 })}
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-lastName"
+                id="grid-lastname"
               />
-              {errors?.lastName?.type === "required" && (
+              {errors?.lastname?.type === "required" && (
                 <p className="text-red-600 normal-case text-xs font-normal italic">
                   Ce champ est requis.
                 </p>
               )}
-              {errors?.lastName?.type === "minLength" && (
+              {errors?.lastname?.type === "minLength" && (
                 <p className="text-red-600 normal-case text-xs font-normal italic">
                   Votre prénom ne peut pas faire moins de 2 caractères.
                 </p>
               )}
-              {errors?.lastName?.type === "maxLength" && (
+              {errors?.lastname?.type === "maxLength" && (
                 <p className="text-red-600 normal-case text-xs font-normal italic">
                   Votre prénom ne peut pas exceder 50 caractères.
                 </p>
               )}
-              {errors?.lastName?.type === "pattern" && (
+              {errors?.lastname?.type === "pattern" && (
                 <p className="text-red-600 normal-case text-xs font-normal italic">
                   Ce champ n'accèpte pas la saisie de caractères spéciaux.
                 </p>
@@ -126,26 +126,26 @@ export default function InscriptionForm() {
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-birthDate"
+              htmlFor="grid-birthdate"
             >
               Date de naissance
               <input
                 type="text"
                 placeholder="01/01/2000"
-                {...register("birthDate", {
+                {...register("birthdate", {
                   required: true,
                   pattern:
                     /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
                 })}
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-birthDate"
+                id="grid-birthdate"
               />
-              {errors?.birthDate?.type === "required" && (
+              {errors?.birthdate?.type === "required" && (
                 <p className="text-red-600 normal-case text-xs font-normal italic">
                   Ce champ est requis.
                 </p>
               )}
-              {errors?.birthDate?.type === "pattern" && (
+              {errors?.birthdate?.type === "pattern" && (
                 <p className="text-red-600 normal-case text-xs font-normal italic">
                   Merci de respecter le format suivant : "jj/mm/aaaa".
                 </p>
