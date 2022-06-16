@@ -134,7 +134,7 @@ export default function InscriptionForm() {
                 type="text"
                 placeholder="01/01/2000"
                 {...register("birthDate", {
-                  require: true,
+                  required: true,
                   pattern:
                     /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
                 })}
