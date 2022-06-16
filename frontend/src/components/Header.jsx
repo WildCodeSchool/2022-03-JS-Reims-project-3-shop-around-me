@@ -4,7 +4,13 @@ import LoginIcon from "../assets/images/login_icon.png";
 function Header() {
   return (
     <Link to="/connexion">
-      <img src={LoginIcon} alt="login" className="h-48 w-48" />
+      <div className="relative h-32 w-100">
+        <img
+          src={LoginIcon}
+          alt="login"
+          className="absolute top-2 right-2 h-12 w-12"
+        />
+      </div>
     </Link>
   );
 }
