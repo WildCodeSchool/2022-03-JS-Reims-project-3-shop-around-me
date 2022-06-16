@@ -5,17 +5,17 @@ const validateUser = (req, res, next) => {
   const validationErrors = (data, forCreation = true) => {
     const presence = forCreation ? "required" : "optional";
     return Joi.object({
-      firstName: Joi.string
+      firstname: Joi.string
         .min(2)
         .max(50)
         .presence(presence)
         .pattern(/^([ \u00c0-\u01ffa-zA-Z'-])+$/i),
-      lastName: Joi.string
+      lastname: Joi.string
         .min(2)
         .max(50)
         .presence(presence)
         .pattern(/^([ \u00c0-\u01ffa-zA-Z'-])+$/i),
-      birthDate: Joi.date()
+      birthdate: Joi.date()
         .greater("12-12-1900")
         .less("12-12-2021")
         .presence(presence)

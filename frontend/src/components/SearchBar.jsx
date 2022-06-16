@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import axios from "axios";
 import logo from "../assets/images/logo.png";
+import Map from "./Map";
 
 export default function SearchBar() {
   const searchValue = useRef();
@@ -21,11 +22,11 @@ export default function SearchBar() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    getResults();
+    return searchValue.current?.value.length > 1 && getResults();
   };
 
   return (
-    <div className="grid place-items-center h-screen">
+    <div className="grid place-items-center">
       <div className="flex flex-col justify-center items-center">
         <img src={logo} alt="logo" className="max-w-xs m-4" />
         <form
@@ -37,23 +38,24 @@ export default function SearchBar() {
               className="text-gray-500
           placeholder-gray-300
           border-none bg-transparent focus:outline-none
-          ml-2 mr-2 min-w-[40vw] min-h-[5vh]"
+          ml-2 mr-2 min-w-[80vw] min-h-[5vh]"
               id="search"
               type="text"
               name="search"
-              placeholder="Recherche ..."
+              placeholder="Tapez: 'Biscuit Roses de Reims'"
               ref={searchValue}
             />
           </label>
           <button type="submit">🔎</button>
         </form>
       </div>
+      {results.length !== 0 && <Map searchValue={searchValue.current?.value} />}
       <ul>
         {results.map((result) => (
           <li
             key={result.id}
             className="text-[#4F4E47] bg-white
-              ml-4 mr-4 min-w-[40vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
+              ml-4 mr-4 min-w-[90vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
           >
             Nom du produit : {result.name} <br /> Marque : {result.brand} <br />
           </li>
