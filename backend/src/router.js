@@ -11,6 +11,7 @@ const {
   ProductController,
   UserController,
   AffiliationController,
+  ShopController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -20,6 +21,12 @@ router.get("/items/:id", ItemController.read);
 router.put("/items/:id", ItemController.edit);
 router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
+
+router.get("/shops", ShopController.browse);
+router.get("/shops/:id", ShopController.read);
+router.put("/shops/:id", ShopController.edit);
+router.post("/shops", ShopController.add);
+router.delete("/shops/:id", ShopController.delete);
 
 router.get("/keywords", KeywordController.browse);
 router.get("/keywords/:id", KeywordController.read);
