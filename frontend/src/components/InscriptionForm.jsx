@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function InscriptionForm() {
   const {
@@ -27,7 +28,7 @@ export default function InscriptionForm() {
   return (
     <div className="grid place-items-center h-screen bg-white">
       <h2 className="block uppercase tracking-wide text-gray-700 text-s font-bold">
-        Incription
+        Inscription
       </h2>
       {isSubmitSuccessful && (
         <div
@@ -334,6 +335,13 @@ export default function InscriptionForm() {
           )}
         </label>
         <input type="submit" />
+        <br />
+        <span className="text-center">
+          Vous avez déjà un compte ?
+          <Link to="/connexion">
+            <strong> Connectez-vous</strong>
+          </Link>
+        </span>
       </form>
     </div>
   );

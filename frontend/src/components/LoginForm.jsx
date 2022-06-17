@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 export default function LoginForm() {
   const {
@@ -13,7 +14,10 @@ export default function LoginForm() {
   };
 
   return (
-    <>
+    <div className="grid place-items-center h-screen bg-white">
+      <h2 className="block uppercase tracking-wide text-gray-700 text-s font-bold">
+        Connexion
+      </h2>
       <form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
         <label
           htmlFor="email"
@@ -53,7 +57,12 @@ export default function LoginForm() {
         </label>
         <input type="submit" />
       </form>
-      <span>Vous n’avez pas de compte ? Inscrivez-vous</span>
-    </>
+      <span>
+        Vous n’avez pas de compte ?
+        <Link to="/inscription">
+          <strong> Inscrivez-vous</strong>
+        </Link>
+      </span>
+    </div>
   );
 }
