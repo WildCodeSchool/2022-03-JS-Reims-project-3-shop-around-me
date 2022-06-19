@@ -60,22 +60,20 @@ export default function InscriptionForm() {
                 id="grid-firstname"
               />
               {errors?.firstname?.type === "required" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
-                  Ce champ est requis.
-                </p>
+                <p className="error-handler">Ce champ est requis.</p>
               )}
               {errors?.firstname?.type === "minLength" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Votre prénom ne peut pas faire moins de 2 caractères.
                 </p>
               )}
               {errors?.firstname?.type === "maxLength" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Votre prénom ne peut pas exceder 50 caractères.
                 </p>
               )}
               {errors?.firstname?.type === "pattern" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Ce champ n'accèpte pas la saisie de caractères spéciaux.
                 </p>
               )}
@@ -100,22 +98,20 @@ export default function InscriptionForm() {
                 id="grid-lastname"
               />
               {errors?.lastname?.type === "required" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
-                  Ce champ est requis.
-                </p>
+                <p className="error-handler">Ce champ est requis.</p>
               )}
               {errors?.lastname?.type === "minLength" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Votre prénom ne peut pas faire moins de 2 caractères.
                 </p>
               )}
               {errors?.lastname?.type === "maxLength" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Votre prénom ne peut pas exceder 50 caractères.
                 </p>
               )}
               {errors?.lastname?.type === "pattern" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Ce champ n'accèpte pas la saisie de caractères spéciaux.
                 </p>
               )}
@@ -141,12 +137,10 @@ export default function InscriptionForm() {
                 id="grid-birthdate"
               />
               {errors?.birthdate?.type === "required" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
-                  Ce champ est requis.
-                </p>
+                <p className="error-handler">Ce champ est requis.</p>
               )}
               {errors?.birthdate?.type === "pattern" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Merci de respecter le format suivant : "jj/mm/aaaa".
                 </p>
               )}
@@ -181,9 +175,7 @@ export default function InscriptionForm() {
                 </div>
               </div>
               {errors?.gender?.type === "required" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
-                  Ce champ est requis.
-                </p>
+                <p className="error-handler">Ce champ est requis.</p>
               )}
             </label>
           </div>
@@ -207,17 +199,17 @@ export default function InscriptionForm() {
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               />
               {errors?.city?.type === "minLength" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Le nom de votre ville ne peut pas faire moins de 3 caractères.
                 </p>
               )}
               {errors?.city?.type === "maxLength" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Le nom de votre ville ne peut pas exceder 80 caractères.
                 </p>
               )}
               {errors?.city?.type === "pattern" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Ce champs n'accepte pas les caractères spéciaux.
                 </p>
               )}
@@ -241,17 +233,17 @@ export default function InscriptionForm() {
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               />
               {errors?.zipcode?.type === "minLength" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Votre code postal ne peut pas faire moins de 4 caractères.
                 </p>
               )}
               {errors?.zipcode?.type === "maxLength" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Votre code postal ne peut pas faire plus de 8 caractères.
                 </p>
               )}
               {errors?.zipcode?.type === "pattern" && (
-                <p className="text-red-600 normal-case text-xs font-normal italic">
+                <p className="error-handler">
                   Ce champs n'accepte pas les caractères spéciaux.
                 </p>
               )}
@@ -275,22 +267,16 @@ export default function InscriptionForm() {
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           />
           {errors?.email?.type === "required" && (
-            <p className="text-red-600 normal-case text-xs font-normal italic">
-              Ce champ est requis.
-            </p>
+            <p className="error-handler">Ce champ est requis.</p>
           )}
           {errors?.email?.type === "minLength" && (
-            <p className="text-red-600 normal-case text-xs font-normal italic">
-              Votre adresse mail est trop courte.
-            </p>
+            <p className="error-handler">Votre adresse mail est trop courte.</p>
           )}
           {errors?.email?.type === "maxLength" && (
-            <p className="text-red-600 normal-case text-xs font-normal italic">
-              Votre adresse mail est trop longue.
-            </p>
+            <p className="error-handler">Votre adresse mail est trop longue.</p>
           )}
           {errors?.email?.type === "pattern" && (
-            <p className="text-red-600 normal-case text-xs font-normal italic">
+            <p className="error-handler">
               Votre adresse mail n'est pas valide.
             </p>
           )}
@@ -312,22 +298,16 @@ export default function InscriptionForm() {
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           />
           {errors?.password?.type === "required" && (
-            <p className="text-red-600 normal-case text-xs font-normal italic">
-              Ce champ est requis.
-            </p>
+            <p className="error-handler">Ce champ est requis.</p>
           )}
           {errors?.password?.type === "minLength" && (
-            <p className="text-red-600 normal-case text-xs font-normal italic">
-              Votre mot de passe est trop court.
-            </p>
+            <p className="error-handler">Votre mot de passe est trop court.</p>
           )}
           {errors?.password?.type === "maxLength" && (
-            <p className="text-red-600 normal-case text-xs font-normal italic">
-              Votre mot de passe est trop long.
-            </p>
+            <p className="error-handler">Votre mot de passe est trop long.</p>
           )}
           {errors?.password?.type === "pattern" && (
-            <p className="text-red-600 normal-case text-xs font-normal italic">
+            <p className="error-handler">
               Votre mot de passe doit au moins comporter une lettre en
               majuscule, une en minuscule, un chiffre et un caractère spécial.
             </p>

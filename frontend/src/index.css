@@ -5,3 +5,9 @@
 body {
   background-color: #bcb4ac;
 }
+
+@layer components {
+  .error-handler {
+    @apply text-red-600 normal-case text-xs font-normal italic;
+  }
+}
