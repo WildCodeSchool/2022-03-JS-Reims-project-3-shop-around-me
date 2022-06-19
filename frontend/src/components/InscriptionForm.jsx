@@ -56,7 +56,7 @@ export default function InscriptionForm() {
                   maxLength: 50,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
                 })}
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="form-input"
                 id="grid-firstname"
               />
               {errors?.firstname?.type === "required" && (
@@ -94,7 +94,7 @@ export default function InscriptionForm() {
                   maxLength: 50,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
                 })}
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="form-input"
                 id="grid-lastname"
               />
               {errors?.lastname?.type === "required" && (
@@ -133,7 +133,7 @@ export default function InscriptionForm() {
                   pattern:
                     /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
                 })}
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="form-input"
                 id="grid-birthdate"
               />
               {errors?.birthdate?.type === "required" && (
@@ -196,7 +196,7 @@ export default function InscriptionForm() {
                   maxLength: 80,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
                 })}
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="form-input"
               />
               {errors?.city?.type === "minLength" && (
                 <p className="error-handler">
@@ -230,7 +230,7 @@ export default function InscriptionForm() {
                   maxLength: 8,
                   pattern: /^[0-9]{3,}$/,
                 })}
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="form-input"
               />
               {errors?.zipcode?.type === "minLength" && (
                 <p className="error-handler">
@@ -264,7 +264,7 @@ export default function InscriptionForm() {
               maxLength: 100,
               pattern: /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,5}/i,
             })}
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            className="form-input"
           />
           {errors?.email?.type === "required" && (
             <p className="error-handler">Ce champ est requis.</p>
@@ -295,7 +295,7 @@ export default function InscriptionForm() {
               pattern:
                 /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
             })}
-            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            className="form-input"
           />
           {errors?.password?.type === "required" && (
             <p className="error-handler">Ce champ est requis.</p>
