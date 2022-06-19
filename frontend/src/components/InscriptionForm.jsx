@@ -42,10 +42,7 @@ export default function InscriptionForm() {
       <form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-firstname"
-            >
+            <label className="form-label" htmlFor="grid-firstname">
               Prénom
               <input
                 type="text"
@@ -80,10 +77,7 @@ export default function InscriptionForm() {
             </label>
           </div>
           <div className="w-full md:w-1/2 px-3">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-lastname"
-            >
+            <label className="form-label" htmlFor="grid-lastname">
               Nom
               <input
                 type="text"
@@ -120,10 +114,7 @@ export default function InscriptionForm() {
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-birthdate"
-            >
+            <label className="form-label" htmlFor="grid-birthdate">
               Date de naissance
               <input
                 type="text"
@@ -147,10 +138,7 @@ export default function InscriptionForm() {
             </label>
           </div>
           <div className="w-full md:w-1/2 px-3">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-gender"
-            >
+            <label className="form-label" htmlFor="grid-gender">
               Genre
               <div className="relative">
                 <select
@@ -182,10 +170,7 @@ export default function InscriptionForm() {
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label
-              htmlFor="grid-city"
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            >
+            <label htmlFor="grid-city" className="form-label">
               Ville
               <input
                 type="text"
@@ -216,10 +201,7 @@ export default function InscriptionForm() {
             </label>
           </div>
           <div className="w-full md:w-1/2 px-3">
-            <label
-              htmlFor="grid-zipcode"
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-            >
+            <label htmlFor="grid-zipcode" className="form-label">
               Code postal
               <input
                 type="text"
@@ -250,10 +232,7 @@ export default function InscriptionForm() {
             </label>
           </div>
         </div>
-        <label
-          htmlFor="email"
-          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-        >
+        <label htmlFor="email" className="form-label">
           Email
           <input
             type="text"
@@ -281,10 +260,7 @@ export default function InscriptionForm() {
             </p>
           )}
         </label>
-        <label
-          htmlFor="password"
-          className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-        >
+        <label htmlFor="password" className="form-label">
           Mot de passe
           <input
             type="password"
