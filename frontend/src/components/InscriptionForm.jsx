@@ -25,7 +25,7 @@ export default function InscriptionForm() {
   };
 
   return (
-    <div className="grid place-items-center h-screen bg-white">
+    <div className="grid place-items-center w-screen">
       <h2 className="block uppercase tracking-wide text-gray-700 text-s font-bold">
         Incription
       </h2>
@@ -39,7 +39,10 @@ export default function InscriptionForm() {
           </span>
         </div>
       )}
-      <form className="w-full max-w-lg" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label className="form-label" htmlFor="grid-firstname">
@@ -56,7 +59,7 @@ export default function InscriptionForm() {
                 className="form-input"
                 id="grid-firstname"
               />
-              {errors?.firstname?.type === "required" && (
+              {errors?.firstname.type === "required" && (
                 <p className="error-handler">Ce champ est requis.</p>
               )}
               {errors?.firstname?.type === "minLength" && (
