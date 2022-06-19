@@ -26,7 +26,7 @@ export default function InscriptionForm() {
 
   return (
     <div className="grid place-items-center w-screen">
-      <h2 className="block uppercase tracking-wide text-gray-700 text-s font-bold">
+      <h2 className="block uppercase tracking-wide text-white text-xl font-bold mt-6 mb-6">
         Incription
       </h2>
       {isSubmitSuccessful && (
@@ -292,7 +292,11 @@ export default function InscriptionForm() {
             </p>
           )}
         </label>
-        <input type="submit" />
+        <input
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+        />
+        <span>Vous avez déjà un compte ? Connectez-vous.</span>
       </form>
     </div>
   );
