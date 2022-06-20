@@ -59,7 +59,7 @@ export default function InscriptionForm() {
                 className="form-input"
                 id="grid-firstname"
               />
-              {errors?.firstname.type === "required" && (
+              {errors?.firstname?.type === "required" && (
                 <p className="error-handler">Ce champ est requis.</p>
               )}
               {errors?.firstname?.type === "minLength" && (
@@ -292,11 +292,41 @@ export default function InscriptionForm() {
             </p>
           )}
         </label>
+        <label htmlFor="password" className="form-label">
+          Confirmation de mot de passe
+          <input
+            type="password"
+            {...register("password", {
+              required: true,
+              minLength: 8,
+              maxLength: 100,
+              pattern:
+                /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+            })}
+            className="form-input"
+          />
+          {errors?.password?.type === "required" && (
+            <p className="error-handler">Ce champ est requis.</p>
+          )}
+          {errors?.password?.type === "minLength" && (
+            <p className="error-handler">Votre mot de passe est trop court.</p>
+          )}
+          {errors?.password?.type === "maxLength" && (
+            <p className="error-handler">Votre mot de passe est trop long.</p>
+          )}
+          {errors?.password?.type === "pattern" && (
+            <p className="error-handler">
+              Votre mot de passe doit au moins comporter une lettre en
+              majuscule, une en minuscule, un chiffre et un caractère spécial.
+            </p>
+          )}
+        </label>
         <input
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
         />
-        <span>Vous avez déjà un compte ? Connectez-vous.</span>
+        <br />
+        <span>Vous avez déjà un compte ?Connectez-vous.</span>
       </form>
     </div>
   );
