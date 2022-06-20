@@ -235,92 +235,110 @@ export default function InscriptionForm() {
             </label>
           </div>
         </div>
-        <label htmlFor="email" className="form-label">
-          Email
-          <input
-            type="text"
-            placeholder="jane.doe@gmail.com"
-            {...register("email", {
-              required: true,
-              minLength: 10,
-              maxLength: 100,
-              pattern: /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,5}/i,
-            })}
-            className="form-input"
-          />
-          {errors?.email?.type === "required" && (
-            <p className="error-handler">Ce champ est requis.</p>
-          )}
-          {errors?.email?.type === "minLength" && (
-            <p className="error-handler">Votre adresse mail est trop courte.</p>
-          )}
-          {errors?.email?.type === "maxLength" && (
-            <p className="error-handler">Votre adresse mail est trop longue.</p>
-          )}
-          {errors?.email?.type === "pattern" && (
-            <p className="error-handler">
-              Votre adresse mail n'est pas valide.
-            </p>
-          )}
-        </label>
-        <label htmlFor="password" className="form-label">
-          Mot de passe
-          <input
-            type="password"
-            {...register("password", {
-              required: true,
-              minLength: 8,
-              maxLength: 100,
-              pattern:
-                /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
-            })}
-            className="form-input"
-          />
-          {errors?.password?.type === "required" && (
-            <p className="error-handler">Ce champ est requis.</p>
-          )}
-          {errors?.password?.type === "minLength" && (
-            <p className="error-handler">Votre mot de passe est trop court.</p>
-          )}
-          {errors?.password?.type === "maxLength" && (
-            <p className="error-handler">Votre mot de passe est trop long.</p>
-          )}
-          {errors?.password?.type === "pattern" && (
-            <p className="error-handler">
-              Votre mot de passe doit au moins comporter une lettre en
-              majuscule, une en minuscule, un chiffre et un caractère spécial.
-            </p>
-          )}
-        </label>
-        <label htmlFor="password" className="form-label">
-          Confirmation de mot de passe
-          <input
-            type="password"
-            {...register("password", {
-              required: true,
-              minLength: 8,
-              maxLength: 100,
-              pattern:
-                /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
-            })}
-            className="form-input"
-          />
-          {errors?.password?.type === "required" && (
-            <p className="error-handler">Ce champ est requis.</p>
-          )}
-          {errors?.password?.type === "minLength" && (
-            <p className="error-handler">Votre mot de passe est trop court.</p>
-          )}
-          {errors?.password?.type === "maxLength" && (
-            <p className="error-handler">Votre mot de passe est trop long.</p>
-          )}
-          {errors?.password?.type === "pattern" && (
-            <p className="error-handler">
-              Votre mot de passe doit au moins comporter une lettre en
-              majuscule, une en minuscule, un chiffre et un caractère spécial.
-            </p>
-          )}
-        </label>
+        <div className="flex flex-col -mx-3 mb-6">
+          <div className="w-full px-3 mb-6 gap-y-6">
+            <label htmlFor="email" className="form-label">
+              Email
+              <input
+                type="text"
+                placeholder="jane.doe@gmail.com"
+                {...register("email", {
+                  required: true,
+                  minLength: 10,
+                  maxLength: 100,
+                  pattern: /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,5}/i,
+                })}
+                className="form-input"
+              />
+              {errors?.email?.type === "required" && (
+                <p className="error-handler">Ce champ est requis.</p>
+              )}
+              {errors?.email?.type === "minLength" && (
+                <p className="error-handler">
+                  Votre adresse mail est trop courte.
+                </p>
+              )}
+              {errors?.email?.type === "maxLength" && (
+                <p className="error-handler">
+                  Votre adresse mail est trop longue.
+                </p>
+              )}
+              {errors?.email?.type === "pattern" && (
+                <p className="error-handler">
+                  Votre adresse mail n'est pas valide.
+                </p>
+              )}
+            </label>
+            <label htmlFor="password" className="form-label">
+              Mot de passe
+              <input
+                type="password"
+                {...register("password", {
+                  required: true,
+                  minLength: 8,
+                  maxLength: 100,
+                  pattern:
+                    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+                })}
+                className="form-input"
+              />
+              {errors?.password?.type === "required" && (
+                <p className="error-handler">Ce champ est requis.</p>
+              )}
+              {errors?.password?.type === "minLength" && (
+                <p className="error-handler">
+                  Votre mot de passe est trop court.
+                </p>
+              )}
+              {errors?.password?.type === "maxLength" && (
+                <p className="error-handler">
+                  Votre mot de passe est trop long.
+                </p>
+              )}
+              {errors?.password?.type === "pattern" && (
+                <p className="error-handler">
+                  Votre mot de passe doit au moins comporter une lettre en
+                  majuscule, une en minuscule, un chiffre et un caractère
+                  spécial.
+                </p>
+              )}
+            </label>
+            <label htmlFor="password" className="form-label">
+              Confirmation de mot de passe
+              <input
+                type="password"
+                {...register("password", {
+                  required: true,
+                  minLength: 8,
+                  maxLength: 100,
+                  pattern:
+                    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+                })}
+                className="form-input"
+              />
+              {errors?.password?.type === "required" && (
+                <p className="error-handler">Ce champ est requis.</p>
+              )}
+              {errors?.password?.type === "minLength" && (
+                <p className="error-handler">
+                  Votre mot de passe est trop court.
+                </p>
+              )}
+              {errors?.password?.type === "maxLength" && (
+                <p className="error-handler">
+                  Votre mot de passe est trop long.
+                </p>
+              )}
+              {errors?.password?.type === "pattern" && (
+                <p className="error-handler">
+                  Votre mot de passe doit au moins comporter une lettre en
+                  majuscule, une en minuscule, un chiffre et un caractère
+                  spécial.
+                </p>
+              )}
+            </label>
+          </div>
+        </div>
         <input
           className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit"
