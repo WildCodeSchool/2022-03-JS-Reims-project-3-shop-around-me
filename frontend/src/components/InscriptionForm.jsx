@@ -26,23 +26,23 @@ export default function InscriptionForm() {
 
   return (
     <div className="grid place-items-center w-screen">
-      <h2 className="block uppercase tracking-wide text-white text-xl font-bold mt-6 mb-6">
-        Incription
-      </h2>
-      {isSubmitSuccessful && (
-        <div
-          className="bg-lime-100 border border-lime-400 text-lime-700 px-4 py-3 rounded"
-          role="alert"
-        >
-          <span className="block sm:inline">
-            Votre inscription a été prise en compte.
-          </span>
-        </div>
-      )}
       <form
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
         onSubmit={handleSubmit(onSubmit)}
       >
+        <h2 className="block uppercase tracking-wide text-gray-700 text-xl font-bold mt-6 mb-6 text-center">
+          Inscription
+        </h2>
+        {isSubmitSuccessful && (
+          <div
+            className="bg-lime-100 border border-lime-400 text-lime-700 mb-6 px-4 py-3 rounded"
+            role="alert"
+          >
+            <span className="block sm:inline">
+              Votre inscription a été prise en compte.
+            </span>
+          </div>
+        )}
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label className="form-label" htmlFor="grid-firstname">
@@ -344,7 +344,10 @@ export default function InscriptionForm() {
           type="submit"
         />
         <br />
-        <span>Vous avez déjà un compte ?Connectez-vous.</span>
+        <span className="text-center">
+          Vous avez déjà un compte ?<br />
+          Connectez-vous.
+        </span>
       </form>
     </div>
   );
