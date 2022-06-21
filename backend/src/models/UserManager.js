@@ -5,21 +5,21 @@ class UserManager extends AbstractManager {
 
   find(id) {
     return this.connection.query(
-      `select id, firstname, lastname, birthdate, gender, zipcode, city, email from user where id = ?`,
+      `select id, firstname, lastname, birthdate, gender, zipcode, city, email from ${UserManager.table} where id = ?`,
       [id]
     );
   }
 
   findAll() {
     return this.connection.query(
-      `select id, firstname, lastname, birthdate, gender, zipcode, city, email from user`
+      `select id, firstname, lastname, birthdate, gender, zipcode, city, email from ${UserManager.table}`
     );
   }
 
   findByEmail(email) {
     return this.connection
       .query(
-        "select id, firstname, lastname, birthdate, gender, zipcode, city, email from user where email = ?",
+        `select id, firstname, lastname, birthdate, gender, zipcode, city, email from ${UserManager.table} where email = ?`,
         [email]
       )
       .then(([results]) => results[0]);

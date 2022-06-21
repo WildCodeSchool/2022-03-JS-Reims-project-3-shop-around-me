@@ -3,14 +3,20 @@ const { hashPassword } = require("./services/PasswordHashing");
 const { validateUser } = require("./validators/UserValidator");
 const { validateKeyword } = require("./validators/KeywordValidator");
 const { validateProduct } = require("./validators/ProductValidator");
-const { validateAffiliation } = require("./validators/AffiliationValidator");
+const {
+  validatePkAffiliation,
+} = require("./validators/PkAffiliationValidator");
+const {
+  validateSpAffiliation,
+} = require("./validators/SpAffiliationValidator");
 
 const {
   ItemController,
   KeywordController,
   ProductController,
   UserController,
-  AffiliationController,
+  PkAffiliationController,
+  SpAffiliationController,
   ShopController,
 } = require("./controllers");
 
@@ -40,11 +46,26 @@ router.put("/products/:id", validateProduct, ProductController.edit);
 router.post("/products", validateProduct, ProductController.add);
 router.delete("/products/:id", ProductController.delete);
 
-router.get("/affiliations", AffiliationController.browse);
-router.post("/affiliations", validateAffiliation, AffiliationController.add);
+router.get("/pk_affiliations", PkAffiliationController.browse);
+router.post(
+  "/pk_affiliations",
+  validatePkAffiliation,
+  PkAffiliationController.add
+);
 router.delete(
-  "/affiliations/products/:product_id/keywords/:keyword_id",
-  AffiliationController.delete
+  "/pk_affiliations/products/:product_id/keywords/:keyword_id",
+  PkAffiliationController.delete
+);
+
+router.get("/sp_affiliations", SpAffiliationController.browse);
+router.post(
+  "/sp_affiliations",
+  validateSpAffiliation,
+  SpAffiliationController.add
+);
+router.delete(
+  "/sp_affiliations/shops/:shop_id/products/:product_id",
+  SpAffiliationController.delete
 );
 
 router.get("/users", UserController.browse);

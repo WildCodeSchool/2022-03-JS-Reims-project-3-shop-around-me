@@ -253,33 +253,29 @@ ALTER TABLE `keyword`
 --
 ALTER TABLE `keyword`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `affiliation`
+-- Structure de la table `pk_affiliation` (p pour product, k pour keyword)
 --
 
-CREATE TABLE `affiliation` (
+CREATE TABLE `pk_affiliation` (
   `product_id` int(11) UNSIGNED NOT NULL,
-  CONSTRAINT fk_affiliation_product
+  CONSTRAINT fk_pk_affiliation_product
         FOREIGN KEY (product_id)
         REFERENCES product(id),
   `keyword_id` int(11) UNSIGNED NOT NULL,
-  CONSTRAINT fk_affiliation_keyword
+  CONSTRAINT fk_pk_affiliation_keyword
         FOREIGN KEY (keyword_id)
         REFERENCES keyword(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `affiliation`
+-- Contenu de la table `pk_affiliation` 
 --
 
-INSERT INTO `affiliation` (`product_id`, `keyword_id`) VALUES
+INSERT INTO `pk_affiliation` (`product_id`, `keyword_id`) VALUES
 (1, 1),
 (1, 2),
 (1, 3),
@@ -459,10 +455,30 @@ INSERT INTO `affiliation` (`product_id`, `keyword_id`) VALUES
 (12, 89),
 (12, 90);
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `sp_affiliation` (s pour shop, p pour product)
+--
+
+CREATE TABLE `sp_affiliation` (
+  `shop_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_sp_affiliation_shop
+        FOREIGN KEY (shop_id)
+        REFERENCES shop(id),
+  `product_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_sp_affiliation_product
+        FOREIGN KEY (product_id)
+        REFERENCES product(id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `sp_affiliation`
+--
+
+INSERT INTO `sp_affiliation` (`shop_id`,`product_id`) VALUES
+(1, 1),
+(1, 2),
 
 -- --------------------------------------------------------
 
