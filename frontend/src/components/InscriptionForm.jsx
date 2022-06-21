@@ -235,8 +235,8 @@ export default function InscriptionForm() {
             </label>
           </div>
         </div>
-        <div className="flex flex-col -mx-3 mb-6">
-          <div className="w-full px-3 mb-6 gap-y-6">
+        <div className="flex flex-col -mx-3 mb-6 px-3">
+          <div className="w-full mb-6">
             <label htmlFor="email" className="form-label">
               Email
               <input
@@ -269,6 +269,8 @@ export default function InscriptionForm() {
                 </p>
               )}
             </label>
+          </div>
+          <div className="w-full mb-6">
             <label htmlFor="password" className="form-label">
               Mot de passe
               <input
@@ -303,6 +305,8 @@ export default function InscriptionForm() {
                 </p>
               )}
             </label>
+          </div>
+          <div className="w-full mb-6">
             <label htmlFor="password" className="form-label">
               Confirmation de mot de passe
               <input
@@ -339,15 +343,15 @@ export default function InscriptionForm() {
             </label>
           </div>
         </div>
-        <input
-          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-        />
-        <br />
-        <span className="text-center">
-          Vous avez déjà un compte ?<br />
-          Connectez-vous.
-        </span>
+        <div className="grid place-items-center gap-y-6">
+          <input
+            className="align-center bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-6 mb-6 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+          />
+          <span className="text-center text-sm">
+            Vous avez déjà un compte ? Connectez-vous.
+          </span>
+        </div>
       </form>
     </div>
   );
