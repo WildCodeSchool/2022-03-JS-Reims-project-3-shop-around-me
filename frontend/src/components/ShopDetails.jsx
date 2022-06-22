@@ -1,3 +1,5 @@
+import logo from "../assets/images/logo.png";
+
 export default function ShopDetails() {
   const shopExemple = {
     name: "Magasin Fossier",
@@ -17,5 +19,14 @@ export default function ShopDetails() {
     phone: "03 26 47 59 84",
   };
 
-  return shopExemple.name;
+  return (
+    <>
+      <h1>{shopExemple.name}</h1>
+      <img
+        src={logo}
+        alt="illu boutique"
+        className="border-2 border-black my-5"
+      />
+    </>
+  );
 }
