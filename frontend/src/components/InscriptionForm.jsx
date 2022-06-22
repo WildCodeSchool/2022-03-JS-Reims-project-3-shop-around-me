@@ -42,8 +42,8 @@ export default function InscriptionForm() {
           </span>
         </div>
       )}
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <div className="flex flex-col">
+        <div className="w-full px-2 mb-6 ">
           <label className="form-label" htmlFor="grid-firstname">
             Prénom
             <input
@@ -78,7 +78,7 @@ export default function InscriptionForm() {
             )}
           </label>
         </div>
-        <div className="w-full md:w-1/2 px-3">
+        <div className="w-full px-2 mb-6 ">
           <label className="form-label" htmlFor="grid-lastname">
             Nom
             <input
@@ -113,9 +113,7 @@ export default function InscriptionForm() {
             )}
           </label>
         </div>
-      </div>
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <div className="w-full px-2 mb-6 ">
           <label className="form-label" htmlFor="grid-birthdate">
             Date de naissance
             <input
@@ -139,7 +137,7 @@ export default function InscriptionForm() {
             )}
           </label>
         </div>
-        <div className="w-full md:w-1/2 px-3">
+        <div className="w-full px-2 mb-6 ">
           <label className="form-label" htmlFor="grid-gender">
             Genre
             <div className="relative">
@@ -154,7 +152,7 @@ export default function InscriptionForm() {
                 <option value="other">Autre</option>
                 <option value="not-tell">Ne se prononce pas</option>
               </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <div className="pointer-events-none absolute inset-y-5 right-0 flex items-center px-2 text-gray-700">
                 <svg
                   className="fill-current h-4 w-4"
                   xmlns="http://www.w3.org/2000/svg"
@@ -169,9 +167,7 @@ export default function InscriptionForm() {
             )}
           </label>
         </div>
-      </div>
-      <div className="flex flex-wrap -mx-3 mb-6">
-        <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <div className="w-full px-2 mb-6 ">
           <label htmlFor="grid-city" className="form-label">
             Ville
             <input
@@ -202,7 +198,7 @@ export default function InscriptionForm() {
             )}
           </label>
         </div>
-        <div className="w-full md:w-1/2 px-3">
+        <div className="w-full px-2 mb-6 ">
           <label htmlFor="grid-zipcode" className="form-label">
             Code postal
             <input
@@ -233,9 +229,7 @@ export default function InscriptionForm() {
             )}
           </label>
         </div>
-      </div>
-      <div className="flex flex-col -mx-3 mb-6 px-3">
-        <div className="w-full mb-6">
+        <div className="w-full px-2 mb-6 ">
           <label htmlFor="email" className="form-label">
             Email
             <input
@@ -269,7 +263,7 @@ export default function InscriptionForm() {
             )}
           </label>
         </div>
-        <div className="w-full mb-6">
+        <div className="w-full px-2 mb-6 ">
           <label htmlFor="password" className="form-label">
             Mot de passe
             <input
@@ -302,7 +296,7 @@ export default function InscriptionForm() {
             )}
           </label>
         </div>
-        <div className="w-full mb-6">
+        <div className="w-full px-2 mb-6 ">
           <label htmlFor="password" className="form-label">
             Confirmation de mot de passe
             <input
@@ -335,12 +329,11 @@ export default function InscriptionForm() {
             )}
           </label>
         </div>
+        <input
+          className="py-3 ml-2 mr-2 mb-6 bg-green-500 hover:bg-green-700 text-white font-bold rounded focus:outline-none focus:shadow-outline"
+          type="submit"
+        />
       </div>
-
-      <input
-        className="align-center bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-6 mb-6 rounded focus:outline-none focus:shadow-outline"
-        type="submit"
-      />
       <p className="text-center text-sm">
         Vous avez déjà un compte ? Connectez-vous.
       </p>
