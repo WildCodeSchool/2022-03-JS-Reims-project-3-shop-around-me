@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import axios from "axios";
 import logo from "../assets/images/logo.png";
 import Map from "./Map";
+import Navbar from "./Navbar";
 
 export default function SearchBar() {
   const searchValue = useRef();
@@ -61,6 +62,7 @@ export default function SearchBar() {
           </li>
         ))}
       </ul>
+      <Navbar />
     </div>
   );
 }
