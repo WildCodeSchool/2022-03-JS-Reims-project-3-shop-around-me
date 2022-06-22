@@ -7,10 +7,10 @@ class SpAffiliationManager extends AbstractManager {
     return this.connection.query(`select * from  ${this.table}`);
   }
 
-  delete(spAffiliation) {
+  delete(shopId, productId) {
     return this.connection.query(
       `delete from ${this.table} where shop_id = ? and product_id = ?`,
-      [spAffiliation.shop_id, spAffiliation.product_id]
+      [shopId, productId]
     );
   }
 

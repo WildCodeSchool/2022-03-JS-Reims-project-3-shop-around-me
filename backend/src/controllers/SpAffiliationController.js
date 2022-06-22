@@ -2,7 +2,7 @@ const models = require("../models");
 
 class SpAffiliationController {
   static browse = (req, res) => {
-    models.spAffiliation
+    models.sp_affiliation
       .findAll()
       .then(([rows]) => {
         res.send(rows);
@@ -18,7 +18,7 @@ class SpAffiliationController {
 
     // TODO validations (length, format...)
 
-    models.spAffiliation
+    models.sp_affiliation
       .insert(spAffiliation)
       .then(() => {
         res.status(201).send({ ...spAffiliation });
@@ -30,7 +30,7 @@ class SpAffiliationController {
   };
 
   static delete = (req, res) => {
-    models.spAffiliation
+    models.sp_affiliation
       .delete(req.params.shop_id, req.params.product_id)
       .then(() => {
         res.sendStatus(204);

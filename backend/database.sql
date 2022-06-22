@@ -478,7 +478,7 @@ CREATE TABLE `sp_affiliation` (
 
 INSERT INTO `sp_affiliation` (`shop_id`,`product_id`) VALUES
 (1, 1),
-(1, 2),
+(1, 2);
 
 -- --------------------------------------------------------
 

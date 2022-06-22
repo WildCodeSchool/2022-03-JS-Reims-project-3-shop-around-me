@@ -7,10 +7,10 @@ class PkAffiliationManager extends AbstractManager {
     return this.connection.query(`select * from  ${this.table}`);
   }
 
-  delete(pkAffiliation) {
+  delete(productId, keywordId) {
     return this.connection.query(
       `delete from ${this.table} where product_id = ? and keyword_id = ?`,
-      [pkAffiliation.product_id, pkAffiliation.keyword_id]
+      [productId, keywordId]
     );
   }
 
