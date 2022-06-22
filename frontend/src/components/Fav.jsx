@@ -19,10 +19,10 @@ export default function Fav() {
         Favoris
       </h1>
       {allFav.map((favorite) => (
-        <div className="flex flex-col items-center gap-1">
+        <figure className="flex flex-col items-center gap-1">
           <img src={favorite.img} alt="favori" />
-          <p>{favorite.name}</p>
-        </div>
+          <figcaption>{favorite.name}</figcaption>
+        </figure>
       ))}
     </section>
   );
