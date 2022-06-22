@@ -33,14 +33,12 @@ export default function InscriptionForm() {
         Inscription
       </h2>
       {isSubmitSuccessful && (
-        <div
+        <p
           className="bg-lime-100 border border-lime-400 text-lime-700 mb-6 px-4 py-3 rounded"
           role="alert"
         >
-          <span className="block sm:inline">
-            Votre inscription a été prise en compte.
-          </span>
-        </div>
+          Votre inscription a été prise en compte.
+        </p>
       )}
       <div className="flex flex-col">
         <label className="form-label" htmlFor="grid-firstname">
