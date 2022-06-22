@@ -1,11 +1,11 @@
 import SearchBar from "../components/SearchBar";
-import MyAccount from "./MyAccount";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   return (
     <>
       <SearchBar />
-      <MyAccount />
+      <Navbar />
     </>
   );
 }
