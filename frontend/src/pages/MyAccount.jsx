@@ -1,4 +1,12 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPiggyBank,
+  faUser,
+  faGears,
+  faCircleInfo,
+  faUserXmark,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function MyAccount() {
   return (
@@ -6,7 +14,7 @@ export default function MyAccount() {
       <h2 className="text-lg">Mon compte</h2>
       <ul>
         <li className="flex justify-between">
-          Historique cagnotte
+          <FontAwesomeIcon icon={faPiggyBank} /> Historique cagnotte
           <svg
             className="fill-current h-4 w-4 text-gray-700"
             xmlns="http://www.w3.org/2000/svg"
@@ -17,6 +25,7 @@ export default function MyAccount() {
         </li>
         <li>
           <Link to="/mydata" className="flex justify-between">
+            <FontAwesomeIcon icon={faUser} />
             Données personnelles
             <svg
               className="fill-current h-4 w-4 text-gray-700"
@@ -28,6 +37,7 @@ export default function MyAccount() {
           </Link>
         </li>
         <li className="flex justify-between">
+          <FontAwesomeIcon icon={faGears} />
           Paramètres de l'application
           <svg
             className="fill-current h-4 w-4 text-gray-700"
@@ -38,6 +48,7 @@ export default function MyAccount() {
           </svg>
         </li>
         <li className="flex justify-between">
+          <FontAwesomeIcon icon={faCircleInfo} />
           Aide et contact
           <svg
             className="fill-current h-4 w-4 text-gray-700"
@@ -48,6 +59,7 @@ export default function MyAccount() {
           </svg>
         </li>
         <li className="flex justify-between">
+          <FontAwesomeIcon icon={faUserXmark} />
           Supprimer des données
           <svg
             className="fill-current h-4 w-4 text-gray-700"
