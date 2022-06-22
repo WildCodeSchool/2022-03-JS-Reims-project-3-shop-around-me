@@ -336,15 +336,14 @@ export default function InscriptionForm() {
           </label>
         </div>
       </div>
-      <div className="grid place-items-center gap-y-6">
-        <input
-          className="align-center bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-6 mb-6 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
-        />
-        <span className="text-center text-sm">
-          Vous avez déjà un compte ? Connectez-vous.
-        </span>
-      </div>
+
+      <input
+        className="align-center bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-6 mb-6 rounded focus:outline-none focus:shadow-outline"
+        type="submit"
+      />
+      <p className="text-center text-sm">
+        Vous avez déjà un compte ? Connectez-vous.
+      </p>
     </form>
   );
 }
