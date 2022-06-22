@@ -3226,8 +3226,8 @@ CREATE TABLE `user` (
   `lastname` varchar(50) NOT NULL,
   `birthdate` date NOT NULL,
   `gender` varchar(20) NOT NULL,
-  `zipcode` varchar(8),
-  `city` varchar(80),
+  `city`varchar(80),
+  `zipcode`varchar(8),
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
