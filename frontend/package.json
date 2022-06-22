@@ -13,8 +13,9 @@
     "axios": "^0.27.2",
     "leaflet": "^1.8.0",
     "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-hook-form": "^7.31.3",
     "react-hook-geolocation": "^1.0.11",
     "react-leaflet": "^4.0.0",
     "react-router-dom": "^6.3.0"
