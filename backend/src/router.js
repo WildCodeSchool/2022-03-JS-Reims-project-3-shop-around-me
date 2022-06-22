@@ -3,14 +3,18 @@ const { hashPassword } = require("./services/PasswordHashing");
 const { validateUser } = require("./validators/UserValidator");
 const { validateKeyword } = require("./validators/KeywordValidator");
 const { validateProduct } = require("./validators/ProductValidator");
-const { validateAffiliation } = require("./validators/AffiliationValidator");
+const {
+  validateKeywordProduct,
+} = require("./validators/KeywordProductValidator");
+const { validateProductShop } = require("./validators/ProductShopValidator");
 
 const {
   ItemController,
   KeywordController,
   ProductController,
   UserController,
-  AffiliationController,
+  KeywordProductController,
+  ProductShopController,
   ShopController,
 } = require("./controllers");
 
@@ -40,11 +44,22 @@ router.put("/products/:id", validateProduct, ProductController.edit);
 router.post("/products", validateProduct, ProductController.add);
 router.delete("/products/:id", ProductController.delete);
 
-router.get("/affiliations", AffiliationController.browse);
-router.post("/affiliations", validateAffiliation, AffiliationController.add);
+router.get("/keyword_product", KeywordProductController.browse);
+router.post(
+  "/keyword_product",
+  validateKeywordProduct,
+  KeywordProductController.add
+);
 router.delete(
-  "/affiliations/products/:product_id/keywords/:keyword_id",
-  AffiliationController.delete
+  "/keyword_product/products/:product_id/keywords/:keyword_id",
+  KeywordProductController.delete
+);
+
+router.get("/product_shop", ProductShopController.browse);
+router.post("/product_shop", validateProductShop, ProductShopController.add);
+router.delete(
+  "/product_shop/shops/:shop_id/products/:product_id",
+  ProductShopController.delete
 );
 
 router.get("/users", UserController.browse);
