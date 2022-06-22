@@ -1,7 +1,7 @@
 export default function MyAccount() {
   return (
-    <div className="flex flex-col gap-y-6 w-screen bg-white shadow-md rounded px-8 pt-6 pb-8">
-      <h2 className="text-">Mon compte</h2>
+    <section className="flex flex-col gap-y-6 w-screen bg-white shadow-md rounded px-8 pt-6 pb-8">
+      <h2 className="text-lg">Mon compte</h2>
       <ul>
         <li className="flex justify-between">
           Historique cagnotte
@@ -65,6 +65,6 @@ export default function MyAccount() {
         </li>
       </ul>
       <button type="button">Se déconnecter</button>
-    </div>
+    </section>
   );
 }
