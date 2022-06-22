@@ -2,8 +2,8 @@ export default function PersonnalData() {
   return (
     <div>
       Votre nom et prénom
-      <button>Modifier mes informations</button>
-      <button>Valider</button>
+      <button type="button">Modifier mes informations</button>
+      <button type="button">Valider</button>
     </div>
   );
 }
