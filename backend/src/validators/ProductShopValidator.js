@@ -1,22 +1,22 @@
 const Joi = require("joi");
 
-const validateShopProductAffiliation = (req, res, next) => {
-  const shopProductAffiliation = req.body;
+const validateProductShop = (req, res, next) => {
+  const productShop = req.body;
   const validationErrors = (data, forCreation = true) => {
     const presence = forCreation ? "required" : "optional";
     return Joi.object({
       shop_id: Joi.number().integer().positive().presence(presence),
       product_id: Joi.number().integer().positive().presence(presence),
-    }).validate(shopProductAffiliation, { abortEarly: false }).error;
+    }).validate(productShop, { abortEarly: false }).error;
   };
 
-  if (validationErrors(shopProductAffiliation)) {
-    res.status(422).json(validationErrors(shopProductAffiliation));
+  if (validationErrors(productShop)) {
+    res.status(422).json(validationErrors(productShop));
   } else {
     next();
   }
 };
 
 module.exports = {
-  validateShopProductAffiliation,
+  validateProductShop,
 };

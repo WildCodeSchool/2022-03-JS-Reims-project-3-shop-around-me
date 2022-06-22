@@ -257,25 +257,25 @@ ALTER TABLE `keyword`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `product_keyword_affiliation`
+-- Structure de la table `keyword_product`
 --
 
-CREATE TABLE `product_keyword_affiliation` (
+CREATE TABLE `keyword_product` (
   `product_id` int(11) UNSIGNED NOT NULL,
-  CONSTRAINT fk_product_keyword_affiliation_product
+  CONSTRAINT fk_keyword_product_product
         FOREIGN KEY (product_id)
         REFERENCES product(id),
   `keyword_id` int(11) UNSIGNED NOT NULL,
-  CONSTRAINT fk_product_keyword_affiliation_keyword
+  CONSTRAINT fk_keyword_product_keyword
         FOREIGN KEY (keyword_id)
         REFERENCES keyword(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `product_keyword_affiliation` 
+-- Contenu de la table `keyword_product` 
 --
 
-INSERT INTO `product_keyword_affiliation` (`product_id`, `keyword_id`) VALUES
+INSERT INTO `keyword_product` (`product_id`, `keyword_id`) VALUES
 (1, 1),
 (1, 2),
 (1, 3),
@@ -458,25 +458,25 @@ INSERT INTO `product_keyword_affiliation` (`product_id`, `keyword_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `shop_product_affiliation`
+-- Structure de la table `product_shop`
 --
 
-CREATE TABLE `shop_product_affiliation` (
+CREATE TABLE `product_shop` (
   `shop_id` int(11) UNSIGNED NOT NULL,
-  CONSTRAINT fk_shop_product_affiliation_shop
+  CONSTRAINT fk_product_shop_shop
         FOREIGN KEY (shop_id)
         REFERENCES shop(id),
   `product_id` int(11) UNSIGNED NOT NULL,
-  CONSTRAINT fk_shop_product_affiliation_product
+  CONSTRAINT fk_product_shop_product
         FOREIGN KEY (product_id)
         REFERENCES product(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `shop_product_affiliation`
+-- Contenu de la table `product_shop`
 --
 
-INSERT INTO `shop_product_affiliation` (`shop_id`,`product_id`) VALUES
+INSERT INTO `product_shop` (`shop_id`,`product_id`) VALUES
 (1, 1),
 (1, 2);
 

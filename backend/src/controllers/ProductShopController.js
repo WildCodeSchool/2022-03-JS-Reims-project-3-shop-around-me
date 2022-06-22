@@ -1,8 +1,8 @@
 const models = require("../models");
 
-class ProductKeywordAffiliationController {
+class ProductShopController {
   static browse = (req, res) => {
-    models.product_keyword_affiliation
+    models.product_shop
       .findAll()
       .then(([rows]) => {
         res.send(rows);
@@ -14,14 +14,14 @@ class ProductKeywordAffiliationController {
   };
 
   static add = (req, res) => {
-    const productKeywordAffiliation = req.body;
+    const productShop = req.body;
 
     // TODO validations (length, format...)
 
-    models.product_keyword_affiliation
-      .insert(productKeywordAffiliation)
+    models.product_shop
+      .insert(productShop)
       .then(() => {
-        res.status(201).send({ ...productKeywordAffiliation });
+        res.status(201).send({ ...productShop });
       })
       .catch((err) => {
         console.error(err);
@@ -30,8 +30,8 @@ class ProductKeywordAffiliationController {
   };
 
   static delete = (req, res) => {
-    models.product_keyword_affiliation
-      .delete(req.params.product_id, req.params.keyword_id)
+    models.product_shop
+      .delete(req.params.shop_id, req.params.product_id)
       .then(() => {
         res.sendStatus(204);
       })
@@ -42,4 +42,4 @@ class ProductKeywordAffiliationController {
   };
 }
 
-module.exports = ProductKeywordAffiliationController;
+module.exports = ProductShopController;
