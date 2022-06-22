@@ -1,9 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 import Home from "@pages/Home";
+import Fav from "../components/Fav";
 
 // Place all routes here
-const routes = [{ path: "/", component: <Home /> }];
+const routes = [
+  { path: "/", component: <Home /> },
+  { path: "/fav", component: <Fav /> },
+];
 
 function Router({ children }) {
   return (

@@ -15,7 +15,7 @@ export default function Fav() {
 
   return (
     <section className="grid grid-cols-3 gap-5 gap-y-10 mx-6 mb-24">
-      <h1 className="text-center text-3xl my-16 col-start-1 col-end-4">
+      <h1 className="text-center text-3xl my-12 col-start-1 col-end-4">
         Favoris
       </h1>
       {allFav.map((favorite) => (
