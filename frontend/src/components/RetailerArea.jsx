@@ -83,7 +83,7 @@ export default function RetailerArea() {
         <img src={logo} alt="logo" className="max-w-xs m-4" />
         <h1 className="text-xl">Espace commerçant</h1>
         <div>
-          <h2>Voir ma boutique : Magasin Fossier Reims Cathédrale           ></h2>
+          <h2>Voir ma boutique : Magasin Fossier Reims Cathédrale</h2>
         </div>
         <div className="mt-2 border-t-2 border-black">
           <h2>Mes informations :</h2>
