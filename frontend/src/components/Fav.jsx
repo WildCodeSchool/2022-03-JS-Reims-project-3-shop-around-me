@@ -14,16 +14,16 @@ export default function Fav() {
   ];
 
   return (
-    <>
-      <h1 className="text-center text-3xl my-16">Favoris</h1>
-      <section className="grid grid-cols-3 gap-5 gap-y-10 mx-6 mb-24">
-        {allFav.map((favorite) => (
-          <div className="flex flex-col items-center gap-1">
-            <img src={favorite.img} alt="favori" />
-            <p>{favorite.name}</p>
-          </div>
-        ))}
-      </section>
-    </>
+    <section className="grid grid-cols-3 gap-5 gap-y-10 mx-6 mb-24">
+      <h1 className="text-center text-3xl my-16 col-start-1 col-end-4">
+        Favoris
+      </h1>
+      {allFav.map((favorite) => (
+        <div className="flex flex-col items-center gap-1">
+          <img src={favorite.img} alt="favori" />
+          <p>{favorite.name}</p>
+        </div>
+      ))}
+    </section>
   );
 }
