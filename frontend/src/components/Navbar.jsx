@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
@@ -8,17 +9,49 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
-  const navBarMenu = [faHouse, faStore, faEuroSign, faHeart, faUser];
+  const navBarMenu = [
+    {
+      id: 1,
+      icon: faHouse,
+      url: "/",
+    },
+    {
+      id: 2,
+      icon: faStore,
+      // URL to be determined later
+      url: "",
+    },
+    {
+      id: 3,
+      icon: faEuroSign,
+      // URL to be determined later
+      url: "",
+    },
+    {
+      id: 4,
+      icon: faHeart,
+      // URL to be determined later
+      url: "",
+    },
+    {
+      id: 5,
+      icon: faUser,
+      // URL to be determined later
+      url: "",
+    },
+  ];
   return (
-    <div className="fixed h-[8vh] w-screen bottom-0 bg-[#4F4E47]">
+    <nav className="fixed h-[8vh] w-screen bottom-0 bg-[#4F4E47]">
       <ul className="flex items-center justify-evenly h-[8vh]">
         {navBarMenu.map((menu) => (
-          <li key={menu} className="mr-4 text-white text-2xl">
-            <FontAwesomeIcon icon={menu} />
+          <li key={menu.id} className="mr-4 text-white text-2xl">
+            <Link to={menu.url}>
+              <FontAwesomeIcon icon={menu.icon} />
+            </Link>
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 }
 
