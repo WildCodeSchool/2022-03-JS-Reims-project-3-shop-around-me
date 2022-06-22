@@ -1,25 +1,26 @@
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo_alone.png";
 
 export default function Fav() {
   const allFav = [
-    { img: logo, title: "Fav 1" },
-    { img: logo, title: "Fav 2" },
-    { img: logo, title: "Fav 3" },
-    { img: logo, title: "Fav 4" },
-    { img: logo, title: "Fav 5" },
-    { img: logo, title: "Fav 6" },
-    { img: logo, title: "Fav 7" },
-    { img: logo, title: "Fav 8" },
-    { img: logo, title: "Fav 9" },
+    { img: logo, name: "Favori 1" },
+    { img: logo, name: "Favori 2" },
+    { img: logo, name: "Favori 3" },
+    { img: logo, name: "Favori 4" },
+    { img: logo, name: "Favori 5" },
+    { img: logo, name: "Favori 6" },
+    { img: logo, name: "Favori 7" },
+    { img: logo, name: "Favori 8" },
+    { img: logo, name: "Favori 9" },
   ];
 
   return (
     <>
-      <h1 className="text-center">Favoris</h1>
-      <div className="grid grid-cols-3 gap-5">
-        {allFav.map((img) => (
-          <div className="">
-            <img src={img} alt="favori" />
+      <h1 className="text-center text-3xl my-16">Favoris</h1>
+      <div className="grid grid-cols-3 gap-5 gap-y-10 mx-6 mb-24">
+        {allFav.map((favorite) => (
+          <div className="flex flex-col items-center gap-1">
+            <img src={favorite.img} alt="favori" />
+            <p>{favorite.name}</p>
           </div>
         ))}
       </div>
