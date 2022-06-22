@@ -37,7 +37,7 @@ function Navbar() {
       id: 5,
       icon: faUser,
       // URL to be determined later
-      url: "",
+      url: "/myaccount",
     },
   ];
   return (
