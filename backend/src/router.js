@@ -4,19 +4,19 @@ const { validateUser } = require("./validators/UserValidator");
 const { validateKeyword } = require("./validators/KeywordValidator");
 const { validateProduct } = require("./validators/ProductValidator");
 const {
-  validatePkAffiliation,
-} = require("./validators/PkAffiliationValidator");
+  validateProductKeywordAffiliation,
+} = require("./validators/ProductKeywordAffiliationValidator");
 const {
-  validateSpAffiliation,
-} = require("./validators/SpAffiliationValidator");
+  validateShopProductAffiliation,
+} = require("./validators/ShopProductAffiliationValidator");
 
 const {
   ItemController,
   KeywordController,
   ProductController,
   UserController,
-  PkAffiliationController,
-  SpAffiliationController,
+  ProductKeywordAffiliationController,
+  ShopProductAffiliationController,
   ShopController,
 } = require("./controllers");
 
@@ -46,26 +46,32 @@ router.put("/products/:id", validateProduct, ProductController.edit);
 router.post("/products", validateProduct, ProductController.add);
 router.delete("/products/:id", ProductController.delete);
 
-router.get("/pk_affiliations", PkAffiliationController.browse);
+router.get(
+  "/product_keyword_affiliations",
+  ProductKeywordAffiliationController.browse
+);
 router.post(
-  "/pk_affiliations",
-  validatePkAffiliation,
-  PkAffiliationController.add
+  "/product_keyword_affiliations",
+  validateProductKeywordAffiliation,
+  ProductKeywordAffiliationController.add
 );
 router.delete(
-  "/pk_affiliations/products/:product_id/keywords/:keyword_id",
-  PkAffiliationController.delete
+  "/product_keyword_affiliations/products/:product_id/keywords/:keyword_id",
+  ProductKeywordAffiliationController.delete
 );
 
-router.get("/sp_affiliations", SpAffiliationController.browse);
+router.get(
+  "/shop_product_affiliations",
+  ShopProductAffiliationController.browse
+);
 router.post(
-  "/sp_affiliations",
-  validateSpAffiliation,
-  SpAffiliationController.add
+  "/shop_product_affiliations",
+  validateShopProductAffiliation,
+  ShopProductAffiliationController.add
 );
 router.delete(
-  "/sp_affiliations/shops/:shop_id/products/:product_id",
-  SpAffiliationController.delete
+  "/shop_product_affiliations/shops/:shop_id/products/:product_id",
+  ShopProductAffiliationController.delete
 );
 
 router.get("/users", UserController.browse);

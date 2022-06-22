@@ -1,8 +1,8 @@
 const models = require("../models");
 
-class SpAffiliationController {
+class ProductKeywordAffiliationController {
   static browse = (req, res) => {
-    models.sp_affiliation
+    models.product_keyword_affiliation
       .findAll()
       .then(([rows]) => {
         res.send(rows);
@@ -14,14 +14,14 @@ class SpAffiliationController {
   };
 
   static add = (req, res) => {
-    const spAffiliation = req.body;
+    const productKeywordAffiliation = req.body;
 
     // TODO validations (length, format...)
 
-    models.sp_affiliation
-      .insert(spAffiliation)
+    models.product_keyword_affiliation
+      .insert(productKeywordAffiliation)
       .then(() => {
-        res.status(201).send({ ...spAffiliation });
+        res.status(201).send({ ...productKeywordAffiliation });
       })
       .catch((err) => {
         console.error(err);
@@ -30,8 +30,8 @@ class SpAffiliationController {
   };
 
   static delete = (req, res) => {
-    models.sp_affiliation
-      .delete(req.params.shop_id, req.params.product_id)
+    models.product_keyword_affiliation
+      .delete(req.params.product_id, req.params.keyword_id)
       .then(() => {
         res.sendStatus(204);
       })
@@ -42,4 +42,4 @@ class SpAffiliationController {
   };
 }
 
-module.exports = SpAffiliationController;
+module.exports = ProductKeywordAffiliationController;

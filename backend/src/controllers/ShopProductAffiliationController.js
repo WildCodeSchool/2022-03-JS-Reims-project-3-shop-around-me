@@ -1,8 +1,8 @@
 const models = require("../models");
 
-class PkAffiliationController {
+class ShopProductAffiliationController {
   static browse = (req, res) => {
-    models.pk_affiliation
+    models.shop_product_affiliation
       .findAll()
       .then(([rows]) => {
         res.send(rows);
@@ -14,14 +14,14 @@ class PkAffiliationController {
   };
 
   static add = (req, res) => {
-    const pkAffiliation = req.body;
+    const shopProductAffiliation = req.body;
 
     // TODO validations (length, format...)
 
-    models.pk_affiliation
-      .insert(pkAffiliation)
+    models.shop_product_affiliation
+      .insert(shopProductAffiliation)
       .then(() => {
-        res.status(201).send({ ...pkAffiliation });
+        res.status(201).send({ ...shopProductAffiliation });
       })
       .catch((err) => {
         console.error(err);
@@ -30,8 +30,8 @@ class PkAffiliationController {
   };
 
   static delete = (req, res) => {
-    models.pk_affiliation
-      .delete(req.params.product_id, req.params.keyword_id)
+    models.shop_product_affiliation
+      .delete(req.params.shop_id, req.params.product_id)
       .then(() => {
         res.sendStatus(204);
       })
@@ -42,4 +42,4 @@ class PkAffiliationController {
   };
 }
 
-module.exports = PkAffiliationController;
+module.exports = ShopProductAffiliationController;

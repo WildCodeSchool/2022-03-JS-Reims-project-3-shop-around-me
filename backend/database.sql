@@ -257,25 +257,25 @@ ALTER TABLE `keyword`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `pk_affiliation` (p pour product, k pour keyword)
+-- Structure de la table `product_keyword_affiliation`
 --
 
-CREATE TABLE `pk_affiliation` (
+CREATE TABLE `product_keyword_affiliation` (
   `product_id` int(11) UNSIGNED NOT NULL,
-  CONSTRAINT fk_pk_affiliation_product
+  CONSTRAINT fk_product_keyword_affiliation_product
         FOREIGN KEY (product_id)
         REFERENCES product(id),
   `keyword_id` int(11) UNSIGNED NOT NULL,
-  CONSTRAINT fk_pk_affiliation_keyword
+  CONSTRAINT fk_product_keyword_affiliation_keyword
         FOREIGN KEY (keyword_id)
         REFERENCES keyword(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `pk_affiliation` 
+-- Contenu de la table `product_keyword_affiliation` 
 --
 
-INSERT INTO `pk_affiliation` (`product_id`, `keyword_id`) VALUES
+INSERT INTO `product_keyword_affiliation` (`product_id`, `keyword_id`) VALUES
 (1, 1),
 (1, 2),
 (1, 3),
@@ -458,25 +458,25 @@ INSERT INTO `pk_affiliation` (`product_id`, `keyword_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `sp_affiliation` (s pour shop, p pour product)
+-- Structure de la table `shop_product_affiliation`
 --
 
-CREATE TABLE `sp_affiliation` (
+CREATE TABLE `shop_product_affiliation` (
   `shop_id` int(11) UNSIGNED NOT NULL,
-  CONSTRAINT fk_sp_affiliation_shop
+  CONSTRAINT fk_shop_product_affiliation_shop
         FOREIGN KEY (shop_id)
         REFERENCES shop(id),
   `product_id` int(11) UNSIGNED NOT NULL,
-  CONSTRAINT fk_sp_affiliation_product
+  CONSTRAINT fk_shop_product_affiliation_product
         FOREIGN KEY (product_id)
         REFERENCES product(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `sp_affiliation`
+-- Contenu de la table `shop_product_affiliation`
 --
 
-INSERT INTO `sp_affiliation` (`shop_id`,`product_id`) VALUES
+INSERT INTO `shop_product_affiliation` (`shop_id`,`product_id`) VALUES
 (1, 1),
 (1, 2);
 
