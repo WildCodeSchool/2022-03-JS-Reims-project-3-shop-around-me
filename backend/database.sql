@@ -2987,33 +2987,29 @@ ALTER TABLE `keyword`
 --
 ALTER TABLE `keyword`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `affiliation`
+-- Structure de la table `keyword_product`
 --
 
-CREATE TABLE `affiliation` (
+CREATE TABLE `keyword_product` (
   `product_id` int(11) UNSIGNED NOT NULL,
-  CONSTRAINT fk_affiliation_product
+  CONSTRAINT fk_keyword_product_product
         FOREIGN KEY (product_id)
         REFERENCES product(id),
   `keyword_id` int(11) UNSIGNED NOT NULL,
-  CONSTRAINT fk_affiliation_keyword
+  CONSTRAINT fk_keyword_product_keyword
         FOREIGN KEY (keyword_id)
         REFERENCES keyword(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `affiliation`
+-- Contenu de la table `keyword_product` 
 --
 
-INSERT INTO `affiliation` (`product_id`, `keyword_id`) VALUES
+INSERT INTO `keyword_product` (`product_id`, `keyword_id`) VALUES
 (1, 1),
 (1, 2),
 (1, 3),
@@ -3193,10 +3189,30 @@ INSERT INTO `affiliation` (`product_id`, `keyword_id`) VALUES
 (12, 89),
 (12, 90);
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- --------------------------------------------------------
 
+--
+-- Structure de la table `product_shop`
+--
+
+CREATE TABLE `product_shop` (
+  `shop_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_product_shop_shop
+        FOREIGN KEY (shop_id)
+        REFERENCES shop(id),
+  `product_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_product_shop_product
+        FOREIGN KEY (product_id)
+        REFERENCES product(id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `product_shop`
+--
+
+INSERT INTO `product_shop` (`shop_id`,`product_id`) VALUES
+(1, 1),
+(1, 2);
 
 -- --------------------------------------------------------
 
