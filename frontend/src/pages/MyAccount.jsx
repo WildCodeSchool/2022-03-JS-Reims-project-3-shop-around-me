@@ -1,6 +1,6 @@
 export default function MyAccount() {
   return (
-    <div className="flex flex-col gap-y-6 w-screen bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div className="flex flex-col gap-y-6 w-screen bg-white shadow-md rounded px-8 pt-6 pb-8">
       <h2 className="text-">Mon compte</h2>
       <ul>
         <li className="flex justify-between">
