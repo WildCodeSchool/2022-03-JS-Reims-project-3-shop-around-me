@@ -36,6 +36,10 @@ export default function ShopDetails() {
         <li>Samedi : {shopExemple.opening_hours.lundi}</li>
         <li>Dimanche : {shopExemple.opening_hours.lundi}</li>
       </ul>
+      <ul>
+        <li>{shopExemple.website}</li>
+        <li>{shopExemple.phone}</li>
+      </ul>
     </>
   );
 }
