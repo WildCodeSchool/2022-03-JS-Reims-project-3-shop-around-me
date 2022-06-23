@@ -2,6 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "nimbus";
+  src: url(./assets/fonts/nimbus.ttf);
+}
+
+@font-face {
+  font-family: "geddes";
+  src: url(./assets/fonts/Geddes.otf);
+}
+
 body {
   background-color: #bcb4ac;
+  font-family: "nimbus";
+}
+
+h1 {
+  font-family: "geddes";
+}
+
+@layer components {
+  .error-handler {
+    @apply text-red-600 normal-case text-xs font-normal italic;
+  }
+  .form-input {
+    @apply appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 max-w-lg;
+  }
+  .form-structure {
+    @apply w-full px-2 mb-6 text-gray-700 font-bold uppercase text-sm;
+  }
+  .link-icons {
+    @apply text-4xl;
+  }
+  .contact-icons {
+    @apply text-xl;
+  }
+  .shedules {
+    @apply my-2 text-center;
+  }
 }
