@@ -25,13 +25,12 @@ function Navbar() {
       id: 3,
       icon: faEuroSign,
       // URL to be determined later
-      url: "",
+      url: "/funds",
     },
     {
       id: 4,
       icon: faHeart,
-      // URL to be determined later
-      url: "",
+      url: "/fav",
     },
     {
       id: 5,
