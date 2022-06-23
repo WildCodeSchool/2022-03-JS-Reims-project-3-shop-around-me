@@ -10,7 +10,7 @@ export default function PersonnalData() {
     // getValues,
   } = useForm();
 
-  const [info, setInfo] = useState("initialValue");
+  const [info, setInfo] = useState("");
   const [edit, setEdit] = useState(false);
 
   // const updateInfo = () => {
@@ -26,7 +26,7 @@ export default function PersonnalData() {
   //     });
   // };
 
-  // Waitting for the authantification to be done so I can acces all the informations with a token
+  // Waiting for the authantification to be done so I can acces all the informations
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -384,7 +384,6 @@ export default function PersonnalData() {
               type="button"
               className="text-sm py-3 ml-2 mr-2 mb-12 border-solid border-2 border-green-900 text-green-900 font-bold rounded focus:outline-none focus:shadow-outline"
               onClick={handleSave}
-              size="sm"
             >
               Valider mes modifications
             </button>
