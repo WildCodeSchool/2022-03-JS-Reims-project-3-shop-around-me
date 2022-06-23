@@ -60,7 +60,6 @@ export default function SearchBar() {
               ml-4 mr-4 min-w-[90vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
           >
             Nom de la boutique : {result.name} <br /> Marque : {result.brand}
-            <br />
           </li>
         ))}
       </ul>
