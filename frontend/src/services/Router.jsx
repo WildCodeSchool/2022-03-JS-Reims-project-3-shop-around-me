@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 import Home from "@pages/Home";
 import Fund from "@components/Fund";
 import Fav from "../components/Fav";
+import InscriptionForm from "../components/InscriptionForm";
 
 // Place all routes here
 const routes = [
   { path: "/", component: <Home /> },
   { path: "/fav", component: <Fav /> },
   { path: "/funds", component: <Fund /> },
+  { path: "/inscription", component: <InscriptionForm /> },
 ];
 
 function Router({ children }) {
