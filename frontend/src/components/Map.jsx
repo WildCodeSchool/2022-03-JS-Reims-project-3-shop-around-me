@@ -31,13 +31,11 @@ function Map({ searchValue, results }) {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {results.map((result, index) => {
-          return (
-            <Marker key={result.id} position={shopPosition[index]}>
-              <Popup>{result.name}</Popup>
-            </Marker>
-          );
-        })}
+        {results.map((result, index) => (
+          <Marker key={result.id} position={shopPosition[index]}>
+            <Popup>{result.name}</Popup>
+          </Marker>
+        ))}
         {userPosition && (
           <Marker position={userPosition}>
             <Popup>Your position.</Popup>
