@@ -2,15 +2,27 @@ const models = require("../models");
 
 class ShopController {
   static browse = (req, res) => {
-    models.shop
-      .findAll()
-      .then(([rows]) => {
-        res.send(rows);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
+    if (req.query.search != null) {
+      models.shop
+        .findByQuery(req.query.search)
+        .then(([rows]) => {
+          res.send(rows);
+        })
+        .catch((err) => {
+          console.error(err);
+          res.sendStatus(500);
+        });
+    } else {
+      models.shop
+        .findAll()
+        .then(([rows]) => {
+          res.send(rows);
+        })
+        .catch((err) => {
+          console.error(err);
+          res.sendStatus(500);
+        });
+    }
   };
 
   static read = (req, res) => {
