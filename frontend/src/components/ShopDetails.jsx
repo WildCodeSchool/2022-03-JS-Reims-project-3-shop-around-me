@@ -27,6 +27,15 @@ export default function ShopDetails() {
         alt="illu boutique"
         className="border-2 border-black my-5"
       />
+      <ul>
+        <li>Lundi : {shopExemple.opening_hours.lundi}</li>
+        <li>Mardi : {shopExemple.opening_hours.lundi}</li>
+        <li>Mercredi : {shopExemple.opening_hours.lundi}</li>
+        <li>Jeudi : {shopExemple.opening_hours.lundi}</li>
+        <li>Vendredi : {shopExemple.opening_hours.lundi}</li>
+        <li>Samedi : {shopExemple.opening_hours.lundi}</li>
+        <li>Dimanche : {shopExemple.opening_hours.lundi}</li>
+      </ul>
     </>
   );
 }
