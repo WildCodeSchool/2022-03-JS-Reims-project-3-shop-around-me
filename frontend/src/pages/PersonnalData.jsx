@@ -308,6 +308,7 @@ export default function PersonnalData() {
               Mot de passe
               <input
                 type="password"
+                placeholder="●●●●●●●●●"
                 {...register("password", {
                   required: true,
                   minLength: 8,
@@ -346,6 +347,7 @@ export default function PersonnalData() {
               Confirmation de mot de passe
               <input
                 type="password"
+                placeholder="●●●●●●●●●"
                 {...register("password", {
                   required: true,
                   minLength: 8,
