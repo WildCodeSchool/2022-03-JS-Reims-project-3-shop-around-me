@@ -27,7 +27,8 @@ export default function PersonnalData() {
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
                 })}
                 className="form-input"
-                id="grid-firstname"
+                id="firstname"
+                name="firstname"
               />
             </label>
             {errors?.firstname?.type === "required" && (
@@ -62,7 +63,8 @@ export default function PersonnalData() {
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
                 })}
                 className="form-input"
-                id="grid-lastname"
+                id="lastname"
+                name="lastname"
               />
             </label>
             {errors?.lastname?.type === "required" && (
@@ -96,7 +98,8 @@ export default function PersonnalData() {
                     /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
                 })}
                 className="form-input"
-                id="grid-birthdate"
+                id="birthdate"
+                name="birthdate"
               />
             </label>
             {errors?.birthdate?.type === "required" && (
@@ -151,6 +154,8 @@ export default function PersonnalData() {
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
                 })}
                 className="form-input"
+                id="city"
+                name="city"
               />{" "}
             </label>
             {errors?.city?.type === "minLength" && (
@@ -182,6 +187,8 @@ export default function PersonnalData() {
                   pattern: /^[0-9]{3,}$/,
                 })}
                 className="form-input"
+                id="zipcode"
+                name="zipcode"
               />{" "}
             </label>
             {errors?.zipcode?.type === "minLength" && (
@@ -213,6 +220,8 @@ export default function PersonnalData() {
                   pattern: /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,5}/i,
                 })}
                 className="form-input"
+                id="email"
+                name="email"
               />{" "}
             </label>
 
@@ -248,6 +257,8 @@ export default function PersonnalData() {
                     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
                 })}
                 className="form-input"
+                id="password"
+                name="password"
               />
             </label>
             {errors?.password?.type === "required" && (
@@ -281,6 +292,8 @@ export default function PersonnalData() {
                     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
                 })}
                 className="form-input"
+                id="password"
+                name="password"
               />
             </label>
             {errors?.password?.type === "required" && (
