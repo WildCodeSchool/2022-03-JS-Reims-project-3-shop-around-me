@@ -1,6 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGlobe,
+  faPhone,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/images/logo.png";
 
 export default function ShopDetails() {
@@ -41,8 +45,12 @@ export default function ShopDetails() {
         <li>Dimanche : {shopExemple.opening_hours.dimanche}</li>
       </ul>
       <ul>
-        <li>{shopExemple.email}</li>
-        <li>{shopExemple.phone}</li>
+        <li>
+          <FontAwesomeIcon icon={faEnvelope} /> : {shopExemple.email}
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faPhone} /> : {shopExemple.phone}
+        </li>
       </ul>
       <ul>
         <li>
