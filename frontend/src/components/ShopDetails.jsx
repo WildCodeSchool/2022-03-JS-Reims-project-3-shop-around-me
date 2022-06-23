@@ -46,13 +46,19 @@ export default function ShopDetails() {
       </ul>
       <ul>
         <li>
-          <FontAwesomeIcon icon={faInstagram} />
+          <a href={shopExemple.fb_page} target="blank">
+            <FontAwesomeIcon icon={faFacebook} />
+          </a>
         </li>
         <li>
-          <FontAwesomeIcon icon={faFacebook} />
+          <a href={shopExemple.insta_page} target="blank">
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
         </li>
         <li>
-          <FontAwesomeIcon icon={faGlobe} />
+          <a href={shopExemple.website} target="blank">
+            <FontAwesomeIcon icon={faGlobe} />
+          </a>
         </li>
       </ul>
     </>
