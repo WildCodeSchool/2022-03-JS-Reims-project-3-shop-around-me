@@ -30,8 +30,7 @@ function Navbar() {
     {
       id: 4,
       icon: faHeart,
-      // URL to be determined later
-      url: "",
+      url: "/fav",
     },
     {
       id: 5,
