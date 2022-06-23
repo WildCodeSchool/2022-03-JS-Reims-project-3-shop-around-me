@@ -1,15 +1,52 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+// import { axios } from "axios";
 
 export default function PersonnalData() {
   const {
     register,
     formState: { errors },
+    // getValues,
   } = useForm();
+
+  const [info, setInfo] = useState("initialValue");
+  const [edit, setEdit] = useState(false);
+
+  // const updateInfo = () => {
+  //   axios
+  //     .put(
+  //       `${
+  //         import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+  //       }/users/${id}`,
+  //       getValues()
+  //     )
+  //     .catch((e) => {
+  //       console.error(e);
+  //     });
+  // };
+
+  // Waitting for the authantification to be done so I can acces all the informations with a token
+
+  const handleSave = (e) => {
+    e.preventDefault();
+    // updateInfo();
+    setEdit(false);
+  };
+
+  const handleEdit = (e) => {
+    e.preventDefault();
+    setEdit(true);
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setInfo({ ...info, [name]: value });
+  };
 
   return (
     <section className=" flex flex-col gap-y-6 w-screen shadow-md rounded px-8 pt-6 pb-8">
-      <h2 className="text-xl text-center font-bold uppercase">
+      <h2 className="text-xl text-center font-bold uppercase text-[#4F4E47]">
         Mes informations
       </h2>
       <form>
@@ -29,6 +66,9 @@ export default function PersonnalData() {
                 className="form-input"
                 id="firstname"
                 name="firstname"
+                value={info.firstname}
+                disabled={!edit}
+                onChange={handleInputChange}
               />
             </label>
             {errors?.firstname?.type === "required" && (
@@ -65,6 +105,9 @@ export default function PersonnalData() {
                 className="form-input"
                 id="lastname"
                 name="lastname"
+                value={info.lastname}
+                disabled={!edit}
+                onChange={handleInputChange}
               />
             </label>
             {errors?.lastname?.type === "required" && (
@@ -100,6 +143,9 @@ export default function PersonnalData() {
                 className="form-input"
                 id="birthdate"
                 name="birthdate"
+                value={info.birthdate}
+                disabled={!edit}
+                onChange={handleInputChange}
               />
             </label>
             {errors?.birthdate?.type === "required" && (
@@ -116,9 +162,13 @@ export default function PersonnalData() {
               Genre
               <div className="relative">
                 <select
-                  name="gender"
                   {...register("gender", { required: true })}
                   className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="gender"
+                  name="gender"
+                  value={info.gender}
+                  disabled={!edit}
+                  onChange={handleInputChange}
                 >
                   <option value="female">Femme</option>
                   <option value="male">Homme</option>
@@ -156,6 +206,9 @@ export default function PersonnalData() {
                 className="form-input"
                 id="city"
                 name="city"
+                value={info.city}
+                disabled={!edit}
+                onChange={handleInputChange}
               />{" "}
             </label>
             {errors?.city?.type === "minLength" && (
@@ -189,6 +242,9 @@ export default function PersonnalData() {
                 className="form-input"
                 id="zipcode"
                 name="zipcode"
+                value={info.zipcode}
+                disabled={!edit}
+                onChange={handleInputChange}
               />{" "}
             </label>
             {errors?.zipcode?.type === "minLength" && (
@@ -222,6 +278,9 @@ export default function PersonnalData() {
                 className="form-input"
                 id="email"
                 name="email"
+                value={info.email}
+                disabled={!edit}
+                onChange={handleInputChange}
               />{" "}
             </label>
 
@@ -259,6 +318,9 @@ export default function PersonnalData() {
                 className="form-input"
                 id="password"
                 name="password"
+                value={info.password}
+                disabled={!edit}
+                onChange={handleInputChange}
               />
             </label>
             {errors?.password?.type === "required" && (
@@ -292,8 +354,11 @@ export default function PersonnalData() {
                     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
                 })}
                 className="form-input"
-                id="password"
-                name="password"
+                id="passwordconfirmation"
+                name="passwordconfirmation"
+                value={info.passwordconfirmation}
+                disabled={!edit}
+                onChange={handleInputChange}
               />
             </label>
             {errors?.password?.type === "required" && (
@@ -314,18 +379,24 @@ export default function PersonnalData() {
               </p>
             )}
           </div>
-          <button
-            type="button"
-            className="text-sm py-3 ml-2 mr-2 mb-6 border-solid border-2 border-red-600 text-red-600 font-bold rounded focus:outline-none focus:shadow-outline"
-          >
-            Modifier mes informations
-          </button>
-          <button
-            type="button"
-            className="text-sm py-3 ml-2 mr-2 mb-12 border-solid border-2 border-green-900 text-green-900 font-bold rounded focus:outline-none focus:shadow-outline"
-          >
-            Valider mes modifications
-          </button>
+          {edit === true ? (
+            <button
+              type="button"
+              className="text-sm py-3 ml-2 mr-2 mb-12 border-solid border-2 border-green-900 text-green-900 font-bold rounded focus:outline-none focus:shadow-outline"
+              onClick={handleSave}
+              size="sm"
+            >
+              Valider mes modifications
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="text-sm py-3 ml-2 mr-2 mb-12 border-solid border-2 border-red-600 text-red-600 font-bold rounded focus:outline-none focus:shadow-outline"
+              onClick={handleEdit}
+            >
+              Modifier mes informations
+            </button>
+          )}
         </div>
       </form>
     </section>
