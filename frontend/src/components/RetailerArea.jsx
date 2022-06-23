@@ -74,9 +74,11 @@ export default function RetailerArea() {
   const [search, setSearch] = useState("");
 
   return (
-    <main className="grid place-items-center block uppercase tracking-wide text-[#4F4E47] mb-2">
-      <img src={logo} alt="logo" className="max-w-xs m-4" />
-      <div className="flex flex-col justify-center w-4/5">
+    <div className="grid place-items-center block uppercase tracking-wide text-[#4F4E47] mb-2">
+      <header>
+        <img src={logo} alt="logo" className="max-w-xs m-4" />
+      </header>
+      <main className="flex flex-col justify-center w-4/5">
         <h1 className="text-xl font-bold mb-8 mt-4 text-center">
           Espace commerçant
         </h1>
@@ -164,7 +166,7 @@ export default function RetailerArea() {
               ))}
           </ul>
         </section>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
