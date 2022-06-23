@@ -13,6 +13,7 @@ export default function ShopDetails() {
       samedi: "14:00-19:00",
       dimanche: "14:00-19:00",
     },
+    email: "fossier@fossier.fr",
     website: "http://www.fossier.fr/",
     fb_page: "https://www.facebook.com/biscuitsfossier",
     insta_page: "https://www.instagram.com/biscuitsfossier/",
@@ -37,7 +38,7 @@ export default function ShopDetails() {
         <li>Dimanche : {shopExemple.opening_hours.lundi}</li>
       </ul>
       <ul>
-        <li>{shopExemple.website}</li>
+        <li>{shopExemple.email}</li>
         <li>{shopExemple.phone}</li>
       </ul>
     </>
