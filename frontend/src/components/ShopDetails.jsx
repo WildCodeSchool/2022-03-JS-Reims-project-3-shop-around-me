@@ -9,12 +9,12 @@ export default function ShopDetails() {
     address: "25 Cr Jean-Baptiste Langlet, 51100 Reims",
     opening_hours: {
       lundi: "14:00-19:00",
-      mardi: "14:00-19:00",
-      mercredi: "14:00-19:00",
-      jeudi: "14:00-19:00",
-      vendredi: "14:00-19:00",
-      samedi: "14:00-19:00",
-      dimanche: "14:00-19:00",
+      mardi: "10:00-19:00",
+      mercredi: "10:00-19:00",
+      jeudi: "10:00-19:00",
+      vendredi: "10:00-19:00",
+      samedi: "10:00-19:00",
+      dimanche: "Fermé",
     },
     email: "fossier@fossier.fr",
     website: "http://www.fossier.fr/",
@@ -33,12 +33,12 @@ export default function ShopDetails() {
       />
       <ul>
         <li>Lundi : {shopExemple.opening_hours.lundi}</li>
-        <li>Mardi : {shopExemple.opening_hours.lundi}</li>
-        <li>Mercredi : {shopExemple.opening_hours.lundi}</li>
-        <li>Jeudi : {shopExemple.opening_hours.lundi}</li>
-        <li>Vendredi : {shopExemple.opening_hours.lundi}</li>
-        <li>Samedi : {shopExemple.opening_hours.lundi}</li>
-        <li>Dimanche : {shopExemple.opening_hours.lundi}</li>
+        <li>Mardi : {shopExemple.opening_hours.mardi}</li>
+        <li>Mercredi : {shopExemple.opening_hours.mercredi}</li>
+        <li>Jeudi : {shopExemple.opening_hours.jeudi}</li>
+        <li>Vendredi : {shopExemple.opening_hours.vendredi}</li>
+        <li>Samedi : {shopExemple.opening_hours.samedi}</li>
+        <li>Dimanche : {shopExemple.opening_hours.dimanche}</li>
       </ul>
       <ul>
         <li>{shopExemple.email}</li>
