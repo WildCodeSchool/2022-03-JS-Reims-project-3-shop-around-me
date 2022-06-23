@@ -7,26 +7,26 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/images/logo.png";
 
-export default function ShopDetails() {
-  const shopExemple = {
-    name: "Magasin Fossier",
-    address: "25 Cr Jean-Baptiste Langlet, 51100 Reims",
-    opening_hours: {
-      lundi: "14:00-19:00",
-      mardi: "10:00-19:00",
-      mercredi: "10:00-19:00",
-      jeudi: "10:00-19:00",
-      vendredi: "10:00-19:00",
-      samedi: "10:00-19:00",
-      dimanche: "Fermé",
-    },
-    email: "fossier@fossier.fr",
-    website: "http://www.fossier.fr/",
-    fb_page: "https://www.facebook.com/biscuitsfossier",
-    insta_page: "https://www.instagram.com/biscuitsfossier/",
-    phone: "03 26 47 59 84",
-  };
+const shopExemple = {
+  name: "Magasin Fossier",
+  address: "25 Cr Jean-Baptiste Langlet, 51100 Reims",
+  opening_hours: {
+    lundi: "14:00-19:00",
+    mardi: "10:00-19:00",
+    mercredi: "10:00-19:00",
+    jeudi: "10:00-19:00",
+    vendredi: "10:00-19:00",
+    samedi: "10:00-19:00",
+    dimanche: "Fermé",
+  },
+  email: "fossier@fossier.fr",
+  website: "http://www.fossier.fr/",
+  fb_page: "https://www.facebook.com/biscuitsfossier",
+  insta_page: "https://www.instagram.com/biscuitsfossier/",
+  phone: "03 26 47 59 84",
+};
 
+export default function ShopDetails() {
   return (
     <section>
       <h1 className="text-center my-6 text-3xl">{shopExemple.name}</h1>
