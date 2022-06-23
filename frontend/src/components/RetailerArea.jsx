@@ -1,83 +1,81 @@
 import { useState } from "react";
 import logo from "../assets/images/logo.png";
 
+const retailerFormFields = [
+  {
+    id: 1,
+    title: "Nom",
+  },
+  {
+    id: 2,
+    title: "Adresse",
+  },
+  {
+    id: 3,
+    title: "Code postal",
+  },
+  {
+    id: 4,
+    title: "Ville",
+  },
+  {
+    id: 5,
+    title: "Horaires",
+  },
+];
+
+const retailerRecordedProducts = [
+  {
+    id: 1,
+    name: "Biscuit Rose",
+  },
+  {
+    id: 2,
+    name: "Croquignoles",
+  },
+  {
+    id: 3,
+    name: "Macarons",
+  },
+  {
+    id: 4,
+    name: "Galettes de Reims",
+  },
+  {
+    id: 5,
+    name: "Thé Dammann",
+  },
+];
+
+const productsList = [
+  {
+    id: 1,
+    name: "Champagne Mumm Cordon Rouge",
+  },
+  {
+    id: 2,
+    name: "Ratafia de Champagne",
+  },
+  {
+    id: 3,
+    name: "Miel de la Champagne",
+  },
+  {
+    id: 4,
+    name: "Bonbons au chocolat",
+  },
+  {
+    id: 5,
+    name: "Tisane infusion passion framboise",
+  },
+];
+
 export default function RetailerArea() {
-  const retailerFormFields = [
-    {
-      id: 1,
-      title: "Nom",
-    },
-    {
-      id: 2,
-      title: "Adresse",
-    },
-    {
-      id: 3,
-      title: "Code postal",
-    },
-    {
-      id: 4,
-      title: "Ville",
-    },
-    {
-      id: 5,
-      title: "Horaires",
-    },
-  ];
-
-  const retailerRecordedProducts = [
-    {
-      id: 1,
-      name: "Biscuit Rose",
-    },
-    {
-      id: 2,
-      name: "Croquignoles",
-    },
-    {
-      id: 3,
-      name: "Macarons",
-    },
-    {
-      id: 4,
-      name: "Galettes de Reims",
-    },
-    {
-      id: 5,
-      name: "Thé Dammann",
-    },
-  ];
-
-  const productsList = [
-    {
-      id: 1,
-      name: "Champagne Mumm Cordon Rouge",
-    },
-    {
-      id: 2,
-      name: "Ratafia de Champagne",
-    },
-    {
-      id: 3,
-      name: "Miel de la Champagne",
-    },
-    {
-      id: 4,
-      name: "Bonbons au chocolat",
-    },
-    {
-      id: 5,
-      name: "Tisane infusion passion framboise",
-    },
-  ];
-
   const [search, setSearch] = useState("");
 
   return (
-    <div className="grid place-items-center block uppercase tracking-wide text-[#4F4E47] mb-2">
-      <div className="flex flex-col justify-center">
-        <img src={logo} alt="logo" className="max-w-xs m-4" />
-      </div>
+    <main className="grid place-items-center block uppercase tracking-wide text-[#4F4E47] mb-2">
+      <img src={logo} alt="logo" className="max-w-xs m-4" />
       <div className="flex flex-col justify-center w-4/5">
         <h1 className="text-xl font-bold mb-8 mt-4 text-center">
           Espace commerçant
@@ -151,7 +149,7 @@ export default function RetailerArea() {
             </label>
           </div>
 
-          <ul className="mb-6">
+          <ul className="mb-12">
             {productsList
               .filter(
                 (product) => search !== "" && product.name.includes(search)
@@ -167,6 +165,6 @@ export default function RetailerArea() {
           </ul>
         </section>
       </div>
-    </div>
+    </main>
   );
 }
