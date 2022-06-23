@@ -28,47 +28,53 @@ export default function ShopDetails() {
   };
 
   return (
-    <>
-      <h1>{shopExemple.name}</h1>
-      <img
-        src={logo}
-        alt="illu boutique"
-        className="border-2 border-black my-5"
-      />
+    <section>
+      <h1 className="text-center my-6 text-3xl">{shopExemple.name}</h1>
+      <img src={logo} alt="illu boutique" className="px-4 my-5" />
       <ul>
-        <li>Lundi : {shopExemple.opening_hours.lundi}</li>
-        <li>Mardi : {shopExemple.opening_hours.mardi}</li>
-        <li>Mercredi : {shopExemple.opening_hours.mercredi}</li>
-        <li>Jeudi : {shopExemple.opening_hours.jeudi}</li>
-        <li>Vendredi : {shopExemple.opening_hours.vendredi}</li>
-        <li>Samedi : {shopExemple.opening_hours.samedi}</li>
-        <li>Dimanche : {shopExemple.opening_hours.dimanche}</li>
-      </ul>
-      <ul>
-        <li>
-          <FontAwesomeIcon icon={faEnvelope} /> : {shopExemple.email}
+        <li className="shedules">Lundi : {shopExemple.opening_hours.lundi}</li>
+        <li className="shedules">Mardi : {shopExemple.opening_hours.mardi}</li>
+        <li className="shedules">
+          Mercredi : {shopExemple.opening_hours.mercredi}
         </li>
-        <li>
-          <FontAwesomeIcon icon={faPhone} /> : {shopExemple.phone}
+        <li className="shedules">Jeudi : {shopExemple.opening_hours.jeudi}</li>
+        <li className="shedules">
+          Vendredi : {shopExemple.opening_hours.vendredi}
+        </li>
+        <li className="shedules">
+          Samedi : {shopExemple.opening_hours.samedi}
+        </li>
+        <li className="shedules">
+          Dimanche : {shopExemple.opening_hours.dimanche}
         </li>
       </ul>
-      <ul>
+      <ul className="flex justify-between mx-4 my-6">
         <li>
+          <FontAwesomeIcon icon={faEnvelope} className="contact-icons" /> :{" "}
+          {shopExemple.email}
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faPhone} className="contact-icons" /> :{" "}
+          {shopExemple.phone}
+        </li>
+      </ul>
+      <ul className="flex justify-evenly my-4">
+        <li className="link-icons">
           <a href={shopExemple.fb_page} target="blank">
             <FontAwesomeIcon icon={faFacebook} />
           </a>
         </li>
-        <li>
+        <li className="link-icons">
           <a href={shopExemple.insta_page} target="blank">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
         </li>
-        <li>
+        <li className="link-icons">
           <a href={shopExemple.website} target="blank">
             <FontAwesomeIcon icon={faGlobe} />
           </a>
         </li>
       </ul>
-    </>
+    </section>
   );
 }
