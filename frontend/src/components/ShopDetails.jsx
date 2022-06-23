@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/images/logo.png";
 
 export default function ShopDetails() {
@@ -40,6 +43,17 @@ export default function ShopDetails() {
       <ul>
         <li>{shopExemple.email}</li>
         <li>{shopExemple.phone}</li>
+      </ul>
+      <ul>
+        <li>
+          <FontAwesomeIcon icon={faInstagram} />
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faFacebook} />
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faGlobe} />
+        </li>
       </ul>
     </>
   );
