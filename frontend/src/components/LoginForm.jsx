@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.png";
+import Header from "./Header";
 
 export default function LoginForm() {
   const {
@@ -10,10 +10,8 @@ export default function LoginForm() {
   } = useForm();
 
   return (
-    <div className="flex flex-col items-center">
-      <header className="m-6">
-        <img src={logo} alt="logo" className="max-w-xs m-4" />
-      </header>
+    <main className="flex flex-col items-center">
+      <Header />
       <form className="w-full max-w-lg w-4/5">
         <label
           htmlFor="email"
@@ -55,12 +53,12 @@ export default function LoginForm() {
           <input type="submit" className="underline underline-offset-1" />
         </Link>
       </form>
-      <div className="flex space-x-1">
-        <span>Vous n’avez pas de compte ? </span>
+      <p>
+        Vous n’avez pas de compte ? {}
         <Link to="/inscription" className="underline underline-offset-1">
           Inscrivez-vous ici
         </Link>
-      </div>
-    </div>
+      </p>
+    </main>
   );
 }
