@@ -29,9 +29,9 @@ export default function SearchBar() {
   return (
     <div className="grid place-items-center">
       <div className="flex flex-col justify-center items-center">
-        <div className="flex items-center">
-          <img src={logo} alt="logo" className="max-w-[4rem] m-4" />
-          <img src={text} alt="logo" className="max-w-[12rem] m-4" />
+        <div className="flex items-center m-4">
+          <img src={logo} alt="logo" className="max-w-[4rem] mr-2" />
+          <img src={text} alt="logo" className="max-w-[12rem] relative top-2" />
         </div>
         <form
           className="flex rounded-3xl border-solid border border-gray-200 w-min p-2 hover:bg-gray-100 bg-white"
