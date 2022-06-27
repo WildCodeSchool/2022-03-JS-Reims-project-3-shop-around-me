@@ -10,7 +10,7 @@ export default function PersonnalData() {
     // getValues,
   } = useForm();
 
-  const [info, setInfo] = useState("");
+  // const [info, setInfo] = useState("");
   const [edit, setEdit] = useState(false);
 
   // const updateInfo = () => {
@@ -39,11 +39,6 @@ export default function PersonnalData() {
     setEdit(true);
   };
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setInfo({ ...info, [name]: value });
-  };
-
   return (
     <section className=" flex flex-col gap-y-6 w-screen shadow-md rounded px-8 pt-6 pb-8">
       <h2 className="text-xl text-center font-bold uppercase text-[#4F4E47]">
@@ -66,9 +61,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="firstname"
                 name="firstname"
-                value={info.firstname}
+                // value={info.firstname}
                 disabled={!edit}
-                onChange={handleInputChange}
               />
             </label>
             {errors?.firstname?.type === "required" && (
@@ -105,9 +99,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="lastname"
                 name="lastname"
-                value={info.lastname}
+                // value={info.lastname}
                 disabled={!edit}
-                onChange={handleInputChange}
               />
             </label>
             {errors?.lastname?.type === "required" && (
@@ -143,9 +136,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="birthdate"
                 name="birthdate"
-                value={info.birthdate}
+                // value={info.birthdate}
                 disabled={!edit}
-                onChange={handleInputChange}
               />
             </label>
             {errors?.birthdate?.type === "required" && (
@@ -160,32 +152,21 @@ export default function PersonnalData() {
           <div className="form-structure">
             <label htmlFor="grid-gender">
               Genre
-              <div className="relative">
-                <select
-                  {...register("gender", { required: true })}
-                  className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                  id="gender"
-                  name="gender"
-                  value={info.gender}
-                  disabled={!edit}
-                  onChange={handleInputChange}
-                >
-                  <option value="female">Femme</option>
-                  <option value="male">Homme</option>
-                  <option value="non-binary">Non-binaire</option>
-                  <option value="other">Autre</option>
-                  <option value="not-tell">Ne se prononce pas</option>
-                </select>
-                <div className="pointer-events-none absolute inset-y-5 right-0 flex items-center px-2 text-gray-700">
-                  <svg
-                    className="fill-current h-4 w-4"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                  </svg>
-                </div>
-              </div>
+              <select
+                {...register("gender", { required: true })}
+                className="form-input"
+                id="gender"
+                name="gender"
+                // value={info.gender}
+                disabled={!edit}
+              >
+                <option value="select">Séléction...</option>
+                <option value="female">Femme</option>
+                <option value="male">Homme</option>
+                <option value="non-binary">Non-binaire</option>
+                <option value="other">Autre</option>
+                <option value="not-tell">Ne se prononce pas</option>
+              </select>
             </label>
             {errors?.gender?.type === "required" && (
               <p className="error-handler">Ce champ est requis.</p>
@@ -206,9 +187,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="city"
                 name="city"
-                value={info.city}
+                // value={info.city}
                 disabled={!edit}
-                onChange={handleInputChange}
               />{" "}
             </label>
             {errors?.city?.type === "minLength" && (
@@ -242,9 +222,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="zipcode"
                 name="zipcode"
-                value={info.zipcode}
+                // value={info.zipcode}
                 disabled={!edit}
-                onChange={handleInputChange}
               />{" "}
             </label>
             {errors?.zipcode?.type === "minLength" && (
@@ -278,9 +257,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="email"
                 name="email"
-                value={info.email}
+                // value={info.email}
                 disabled={!edit}
-                onChange={handleInputChange}
               />{" "}
             </label>
 
@@ -319,9 +297,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="password"
                 name="password"
-                value={info.password}
+                // value={info.password}
                 disabled={!edit}
-                onChange={handleInputChange}
               />
             </label>
             {errors?.password?.type === "required" && (
@@ -358,9 +335,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="passwordconfirmation"
                 name="passwordconfirmation"
-                value={info.passwordconfirmation}
+                // value={info.passwordconfirmation}
                 disabled={!edit}
-                onChange={handleInputChange}
               />
             </label>
             {errors?.password?.type === "required" && (
