@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import Header from "./Header";
+import logo from "../assets/images/logo.png";
 
 export default function LoginForm() {
   const {
@@ -11,7 +11,9 @@ export default function LoginForm() {
 
   return (
     <main className="flex flex-col items-center">
-      <Header />
+      <picture className="m-6">
+        <img src={logo} alt="logo" className="max-w-xs m-4" />
+      </picture>
       <form className="w-full max-w-lg w-4/5">
         <label
           htmlFor="email"
@@ -25,12 +27,12 @@ export default function LoginForm() {
             })}
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           />
-          {errors?.email?.type === "required" && (
-            <p className="text-red-600 normal-case text-xs font-normal italic">
-              Ce champ est requis.
-            </p>
-          )}
         </label>
+        {errors?.email?.type === "required" && (
+          <p className="text-red-600 normal-case text-xs font-normal italic">
+            Ce champ est requis.
+          </p>
+        )}
         <label
           htmlFor="password"
           className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -43,12 +45,12 @@ export default function LoginForm() {
             })}
             className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
           />
-          {errors?.password?.type === "required" && (
-            <p className="text-red-600 normal-case text-xs font-normal italic">
-              Ce champ est requis.
-            </p>
-          )}
         </label>
+        {errors?.password?.type === "required" && (
+          <p className="text-red-600 normal-case text-xs font-normal italic">
+            Ce champ est requis.
+          </p>
+        )}
         <Link to="/home">
           <input type="submit" className="underline underline-offset-1" />
         </Link>
