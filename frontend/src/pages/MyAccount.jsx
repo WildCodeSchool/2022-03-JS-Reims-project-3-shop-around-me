@@ -56,9 +56,8 @@ export default function MyAccount() {
             className="mr-4 text-[#4F4E47] text-lg list-none mb-4"
           >
             <Link to={menu.url} className="flex gap-8">
-              <div className="w-[24px] h-[24px]">
-                <FontAwesomeIcon icon={menu.icon} />
-              </div>
+              <FontAwesomeIcon icon={menu.icon} className="w-[24px] h-[24px]" />
+
               {menu.title}
             </Link>
           </li>
