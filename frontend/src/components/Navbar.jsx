@@ -18,26 +18,22 @@ function Navbar() {
     {
       id: 2,
       icon: faStore,
-      // URL to be determined later
-      url: "",
+      url: "/account",
     },
     {
       id: 3,
       icon: faEuroSign,
-      // URL to be determined later
-      url: "",
+      url: "/funds",
     },
     {
       id: 4,
       icon: faHeart,
-      // URL to be determined later
-      url: "",
+      url: "/fav",
     },
     {
       id: 5,
       icon: faUser,
-      // URL to be determined later
-      url: "",
+      url: "/inscription",
     },
   ];
   return (

@@ -3212,7 +3212,7 @@ CREATE TABLE `product_shop` (
 
 INSERT INTO `product_shop` (`shop_id`,`product_id`) VALUES
 (1, 1),
-(1, 2);
+(438, 2);
 
 -- --------------------------------------------------------
 

@@ -5,29 +5,27 @@ import axios from "axios";
 export default function InscriptionForm() {
   const {
     register,
-    handleSubmit,
     formState,
     formState: { errors },
+    handleSubmit,
+    getValues,
   } = useForm();
 
   const { isSubmitSuccessful } = formState;
 
-  const onSubmit = async (data) => {
-    try {
-      const resp = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/users`,
-        data
-      );
-      console.warn(resp.data);
-    } catch (err) {
-      console.warn(err.data);
-    }
+  const postUser = () => {
+    axios
+      .post(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users`,
+        getValues()
+      )
+      .then((response) => response);
   };
 
   return (
     <form
-      className="w-screen flex flex-col bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-      onSubmit={handleSubmit(onSubmit)}
+      className="w-screen flex flex-col bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10"
+      onSubmit={handleSubmit(postUser)}
     >
       <h2 className="block uppercase tracking-wide text-gray-700 text-xl font-bold mt-6 mb-6 text-center">
         Inscription
@@ -116,11 +114,10 @@ export default function InscriptionForm() {
             Date de naissance
             <input
               type="text"
-              placeholder="01/01/2000"
+              placeholder="2000/01/01"
               {...register("birthdate", {
                 required: true,
-                pattern:
-                  /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
+                pattern: /^(\d{4})(\/|-)(\d{1,2})(\/|-)(\d{1,2})$/,
               })}
               className="form-input"
               id="grid-birthdate"
@@ -131,7 +128,7 @@ export default function InscriptionForm() {
           )}
           {errors?.birthdate?.type === "pattern" && (
             <p className="error-handler">
-              Merci de respecter le format suivant : "jj/mm/aaaa".
+              Merci de respecter le format suivant : "aaaa/mm/jj".
             </p>
           )}
         </div>

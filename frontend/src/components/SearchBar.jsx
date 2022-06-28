@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import axios from "axios";
-import logo from "../assets/images/logo.png";
+import Logo from "./Logo";
 import Map from "./Map";
 
 export default function SearchBar() {
@@ -12,7 +12,7 @@ export default function SearchBar() {
       .get(
         `${
           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-        }/products/?search=${searchValue.current.value}`
+        }/shops/?search=${searchValue.current.value}`
       )
       .then((response) => response.data)
       .then((data) => {
@@ -28,7 +28,7 @@ export default function SearchBar() {
   return (
     <div className="grid place-items-center">
       <div className="flex flex-col justify-center items-center">
-        <img src={logo} alt="logo" className="max-w-xs m-4" />
+        <Logo />
         <form
           className="flex rounded-3xl border-solid border border-gray-200 w-min p-2 hover:bg-gray-100 bg-white"
           onSubmit={handleSubmit}
@@ -49,7 +49,9 @@ export default function SearchBar() {
           <button type="submit">🔎</button>
         </form>
       </div>
-      {results.length !== 0 && <Map searchValue={searchValue.current?.value} />}
+      {results.length !== 0 && (
+        <Map searchValue={searchValue.current?.value} results={results} />
+      )}
       <ul>
         {results.map((result) => (
           <li
@@ -57,7 +59,7 @@ export default function SearchBar() {
             className="text-[#4F4E47] bg-white
               ml-4 mr-4 min-w-[90vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
           >
-            Nom du produit : {result.name} <br /> Marque : {result.brand} <br />
+            Nom de la boutique : {result.name} <br /> Marque : {result.brand}
           </li>
         ))}
       </ul>

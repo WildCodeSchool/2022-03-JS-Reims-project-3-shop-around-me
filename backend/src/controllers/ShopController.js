@@ -2,8 +2,15 @@ const models = require("../models");
 
 class ShopController {
   static browse = (req, res) => {
-    models.shop
-      .findAll()
+    let promise = null;
+
+    if (req.query.search != null) {
+      promise = models.shop.findByQuery(req.query.search);
+    } else {
+      promise = models.shop.findAll();
+    }
+
+    promise
       .then(([rows]) => {
         res.send(rows);
       })
