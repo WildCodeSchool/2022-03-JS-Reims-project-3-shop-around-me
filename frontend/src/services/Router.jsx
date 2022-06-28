@@ -1,9 +1,8 @@
-/* eslint-disable import/no-unresolved */
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PropTypes from "prop-types";
-import Home from "@pages/Home";
-import Fund from "@components/Fund";
-import MyAccount from "@pages/MyAccount";
+import Home from "../pages/Home";
+import Fund from "../components/Fund";
+import MyAccount from "../pages/MyAccount";
 import Fav from "../components/Fav";
 import InscriptionForm from "../components/InscriptionForm";
 

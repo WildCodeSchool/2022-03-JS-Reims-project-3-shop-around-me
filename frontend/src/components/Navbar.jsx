@@ -18,7 +18,7 @@ function Navbar() {
     {
       id: 2,
       icon: faStore,
-      url: "account",
+      url: "/account",
     },
     {
       id: 3,
