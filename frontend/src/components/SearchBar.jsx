@@ -59,7 +59,13 @@ export default function SearchBar() {
             className="text-[#4F4E47] bg-white
               ml-4 mr-4 min-w-[90vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
           >
-            Nom de la boutique : {result.name} <br /> Marque : {result.brand}
+            {result.name} <br />{" "}
+            {axios
+              .get(
+                `https://api-adresse.data.gouv.fr/reverse/?lon=${result.x}&lat=${result.y}`
+              )
+              .then((response) => response.data.features[0].properties.label)
+              .then((address) => console.warn(address))}
           </li>
         ))}
       </ul>
