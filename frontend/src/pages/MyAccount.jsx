@@ -9,39 +9,40 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/images/logo_alone.png";
 
+const accountMenu = [
+  {
+    id: 1,
+    icon: faPiggyBank,
+    title: "Historique cagnotte",
+    url: "/account/",
+  },
+  {
+    id: 2,
+    icon: faUser,
+    title: "Mes données personnelles",
+    url: "/account/mydata/",
+  },
+  {
+    id: 3,
+    icon: faGears,
+    title: "Paramètres de l'application",
+    url: "/account/",
+  },
+  {
+    id: 4,
+    icon: faCircleInfo,
+    title: "Aide et contact",
+    url: "/account/",
+  },
+  {
+    id: 5,
+    icon: faUserXmark,
+    title: "Supprimer mes données",
+    url: "/account/",
+  },
+];
+
 export default function MyAccount() {
-  const accountMenu = [
-    {
-      id: 1,
-      icon: faPiggyBank,
-      title: "Historique cagnotte",
-      url: "/account/",
-    },
-    {
-      id: 2,
-      icon: faUser,
-      title: "Mes données personnelles",
-      url: "/account/mydata/",
-    },
-    {
-      id: 3,
-      icon: faGears,
-      title: "Paramètres de l'application",
-      url: "/account/",
-    },
-    {
-      id: 4,
-      icon: faCircleInfo,
-      title: "Aide et contact",
-      url: "/account/",
-    },
-    {
-      id: 5,
-      icon: faUserXmark,
-      title: "Supprimer mes données",
-      url: "/account/",
-    },
-  ];
   return (
     <section className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide">
       <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
