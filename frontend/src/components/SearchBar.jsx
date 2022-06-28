@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Logo from "./Logo";
+import VerticalLogo from "./VerticalLogo";
+import HorizontalLogo from "./HorizontalLogo";
 import Map from "./Map";
 
 export default function SearchBar() {
@@ -27,9 +28,13 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="grid place-items-center">
+    <div
+      className={`grid place-items-center mb-14 ${
+        results && results.length > 0 ? "" : "h-[100vh]"
+      }`}
+    >
       <div className="flex flex-col justify-center items-center">
-        <Logo />
+        {results && results.length > 0 ? <HorizontalLogo /> : <VerticalLogo />}
         <form
           className="flex rounded-3xl border-solid border border-gray-200 w-min p-2 hover:bg-gray-100 bg-white"
           onSubmit={handleSubmit}

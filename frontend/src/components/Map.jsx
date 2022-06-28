@@ -21,7 +21,7 @@ function Map({ searchValue, results }) {
     <div className="flex flex-col text-center">
       <h1 className="m-2">Votre résultat pour: {searchValue}</h1>
       <MapContainer
-        zoom={25}
+        zoom={17}
         center={userPosition ?? shopPosition[0]}
         scrollWheelZoom={false}
         style={{ height: "600px", width: "800px" }}

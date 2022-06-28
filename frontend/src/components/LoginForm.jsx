@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.png";
+import VerticalLogo from "./VerticalLogo";
 
 export default function LoginForm() {
   const {
@@ -10,10 +10,8 @@ export default function LoginForm() {
   } = useForm();
 
   return (
-    <main className="flex flex-col items-center">
-      <picture className="m-6">
-        <img src={logo} alt="logo" className="max-w-xs m-4" />
-      </picture>
+    <main className="flex flex-col justify-center items-center h-[78vh]">
+      <VerticalLogo className="" />
       <form className="w-full max-w-lg w-4/5">
         <label
           htmlFor="email"
