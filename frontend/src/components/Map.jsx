@@ -19,13 +19,13 @@ function Map({ searchValue, results }) {
 
   return (
     <div className="flex flex-col text-center">
-      <h1>Votre résultat pour: {searchValue}</h1>
+      <h1 className="m-2">Votre résultat pour: {searchValue}</h1>
       <MapContainer
         zoom={25}
         center={userPosition ?? shopPosition[0]}
         scrollWheelZoom={false}
         style={{ height: "600px", width: "800px" }}
-        className="rounded-xl border-solid border border-gray-200 max-w-[90vw] max-h-[20vh]"
+        className="rounded-xl border-solid border border-gray-200 max-w-[90vw] max-h-[45vh]"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

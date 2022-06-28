@@ -5,7 +5,7 @@ import {
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import logo from "../assets/images/logo.png";
+import fossier from "../assets/images/fossier.png";
 
 const shopExemple = {
   name: "Magasin Fossier",
@@ -28,9 +28,13 @@ const shopExemple = {
 
 export default function ShopDetails() {
   return (
-    <section>
+    <section className="mb-[4.5rem]">
       <h1 className="text-center my-6 text-3xl">{shopExemple.name}</h1>
-      <img src={logo} alt="illu boutique" className="px-4 my-5" />
+      <img
+        src={fossier}
+        alt={`${shopExemple.name} façade`}
+        className="my-5 border-2 border-black max-w-[85%] mx-auto rounded-lg"
+      />
       <ul>
         <li className="shedules">Lundi : {shopExemple.opening_hours.lundi}</li>
         <li className="shedules">Mardi : {shopExemple.opening_hours.mardi}</li>

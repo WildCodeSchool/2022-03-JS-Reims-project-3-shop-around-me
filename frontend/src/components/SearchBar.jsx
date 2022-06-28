@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import axios from "axios";
-import logo from "../assets/images/logo.png";
+import Logo from "./Logo";
 import Map from "./Map";
 
 export default function SearchBar() {
@@ -28,7 +28,7 @@ export default function SearchBar() {
   return (
     <div className="grid place-items-center">
       <div className="flex flex-col justify-center items-center">
-        <img src={logo} alt="logo" className="max-w-xs m-4" />
+        <Logo />
         <form
           className="flex rounded-3xl border-solid border border-gray-200 w-min p-2 hover:bg-gray-100 bg-white"
           onSubmit={handleSubmit}

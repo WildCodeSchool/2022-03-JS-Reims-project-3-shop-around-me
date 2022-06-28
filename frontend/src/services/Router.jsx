@@ -15,6 +15,7 @@ const routes = [
   { path: "/fav", component: <Fav /> },
   { path: "/funds", component: <Fund /> },
   { path: "/inscription", component: <InscriptionForm /> },
+  { path: "/account", component: <MyAccount /> },
 ];
 
 function Router({ children }) {

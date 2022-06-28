@@ -24,7 +24,7 @@ export default function InscriptionForm() {
 
   return (
     <form
-      className="w-screen flex flex-col bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+      className="w-screen flex flex-col bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10"
       onSubmit={handleSubmit(postUser)}
     >
       <h2 className="block uppercase tracking-wide text-gray-700 text-xl font-bold mt-6 mb-6 text-center">
