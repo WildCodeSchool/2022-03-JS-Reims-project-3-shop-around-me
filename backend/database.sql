@@ -75,19 +75,19 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 5 */
 ,
 (
-9, 'Cave des Sacres', '', 'alcohol', '', '', '', '', '', '', '', 4.0328038, 49.2529802996299
+9, 'Cave des Sacres', '', 'alcohol', '7 Place Luton, 51100 Reims', 'lundi 09:30–19:00 / mardi 09:30–19:00 / mercredi 09:30–19:00 / jeudi 09:30–19:00 /  vendredi 09:30–19:00 / samedi 09:30–19:00 / dimanche, 10:00–19:00 ', 'https://www.cavedessacres.com/', 'shop@cavedessacres.com', '+33326473589', '', '', 4.0328038, 49.2529802996299
 )
 
 /* INSERT QUERY NO: 6 */
 ,
 (
-10, 'Cave Balourdet', '', 'alcohol', '', '', 'http://balourdet.fr', '+33 3 26 82 15 69', '', '', '', 4.0409329, 49.2512253996303
+10, 'Cave Balourdet', '', 'alcohol', '11 Rue Gerbert, 51100 Reims', 'lundi, fermé / mardi 10:00-13:00 15:00-19:30 / mercredi 10:00-13:00 15:00-19:30 / jeudi 10:00-13:00 15:00-19:30 / vendredi 10:00-19:30 / samedi 10:00-19:30 / dimanche, fermé', 'http://balourdet.fr', '+33 3 26 82 15 69', '', '', '', 4.0409329, 49.2512253996303
 )
 
 /* INSERT QUERY NO: 7 */
 ,
 (
-11, 'Le Parvis', '', 'alcohol', '', '', '', '', '', '', '', 4.0319395, 49.2532466996298
+11, 'Le Parvis', '', 'alcohol', '2 Rue Rockefeller, 51100 Reims', 'lundi 09:00-19:00 / mardi, fermé / mercredi 09:00-19:00 / jeudi 09:00-23:00 / vendredi 09:00-23:00 / samedi 09:00-23:00 / dimanche 10:00-19:00', 'https://le-parvis.fr', '+33326841682', '', '', '', 4.0319395, 49.2532466996298
 )
 
 /* INSERT QUERY NO: 8 */
@@ -1701,7 +1701,8 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 276 */
 ,
 (
-280, 'La Petite Malle d''Apolline', '', 'games', '', '', '', '', '', '', '', 4.0249669, 49.2547674996295
+280, 'La Petite Malle d''Apolline', '', 'games', '39 Rue Jeanne d Arc, 51100 Reims', 'lundi 13:30-18:30 / mardi 10:00-12:00 13:30-18:30 / mercredi 10:00-12:00 13:30-18:30 / jeudi 10:00-12:00 13:30-18:30 / vendredi 10:00-12:00 13:30-18:30 / samedi 10:00-12:00 13:30-18:30 / dimanche, fermé', 'https://lamalledapolline.fr', '
+lamalledapolline@gmail.com', '+33981823129', 'https://www.facebook.com/lamalledapolline/', '', 4.0249669, 49.2547674996295
 )
 
 /* INSERT QUERY NO: 277 */
@@ -1719,19 +1720,19 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 279 */
 ,
 (
-283, 'Le Clos Simon', '', 'greengrocer', '', '', '', '', '', '', '', 4.015903, 49.2764679996242
+283, 'Le Clos Simon', '', 'greengrocer', '385 Avenue de Laon, 51100 Reims', '', '', '', '', '', '', 4.015903, 49.2764679996242
 )
 
 /* INSERT QUERY NO: 280 */
 ,
 (
-284, 'Au Temps des Cerises', '', 'greengrocer', '', '', 'https://www.vitrinesdereims.com/', '+33 3 26 40 46 06', '', '', '', 4.0342764, 49.2563054996291
+284, 'Au Temps des Cerises', '', 'greengrocer', '10 Place du Forum, 51100 Reims', 'lundi, fermé / mardi 09:00-13:00 15:30-19:00 / mercredi 09:00-13:00 15:30-19:00 / jeudi 09:00-13:00 15:30-19:00 / vendredi 09:00-13:00 15:30-19:00 / samedi 09:00-13:00 15:30-19:00 / dimanche, fermé' 'https://www.vitrinesdereims.com/', '', '+33326404606', '', '', '', 4.0342764, 49.2563054996291
 )
 
 /* INSERT QUERY NO: 281 */
 ,
 (
-285, 'Signorini Tartufi', '', 'grocery', '', '', '', '+33 3 26 97 42 99', '', '', '', 4.0280901, 49.2538026996297
+285, 'Signorini Tartufi', '', 'grocery', '13 rue Marx Dormoy, 51100 Reims', 'lundi 14:00-19:00 / mardi 10:00-13:00 14:00-19:00 / mercredi 10:00-13:00 14:00-19:00 / jeudi 10:00-13:00 14:00-19:00 / vendredi 10:00-13:00 14:00-19:00 / samedi 10:00-13:00 14:00-19:00 / dimanche, fermé', 'https://www.signorinitartufi.com/', 'hello@signorinitartufi.com', '+33 3 26 97 42 99', 'https://www.facebook.com/signorinitartufifrance/', 'https://www.instagram.com/signorinitartufi/', 4.0280901, 49.2538026996297
 )
 
 /* INSERT QUERY NO: 282 */
@@ -2583,13 +2584,13 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 423 */
 ,
 (
-427, 'En Apart Thé', '', 'tea', '', '', '', '', '', '', '', 4.0318283, 49.25260939963
+427, 'En Apart Thé', '', 'tea', '23 Rue Chanzy, 51100 Reims', 'lundi, fermé / mardi, fermé / mercredi 10:00-18:30 / jeudi 10:00-18:30 / vendredi 10:00-18:30 / samedi 10:00-18:30 / dimanche 10:00-15:30', 'https://enaparthereims.fr', '', '+33326025894', 'https://www.facebook.com/enaparthereims/', 'https://www.instagram.com/en_aparthe_/', 4.0318283, 49.25260939963
 )
 
 /* INSERT QUERY NO: 424 */
 ,
 (
-428, 'Palais des Thés', 'Palais des Thés', 'tea', '', '', '', '', '', '', '', 4.0282822, 49.2555660996293
+428, 'Palais des Thés', 'Palais des Thés', 'tea', '14 Rue de l Étape, 51100 Reims', 'lundi 12:30-18:00 /  mardi 10:00-19:00 / mercredi 10:00-19:00 / jeudi 10:00-19:00 / vendredi 10:00-19:00 / samedi 10:00-19:00 / dimanche, fermé', 'https://www.palaisdesthes.com', '', '+33326792663', '', '', 4.0282822, 49.2555660996293
 )
 
 /* INSERT QUERY NO: 425 */
@@ -2649,7 +2650,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 434 */
 ,
 (
-438, 'Le Royaume du Jouet Franchisé Indépendant', '', 'toys', '', '', '', '', '', '', '', 4.0297977, 49.2545204996295
+438, 'Le Royaume du Jouet Franchisé Indépendant', '', 'toys', '7 Rue de Talleyrand, 51100 Reims', 'lundi 14:00-19:00 / mardi 10:00-13:00 14:00-19:00 / mercredi 10:00-19:00 / jeudi 10:00-13:00 14:00-19:00 / vendredi 10:00-13:00 14:00-19:00 / samedi 10:00-19:00 / dimanche, fermé', '', '', '+33326474126', '', '', 4.0297977, 49.2545204996295
 )
 
 /* INSERT QUERY NO: 435 */
