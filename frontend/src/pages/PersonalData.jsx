@@ -23,7 +23,7 @@ export default function PersonnalData() {
       });
   }, []);
 
-  // Waiting for the authantification to be done so I can acces all the informations
+  // Waiting for the authentification to be done so I can access all the informations
 
   const handleSave = (e) => {
     e.preventDefault();
