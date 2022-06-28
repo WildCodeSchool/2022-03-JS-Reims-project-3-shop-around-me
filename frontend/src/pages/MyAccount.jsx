@@ -20,7 +20,7 @@ export default function MyAccount() {
       id: 2,
       icon: faUser,
       title: "Mes données personnelles",
-      url: "/myaccount/",
+      url: "/myaccount/mydata/",
     },
     {
       id: 3,
@@ -43,12 +43,13 @@ export default function MyAccount() {
   ];
   return (
     <section className="flex flex-col gap-y-8 w-screen px-8 pt-8 pb-8">
-      <h2 className=" text-4xl text-center">Mon compte</h2>
+      <h2 className=" text-3xl text-[#4F4E47]">Bonjour utilisateur !</h2>
+      <h3 className=" text-2xl text-[#4F4E47] -mt-6">Votre compte.</h3>
       <ul>
         {accountMenu.map((menu) => (
           <li
             key={menu.id}
-            className="mr-4 text-gray-900 text-xl list-none mb-4"
+            className="mr-4 text-[#4F4E47] text-lg list-none mb-4"
           >
             <Link to={menu.url} className="flex gap-8">
               <div className="w-[24px] h-[24px]">

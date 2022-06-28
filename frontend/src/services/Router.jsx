@@ -11,7 +11,7 @@ import InscriptionForm from "../components/InscriptionForm";
 const routes = [
   { path: "/", component: <Home /> },
   { path: "/myaccount", component: <MyAccount /> },
-  { path: "/mydata", component: <PersonnalData /> },
+  { path: "/myaccount/mydata", component: <PersonnalData /> },
   { path: "/fav", component: <Fav /> },
   { path: "/funds", component: <Fund /> },
   { path: "/inscription", component: <InscriptionForm /> },
