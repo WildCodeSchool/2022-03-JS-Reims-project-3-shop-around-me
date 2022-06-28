@@ -15,31 +15,31 @@ export default function MyAccount() {
       id: 1,
       icon: faPiggyBank,
       title: "Historique cagnotte",
-      url: "/myaccount/",
+      url: "/account/",
     },
     {
       id: 2,
       icon: faUser,
       title: "Mes données personnelles",
-      url: "/myaccount/mydata/",
+      url: "/account/mydata/",
     },
     {
       id: 3,
       icon: faGears,
       title: "Paramètres de l'application",
-      url: "/myaccount/",
+      url: "/account/",
     },
     {
       id: 4,
       icon: faCircleInfo,
       title: "Aide et contact",
-      url: "/myaccount/",
+      url: "/account/",
     },
     {
       id: 5,
       icon: faUserXmark,
       title: "Supprimer mes données",
-      url: "/myaccount/",
+      url: "/account/",
     },
   ];
   return (

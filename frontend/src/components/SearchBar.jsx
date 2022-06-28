@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Logo from "./Logo";
 import Map from "./Map";
 
@@ -54,13 +55,15 @@ export default function SearchBar() {
       )}
       <ul>
         {results.map((result) => (
-          <li
-            key={result.id}
-            className="text-[#4F4E47] bg-white
+          <Link to="/shopDetails">
+            <li
+              key={result.id}
+              className="text-[#4F4E47] bg-white
               ml-4 mr-4 min-w-[90vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
-          >
-            Nom de la boutique : {result.name} <br /> Marque : {result.brand}
-          </li>
+            >
+              Nom de la boutique : {result.name} <br /> Marque : {result.brand}
+            </li>
+          </Link>
         ))}
       </ul>
     </div>
