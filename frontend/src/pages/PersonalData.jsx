@@ -1,42 +1,38 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
-import { useState } from "react";
-// import { axios } from "axios";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function PersonnalData() {
   const {
     register,
     formState: { errors },
-    // getValues,
   } = useForm();
 
-  // const [info, setInfo] = useState("");
-  const [edit, setEdit] = useState(false);
+  const [editUser, setEditedUser] = useState(false);
+  const [user, setUser] = useState({});
 
-  // const updateInfo = () => {
-  //   axios
-  //     .put(
-  //       `${
-  //         import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-  //       }/users/${id}`,
-  //       getValues()
-  //     )
-  //     .catch((e) => {
-  //       console.error(e);
-  //     });
-  // };
+  useEffect(() => {
+    axios
+      .get(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users/1`
+      )
+      .then((response) => response)
+      .then((data) => {
+        setUser(data);
+      });
+  }, []);
 
   // Waiting for the authantification to be done so I can acces all the informations
 
   const handleSave = (e) => {
     e.preventDefault();
-    // updateInfo();
-    setEdit(false);
+    setEditedUser(false);
   };
 
   const handleEdit = (e) => {
     e.preventDefault();
-    setEdit(true);
+    setEditedUser(true);
   };
 
   return (
@@ -61,8 +57,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="firstname"
                 name="firstname"
-                // value={info.firstname}
-                disabled={!edit}
+                disabled={!editUser}
+                value={user.firstname}
               />
             </label>
             {errors?.firstname?.type === "required" && (
@@ -99,8 +95,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="lastname"
                 name="lastname"
-                // value={info.lastname}
-                disabled={!edit}
+                disabled={!editUser}
+                value={user.lastname}
               />
             </label>
             {errors?.lastname?.type === "required" && (
@@ -136,8 +132,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="birthdate"
                 name="birthdate"
-                // value={info.birthdate}
-                disabled={!edit}
+                disabled={!editUser}
+                value={user.lastname}
               />
             </label>
             {errors?.birthdate?.type === "required" && (
@@ -157,8 +153,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="gender"
                 name="gender"
-                // value={info.gender}
-                disabled={!edit}
+                disabled={!editUser}
+                value={user.lastname}
               >
                 <option value="select">Séléction...</option>
                 <option value="female">Femme</option>
@@ -187,8 +183,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="city"
                 name="city"
-                // value={info.city}
-                disabled={!edit}
+                disabled={!editUser}
+                value={user.city}
               />{" "}
             </label>
             {errors?.city?.type === "minLength" && (
@@ -222,8 +218,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="zipcode"
                 name="zipcode"
-                // value={info.zipcode}
-                disabled={!edit}
+                disabled={!editUser}
+                value={user.zipcode}
               />{" "}
             </label>
             {errors?.zipcode?.type === "minLength" && (
@@ -257,8 +253,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="email"
                 name="email"
-                // value={info.email}
-                disabled={!edit}
+                disabled={!editUser}
+                value={user.email}
               />{" "}
             </label>
 
@@ -297,8 +293,8 @@ export default function PersonnalData() {
                 className="form-input"
                 id="password"
                 name="password"
-                // value={info.password}
-                disabled={!edit}
+                disabled={!editUser}
+                value={user.password}
               />
             </label>
             {errors?.password?.type === "required" && (
@@ -335,8 +331,7 @@ export default function PersonnalData() {
                 className="form-input"
                 id="passwordconfirmation"
                 name="passwordconfirmation"
-                // value={info.passwordconfirmation}
-                disabled={!edit}
+                disabled={!editUser}
               />
             </label>
             {errors?.password?.type === "required" && (
@@ -357,7 +352,7 @@ export default function PersonnalData() {
               </p>
             )}
           </div>
-          {edit === true ? (
+          {editUser === true ? (
             <button
               type="button"
               className="text-sm py-3 ml-2 mr-2 mb-12 border-solid border-2 border-green-900 text-green-900 font-bold rounded focus:outline-none focus:shadow-outline"

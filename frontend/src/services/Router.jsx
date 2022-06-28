@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 import Home from "../pages/Home";
-import PersonnalData from "../pages/PersonnalData";
+import PersonnalData from "../pages/PersonalData";
 import MyAccount from "../pages/MyAccount";
 import Fund from "../components/Fund";
 import Fav from "../components/Fav";
