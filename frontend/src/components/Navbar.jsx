@@ -18,13 +18,11 @@ function Navbar() {
     {
       id: 2,
       icon: faStore,
-      // URL to be determined later
-      url: "",
+      url: "/account",
     },
     {
       id: 3,
       icon: faEuroSign,
-      // URL to be determined later
       url: "/funds",
     },
     {
