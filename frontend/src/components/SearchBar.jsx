@@ -16,12 +16,39 @@ export default function SearchBar() {
       )
       .then((response) => response.data)
       .then((data) => {
-        setResults(data);
+        Promise.all(
+          data.map((result) =>
+            result.address
+              ? {
+                  data: {
+                    features: [{ properties: { label: result.address } }],
+                  },
+                }
+              : axios.get(
+                  `https://api-adresse.data.gouv.fr/reverse/?lon=${result.x}&lat=${result.y}`
+                )
+          )
+        ).then((responses) => {
+          setResults(
+            data.map((result, index) => ({
+              ...result,
+              address: responses[index].data.features[0].properties.label,
+            }))
+          );
+        });
       });
+  };
+
+  const getAddress = (lat, lon) => {
+    axios
+      .get(`https://api-adresse.data.gouv.fr/reverse/?lon=${lon}&lat=${lat}`)
+      .then((response) => response.data.features[0].properties.label)
+      .then((address) => console.warn(address));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    getAddress(results.x, results.y);
     return searchValue.current?.value.length > 1 && getResults();
   };
 
@@ -59,13 +86,7 @@ export default function SearchBar() {
             className="text-[#4F4E47] bg-white
               ml-4 mr-4 min-w-[90vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
           >
-            {result.name} <br />{" "}
-            {axios
-              .get(
-                `https://api-adresse.data.gouv.fr/reverse/?lon=${result.x}&lat=${result.y}`
-              )
-              .then((response) => response.data.features[0].properties.label)
-              .then((address) => console.warn(address))}
+            {result.name} <br /> {result.address}
           </li>
         ))}
       </ul>
