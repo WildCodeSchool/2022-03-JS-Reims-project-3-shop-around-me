@@ -32,7 +32,7 @@ h1 {
     @apply block uppercase tracking-wide text-[#4F4E47] text-sm font-bold mb-4;
   }
   .form-structure {
-    @apply w-full px-2 mb-6 text-gray-700 font-bold uppercase text-sm;
+    @apply w-full mb-6 text-gray-700 font-bold uppercase text-sm;
   }
   .link-icons {
     @apply text-4xl;
@@ -44,6 +44,6 @@ h1 {
     @apply my-2 text-center;
   }
   .checkbox {
-    @apply w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
+    @apply w-4 h-4 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
   }
 }
