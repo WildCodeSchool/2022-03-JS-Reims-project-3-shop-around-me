@@ -28,7 +28,7 @@ export default function InscriptionForm() {
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide">
       <img src={logo} alt="logo" className="max-w-[4rem] mb-8" />
       <form className="flex flex-col" onSubmit={handleSubmit(postUser)}>
-        <p className=" text-3xl text-[#4F4E47] mb-8">Inscrivez-vous.</p>
+        <p className="text-3xl text-[#4F4E47] mb-8">Inscrivez-vous.</p>
         {isSubmitSuccessful && (
           <p
             className="bg-lime-100 border border--400 text-lime-700 mb-6 px-4 py-3 rounded"
