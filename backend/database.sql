@@ -3237,7 +3237,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `birthdate`, `gender`, `zipcode`, `city`, `email`, `password`) VALUES
-(1, "Nibor", "Valjen", "1995-03-14", "male", "51100", "Reims", "nibor@wild.com", "$argon2id$v=19$m=65536,t=5,p=1$kyt4+/e/n/CfttAPLi0Fqw$axBWlUeK/GKrTE5tXYY5mgT20+KxGklsKudf3F7qGFg");
+(1, "Nibor", "Valjen", "1995-03-14", "male", "51100", "Reims", "nibor@wild.com", "$argon2id$v=19$m=65536,t=5,p=1$kyt4+/e/n/CfttAPLi0Fqw$axBWlUeK/GKrTE5tXYY5mgT20+KxGklsKudf3F7qGFg"),
+(2, "John", "Doe", "1990-01-01", "male", "51100", "Reims", "john.doe@shoparoundme.com", "$argon2id$v=19$m=65536,t=5,p=1$7mVgivYtWnsgElIicIfdaA$f+YO/xkVeN9RovS0G9tXoj3TE6kZToj3hz34lnK0Rbs");
 
 --
 -- Index pour les tables exportées
