@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function InscriptionForm() {
@@ -24,7 +25,7 @@ export default function InscriptionForm() {
 
   return (
     <form
-      className="w-screen flex flex-col bg-white shadow-md rounded px-8 pt-6 pb-8 mb-10"
+      className="w-screen flex flex-col bg-white shadow-md rounded px-8 pt-6 pb-8"
       onSubmit={handleSubmit(postUser)}
     >
       <h2 className="block uppercase tracking-wide text-gray-700 text-xl font-bold mt-6 mb-6 text-center">
@@ -322,7 +323,7 @@ export default function InscriptionForm() {
         />
       </div>
       <p className="text-center text-sm">
-        Vous avez déjà un compte ? Connectez-vous.
+        Vous avez déjà un compte ? <Link to="/">Connectez-vous.</Link>
       </p>
     </form>
   );
