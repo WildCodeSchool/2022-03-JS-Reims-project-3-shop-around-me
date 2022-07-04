@@ -18,19 +18,23 @@ export default function SearchBar() {
       .then((data) => {
         Promise.all(
           data.map((result) =>
+            // is the address completed in this shop table element ?
             result.address
-              ? {
+              ? // if so, we return an object with the shop's address in the same format as the api-adresse.data.gouv address object
+                {
                   data: {
                     features: [{ properties: { label: result.address } }],
                   },
                 }
-              : axios.get(
+              : // if not, we return an object with the shop's address thanks to api-adresse.data.gouv address object
+                axios.get(
                   `https://api-adresse.data.gouv.fr/reverse/?lon=${result.x}&lat=${result.y}`
                 )
           )
         ).then((responses) => {
           setResults(
             data.map((result, index) => ({
+              // we return an object with the shop's information, plus the address that we got from the api-adresse.data.gouv format object
               ...result,
               address: responses[index].data.features[0].properties.label,
             }))
@@ -39,16 +43,8 @@ export default function SearchBar() {
       });
   };
 
-  const getAddress = (lat, lon) => {
-    axios
-      .get(`https://api-adresse.data.gouv.fr/reverse/?lon=${lon}&lat=${lat}`)
-      .then((response) => response.data.features[0].properties.label)
-      .then((address) => console.warn(address));
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
-    getAddress(results.x, results.y);
     return searchValue.current?.value.length > 1 && getResults();
   };
 
