@@ -24,9 +24,11 @@ export default function ShopList() {
       <h1>Catalogue</h1>
       <ul>
         {results
-          .sort((a, b) => a.name.localeCompare(b.name))
+          .sort((a, b) => a.type.localeCompare(b.type))
           .map((result) => (
-            <li key={result.id}>{result.name}</li>
+            <li key={result.id}>
+              {result.name} : {result.type}
+            </li>
           ))}
       </ul>
     </>
