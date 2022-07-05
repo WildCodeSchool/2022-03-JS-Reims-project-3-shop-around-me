@@ -1,17 +1,19 @@
 /* eslint-disable react/jsx-props-no-spreading */
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuthContext } from "../contexts/AuthContext";
 import logo from "../assets/images/logo.png";
 
 export default function LoginForm() {
-  const { setLoginData } = useAuthContext();
+  const { loginData, setLoginData } = useAuthContext();
   const {
     register,
     formState: { errors },
     getValues,
   } = useForm();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +27,12 @@ export default function LoginForm() {
         setLoginData({ ...res.data, isLoggedIn: true });
       });
   };
+
+  useEffect(() => {
+    if (loginData.isLoggedIn) {
+      navigate("/home");
+    }
+  });
 
   return (
     <main className="flex flex-col items-center">
