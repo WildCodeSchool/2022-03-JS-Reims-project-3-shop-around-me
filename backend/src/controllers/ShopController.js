@@ -20,19 +20,6 @@ class ShopController {
       });
   };
 
-  static types = (req, res) => {
-    const promise = models.shop.findTypes(req.body);
-
-    promise
-      .then(([rows]) => {
-        res.send(rows);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
   static read = (req, res) => {
     models.shop
       .find(req.params.id)
