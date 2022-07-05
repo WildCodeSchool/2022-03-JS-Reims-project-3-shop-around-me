@@ -1,3 +1,4 @@
+require("dotenv").config();
 const Localstrategy = require("passport-local").Strategy;
 const JWTStrategy = require("passport-jwt").Strategy;
 const ExtractJWT = require("passport-jwt").ExtractJwt;
@@ -31,7 +32,7 @@ const initialize = (passport) => {
     new JWTStrategy(
       {
         jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-        secretOrKey: "supersecret",
+        secretOrKey: process.env.JWT_SECRET,
       },
       authenticateJWT
     )
