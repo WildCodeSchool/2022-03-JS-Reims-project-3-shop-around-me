@@ -46,8 +46,8 @@ export default function MyAccount() {
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide">
       <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
-      <p className=" text-3xl text-[#4F4E47]">Bonjour utilisateur !</p>
-      <p className=" text-2xl text-[#4F4E47] mb-8">Votre compte.</p>
+      <p className=" text-2xl text-[#4F4E47]">Bonjour utilisateur !</p>
+      <p className=" text-xl text-[#4F4E47] mb-8">Votre compte.</p>
 
       <ul>
         {accountMenu.map((menu) => (

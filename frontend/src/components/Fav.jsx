@@ -16,7 +16,10 @@ export default function Fav() {
   return (
     <section className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide">
       <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
-      <p className=" text-4xl text-[#4F4E47] mb-8">Vos favoris</p>
+      <p className=" text-2xl text-[#4F4E47]">Vos favoris</p>
+      <p className=" text-m text-[#4F4E47] mb-8">
+        Enregistrez vos boutiques favorites et retrouvez-les rapidement.
+      </p>
       <div className="flex flex-row flex-wrap gap-x-4 gap-y-4 justify-center">
         {allFav.map((favorite) => (
           <figure className="flex flex-col items-center max-w-[30%]">

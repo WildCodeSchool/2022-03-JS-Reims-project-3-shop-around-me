@@ -11,11 +11,16 @@ export default function LoginForm() {
   } = useForm();
 
   return (
-    <main className="flex flex-col w-screen px-8 pt-8 pb-8 gap-y-8 tracking-wide">
+    <main className="flex flex-col w-screen px-8 pt-8 pb-8 gap-y-4 tracking-wide">
       <picture className="self-center">
         <img src={logo} alt="logo" className="max-w-xs m-4" />
       </picture>
       <form className="flex flex-col">
+        <p className=" text-2xl text-[#4F4E47]">Bienvenue !</p>
+        <p className=" text-m text-[#4F4E47] mb-8 leading-4">
+          Connectez-vous ou inscrivez-vous pour accèder à vos boutiques
+          favorites et à votre cagnotte.
+        </p>
         <div className="form-structure">
           <label
             htmlFor="email"
