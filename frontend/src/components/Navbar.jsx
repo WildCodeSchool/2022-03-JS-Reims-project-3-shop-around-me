@@ -20,7 +20,7 @@ function Navbar() {
     {
       id: 2,
       icon: faStore,
-      url: "",
+      url: "/shopList",
     },
     {
       id: 3,
