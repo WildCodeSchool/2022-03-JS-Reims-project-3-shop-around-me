@@ -12,7 +12,7 @@ export default function PersonnalData() {
   const [editUser, setEditedUser] = useState(false);
   const [user, setUser] = useState({});
 
-  useEffect(() => {
+  const getUser = () => {
     axios
       .get(
         `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users/1`
@@ -21,13 +21,17 @@ export default function PersonnalData() {
       .then((data) => {
         setUser(data.data);
       });
-  }, []);
+  };
 
+  useEffect(() => {
+    getUser();
+  }, []);
   // Waiting for the authentification to be done so I can access all the informations
 
   const handleSave = (e) => {
     e.preventDefault();
     setEditedUser(false);
+    getUser();
   };
 
   const handleEdit = (e) => {
@@ -54,11 +58,11 @@ export default function PersonnalData() {
                   maxLength: 50,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
                 })}
-                className="form-input"
+                className={!editUser ? "form-input bg-slate-300" : "form-input"}
                 id="firstname"
                 name="firstname"
                 disabled={!editUser}
-                value={user.firstname}
+                value={!editUser ? user.firstname : undefined}
               />
             </label>
             {errors?.firstname?.type === "required" && (
@@ -92,11 +96,11 @@ export default function PersonnalData() {
                   maxLength: 50,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
                 })}
-                className="form-input"
+                className={!editUser ? "form-input bg-slate-300" : "form-input"}
                 id="lastname"
                 name="lastname"
                 disabled={!editUser}
-                value={user.lastname}
+                value={!editUser ? user.lastname : undefined}
               />
             </label>
             {errors?.lastname?.type === "required" && (
@@ -129,11 +133,11 @@ export default function PersonnalData() {
                   pattern:
                     /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
                 })}
-                className="form-input"
+                className={!editUser ? "form-input bg-slate-300" : "form-input"}
                 id="birthdate"
                 name="birthdate"
                 disabled={!editUser}
-                value={user.birthdate}
+                value={!editUser ? user.birthdate : undefined}
               />
             </label>
             {errors?.birthdate?.type === "required" && (
@@ -150,11 +154,11 @@ export default function PersonnalData() {
               Genre
               <select
                 {...register("gender", { required: true })}
-                className="form-input"
+                className={!editUser ? "form-input bg-slate-300" : "form-input"}
                 id="gender"
                 name="gender"
                 disabled={!editUser}
-                value={user.gender}
+                value={!editUser ? user.gender : undefined}
               >
                 <option value="select">Séléction...</option>
                 <option value="female">Femme</option>
@@ -180,11 +184,11 @@ export default function PersonnalData() {
                   maxLength: 80,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
                 })}
-                className="form-input"
+                className={!editUser ? "form-input bg-slate-300" : "form-input"}
                 id="city"
                 name="city"
                 disabled={!editUser}
-                value={user.city}
+                value={!editUser ? user.city : undefined}
               />{" "}
             </label>
             {errors?.city?.type === "minLength" && (
@@ -215,11 +219,11 @@ export default function PersonnalData() {
                   maxLength: 8,
                   pattern: /^[0-9]{3,}$/,
                 })}
-                className="form-input"
+                className={!editUser ? "form-input bg-slate-300" : "form-input"}
                 id="zipcode"
                 name="zipcode"
                 disabled={!editUser}
-                value={user.zipcode}
+                value={!editUser ? user.zipcode : undefined}
               />{" "}
             </label>
             {errors?.zipcode?.type === "minLength" && (
@@ -250,11 +254,11 @@ export default function PersonnalData() {
                   maxLength: 100,
                   pattern: /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,5}/i,
                 })}
-                className="form-input"
+                className={!editUser ? "form-input bg-slate-300" : "form-input"}
                 id="email"
                 name="email"
                 disabled={!editUser}
-                value={user.email}
+                value={!editUser ? user.email : undefined}
               />{" "}
             </label>
 
@@ -290,11 +294,11 @@ export default function PersonnalData() {
                   pattern:
                     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
                 })}
-                className="form-input"
+                className={!editUser ? "form-input bg-slate-300" : "form-input"}
                 id="password"
                 name="password"
                 disabled={!editUser}
-                value={user.password}
+                value={!editUser ? user.password : undefined}
               />
             </label>
             {errors?.password?.type === "required" && (
@@ -328,7 +332,7 @@ export default function PersonnalData() {
                   pattern:
                     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
                 })}
-                className="form-input"
+                className={!editUser ? "form-input bg-slate-300" : "form-input"}
                 id="passwordconfirmation"
                 name="passwordconfirmation"
                 disabled={!editUser}
