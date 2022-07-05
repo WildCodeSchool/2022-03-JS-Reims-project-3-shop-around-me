@@ -34,14 +34,14 @@ export default function ShopList() {
 
   return (
     <>
-      <h1>Catalogue</h1>
+      <h1 className="text-center m-4 text-2xl font-bold">Catalogue</h1>
       <ul>
         {types.map((res) => (
           <>
-            <li key={res.id} className="text-[red]">
+            <li key={res.id} className="p-4 text-lg font-bold bg-[#9c958e]">
               {res.type}
             </li>
-            <ul>
+            <ul className="ml-6 my-4">
               {results.map(
                 (resul) =>
                   res.type === resul.type && (
