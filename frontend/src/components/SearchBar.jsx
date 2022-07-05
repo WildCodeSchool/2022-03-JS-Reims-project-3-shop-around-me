@@ -28,7 +28,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div
+    <main
       className={`grid place-items-center mb-14 ${
         results && results.length > 0 ? "" : "h-[100vh]"
       }`}
@@ -71,6 +71,6 @@ export default function SearchBar() {
           </Link>
         ))}
       </ul>
-    </div>
+    </main>
   );
 }
