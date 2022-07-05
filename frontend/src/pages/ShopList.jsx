@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function ShopList() {
   const [results, setResults] = useState([]);
@@ -34,7 +35,7 @@ export default function ShopList() {
 
   return (
     <>
-      <h1 className="text-center m-4 text-2xl font-bold">Catalogue</h1>
+      <h1 className="text-center m-6 text-2xl font-bold">Catalogue</h1>
       <ul>
         {types.map((res) => (
           <>
@@ -45,7 +46,9 @@ export default function ShopList() {
               {results.map(
                 (resul) =>
                   res.type === resul.type && (
-                    <li key={resul.id}>{resul.name}</li>
+                    <li className="my-2" key={resul.id}>
+                      <Link to="/shopDetails">{resul.name}</Link>
+                    </li>
                   )
               )}
             </ul>
