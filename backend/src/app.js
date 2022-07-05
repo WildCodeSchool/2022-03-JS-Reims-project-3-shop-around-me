@@ -50,7 +50,5 @@ app.get("*", (req, res) => {
   );
 });
 
-router.post("/login", passport.authenticate("local"));
-
 // ready to export
 module.exports = app;
