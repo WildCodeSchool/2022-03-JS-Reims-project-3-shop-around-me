@@ -1,20 +1,37 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useAuthContext } from "../contexts/AuthContext";
 import logo from "../assets/images/logo.png";
 
 export default function LoginForm() {
+  const { setLoginData } = useAuthContext();
   const {
     register,
     formState: { errors },
+    getValues,
   } = useForm();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { email, password } = getValues();
+    axios
+      .post(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/login`,
+        { email, password }
+      )
+      .then((res) => {
+        setLoginData({ ...res.data, isLoggedIn: true });
+      });
+  };
 
   return (
     <main className="flex flex-col items-center">
       <picture className="m-6">
         <img src={logo} alt="logo" className="max-w-xs m-4" />
       </picture>
-      <form className="w-full max-w-lg w-4/5">
+      <form className="w-full max-w-lg w-4/5" onSubmit={handleSubmit}>
         <label
           htmlFor="email"
           className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -51,9 +68,8 @@ export default function LoginForm() {
             Ce champ est requis.
           </p>
         )}
-        <Link to="/home">
-          <input type="submit" className="underline underline-offset-1" />
-        </Link>
+
+        <input type="submit" className="underline underline-offset-1" />
       </form>
       <p>
         Vous n’avez pas de compte ? {}
