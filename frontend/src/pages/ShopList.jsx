@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function ShopList() {
-  const [results, setResults] = useState([]);
-  const [types, setTypes] = useState([]);
+  const [results, setResults] = useState({});
 
   const getResults = () => {
     axios
@@ -13,20 +12,9 @@ export default function ShopList() {
       )
       .then((response) => response.data)
       .then((data) => {
-        setResults(data);
-      });
-  };
-
-  const getTypes = () => {
-    axios
-      .get(
-        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/types`
-      )
-      .then((response) => response.data)
-      .then((data) => {
-        setTypes(
+        setResults(
           data.reduce((acc, cur) => {
-            acc[cur.id] = cur.type;
+            acc[cur.type] = [cur, ...(acc[cur.type] ?? [])];
             return acc;
           }, {})
         );
@@ -39,27 +27,23 @@ export default function ShopList() {
 
   useEffect(() => {
     getResults();
-    getTypes();
   }, []);
 
   return (
     <>
       <h1 className="text-center m-6 text-2xl font-bold">Catalogue</h1>
       <ul className="mb-16">
-        {types.map((res) => (
-          <li key={res.id}>
+        {Object.keys(results).map((type) => (
+          <li key={type}>
             <h2 className="p-4 text-lg font-bold bg-[#9c958e]">
-              {capitalize(res.type)}
+              {capitalize(type)}
             </h2>
             <ul className="ml-6 my-4">
-              {results.map(
-                (resul) =>
-                  res.type === resul.type && (
-                    <li className="my-2" key={resul.id}>
-                      <Link to="/shopDetails">{resul.name}</Link>
-                    </li>
-                  )
-              )}
+              {results[type].map((shop) => (
+                <li className="my-2" key={shop.id}>
+                  <Link to="/shopDetails">{shop.name}</Link>
+                </li>
+              ))}
             </ul>
           </li>
         ))}
