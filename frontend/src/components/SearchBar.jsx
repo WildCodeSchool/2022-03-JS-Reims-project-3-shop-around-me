@@ -18,7 +18,30 @@ export default function SearchBar() {
       )
       .then((response) => response.data)
       .then((data) => {
-        setResults(data);
+        Promise.all(
+          data.map((result) =>
+            // is the address completed in this shop table element ?
+            result.address
+              ? // if so, we return an object with the shop's address in the same format as the api-adresse.data.gouv address object
+                {
+                  data: {
+                    features: [{ properties: { label: result.address } }],
+                  },
+                }
+              : // if not, we return an object with the shop's address thanks to api-adresse.data.gouv address object
+                axios.get(
+                  `https://api-adresse.data.gouv.fr/reverse/?lon=${result.x}&lat=${result.y}`
+                )
+          )
+        ).then((responses) => {
+          setResults(
+            data.map((result, index) => ({
+              // we return an object with the shop's information, plus the address that we got from the api-adresse.data.gouv format object
+              ...result,
+              address: responses[index].data.features[0].properties.label,
+            }))
+          );
+        });
       });
   };
 
@@ -66,7 +89,7 @@ export default function SearchBar() {
               className="text-[#4F4E47] bg-white
               ml-4 mr-4 min-w-[90vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
             >
-              Nom de la boutique : {result.name} <br /> Marque : {result.brand}
+              {result.name} <br /> {result.address}
             </li>
           </Link>
         ))}
