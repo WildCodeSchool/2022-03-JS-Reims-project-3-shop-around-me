@@ -24,7 +24,12 @@ export default function ShopList() {
       )
       .then((response) => response.data)
       .then((data) => {
-        setTypes(data);
+        setTypes(
+          data.reduce((acc, cur) => {
+            acc[cur.id] = cur.type;
+            return acc;
+          }, {})
+        );
       });
   };
 
