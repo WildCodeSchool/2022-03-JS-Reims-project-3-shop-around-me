@@ -32,7 +32,7 @@ export default function ShopDetails() {
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide text-[#4F4E47]">
       <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
       <p className=" text-2xl">{shopExemple.name}</p>
-      <p className=" text-m mb-2">{shopExemple.address}</p>
+      <p className=" text-m mb-2 leading-4">{shopExemple.address}</p>
       <button
         type="button"
         className="text-m max-w-[33%] mb-4 py-1 border-solid border-2 rounded-full border-green-900 text-green-900 font-bold focus:outline-none focus:shadow-outline "
