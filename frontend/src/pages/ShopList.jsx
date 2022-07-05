@@ -40,7 +40,7 @@ export default function ShopList() {
   return (
     <>
       <h1 className="text-center m-6 text-2xl font-bold">Catalogue</h1>
-      <ul>
+      <ul className="mb-16">
         {types.map((res) => (
           <li key={res.id}>
             <h2 className="p-4 text-lg font-bold bg-[#9c958e]">
