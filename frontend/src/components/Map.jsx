@@ -18,7 +18,7 @@ function Map({ searchValue, results }) {
   results.forEach((result) => shopPosition.push([result.y, result.x]));
 
   return (
-    <div className="flex flex-col text-center">
+    <section className="flex flex-col text-center">
       <h1 className="m-2">Votre résultat pour: {searchValue}</h1>
       <MapContainer
         zoom={17}
@@ -42,7 +42,7 @@ function Map({ searchValue, results }) {
           </Marker>
         )}
       </MapContainer>
-    </div>
+    </section>
   );
 }
 
