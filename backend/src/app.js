@@ -1,9 +1,28 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const session = require("express-session");
+const passport = require("passport");
 const router = require("./router");
 
 const app = express();
+
+const initializePassport = require("./config/passport");
+
+initializePassport(passport);
+
+// Session
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+// Passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // use some application-level middlewares
 app.use(
@@ -30,6 +49,8 @@ app.get("*", (req, res) => {
     path.join(__dirname, "..", "..", "frontend", "dist", "index.html")
   );
 });
+
+router.post("/login", passport.authenticate("local"));
 
 // ready to export
 module.exports = app;
