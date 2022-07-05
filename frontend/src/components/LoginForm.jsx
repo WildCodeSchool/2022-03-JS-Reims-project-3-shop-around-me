@@ -60,7 +60,7 @@ export default function LoginForm() {
           )}
           <input type="checkbox" value="" className="checkbox mt-2" />
           <label htmlFor="checkbox" className="text-[#4F4E47] normal-case ml-2">
-            Resté connecté
+            Resté connecté(e)
           </label>
         </div>
         <input
