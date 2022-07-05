@@ -28,6 +28,10 @@ export default function ShopList() {
       });
   };
 
+  const capitalize = (s) => {
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  };
+
   useEffect(() => {
     getResults();
     getTypes();
@@ -38,10 +42,10 @@ export default function ShopList() {
       <h1 className="text-center m-6 text-2xl font-bold">Catalogue</h1>
       <ul>
         {types.map((res) => (
-          <>
-            <li key={res.id} className="p-4 text-lg font-bold bg-[#9c958e]">
-              {res.type}
-            </li>
+          <li key={res.id}>
+            <h2 className="p-4 text-lg font-bold bg-[#9c958e]">
+              {capitalize(res.type)}
+            </h2>
             <ul className="ml-6 my-4">
               {results.map(
                 (resul) =>
@@ -52,7 +56,7 @@ export default function ShopList() {
                   )
               )}
             </ul>
-          </>
+          </li>
         ))}
       </ul>
     </>
