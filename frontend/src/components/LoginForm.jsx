@@ -13,8 +13,8 @@ export default function LoginForm() {
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 gap-y-4 tracking-wide text-[#4F4E47]">
       <VerticalLogo />
       <form className="flex flex-col">
-        <p className=" text-2xl ">Bienvenue !</p>
-        <p className=" text-m  mb-8 leading-4">
+        <p className="text-2xl">Bienvenue !</p>
+        <p className="text-m mb-8 leading-4">
           Connectez-vous ou inscrivez-vous pour accèder à vos boutiques
           favorites ainsi qu'à votre cagnotte.
         </p>

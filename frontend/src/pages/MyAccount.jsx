@@ -44,17 +44,17 @@ const accountMenu = [
 
 export default function MyAccount() {
   return (
-    <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide">
+    <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide text-[#4F4E47]">
       <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
-      <p className=" text-2xl text-[#4F4E47]">Bonjour utilisateur !</p>
-      <p className=" text-xl text-[#4F4E47] mb-8">Votre compte.</p>
+      <p className=" text-2xl">Bonjour utilisateur !</p>
+      <p className="text-m mb-8 leading-4">
+        D'ici vous pouvez accèder à toutes vos informations et modifier vos
+        préférences.
+      </p>
 
       <ul>
         {accountMenu.map((menu) => (
-          <li
-            key={menu.id}
-            className="mr-4 text-[#4F4E47] text-lg list-none mb-4"
-          >
+          <li key={menu.id} className="mr-4 text-lg list-none mb-4">
             <Link to={menu.url} className="flex gap-8">
               <FontAwesomeIcon icon={menu.icon} className="w-[24px] h-[24px]" />
 
