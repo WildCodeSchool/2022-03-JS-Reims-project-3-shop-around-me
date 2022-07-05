@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "./Logo";
+import HorizontalLogo from "./HorizontalLogo";
 
 const retailerFormFields = [
   {
@@ -75,9 +75,7 @@ export default function RetailerArea() {
 
   return (
     <main className="grid place-items-center block uppercase tracking-wide text-[#4F4E47] mb-2">
-      <picture>
-        <Logo />
-      </picture>
+      <HorizontalLogo />
       <section className="flex flex-col justify-center w-4/5">
         <h1 className="text-xl font-bold tracking-wide mb-6 mt-4 text-center">
           Espace commerçant

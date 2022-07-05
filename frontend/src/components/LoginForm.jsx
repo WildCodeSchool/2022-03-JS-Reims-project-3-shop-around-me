@@ -1,8 +1,7 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/jsx-props-no-spreading */
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.png";
+import VerticalLogo from "./VerticalLogo";
 
 export default function LoginForm() {
   const {
@@ -11,20 +10,18 @@ export default function LoginForm() {
   } = useForm();
 
   return (
-    <main className="flex flex-col w-screen px-8 pt-8 pb-8 gap-y-4 tracking-wide">
-      <picture className="self-center">
-        <img src={logo} alt="logo" className="max-w-xs m-4" />
-      </picture>
+    <main className="flex flex-col w-screen px-8 pt-8 pb-8 gap-y-4 tracking-wide text-[#4F4E47]">
+      <VerticalLogo />
       <form className="flex flex-col">
-        <p className=" text-2xl text-[#4F4E47]">Bienvenue !</p>
-        <p className=" text-m text-[#4F4E47] mb-8 leading-4">
+        <p className=" text-2xl ">Bienvenue !</p>
+        <p className=" text-m  mb-8 leading-4">
           Connectez-vous ou inscrivez-vous pour accèder à vos boutiques
-          favorites et à votre cagnotte.
+          favorites ainsi qu'à votre cagnotte.
         </p>
-        <div className="form-structure">
+        <div className="form-structure text-[#4F4E47] ">
           <label
             htmlFor="email"
-            className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-4"
+            className="block uppercase tracking-wide text-xs font-bold mb-4"
           >
             Email
             <input
@@ -42,7 +39,7 @@ export default function LoginForm() {
           )}
           <label
             htmlFor="password"
-            className="block uppercase tracking-wide text-[#4F4E47] text-sm font-bold mb-4"
+            className="block uppercase tracking-wide  text-sm font-bold mb-4"
           >
             Mot de passe
             <input
@@ -58,8 +55,8 @@ export default function LoginForm() {
               Ce champ est requis.
             </p>
           )}
-          <input type="checkbox" value="" className="checkbox mt-2" />
-          <label htmlFor="checkbox" className="text-[#4F4E47] normal-case ml-2">
+          <label htmlFor="checkbox" className=" normal-case ml-2 mb-4">
+            <input type="checkbox" value="" className="checkbox mt-2" />
             Resté connecté(e)
           </label>
         </div>
