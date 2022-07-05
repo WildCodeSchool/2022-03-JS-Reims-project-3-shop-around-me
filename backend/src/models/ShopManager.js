@@ -22,6 +22,13 @@ class ShopManager extends AbstractManager {
     );
   }
 
+  findTypes(shop) {
+    return this.connection.query(
+      `SELECT DISTINCT type FROM ${ShopManager.table}`,
+      [shop.type]
+    );
+  }
+
   insert(shop) {
     return this.connection.query(
       `insert into ${ShopManager.table} (name, brand, type, adress, opening_hours, website, email, phone, fb_page, insta_page, x, y) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,

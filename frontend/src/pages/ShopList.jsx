@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 export default function ShopList() {
   const [results, setResults] = useState([]);
+  const [types, setTypes] = useState([]);
 
   const getResults = () => {
     axios
@@ -15,21 +16,41 @@ export default function ShopList() {
       });
   };
 
+  const getTypes = () => {
+    axios
+      .get(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/types`
+      )
+      .then((response) => response.data)
+      .then((data) => {
+        setTypes(data);
+      });
+  };
+
   useEffect(() => {
     getResults();
+    getTypes();
   }, []);
 
   return (
     <>
       <h1>Catalogue</h1>
       <ul>
-        {results
-          .sort((a, b) => a.type.localeCompare(b.type))
-          .map((result) => (
-            <li key={result.id}>
-              {result.name} : {result.type}
+        {types.map((res) => (
+          <>
+            <li key={res.id} className="text-[red]">
+              {res.type}
             </li>
-          ))}
+            <ul>
+              {results.map(
+                (resul) =>
+                  res.type === resul.type && (
+                    <li key={resul.id}>{resul.name}</li>
+                  )
+              )}
+            </ul>
+          </>
+        ))}
       </ul>
     </>
   );

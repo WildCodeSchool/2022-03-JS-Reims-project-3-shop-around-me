@@ -26,6 +26,7 @@ router.put("/items/:id", ItemController.edit);
 router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
+router.get("/types", ShopController.types);
 router.get("/shops", ShopController.browse);
 router.get("/shops/:id", ShopController.read);
 router.put("/shops/:id", ShopController.edit);
