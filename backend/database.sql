@@ -46,9 +46,21 @@ CREATE TABLE `shop` (
 --
 
 INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `website`, `email`, `phone`, `fb_page`, `insta_page`, `x`, `y`) VALUES
-(1, "Magasin Fossier", "Maison Fossier", "Biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "lundi, 14:00–19:00 / mardi, 10:00–19:00 / mercredi, 10:00–19:00 / jeudi, 10:00–19:00 / vendredi, 10:00–19:00 / samedi, 10:00–19:00 / dimanche, Fermé", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", "4.030856132507324", "49.25590515136719")
+(1, "Magasin Fossier", "Maison Fossier", "Biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "lundi, 14:00–19:00 / mardi, 10:00–19:00 / mercredi, 10:00–19:00 / jeudi, 10:00–19:00 / vendredi, 10:00–19:00 / samedi, 10:00–19:00 / dimanche, Fermé", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", 4.030351161956787, 49.25590515136719)
 
 /* INSERT QUERY NO: 1 */
+,
+(
+2, 'Boutique officielle du Stade de Reims Stade Auguste Delaune', '', 'clothes', '33 Chaussée Bocquaine, 51100 Reims', '', '', '', '', '', '', 4.025034427642822, 49.24589157104492
+)
+,
+(
+3, 'Boutique officielle du Stade de Reims Centre-ville', '', 'clothes', '1 Rue Chanzy, 51100 Reims', '', '', '', '', '', '', 4.032470703125, 49.25199890136719
+)
+,
+(
+4, 'Mojito Skateshop', '', 'clothes', '15 Rue du Clou-dans-le-Fer, 51100 Reims', '', '', '', '', '', '', 4.0282211, 49.255123138427734
+)
 ,
 (
 5, 'Nicolas', 'Nicolas', 'alcohol', '', '', '', '', '', '', '', 4.0282211, 49.2555462996293
@@ -1659,7 +1671,20 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 ,
 (
 450, 'Boutique Guy Degrenne', '', 'wine', '', '', 'http://guydegrenne.fr', '+33 3 26 06 86 39', '', '', '', 4.0261481, 49.2523205996301
+)
+,
+(
+451, 'Lacoste Reims centre-ville', '', 'clothes', '31 Rue des Élus, 51100 Reims', '', '', '', '', '', '', 4.0302512, 49.2549803
+)
+,
+(
+452, 'Eklips', '', 'clothes', '7 Rue des Élus, 51100 Reims', '', '', '', '', '', '', 4.031376838684082, 49.2554817199707
+)
+,
+(
+453, 'Galeries Lafayette Reims', '', 'clothes', '33-45 Rue de Vesle, 51100 Reims', '', '', '', '', '', '', 4.023271083831787, 49.25151443481445
 );
+
 
 UPDATE shop SET type = REPLACE(type, '', null) WHERE type = '';
 UPDATE shop SET brand = REPLACE(brand, '', null) WHERE brand = '';
