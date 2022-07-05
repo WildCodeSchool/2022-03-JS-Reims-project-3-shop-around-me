@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useAuthContext } from "../contexts/AuthContext";
-import logo from "../assets/images/logo.png";
+import VerticalLogo from "./VerticalLogo";
 
 export default function LoginForm() {
   const { loginData, setLoginData } = useAuthContext();
@@ -35,10 +35,8 @@ export default function LoginForm() {
   });
 
   return (
-    <main className="flex flex-col items-center">
-      <picture className="m-6">
-        <img src={logo} alt="logo" className="max-w-xs m-4" />
-      </picture>
+    <main className="flex flex-col justify-center items-center h-[78vh]">
+      <VerticalLogo className="" />
       <form className="w-full max-w-lg w-4/5" onSubmit={handleSubmit}>
         <label
           htmlFor="email"

@@ -46,9 +46,21 @@ CREATE TABLE `shop` (
 --
 
 INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `website`, `email`, `phone`, `fb_page`, `insta_page`, `x`, `y`) VALUES
-(1, "Magasin Fossier", "Maison Fossier", "Biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "lundi, 14:00–19:00 / mardi, 10:00–19:00 / mercredi, 10:00–19:00 / jeudi, 10:00–19:00 / vendredi, 10:00–19:00 / samedi, 10:00–19:00 / dimanche, Fermé", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", "4.030856132507324", "49.25590515136719")
+(1, "Magasin Fossier", "Maison Fossier", "Biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "lundi, 14:00–19:00 / mardi, 10:00–19:00 / mercredi, 10:00–19:00 / jeudi, 10:00–19:00 / vendredi, 10:00–19:00 / samedi, 10:00–19:00 / dimanche, Fermé", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", 4.030351161956787, 49.25590515136719)
 
 /* INSERT QUERY NO: 1 */
+,
+(
+2, 'Boutique officielle du Stade de Reims Stade Auguste Delaune', '', 'clothes', '33 Chaussée Bocquaine, 51100 Reims', '', '', '', '', '', '', 4.025034427642822, 49.24589157104492
+)
+,
+(
+3, 'Boutique officielle du Stade de Reims Centre-ville', '', 'clothes', '1 Rue Chanzy, 51100 Reims', '', '', '', '', '', '', 4.032470703125, 49.25199890136719
+)
+,
+(
+4, 'Mojito Skateshop', '', 'clothes', '15 Rue du Clou-dans-le-Fer, 51100 Reims', '', '', '', '', '', '', 4.0282211, 49.255123138427734
+)
 ,
 (
 5, 'Nicolas', 'Nicolas', 'alcohol', '', '', '', '', '', '', '', 4.0282211, 49.2555462996293
@@ -330,24 +342,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 51, 'Les gourmandises de Marido', '', 'bakery', '', '', '', '+33 3 26 40 54 69', '', '', '', 4.0291187, 49.2538631996297
 )
 
-/* INSERT QUERY NO: 48 */
-,
-(
-52, 'Espace Aubade', '', 'bathroom_furnishing', '', '', 'https://www.espace-aubade.fr/magasins/reims-42.html', '', '', '', '', 4.06654750418496, 49.2687639422001
-)
-
-/* INSERT QUERY NO: 49 */
-,
-(
-53, 'Brossette Salles de bains', '', 'bathroom_furnishing', '', '', '', '', '', '', '', 4.00317637674252, 49.2760290646182
-)
-
-/* INSERT QUERY NO: 50 */
-,
-(
-54, 'CEDEO', '', 'bathroom_furnishing', '', '', '', '', '', '', '', 4.06926078772219, 49.2699267850511
-)
-
 /* INSERT QUERY NO: 51 */
 ,
 (
@@ -546,12 +540,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 87, 'Senses Brewing', '', 'brewery', '', '', 'https://www.sensesbrewing.com', '', '', 'https://www.facebook.com/SensesBrewing/', '', 4.0409294, 49.2666856996265
 )
 
-/* INSERT QUERY NO: 84 */
-,
-(
-88, 'Change Or Reims', '', 'bureau_de_change', '', '', '', '', '', '', '', 4.0324729, 49.2518331996302
-)
-
 /* INSERT QUERY NO: 85 */
 ,
 (
@@ -618,280 +606,16 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 99, 'François Léau', '', 'butcher', '', '', '', '+33 3 26 05 23 46', '', '', '', 4.0366445, 49.25256839963
 )
 
-/* INSERT QUERY NO: 96 */
-,
-(
-100, 'Peugeot', 'Peugeot', 'car', '', '', '', '', '', '', '', 4.02331894204486, 49.2928254903332
-)
-
-/* INSERT QUERY NO: 97 */
-,
-(
-101, 'Auto City', '', 'car', '', '', 'https://www.autocity.fr/', '+33 3 26 88 04 44', '', '', '', 4.0840247, 49.2347671996344
-)
-
-/* INSERT QUERY NO: 98 */
-,
-(
-102, 'Reims Champagne Auto', 'Škoda Auto', 'car', '', '', 'https://www.skoda-reims.fr/', '+33 3 64 00 94 78', '', '', '', 4.0835774, 49.2367530996339
-)
-
-/* INSERT QUERY NO: 99 */
-,
-(
-103, 'Liana Auto', '', 'car', '', '', '', '', '', '', '', 4.006168, 49.2707411996256
-)
-
-/* INSERT QUERY NO: 100 */
-,
-(
-104, 'DG Prestige Automobile', '', 'car', '', '', '', '+33 699133535', '', '', '', 4.0166746, 49.2880034996213
-)
-
-/* INSERT QUERY NO: 101 */
-,
-(
-105, 'Transit Auto', '', 'car', '49 Avenue Nationale', '', '', '+33 3 26 40 29 29', '', '', '', 4.006548, 49.2870752996215
-)
-
-/* INSERT QUERY NO: 102 */
-,
-(
-106, 'BMW', 'BMW', 'car', '', '', 'https://emond-bmw-reims.espacevo.fr', '', '', '', '', 4.0825903, 49.2373317996338
-)
-
-/* INSERT QUERY NO: 103 */
-,
-(
-107, 'Rectification Rémoise', '', 'car', '', '', '', '+33 326870939', '', '', '', 4.0158429, 49.2899731996208
-)
-
-/* INSERT QUERY NO: 104 */
-,
-(
-108, 'PH Auto Net', '', 'car', '', '', '', '', '', '', '', 4.0746988, 49.2371303996338
-)
-
-/* INSERT QUERY NO: 105 */
-,
-(
-109, 'Compil'' Auto', '', 'car', '', '', '', '', '', '', '', 4.00868941172698, 49.2864808568598
-)
-
-/* INSERT QUERY NO: 106 */
-,
-(
-110, 'Delhorbe Automobile Volvo Hyundai', '', 'car', '', '', '', '', '', '', '', 4.08444206656635, 49.2363923676556
-)
-
-/* INSERT QUERY NO: 107 */
-,
-(
-111, '', '', 'car', '', '', '', '', '', '', '', 4.08325656485263, 49.2354584540996
-)
-
-/* INSERT QUERY NO: 108 */
-,
-(
-112, 'Renault', 'Renault', 'car', '', '', '', '+33 326506070', '', '', '', 4.0795247, 49.2381014996336
-)
-
-/* INSERT QUERY NO: 109 */
-,
-(
-113, 'Carter-Cash', '', 'car_parts', '1 Avenue Benoît Frachon', '', 'https://www.carter-cash.com/magasin/reims-51100-M028', '', '', '', '', 4.0156275832488, 49.284413325661
-)
-
-/* INSERT QUERY NO: 110 */
-,
-(
-114, 'API Reims', '', 'car_parts', 'Rue Docteur Serge Bazelaire', '', 'http://api-france.com', '+33 326874804', '', '', '', 4.0258798, 49.2899786996208
-)
-
-/* INSERT QUERY NO: 111 */
-,
-(
-115, 'Vatat Carrosserie industrielle', '', 'car_parts', '10 Avenue Benoît Frachon', '', 'http://www.vatat.fr/', '', '', '', '', 4.01690135664413, 49.28620406722
-)
-
-/* INSERT QUERY NO: 112 */
-,
-(
-116, 'Rent A Car (RentACar)', '', 'car_rental', '', '', '', '', '', '', '', 4.0251729, 49.2591860996284
-)
-
-/* INSERT QUERY NO: 113 */
-,
-(
-117, 'Europcar', 'Europcar', 'car_rental', '', '', '', '', '', '', '', 4.0316942, 49.2614227996278
-)
-
-/* INSERT QUERY NO: 114 */
-,
-(
-118, 'Alamo', 'Alamo', 'car_rental', '', '', '', '', '', '', '', 4.02581, 49.2593357996284
-)
-
-/* INSERT QUERY NO: 115 */
-,
-(
-119, 'Garage Pommery AD', '', 'car_repair', '', '', '', '', '', '', '', 4.0408139, 49.2396068996332
-)
-
-/* INSERT QUERY NO: 116 */
-,
-(
-120, 'Reanault Garage Carteret', '', 'car_repair', 'Boulevard Carteret', '', '', '', '', '', '', 4.0481669, 49.2584123996286
-)
-
-/* INSERT QUERY NO: 117 */
-,
-(
-121, 'Garage Jamin Peugeot', '', 'car_repair', '', '', 'http://garagejamin-Peugeot-reims.fr', '+33 3326072158', '', '', '', 4.04647255621075, 49.2617317481116
-)
-
-/* INSERT QUERY NO: 118 */
-,
-(
-122, 'Planète Auto Reims', '', 'car_repair', '', '', '', '', '', '', '', 4.00211456863514, 49.2754195856542
-)
-
-/* INSERT QUERY NO: 119 */
-,
-(
-123, 'Carglass', 'Carglass', 'car_repair', '', '', '', '', '', '', '', 4.059932, 49.264698599627
-)
-
-/* INSERT QUERY NO: 120 */
-,
-(
-124, 'Garage Berganzoni', '', 'car_repair', '', '', 'https://www.carrosserie-berganzoni-reims.fr/garage-automobile', '', '', '', '', 4.06669826513016, 49.2704152581202
-)
-
-/* INSERT QUERY NO: 121 */
-,
-(
-125, 'Garage Team TH', '', 'car_repair', '', '', '', '+33 326868220', '', '', '', 4.0224768, 49.2926947996202
-)
-
-/* INSERT QUERY NO: 122 */
-,
-(
-126, 'Ford', 'Ford', 'car_repair', '', '', 'https://www.groupesaintchristophe.fr/EmplacementConcession/1189', '+33 3 26 85 72 80', '', '', '', 4.0862917, 49.2356785996342
-)
-
-/* INSERT QUERY NO: 123 */
-,
-(
-127, 'Europarts Pare-brise', '', 'car_repair', '', '', 'http://windscreen.net', '+33 326403840', '', '', '', 4.015476, 49.2921554996203
-)
-
-/* INSERT QUERY NO: 124 */
-,
-(
-128, '', '', 'car_repair', '', '', '', '', '', '', '', 4.0539297, 49.2535169996298
-)
-
-/* INSERT QUERY NO: 125 */
-,
-(
-129, 'Speedy', 'Speedy', 'car_repair', '', '', '', '', '', '', '', 4.06355124830266, 49.2591471319626
-)
-
-/* INSERT QUERY NO: 126 */
-,
-(
-130, 'Norauto', 'Norauto', 'car_repair', 'Rue Joanne Broche', '', 'http://centres.norauto.fr', '+33 326778262', '', '', '', 4.0236800286701, 49.2890396965326
-)
-
-/* INSERT QUERY NO: 127 */
-,
-(
-131, 'Garage Malin', '', 'car_repair', '', '', '', '', '', '', '', 4.0237054, 49.2176800996386
-)
-
-/* INSERT QUERY NO: 128 */
-,
-(
-132, 'Garage Guiardel', '', 'car_repair', '', '', 'http://www.garage-guiardel-reims.com/', '33326474781', '', '', '', 4.0368675, 49.2677551996263
-)
-
-/* INSERT QUERY NO: 129 */
-,
-(
-133, 'Garage Nachate', '', 'car_repair', '', '', 'https://www.carrosserie-nachate.fr/', '+33 3 26 88 73 81', '', '', '', 4.04995531491047, 49.2552399371893
-)
-
-/* INSERT QUERY NO: 130 */
-,
-(
-134, 'Garage Eugène Jeep Parts', '', 'car_repair', '', '', 'https://www.eugene-jeep-parts.fr/fr/', '+33 3 26 35 63 22', 'eugenejeep.rs@gmail.com', '', '', 4.010888, 49.2611955996279
-)
-
-/* INSERT QUERY NO: 131 */
-,
-(
-135, 'Garage Guiardel - Renault', 'Renault', 'car_repair', '', '', '', '', '', '', '', 4.03714648751114, 49.2681498998517
-)
-
-/* INSERT QUERY NO: 132 */
-,
-(
-136, 'Garage DM', '', 'car_repair', '', '', '', '+33 6 56 66 07 28', '', '', '', 4.022799, 49.2776574996239
-)
-
-/* INSERT QUERY NO: 133 */
-,
-(
-137, 'Renault Garage Carteret', 'Renault', 'car_repair', '', '', '', '+33 3 26 85 27 26', '', '', '', 4.0338909, 49.2472338996313
-)
-
-/* INSERT QUERY NO: 134 */
-,
-(
-138, 'Euromaster', 'Euromaster', 'car_repair', '', '', 'http://centres.euromaster.fr', '+33 351308130', '', '', '', 4.0662521, 49.2293489996357
-)
-
-/* INSERT QUERY NO: 135 */
-,
-(
-139, 'Garage BEYA PRO', '', 'car_repair', '', '', 'https://www.beyapro-reims.fr/', '+33 3 59 28 31 44', '', '', '', 4.0312852, 49.2469353996314
-)
-
 /* INSERT QUERY NO: 136 */
 ,
 (
 140, 'Ébéniste', '', 'carpenter', '', '', '', '+33 6 82 03 64 46', '', '', '', 4.0400812, 49.248614699631
 )
 
-/* INSERT QUERY NO: 137 */
-,
-(
-141, '', '', 'caterer', '', '', '', '', '', '', '', 4.0532287, 49.2626257996275
-)
-
-/* INSERT QUERY NO: 138 */
-,
-(
-142, 'Symbiose', '', 'chemist', '', '', 'http://www.symbiose-reims.com', '', '', 'https://www.facebook.com/symbiosereims/', '', 4.0318116, 49.2591710996284
-)
-
 /* INSERT QUERY NO: 139 */
 ,
 (
 143, 'Maison Dallet', '', 'chocolate', '47 Cours Jean-Baptiste Langlet', '', '', '', '', '', '', 4.02973336615391, 49.2571007956441
-)
-
-/* INSERT QUERY NO: 140 */
-,
-(
-144, 'Petits-fils Reims Courmeaux', '', 'cleaning', '', '', 'https://www.petits-fils.com/nos-agences/agence-aide-a-domicile-reims-courmeaux/', '+33 352626321', '', '', '', 4.0374066, 49.2581117996287
-)
-
-/* INSERT QUERY NO: 141 */
-,
-(
-145, 'Amaelles (Ex : Aradopa)', '', 'cleaning', '', '', 'https://www.aradopa.fr/', '+33 3 26 79 30 40', '', '', '', 4.0385543, 49.2502445996306
 )
 
 /* INSERT QUERY NO: 142 */
@@ -1194,18 +918,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 195, 'L''Échoppe magique', '', 'collector', '', '', '', '', '', '', '', 4.02235294302742, 49.2513240386918
 )
 
-/* INSERT QUERY NO: 192 */
-,
-(
-196, 'Service 2i Informatique et Internet', '', 'computer', '', '', 'http://service2i.fr', '+33 7 60 25 06 05', '', '', '', 4.0441287, 49.2462824996316
-)
-
-/* INSERT QUERY NO: 193 */
-,
-(
-197, 'Mapuceps2', '', 'computer', '', '', 'http://mapuceps2.com', '996272701', '', '', '', 4.038585, 49.2531819996298
-)
-
 /* INSERT QUERY NO: 194 */
 ,
 (
@@ -1380,30 +1092,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 226, 'Laiterie Gilbert', '', 'convenience', '', '', 'https://www.laiterie-gilbert.fr', '+33 3 26 61 35 70', '', '', '', 4.0560812, 49.2594347996283
 )
 
-/* INSERT QUERY NO: 223 */
-,
-(
-227, 'B-Side', '', 'copyshop', '', '', 'http://www.bside-printshop.com/', '', '', '', '', 4.02318008828491, 49.2530687591668
-)
-
-/* INSERT QUERY NO: 224 */
-,
-(
-228, 'Brochage Routage Champagne (BRC)', '', 'copyshop', '', '', 'https://www.brc51.fr/', '+33 3 26 85 70 25', 'brc51@orange.fr', '', '', 4.0848773, 49.2300359996355
-)
-
-/* INSERT QUERY NO: 225 */
-,
-(
-229, 'Bureautype Copies', '', 'copyshop', '', '', 'http://burotypecopies.fr/', '+33 3 26 50 13 58', 'contact@burotypecopies.fr', '', '', 4.0389983, 49.2422448996325
-)
-
-/* INSERT QUERY NO: 226 */
-,
-(
-230, 'Imprimerie Reprocolor', '', 'copyshop', '6 ter Rue André F.J. Rieg', '', 'https://www.reprocolor.fr', '+33 3 20 29 87 87', 'reprolille@reprocolor.fr', '', '', 4.0794355, 49.2313733996352
-)
-
 /* INSERT QUERY NO: 227 */
 ,
 (
@@ -1446,76 +1134,10 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 237, 'Motio', '', 'cosmetics', '', '', 'https://www.motioreims.com/', '', '', '', '', 4.03248003830438, 49.2556824441159
 )
 
-/* INSERT QUERY NO: 234 */
-,
-(
-238, 'Crématorium de reims', '', 'crematorium', '40 Avenue Maurice Plongeron', '', '', '', '', '', '', 4.0126637, 49.2921065996203
-)
-
-/* INSERT QUERY NO: 235 */
-,
-(
-239, 'Épicerie Orientale', '', 'deli', '', '', '', '', '', '', '', 4.0269145, 49.2738403996248
-)
-
-/* INSERT QUERY NO: 236 */
-,
-(
-240, 'Anna-S La Boutique', '', 'deli', '', '', 'http://annas-latableamoureuse.com/-La-Boutique-', '', '', '', '', 4.03515492771262, 49.2507201224413
-)
-
-/* INSERT QUERY NO: 237 */
-,
-(
-241, 'Leroy Merlin', 'Leroy Merlin', 'doityourself', 'Rue Docteur Robert Creusat', '', 'https://www.leroymerlin.fr/', '33326778282', '', '', '', 4.02116399488809, 49.2887440393445
-)
-
-/* INSERT QUERY NO: 238 */
-,
-(
-242, 'Brico Dépôt', 'Brico Dépôt', 'doityourself', '', '', 'https://www.bricodepot.fr/reims/depot/reims/1701/', '', '', '', '', 4.07117646526567, 49.2702027383646
-)
-
-/* INSERT QUERY NO: 239 */
-,
-(
-243, 'Brico Dépôt', 'Brico Dépôt', 'doityourself', 'Rue William Shakespeare', '', 'http://www.bricodepot.fr', '', '', '', '', 4.0178906858511, 49.2132899059594
-)
-
-/* INSERT QUERY NO: 240 */
-,
-(
-244, 'Lapeyre', 'Lapeyre', 'doityourself', '', '', '', '', '', '', '', 4.0211438, 49.2184578996384
-)
-
-/* INSERT QUERY NO: 241 */
-,
-(
-245, 'Pillaud Matériaux', '', 'doityourself', 'Rue William Whakespeare', '', '', '', '', '', '', 4.01853226208368, 49.2150331568538
-)
-
 /* INSERT QUERY NO: 242 */
 ,
 (
 246, 'Plus + Retouches', '', 'dressmaker', '', '', '', '+33 3 26 88 67 23', '', '', '', 4.0288338, 49.25253669963
-)
-
-/* INSERT QUERY NO: 243 */
-,
-(
-247, '', '', 'dry_cleaning', '', '', '', '', '', '', '', 4.0072434, 49.2358550996341
-)
-
-/* INSERT QUERY NO: 244 */
-,
-(
-248, 'Presse 9', '', 'dry_cleaning', '', '', '', '', '', '', '', 4.0668277, 49.260913099628
-)
-
-/* INSERT QUERY NO: 245 */
-,
-(
-249, '', '', 'dry_cleaning', '', '', '', '', '', '', '', 4.0395019206608, 49.2467657970979
 )
 
 /* INSERT QUERY NO: 246 */
@@ -1524,46 +1146,10 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 250, 'VAPOA', '', 'e-cigarette', '', '', '', '', '', '', '', 4.0290283, 49.2541878996296
 )
 
-/* INSERT QUERY NO: 247 */
-,
-(
-251, 'Yesss Électrique', 'Yesss Électrique', 'electrical', '', '', 'https://www.yesss-fr.com/', '', '', '', '', 4.01502496110457, 49.2842669004969
-)
-
-/* INSERT QUERY NO: 248 */
-,
-(
-252, 'ARES', '', 'electrician', '5 Rue Rosa Luxemburg', '', 'http://www.ares-reims.fr/', '', '', '', '', 4.01789611273503, 49.2858163192545
-)
-
-/* INSERT QUERY NO: 249 */
-,
-(
-253, 'Electro Dépôt', '', 'electronics', 'Rue Joanne Broche', '', 'http://electrodepot.fr', '+33 326867430', '', '', '', 4.02463772104111, 49.2894691448624
-)
-
-/* INSERT QUERY NO: 250 */
-,
-(
-254, 'Ordi-Service', '', 'electronics_repair', '', '', '', '', '', '', '', 4.0243175, 49.2721425996252
-)
-
-/* INSERT QUERY NO: 251 */
-,
-(
-255, 'Clinique de la machine à coudre', '', 'electronics_repair', '', '', 'http://machineacoudre-nordest.fr', '+33 3 26 82 55 31', '', '', '', 4.0408797, 49.2480943996311
-)
-
 /* INSERT QUERY NO: 252 */
 ,
 (
 256, 'Tendance Liège', '', 'fashion_accessories', '', '', 'https://liege-et-passion.fr/', '+33 9 86 46 65 86', 'contact@liege-et-passion.fr', '', '', 4.0284287, 49.2529526996299
-)
-
-/* INSERT QUERY NO: 253 */
-,
-(
-257, '', '', 'floorer', '', '', '', '', '', '', '', 4.06573942515613, 49.2698651557445
 )
 
 /* INSERT QUERY NO: 254 */
@@ -1608,106 +1194,10 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 264, 'Opuscule', '', 'florist', '', '', '', '+33 6 41 70 95 44', '', '', '', 4.030319, 49.2536267996297
 )
 
-/* INSERT QUERY NO: 261 */
-,
-(
-265, 'Cafèt', '', 'food_court', '', '', '', '', '', '', '', 4.06259833408737, 49.24395499755
-)
-
-/* INSERT QUERY NO: 262 */
-,
-(
-266, 'Caféteria', '', 'food_court', '', '', '', '', '', '', '', 4.0620086, 49.2406895996329
-)
-
-/* INSERT QUERY NO: 263 */
-,
-(
-267, 'Roc Eclerc', 'Roc-Eclerc', 'funeral_directors', '', '', 'http://groupe-roc-eclerc.com', '', '', '', '', 4.0143879, 49.2923146996203
-)
-
-/* INSERT QUERY NO: 264 */
-,
-(
-268, 'Maliterie Reimd', '', 'furniture', '', '', 'http://maliterie.com', '+33 326851011', '', '', '', 4.0200722, 49.2910237996206
-)
-
-/* INSERT QUERY NO: 265 */
-,
-(
-269, 'Roche Bobois', 'Roche Bobois', 'furniture', '', '', '', '', '', '', '', 4.01918727606082, 49.2165822396104
-)
-
-/* INSERT QUERY NO: 266 */
-,
-(
-270, 'Ambiance Tables et Chaises', '', 'furniture', '', '', '', '', '', '', '', 4.0240513, 49.2181369996385
-)
-
-/* INSERT QUERY NO: 267 */
-,
-(
-271, 'DPStyle', '', 'furniture', '', '', 'http://dpstyle.fr', '+33 3 26 35 87 91', '', '', '', 4.0295957, 49.2578524996287
-)
-
-/* INSERT QUERY NO: 268 */
-,
-(
-272, 'SARL Saine', '', 'furniture', '', '', 'https://menuiseriesaine.fr/', '+33 3 26 09 42 15', '', '', '', 4.0169954, 49.2885476996212
-)
-
-/* INSERT QUERY NO: 269 */
-,
-(
-273, 'Petitcolin', '', 'furniture', 'Rue Edmond Rostand', '', '', '', '', '', '', 4.02001065728453, 49.2175023122515
-)
-
-/* INSERT QUERY NO: 270 */
-,
-(
-274, 'A&M décoration', '', 'furniture', '', '', 'http://amdecoration.fr', '+33 3 26 47 45 27', '', '', '', 4.0370761, 49.25267909963
-)
-
-/* INSERT QUERY NO: 271 */
-,
-(
-275, 'Canap''Affaires', '', 'furniture', '', '', '', '', '', '', '', 4.002607, 49.2702494996257
-)
-
-/* INSERT QUERY NO: 272 */
-,
-(
-276, 'Le Chaisier', '', 'furniture', '', '', 'https://www.lechaisier.fr', '+33 3 26 85 06 35', '', '', '', 4.0410031, 49.2475628996312
-)
-
-/* INSERT QUERY NO: 273 */
-,
-(
-277, 'Château d’Ax', '', 'furniture', 'Rue Docteur Robert Creusat', '', 'http://chateatdax-reims.fr', '+33 326099454', '', '', '', 4.0237277, 49.289315799621
-)
-
-/* INSERT QUERY NO: 274 */
-,
-(
-278, 'Phybris Spa', '', 'furniture', '', '', 'http://phybis-spa.com', '+33 326614990', '', '', '', 4.0314109, 49.2465113996315
-)
-
-/* INSERT QUERY NO: 275 */
-,
-(
-279, 'Agencia', '', 'furniture', '', '', 'http://agencia-design.com', '967769218', '', '', '', 4.0337367, 49.2557345996292
-)
-
 /* INSERT QUERY NO: 276 */
 ,
 (
 280, 'La Petite Malle d''Apolline', '', 'games', '', '', '', '', '', '', '', 4.0249669, 49.2547674996295
-)
-
-/* INSERT QUERY NO: 277 */
-,
-(
-281, 'MisterMenuiserie Reims', '', 'gates', '', '', '', '+33 3 26 23 60 95', '', '', '', 4.0221761344669, 49.2911815611981
 )
 
 /* INSERT QUERY NO: 278 */
@@ -1728,42 +1218,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 284, 'Au Temps des Cerises', '', 'greengrocer', '', '', 'https://www.vitrinesdereims.com/', '+33 3 26 40 46 06', '', '', '', 4.0342764, 49.2563054996291
 )
 
-/* INSERT QUERY NO: 281 */
-,
-(
-285, 'Signorini Tartufi', '', 'grocery', '', '', '', '+33 3 26 97 42 99', '', '', '', 4.0280901, 49.2538026996297
-)
-
-/* INSERT QUERY NO: 282 */
-,
-(
-286, 'Würth', 'Würth', 'hardware', '', '', 'http://magasins.wurth.fr', '+33 326828105', '', '', '', 4.0276253, 49.2928281996201
-)
-
-/* INSERT QUERY NO: 283 */
-,
-(
-287, 'Audition Conseil', 'Audition Conseil', 'hearing_aids', '', '', 'http://auditionconseil-lefebvre.fr', '+33 3 26 88 92 40', '', '', '', 4.033205, 49.2518354996302
-)
-
-/* INSERT QUERY NO: 284 */
-,
-(
-288, 'Audilab', '', 'hearing_aids', '', '', '', '+33 326405804', '', '', '', 4.0326295, 49.2614226996278
-)
-
-/* INSERT QUERY NO: 285 */
-,
-(
-289, 'Cham Mulot', '', 'heating_engineer', '', '', 'https://www.groupecham.com/agences/reims/', '', '', '', '', 4.06868041436989, 49.2708679874044
-)
-
-/* INSERT QUERY NO: 286 */
-,
-(
-290, '', '', 'hifi', '', '', '', '', '', '', '', 4.0284736, 49.2553958996293
-)
-
 /* INSERT QUERY NO: 287 */
 ,
 (
@@ -1775,169 +1229,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 (
 292, 'Lydia SAS', '', 'houseware', '', '', '', '', '', '', '', 4.0347572, 49.256537199629
 )
-
-/* INSERT QUERY NO: 289 */
-,
-(
-293, '', '', 'hvac', '', '', '', '', '', '', '', 4.06444124057372, 49.2709393347556
-)
-
-/* INSERT QUERY NO: 290 */
-,
-(
-294, 'AXA', 'AXA', 'insurance', '', '', 'http://agenceaxa.fr', '+33 326472038', '', '', '', 4.0381837, 49.2571888996289
-)
-
-/* INSERT QUERY NO: 291 */
-,
-(
-295, 'Cabinet Mougeot', '', 'insurance', '', '', '', '', '', '', '', 4.0365517, 49.2575044996288
-)
-
-/* INSERT QUERY NO: 292 */
-,
-(
-296, 'Advantis Assurances', '', 'insurance', '', '', '', '', '', '', '', 4.02683452275648, 49.2655871536442
-)
-
-/* INSERT QUERY NO: 293 */
-,
-(
-297, 'Transports Sogny', '', 'insurance', '', '', '', '+33 326496016', '', '', '', 4.0161402, 49.289168099621
-)
-
-/* INSERT QUERY NO: 294 */
-,
-(
-298, 'Allianz', 'Allianz', 'insurance', '', '', '', '', '', '', '', 4.0423167, 49.2586400996285
-)
-
-/* INSERT QUERY NO: 295 */
-,
-(
-299, 'Mutuelle Just', '', 'insurance', '', '', '', '', '', '', '', 4.0360127, 49.2504236996305
-)
-
-/* INSERT QUERY NO: 296 */
-,
-(
-300, 'Allianz', 'Allianz', 'insurance', '', '', 'http://allianz.fr', '+33 3 26 40 28 49', 'colin.reims@allianz.fr', '', '', 4.0441156, 49.2431176996323
-)
-
-/* INSERT QUERY NO: 297 */
-,
-(
-301, 'Assu 2000', 'Assu 2000', 'insurance', '8 Rue Émile Zola', '', '', '', '', '', '', 4.02667121315512, 49.2653754785528
-)
-
-/* INSERT QUERY NO: 298 */
-,
-(
-302, 'MAPA', '', 'insurance', '', '', 'http://papa-assurance.fr', '+33 3 26 85 12 85', '', '', '', 4.0439807, 49.2427250996324
-)
-
-/* INSERT QUERY NO: 299 */
-,
-(
-303, 'TCA', '', 'insurance', '', '', '', '+33 323277777', '', '', '', 4.0355055, 49.2552109996294
-)
-
-/* INSERT QUERY NO: 300 */
-,
-(
-304, 'Retraite Patrimoine (RP)', '', 'insurance', '', '', '', '', '', '', '', 4.0716236, 49.2372174996338
-)
-
-/* INSERT QUERY NO: 301 */
-,
-(
-305, 'Aviva', 'Aviva', 'insurance', '', '', '', '', '', '', '', 4.0358495, 49.2569360996289
-)
-
-/* INSERT QUERY NO: 302 */
-,
-(
-306, 'Maif Reims', 'Maif', 'insurance', '', '', '', '+33 3 26773360', '', '', '', 4.0448873, 49.2449353996319
-)
-
-/* INSERT QUERY NO: 303 */
-,
-(
-307, 'MMA Reims Promenades', 'MMA', 'insurance', '', '', 'https://agence.mma.fr/reims-promenades/agence.html', '+33 3 26 47 30 42', '', '', '', 4.02276968157091, 49.2545524204702
-)
-
-/* INSERT QUERY NO: 304 */
-,
-(
-308, 'Assurances CSF', '', 'insurance', '', '', '', '', '', '', '', 4.0213254, 49.2579952996287
-)
-
-/* INSERT QUERY NO: 305 */
-,
-(
-309, 'AXA', 'AXA', 'insurance', '', '', '', '', '', '', '', 4.0375654, 49.2580607996287
-)
-
-/* INSERT QUERY NO: 306 */
-,
-(
-310, 'Carac', '', 'insurance', '', '', 'http://carac.fr', '', '', '', '', 4.0323047, 49.2522498996301
-)
-
-/* INSERT QUERY NO: 307 */
-,
-(
-311, 'BHô', '', 'interior_decoration', '', '', '', '', '', '', '', 4.03120967118, 49.2564607666863
-)
-
-/* INSERT QUERY NO: 308 */
-,
-(
-312, 'Atelier Francony', '', 'interior_decoration', '', '', 'https://www.daniellefancony.com/', '+33 3 26 40 42 81', '', '', '', 4.0362897, 49.2536234996298
-)
-
-/* INSERT QUERY NO: 309 */
-,
-(
-313, '4 murs - La Neuvilette', '', 'interior_decoration', 'Rue Docteur Robert Creusat', '', 'http://4murd.com', '+33 326356966', '', '', '', 4.0225856, 49.2902551996208
-)
-
-/* INSERT QUERY NO: 310 */
-,
-(
-314, 'ABC.DER', '', 'interior_decoration', '', '', 'https://www.abcder-duret.fr/', '+33 3 23 08 62 36', '', '', '', 4.0398407, 49.2493748996308
-)
-
-/* INSERT QUERY NO: 311 */
-,
-(
-315, 'Intemporel M', '', 'interior_decoration', '', '', '', '', '', '', '', 4.0287892, 49.2548993996295
-)
-
-/* INSERT QUERY NO: 312 */
-,
-(
-316, 'Bull', '', 'interior_decoration', '', '', '', '', '', '', '', 4.0288767, 49.2549264996294
-)
-
-/* INSERT QUERY NO: 313 */
-,
-(
-317, 'Centrakor', 'Centrakor', 'interior_decoration', '', '', '', '', '', '', '', 4.0210926, 49.2170803996387
-)
-
-/* INSERT QUERY NO: 314 */
-,
-(
-318, 'Squirrel', '', 'it', '', '', 'https://www.squirrel.fr/', '972369949', 'contact@squirrel.fr', '', '', 4.0719814, 49.2368499996339
-)
-
-/* INSERT QUERY NO: 315 */
-,
-(
-319, 'ASGA', '', 'it', '', '', 'http://asga.fr/', '', '', '', '', 4.0379903789542, 49.2704759074748
-)
-
 /* INSERT QUERY NO: 316 */
 ,
 (
@@ -1998,18 +1289,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 329, 'Tempka', '', 'jewelry', '', '', '', '', '', '', '', 4.02660686804635, 49.2555070359179
 )
 
-/* INSERT QUERY NO: 326 */
-,
-(
-330, 'CEDEA', '', 'joiner', '', '', '', '', '', '', '', 4.0861767, 49.2307613996354
-)
-
-/* INSERT QUERY NO: 327 */
-,
-(
-331, 'Quénot', '', 'joiner', '', '', '', '+33 3 26 82 84 61', '', '', '', 4.0952294, 49.224190599637
-)
-
 /* INSERT QUERY NO: 328 */
 ,
 (
@@ -2026,78 +1305,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 ,
 (
 334, '', '', 'kiosk', '', '', '', '', '', '', '', 4.02708206638371, 49.2585695482993
-)
-
-/* INSERT QUERY NO: 331 */
-,
-(
-335, 'Cuisinella', 'Cuisinella', 'kitchen', '', '', '', '', '', '', '', 4.0237068, 49.289466299621
-)
-
-/* INSERT QUERY NO: 332 */
-,
-(
-336, 'Inova', '', 'kitchen', '', '', '', '', '', '', '', 4.0288716, 49.25247269963
-)
-
-/* INSERT QUERY NO: 333 */
-,
-(
-337, 'Bruschi', '', 'kitchen', '', '', '', '', '', '', '', 4.01962509954459, 49.2171660501324
-)
-
-/* INSERT QUERY NO: 334 */
-,
-(
-338, 'Laverie Libre-service', '', 'laundry', '', '', '', '', '', '', '', 4.0254447, 49.2657151996268
-)
-
-/* INSERT QUERY NO: 335 */
-,
-(
-339, 'Lavomatique', '', 'laundry', '', '', '', '+33 3 26 86 19 06', '', '', '', 4.037064, 49.2494421996308
-)
-
-/* INSERT QUERY NO: 336 */
-,
-(
-340, 'Laverie Speed Queen Reims St Remi', '', 'laundry', '', '', 'https://laverie-reims.com', '', 'contact-adulie@laverie-reims.com', '', '', 4.0395151, 49.2423321996325
-)
-
-/* INSERT QUERY NO: 337 */
-,
-(
-341, 'Le Lavoir', '', 'laundry', '', '', '', '', '', '', '', 4.0503768, 49.2611943996279
-)
-
-/* INSERT QUERY NO: 338 */
-,
-(
-342, 'L.R Blanchisserie Chzmpenoise', '', 'laundry', '', '', 'http://le-blanchisserie-champenoise.fr', '+33 326779510', '', '', '', 4.0183761, 49.2923881996202
-)
-
-/* INSERT QUERY NO: 339 */
-,
-(
-343, 'Laverie', '', 'laundry', '', '', '', '', '', '', '', 4.0334365, 49.2517351996302
-)
-
-/* INSERT QUERY NO: 340 */
-,
-(
-344, '', '', 'laundry', '', '', '', '', '', '', '', 4.0259931, 49.2490280996309
-)
-
-/* INSERT QUERY NO: 341 */
-,
-(
-345, 'CORDEUIL Davis', '', 'locksmith', '', '', '', '326', '', '', '', 4.0423607, 49.2709922996255
-)
-
-/* INSERT QUERY NO: 342 */
-,
-(
-346, '', '', 'mall', '', '', '', '', '', '', '', 4.08414782425987, 49.2421047768034
 )
 
 /* INSERT QUERY NO: 343 */
@@ -2118,94 +1325,10 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 349, 'Flora Mei', '', 'massage', '', '', 'http://www.floramei.com', '', '', '', '', 4.03740524049667, 49.2483723352612
 )
 
-/* INSERT QUERY NO: 346 */
-,
-(
-350, 'Andi''Med Santé', '', 'medical_supply', '', '', 'https://www.cap-vital-sante.com/reims', '', '', '', '', 4.07288723003436, 49.2703180283441
-)
-
-/* INSERT QUERY NO: 347 */
-,
-(
-351, 'LVL Médical Est', '', 'medical_supply', '', '', 'https://www.lvlmedical.com/', '+33 3 26 35 24 20', '', '', '', 4.0866756, 49.2306124996354
-)
-
-/* INSERT QUERY NO: 348 */
-,
-(
-352, '', 'ORKYN', 'medical_supply', '', '', '', '33326771076', '', '', '', 4.0816366, 49.2306981996354
-)
-
-/* INSERT QUERY NO: 349 */
-,
-(
-353, 'SMH', '', 'metal_construction', '', '', '', '+33 3 26 02 60 55', '', '', '', 4.0364522, 49.2684023996261
-)
-
-/* INSERT QUERY NO: 350 */
-,
-(
-354, 'MSK', '', 'metal_construction', '', '', '', '', '', '', '', 4.0572227, 49.2409760996329
-)
-
-/* INSERT QUERY NO: 351 */
-,
-(
-355, 'MRI Industrie', '', 'metalworking', '', '', 'https://www.mri-industrie.com/', '', '', '', '', 4.07257106839163, 49.2714752757297
-)
-
-/* INSERT QUERY NO: 352 */
-,
-(
-356, 'Oh m’y Phone', '', 'mobile_phone', '', '', '', '+33 9 52 01 52 79', '', '', '', 4.0362117, 49.248586499631
-)
-
-/* INSERT QUERY NO: 353 */
-,
-(
-357, 'Free', '', 'mobile_phone', '', '', '', '', '', '', '', 4.0283602, 49.2545312996295
-)
-
-/* INSERT QUERY NO: 354 */
-,
-(
-358, 'Orange', 'Orange', 'mobile_phone', '', '', '', '', '', '', '', 4.0299345, 49.2540137996297
-)
-
-/* INSERT QUERY NO: 355 */
-,
-(
-359, 'SFR', 'SFR', 'mobile_phone', '', '', 'http://boutique.sfr.fr', '+33 310571800', '', '', '', 4.0221877, 49.2905821996207
-)
-
-/* INSERT QUERY NO: 356 */
-,
-(
-360, 'L’Atelier', '', 'mobile_phone', '', '', '', '+33 9 72 87 57 15', '', '', '', 4.0359493, 49.2504821996305
-)
-
 /* INSERT QUERY NO: 357 */
 ,
 (
 361, 'L’Accord Parfait', '', 'musical_instrument', '', '', '', '+33 3 26 47 33 68', '', '', '', 4.0356358, 49.2506781996305
-)
-
-/* INSERT QUERY NO: 358 */
-,
-(
-362, 'Le Saint-André', '', 'newsagent', '', '', '', '+33 326851468', '', '', '', 4.0426159, 49.2584091996286
-)
-
-/* INSERT QUERY NO: 359 */
-,
-(
-363, 'La Régence', '', 'newsagent', '', '', 'http://régence-Reims.com', '+33 326474979', '', '', '', 4.0272996, 49.2555649996293
-)
-
-/* INSERT QUERY NO: 360 */
-,
-(
-364, '', '', 'newsagent', '', '', '', '', '', '', '', 4.0141083, 49.2297525996356
 )
 
 /* INSERT QUERY NO: 361 */
@@ -2232,12 +1355,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 368, 'Nicoletta FANTONI', '', 'paint', '5 Rue André F.J. Rieg', '', 'http://www.nicoletta.fr/', '+33 3 26 85 45 49', '', '', '', 4.0800639, 49.2297972996356
 )
 
-/* INSERT QUERY NO: 365 */
-,
-(
-369, 'Les Compagnons Peintres Champenois', '', 'painter', '', '', 'http://www.compagnons-peintres.fr/', '', '', '', '', 4.07107393285616, 49.2714780401946
-)
-
 /* INSERT QUERY NO: 366 */
 ,
 (
@@ -2248,12 +1365,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 ,
 (
 371, 'Festi', '', 'party', 'Rue Docteur Serge Bazelaire', '', 'https://www.festi.fr', '+33 326871640', '', '', '', 4.0244167, 49.2902613996208
-)
-
-/* INSERT QUERY NO: 368 */
-,
-(
-372, 'Waïda et Fils', '', 'pastry', '', '', '', '', '', '', '', 4.02742013674158, 49.2541459330816
 )
 
 /* INSERT QUERY NO: 369 */
@@ -2278,18 +1389,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 ,
 (
 376, 'Atelier Michel JOLYOT', '', 'photographer', '', '', '', '+33 3 26 47 44 12', '', '', '', 4.0100578, 49.2467731996314
-)
-
-/* INSERT QUERY NO: 373 */
-,
-(
-377, 'Mathieu Entreprise', '', 'plumber', '', '', 'http://www.mathieu-entreprise.fr', '+33 326471740', 'contact@mathieu-entreprise.com', '', '', 4.0400965, 49.2578810996287
-)
-
-/* INSERT QUERY NO: 374 */
-,
-(
-378, 'Jacob Delafon', '', 'plumbing', '2 Avenue Benoît Frachon', '', '', '', '', '', '', 4.01658832733213, 49.2848332990893
 )
 
 /* INSERT QUERY NO: 375 */
@@ -2364,12 +1463,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 390, 'Reims Gambetta', 'La Poste', 'post_office', '', '', 'http://laposte.fr', '3631', '', '', '', 4.0388438, 49.2471227996314
 )
 
-/* INSERT QUERY NO: 387 */
-,
-(
-391, 'Cabinet Car', '', 'private_investigator', '', '', '', '+33 3 26 88 20 51', '', '', '', 4.0434386, 49.2513766996303
-)
-
 /* INSERT QUERY NO: 388 */
 ,
 (
@@ -2416,24 +1509,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 ,
 (
 399, 'Le ciba', '', 'pub', '', '', '', '', '', '', '', 4.0252233, 49.2555830996293
-)
-
-/* INSERT QUERY NO: 396 */
-,
-(
-400, 'Autosur', 'Autosur', 'roadworthiness', '', '', 'https://controle-technique.autosur.fr/31072-autosur-reims-epinettes', '', '', '', '', 4.06890464042139, 49.2705273461553
-)
-
-/* INSERT QUERY NO: 397 */
-,
-(
-401, 'SCHANUS', '', 'roofer', '4 Rue André F.J. Rieg', '', '', '', '', '', '', 4.0811044, 49.2309496996353
-)
-
-/* INSERT QUERY NO: 398 */
-,
-(
-402, '', '', 'roofer', '', '', '', '', '', '', '', 4.06427449771433, 49.2708410738714
 )
 
 /* INSERT QUERY NO: 399 */
@@ -2526,60 +1601,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 417, '', '', 'shoes', '', '', '', '', '', '', '', 4.0276777, 49.2553577996293
 )
 
-/* INSERT QUERY NO: 414 */
-,
-(
-418, 'Champagne Sonorisation', '', 'sound_system', '', '', 'https://www.champagnesonorisation.fr/', '', '', '', '', 4.07158311319678, 49.2716701500433
-)
-
-/* INSERT QUERY NO: 415 */
-,
-(
-419, 'Footing+', '', 'sports', '', '', 'http://footingplus.fR', '+33 3 26 47 04 86', '', '', '', 4.0348056, 49.2508579996304
-)
-
-/* INSERT QUERY NO: 416 */
-,
-(
-420, 'Decathlon', 'Decathlon', 'sports', 'Rue André Chaillot', '', 'https://www.decathlon.fr/', '+33 3 26 35 03 30', '', '', '', 4.0270868952706, 49.2884598667034
-)
-
-/* INSERT QUERY NO: 417 */
-,
-(
-421, 'Stade Reims boutique officielle', '', 'sports', '', '', '', '', '', '', '', 4.0306677, 49.2539701996297
-)
-
-/* INSERT QUERY NO: 418 */
-,
-(
-422, 'Stardec', '', 'stand_builder', '', '', 'https://www.stardec.fr/', '', '', '', '', 4.07000364477808, 49.2719971032141
-)
-
-/* INSERT QUERY NO: 419 */
-,
-(
-423, 'Mail Box ETC.', '', 'stationery', '', '', '', '', '', '', '', 4.0336921, 49.2513369996303
-)
-
-/* INSERT QUERY NO: 420 */
-,
-(
-424, 'HomeBox', '', 'storage_rental', 'Rue William Shakespeare', '', '', '', '', '', '', 4.018515, 49.2154604996391
-)
-
-/* INSERT QUERY NO: 421 */
-,
-(
-425, 'Gezing Tatouage', '', 'tattoo', '', '', '', '', '', '', '', 4.0159396, 49.2239132996371
-)
-
-/* INSERT QUERY NO: 422 */
-,
-(
-426, '', '', 'tattoo', '', '', '', '', '', '', '', 4.0370211, 49.2258823996366
-)
-
 /* INSERT QUERY NO: 423 */
 ,
 (
@@ -2604,40 +1625,16 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 430, 'Le Joker', '', 'tobacco', '', '', '', '', '', '', '', 4.0219896, 49.2245973996369
 )
 
-/* INSERT QUERY NO: 427 */
-,
-(
-431, '', '', 'tobacco', '', '', '', '', '', '', '', 4.0326241, 49.2331391996348
-)
-
 /* INSERT QUERY NO: 428 */
 ,
 (
 432, 'GAIGNER Nicolas', '', 'tobacco', '', '', '', '', '', '', '', 4.0263574, 49.2134069996396
 )
 
-/* INSERT QUERY NO: 429 */
-,
-(
-433, '', '', 'tobacco', '', '', '', '', '', '', '', 4.0163314, 49.236449799634
-)
-
-/* INSERT QUERY NO: 430 */
-,
-(
-434, '', '', 'tobacco', '', '', '', '', '', '', '', 4.037698, 49.2480314996311
-)
-
 /* INSERT QUERY NO: 431 */
 ,
 (
 435, 'Le Végas', '', 'tobacco', '', '', '', '', '', '', '', 4.0101661, 49.248419099631
-)
-
-/* INSERT QUERY NO: 432 */
-,
-(
-436, 'LOXAM Reims Ouest', '', 'tool_hire', '', '', '', '+33 3 26 86 50 70', '', '', '', 4.001929, 49.2683652996261
 )
 
 /* INSERT QUERY NO: 433 */
@@ -2652,24 +1649,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 438, 'Le Royaume du Jouet Franchisé Indépendant', '', 'toys', '', '', '', '', '', '', '', 4.0297977, 49.2545204996295
 )
 
-/* INSERT QUERY NO: 435 */
-,
-(
-439, 'Fixation Location Service', '', 'trade', '10 Rue Rosa Luxemburg', '', '', '', '', '', '', 4.01908084912312, 49.2849985261101
-)
-
-/* INSERT QUERY NO: 436 */
-,
-(
-440, 'Distrilab Hatry', '', 'trade', '', '', '', '', '', '', '', 4.00115615285718, 49.2705365760101
-)
-
-/* INSERT QUERY NO: 437 */
-,
-(
-441, 'Déhée Bonnabaud', '', 'trade', '', '', '', '', '', '', '', 4.00043304363177, 49.2697410521832
-)
-
 /* INSERT QUERY NO: 438 */
 ,
 (
@@ -2680,36 +1659,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 ,
 (
 443, 'AT Oliveira Tapissier Décorateur', '', 'upholsterer', '', '', '', '+33 3 26 85 62 29', '', '', '', 4.0400219, 49.248680299631
-)
-
-/* INSERT QUERY NO: 440 */
-,
-(
-444, 'GiFi', 'GiFi', 'variety_store', '', '', 'https://magasins.gifi.fr/decoration/reims/0000010926', '', '', '', '', 4.02700429448422, 49.2879483136895
-)
-
-/* INSERT QUERY NO: 441 */
-,
-(
-445, 'Phildar', '', 'variety_store', '', '', 'http://phildar.fr', '+33 3 26 61 29 53', '', '', '', 4.0271425, 49.25269609963
-)
-
-/* INSERT QUERY NO: 442 */
-,
-(
-446, 'DEKRA', 'DEKRA', 'vehicle_inspection', '', '', '', '', '', '', '', 4.05960480547237, 49.2651984540963
-)
-
-/* INSERT QUERY NO: 443 */
-,
-(
-447, 'METRO', 'METRO', 'wholesale', '', '', '', '', '', '', '', 4.0120245, 49.2618050996277
-)
-
-/* INSERT QUERY NO: 444 */
-,
-(
-448, 'K par K', 'K par K', 'window_construction', '', '', '', '', '', '', '', 4.0804557, 49.2296361996356
 )
 
 /* INSERT QUERY NO: 445 */
@@ -2723,54 +1672,19 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 (
 450, 'Boutique Guy Degrenne', '', 'wine', '', '', 'http://guydegrenne.fr', '+33 3 26 06 86 39', '', '', '', 4.0261481, 49.2523205996301
 )
-
-/* INSERT QUERY NO: 447 */
 ,
 (
-451, 'France VET à l''Ouvrier bleu', '', 'workwear', '', '', 'http://www.alouvrierbleu.com/', '', '', '', '', 4.07270148694727, 49.27024928796
+451, 'Lacoste Reims centre-ville', '', 'clothes', '31 Rue des Élus, 51100 Reims', '', '', '', '', '', '', 4.0302512, 49.2549803
 )
-
-/* INSERT QUERY NO: 448 */
 ,
 (
-452, 'Photomaton', '', 'yes', '', '', '', '', '', '', '', 4.02584183824707, 49.2548156689198
+452, 'Eklips', '', 'clothes', '7 Rue des Élus, 51100 Reims', '', '', '', '', '', '', 4.031376838684082, 49.2554817199707
 )
-
-/* INSERT QUERY NO: 449 */
 ,
 (
-453, 'Cyclovac Kinetico Technologis 51', '', 'yes', '', '', 'https://technologis51.business.site/', '', '', '', '', 4.07210967803453, 49.2713011056539
-)
-
-/* INSERT QUERY NO: 450 */
-,
-(
-454, 'Photostation', '', 'yes', '', '', '', '', '', '', '', 4.0257461862311, 49.2548608632389
-)
-
-/* INSERT QUERY NO: 451 */
-,
-(
-455, '', '', 'yes', '', '', '', '', '', '', '', 4.02629783047739, 49.2554123570176
-)
-
-/* INSERT QUERY NO: 452 */
-,
-(
-456, 'PLANET CASH', '', 'yes', '', '', '', '+33 3 26 02 18 57', '', '', '', 4.0257982, 49.25251469963
-)
-
-/* INSERT QUERY NO: 453 */
-,
-(
-457, 'Station Multi-Services', '', 'yes', '', '', '', '', '', '', '', 4.0377586, 49.2576049996288
-)
-
-/* INSERT QUERY NO: 454 */
-,
-(
-458, 'Mistigriff', '', 'yes', '', '', '', '', '', '', '', 4.0316205, 49.2570832996289
+453, 'Galeries Lafayette Reims', '', 'clothes', '33-45 Rue de Vesle, 51100 Reims', '', '', '', '', '', '', 4.023271083831787, 49.25151443481445
 );
+
 
 UPDATE shop SET type = REPLACE(type, '', null) WHERE type = '';
 UPDATE shop SET brand = REPLACE(brand, '', null) WHERE brand = '';

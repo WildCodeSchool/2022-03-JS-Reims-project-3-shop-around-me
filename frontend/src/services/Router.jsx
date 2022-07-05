@@ -8,6 +8,7 @@ import MyAccount from "../pages/MyAccount";
 import Fav from "../components/Fav";
 import InscriptionForm from "../components/InscriptionForm";
 import ShopDetails from "../components/ShopDetails";
+import ShopList from "../pages/ShopList";
 
 // Place all routes here
 const routes = [
@@ -19,6 +20,7 @@ const routes = [
   { path: "/inscription", component: <InscriptionForm /> },
   { path: "/", component: <LoginForm /> },
   { path: "/shopDetails", component: <ShopDetails /> },
+  { path: "/shopList", component: <ShopList /> },
 ];
 
 function Router({ children }) {
