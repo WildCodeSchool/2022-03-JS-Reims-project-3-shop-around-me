@@ -7,6 +7,7 @@ export default function PersonnalData() {
   const {
     register,
     formState: { errors },
+    getValues,
   } = useForm();
 
   const [editUser, setEditedUser] = useState(false);
@@ -23,15 +24,26 @@ export default function PersonnalData() {
       });
   };
 
+  const putUser = () => {
+    axios
+      .put(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/users/1`,
+        getValues()
+      )
+      .then((response) => response);
+  };
+
   useEffect(() => {
     getUser();
-  }, []);
+  }, [user]);
   // Waiting for the authentification to be done so I can access all the informations
 
   const handleSave = (e) => {
     e.preventDefault();
     setEditedUser(false);
-    getUser();
+    putUser();
   };
 
   const handleEdit = (e) => {
@@ -298,7 +310,6 @@ export default function PersonnalData() {
                 id="password"
                 name="password"
                 disabled={!editUser}
-                value={!editUser ? user.password : undefined}
               />
             </label>
             {errors?.password?.type === "required" && (
@@ -320,36 +331,29 @@ export default function PersonnalData() {
             )}
           </div>
           <div className="form-structure">
-            <label htmlFor="password">
+            <label htmlFor="passwordconfirmation">
               Confirmation de mot de passe
               <input
                 type="password"
                 placeholder="●●●●●●●●●"
-                {...register("password", {
-                  required: true,
-                  minLength: 8,
-                  maxLength: 100,
-                  pattern:
-                    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
-                })}
                 className={!editUser ? "form-input bg-slate-300" : "form-input"}
                 id="passwordconfirmation"
                 name="passwordconfirmation"
                 disabled={!editUser}
               />
             </label>
-            {errors?.password?.type === "required" && (
+            {errors?.passwordconfirmation?.type === "required" && (
               <p className="error-handler">Ce champ est requis.</p>
             )}
-            {errors?.password?.type === "minLength" && (
+            {errors?.passwordconfirmation?.type === "minLength" && (
               <p className="error-handler">
                 Votre mot de passe est trop court.
               </p>
             )}
-            {errors?.password?.type === "maxLength" && (
+            {errors?.passwordconfirmation?.type === "maxLength" && (
               <p className="error-handler">Votre mot de passe est trop long.</p>
             )}
-            {errors?.password?.type === "pattern" && (
+            {errors?.passwordconfirmation?.type === "pattern" && (
               <p className="error-handler">
                 Votre mot de passe doit au moins comporter une lettre en
                 majuscule, une en minuscule, un chiffre et un caractère spécial.
