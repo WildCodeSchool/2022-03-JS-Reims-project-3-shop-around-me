@@ -45,7 +45,7 @@ export default function ShopList() {
             <h2 className="px-8 py-4 text-lg font-bold bg-[#9c958e]">
               {capitalize(type)}
             </h2>
-            <ul className="px-8 my-4">
+            <ul className="px-12 my-6">
               {results[type].map((shop) => (
                 <li className="my-2" key={shop.id}>
                   <Link to="/shopDetails">{shop.name}</Link>
