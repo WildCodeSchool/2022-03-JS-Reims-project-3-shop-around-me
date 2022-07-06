@@ -33,7 +33,10 @@ function Map({ searchValue, results }) {
         />
         {results.map((result, index) => (
           <Marker key={result.id} position={shopPosition[index]}>
-            <Popup>{result.name}</Popup>
+            <Popup>
+              {result.name} :<br />
+              {result.address}
+            </Popup>
           </Marker>
         ))}
         {userPosition && (
