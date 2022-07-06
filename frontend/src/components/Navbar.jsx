@@ -5,7 +5,7 @@ import {
   faHeart,
   faStore,
   faHouse,
-  faEuroSign,
+  faPiggyBank,
 } from "@fortawesome/free-solid-svg-icons";
 
 function Navbar() {
@@ -24,7 +24,7 @@ function Navbar() {
     },
     {
       id: 3,
-      icon: faEuroSign,
+      icon: faPiggyBank,
       url: "/funds",
     },
     {

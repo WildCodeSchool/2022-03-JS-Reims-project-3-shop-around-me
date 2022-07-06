@@ -26,18 +26,21 @@ h1 {
     @apply text-red-600 normal-case text-xs font-normal italic;
   }
   .form-input {
-    @apply appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 max-w-lg;
+    @apply appearance-none block w-full bg-gray-200 text-[#4F4E47] border border-gray-200 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 max-w-lg;
+  }
+  .form-label {
+    @apply block uppercase tracking-wide text-[#4F4E47] text-sm font-bold mb-4;
   }
   .form-structure {
-    @apply w-full px-2 mb-6 text-gray-700 font-bold uppercase text-sm;
+    @apply w-full mb-6 text-gray-700 font-bold uppercase text-sm;
   }
-  .link-icons {
-    @apply text-4xl;
+  .general-text {
+    @apply text-[#4F4E47] text-sm;
   }
-  .contact-icons {
-    @apply text-xl;
+  .checkbox {
+    @apply w-4 h-4 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
   }
-  .shedules {
-    @apply my-2 text-center;
+  .product-type {
+    @apply flex justify-center items-center text-gray-700 text-center font-bold text-sm shadow-[0_2px_20px_0px_rgba(27,40,54,0.15)] rounded max-w-[40%] p-1.5 ml-2 mr-2;
   }
 }
