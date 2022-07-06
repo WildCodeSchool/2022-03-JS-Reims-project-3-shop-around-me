@@ -1,18 +1,43 @@
 /* eslint-disable react/jsx-props-no-spreading */
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useAuthContext } from "../contexts/AuthContext";
 import VerticalLogo from "./VerticalLogo";
 
 export default function LoginForm() {
+  const { loginData, setLoginData } = useAuthContext();
   const {
     register,
     formState: { errors },
+    getValues,
   } = useForm();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { email, password } = getValues();
+    axios
+      .post(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/login`,
+        { email, password }
+      )
+      .then((res) => {
+        setLoginData({ ...res.data, isLoggedIn: true });
+      });
+  };
+
+  useEffect(() => {
+    if (loginData.isLoggedIn) {
+      navigate("/home");
+    }
+  });
 
   return (
     <main className="flex flex-col justify-center items-center h-[78vh]">
       <VerticalLogo className="" />
-      <form className="w-full max-w-lg w-4/5">
+      <form className="w-full max-w-lg w-4/5" onSubmit={handleSubmit}>
         <label
           htmlFor="email"
           className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -49,9 +74,8 @@ export default function LoginForm() {
             Ce champ est requis.
           </p>
         )}
-        <Link to="/home">
-          <input type="submit" className="underline underline-offset-1" />
-        </Link>
+
+        <input type="submit" className="underline underline-offset-1" />
       </form>
       <p>
         Vous n’avez pas de compte ? {}
