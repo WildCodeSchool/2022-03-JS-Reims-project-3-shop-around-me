@@ -94,7 +94,7 @@ export default function SearchBar() {
             className="text-[#4F4E47] bg-white
               ml-4 mr-4 min-w-[90vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
           >
-            <Link to="/shopDetails">
+            <Link to={`/shops/${result.id}`}>
               {result.name} <br /> {result.address}
             </Link>
           </li>
