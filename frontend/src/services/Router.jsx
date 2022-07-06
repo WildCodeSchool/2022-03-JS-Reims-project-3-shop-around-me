@@ -20,7 +20,8 @@ const protectedRoutes = [
   { path: "/fav", component: <Test /> },
   { path: "/funds", component: <Fund /> },
   { path: "/inscription", component: <InscriptionForm /> },
-  { path: "/shopDetails", component: <ShopDetails /> },
+  { path: "/", component: <LoginForm /> },
+  { path: "/shops/:id", component: <ShopDetails /> },
   { path: "/shopList", component: <ShopList /> },
 ];
 

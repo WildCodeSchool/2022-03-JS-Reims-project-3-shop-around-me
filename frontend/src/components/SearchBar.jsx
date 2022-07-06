@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import useGeolocation from "react-hook-geolocation";
 import VerticalLogo from "./VerticalLogo";
 import HorizontalLogo from "./HorizontalLogo";
 import Map from "./Map";
 
 export default function SearchBar() {
   const searchValue = useRef();
+  const userGeolocation = useGeolocation();
 
   const [results, setResults] = useState([]);
   const getResults = () => {
@@ -85,7 +87,11 @@ export default function SearchBar() {
         </form>
       </div>
       {results.length !== 0 && (
-        <Map searchValue={searchValue.current?.value} results={results} />
+        <Map
+          searchValue={searchValue.current?.value}
+          results={results}
+          userGeolocation={userGeolocation}
+        />
       )}
       <ul>
         {results.map((result) => (
@@ -94,7 +100,7 @@ export default function SearchBar() {
             className="text-[#4F4E47] bg-white
               ml-4 mr-4 min-w-[90vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
           >
-            <Link to="/shopDetails">
+            <Link to={`/shops/${result.id}`}>
               {result.name} <br /> {result.address}
             </Link>
           </li>

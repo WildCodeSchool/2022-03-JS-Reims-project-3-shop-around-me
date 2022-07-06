@@ -2,6 +2,7 @@
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useAuthContext } from "../contexts/AuthContext";
 
 export default function PersonnalData() {
   const {
@@ -11,12 +12,19 @@ export default function PersonnalData() {
   } = useForm();
 
   const [editUser, setEditedUser] = useState(false);
-  const [user, setUser] = useState({});
+  const { loginData, setLoginData } = useAuthContext();
+  const { user } = loginData;
+
+  const setUser = (userObject) => {
+    setLoginData({ ...loginData, user: userObject });
+  };
 
   const getUser = () => {
     axios
       .get(
-        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users/1`
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users/${
+          user.id
+        }`
       )
       .then((response) => response)
       .then((data) => {
@@ -27,9 +35,9 @@ export default function PersonnalData() {
   const putUser = () => {
     axios
       .put(
-        `${
-          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-        }/users/1`,
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users/${
+          user.id
+        }`,
         getValues()
       )
       .then((response) => response);

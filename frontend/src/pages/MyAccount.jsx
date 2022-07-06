@@ -7,6 +7,7 @@ import {
   faCircleInfo,
   faUserXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import { useAuthContext } from "../contexts/AuthContext";
 import logo from "../assets/images/logo_alone.png";
 
 const accountMenu = [
@@ -43,10 +44,20 @@ const accountMenu = [
 ];
 
 export default function MyAccount() {
+  const { loginData, setLoginData } = useAuthContext();
+  const { firstname } = loginData.user;
+
+  const handleLogout = () => {
+    setLoginData({
+      isLoggedIn: false,
+      user: {},
+    });
+  };
+
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide">
       <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
-      <p className=" text-3xl text-[#4F4E47]">Bonjour utilisateur !</p>
+      <p className=" text-3xl text-[#4F4E47]">Bonjour {firstname} !</p>
       <p className=" text-2xl text-[#4F4E47] mb-8">Votre compte.</p>
 
       <ul>
@@ -66,6 +77,7 @@ export default function MyAccount() {
       <button
         type="button"
         className="text-m mt-8 py-3 border-solid border-2 border-red-600 text-red-600 font-bold rounded focus:outline-none focus:shadow-outline"
+        onClick={handleLogout}
       >
         Se déconnecter
       </button>
