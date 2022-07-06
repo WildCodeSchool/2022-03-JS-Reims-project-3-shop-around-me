@@ -5,10 +5,11 @@ import PersonalData from "../pages/PersonalData";
 import Fund from "../components/Fund";
 import LoginForm from "../components/LoginForm";
 import MyAccount from "../pages/MyAccount";
-import Fav from "../components/Fav";
+// import Fav from "../components/Fav";
 import InscriptionForm from "../components/InscriptionForm";
 import ShopDetails from "../components/ShopDetails";
 import ShopList from "../pages/ShopList";
+import Test from "../pages/Test";
 import { useAuthContext } from "../contexts/AuthContext";
 
 // Place all routes here
@@ -16,7 +17,7 @@ const protectedRoutes = [
   { path: "/home", component: <Home /> },
   { path: "/account", component: <MyAccount /> },
   { path: "/account/mydata", component: <PersonalData /> },
-  { path: "/fav", component: <Fav /> },
+  { path: "/fav", component: <Test /> },
   { path: "/funds", component: <Fund /> },
   { path: "/inscription", component: <InscriptionForm /> },
   { path: "/shopDetails", component: <ShopDetails /> },
