@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import VerticalLogo from "./VerticalLogo";
@@ -18,32 +18,38 @@ export default function SearchBar() {
       )
       .then((response) => response.data)
       .then((data) => {
-        Promise.all(
-          data.map((result) =>
-            // is the address completed in this shop table element ?
-            result.address
-              ? // if so, we return an object with the shop's address in the same format as the api-adresse.data.gouv address object
-                {
-                  data: {
-                    features: [{ properties: { label: result.address } }],
-                  },
-                }
-              : // if not, we return an object with the shop's address thanks to api-adresse.data.gouv address object
-                axios.get(
-                  `https://api-adresse.data.gouv.fr/reverse/?lon=${result.x}&lat=${result.y}`
-                )
-          )
-        ).then((responses) => {
-          setResults(
-            data.map((result, index) => ({
-              // we return an object with the shop's information, plus the address that we got from the api-adresse.data.gouv format object
-              ...result,
-              address: responses[index].data.features[0].properties.label,
-            }))
-          );
-        });
+        setResults(data);
       });
   };
+
+  useEffect(() => {
+    Promise.all(
+      results.map((result) =>
+        // is the address completed in this shop table element ?
+        result.address
+          ? // if so, we return an object with the shop's address in the same format as the api-adresse.data.gouv address object
+            {
+              data: {
+                features: [{ properties: { label: result.address } }],
+              },
+            }
+          : // if not, we return an object with the shop's address thanks to api-adresse.data.gouv address object
+            axios.get(
+              `${
+                import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+              }/address/reverse/?lon=${result.x}&lat=${result.y}`
+            )
+      )
+    ).then((responses) => {
+      setResults(
+        results.map((result, index) => ({
+          // we return an object with the shop's information, plus the address that we got from the api-adresse.data.gouv format object
+          ...result,
+          address: responses[index].data.features[0].properties.label,
+        }))
+      );
+    });
+  }, [JSON.stringify(results)]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -83,15 +89,15 @@ export default function SearchBar() {
       )}
       <ul>
         {results.map((result) => (
-          <Link to="/shopDetails">
-            <li
-              key={result.id}
-              className="text-[#4F4E47] bg-white
+          <li
+            key={result.id}
+            className="text-[#4F4E47] bg-white
               ml-4 mr-4 min-w-[90vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
-            >
+          >
+            <Link to="/shopDetails">
               {result.name} <br /> {result.address}
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
       </ul>
     </main>

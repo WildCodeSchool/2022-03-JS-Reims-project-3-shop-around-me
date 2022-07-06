@@ -1,4 +1,5 @@
 const express = require("express");
+const axios = require("axios");
 const passport = require("passport");
 const GenerateToken = require("./services/GenerateToken");
 const { hashPassword } = require("./services/PasswordHashing");
@@ -69,6 +70,16 @@ router.get("/users/:id", UserController.read);
 router.put("/users/:id", UserController.edit);
 router.post("/users", validateUser, hashPassword, UserController.add);
 router.delete("/users/:id", UserController.delete);
+
+router.get("/address/reverse", (req, res) => {
+  const { lon, lat } = req.query;
+
+  axios
+    .get(`https://api-adresse.data.gouv.fr/reverse/?lon=${lon}&lat=${lat}`)
+    .then((response) => {
+      res.send(response.data);
+    });
+});
 
 router.post("/login", passport.authenticate("local"), GenerateToken);
 
