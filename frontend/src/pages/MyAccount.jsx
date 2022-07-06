@@ -44,8 +44,15 @@ const accountMenu = [
 ];
 
 export default function MyAccount() {
-  const { loginData } = useAuthContext();
+  const { loginData, setLoginData } = useAuthContext();
   const { firstname } = loginData.user;
+
+  const handleLogout = () => {
+    setLoginData({
+      isLoggedIn: false,
+      user: {},
+    });
+  };
 
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide">
@@ -70,6 +77,7 @@ export default function MyAccount() {
       <button
         type="button"
         className="text-m mt-8 py-3 border-solid border-2 border-red-600 text-red-600 font-bold rounded focus:outline-none focus:shadow-outline"
+        onClick={handleLogout}
       >
         Se déconnecter
       </button>
