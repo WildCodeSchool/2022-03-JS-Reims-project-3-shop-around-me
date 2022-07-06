@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 import Home from "../pages/Home";
 import PersonalData from "../pages/PersonalData";
@@ -9,9 +9,10 @@ import Fav from "../components/Fav";
 import InscriptionForm from "../components/InscriptionForm";
 import ShopDetails from "../components/ShopDetails";
 import ShopList from "../pages/ShopList";
+import { useAuthContext } from "../contexts/AuthContext";
 
 // Place all routes here
-const routes = [
+const protectedRoutes = [
   { path: "/home", component: <Home /> },
   { path: "/account", component: <MyAccount /> },
   { path: "/account/mydata", component: <PersonalData /> },
@@ -24,13 +25,29 @@ const routes = [
 ];
 
 function Router({ children }) {
+  const { loginData } = useAuthContext();
+
+  const protect = (element) => {
+    if (!loginData.isLoggedIn) {
+      return <Navigate to="/" />;
+    }
+
+    return element;
+  };
+
+  const protectedRoute = (path, element, key) => (
+    <Route key={key} path={path} element={protect(element)} />
+  );
+
   return (
     <BrowserRouter>
       {children}
       <Routes>
-        {routes.map((route) => (
-          <Route key={route.path} path={route.path} element={route.component} />
-        ))}
+        <Route path="/" element={<LoginForm />} />
+        <Route path="/inscription" element={<InscriptionForm />} />
+        {protectedRoutes.map((route) =>
+          protectedRoute(route.path, route.component, route.path)
+        )}
       </Routes>
     </BrowserRouter>
   );
