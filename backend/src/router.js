@@ -1,5 +1,7 @@
 const express = require("express");
 const axios = require("axios");
+const passport = require("passport");
+const GenerateToken = require("./services/GenerateToken");
 const { hashPassword } = require("./services/PasswordHashing");
 const { validateUser } = require("./validators/UserValidator");
 const { validateKeyword } = require("./validators/KeywordValidator");
@@ -78,5 +80,7 @@ router.get("/address/reverse", (req, res) => {
       res.send(response.data);
     });
 });
+
+router.post("/login", passport.authenticate("local"), GenerateToken);
 
 module.exports = router;
