@@ -10,6 +10,7 @@ const {
   validateKeywordProduct,
 } = require("./validators/KeywordProductValidator");
 const { validateProductShop } = require("./validators/ProductShopValidator");
+const { validateShopUser } = require("./validators/ShopUserValidator");
 
 const {
   ItemController,
@@ -19,6 +20,7 @@ const {
   KeywordProductController,
   ProductShopController,
   ShopController,
+  ShopUserController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -63,6 +65,13 @@ router.post("/product_shop", validateProductShop, ProductShopController.add);
 router.delete(
   "/product_shop/shops/:shop_id/products/:product_id",
   ProductShopController.delete
+);
+
+router.get("/shop_user", ShopUserController.browse);
+router.post("/shop_user", validateShopUser, ShopUserController.add);
+router.delete(
+  "/shop_user/shops/:shop_id/user/:user_id",
+  ShopUserController.delete
 );
 
 router.get("/users", UserController.browse);
