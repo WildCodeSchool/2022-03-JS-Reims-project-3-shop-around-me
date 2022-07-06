@@ -19,7 +19,7 @@ const routes = [
   { path: "/funds", component: <Fund /> },
   { path: "/inscription", component: <InscriptionForm /> },
   { path: "/", component: <LoginForm /> },
-  { path: "/shopDetails", component: <ShopDetails /> },
+  { path: "/shops/:id", component: <ShopDetails /> },
   { path: "/shopList", component: <ShopList /> },
 ];
 
