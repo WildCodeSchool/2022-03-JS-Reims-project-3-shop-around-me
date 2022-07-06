@@ -46,7 +46,7 @@ CREATE TABLE `shop` (
 --
 
 INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `website`, `email`, `phone`, `fb_page`, `insta_page`, `x`, `y`) VALUES
-(1, "Magasin Fossier", "Maison Fossier", "biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "lundi, 14:00–19:00 / mardi, 10:00–19:00 / mercredi, 10:00–19:00 / jeudi, 10:00–19:00 / vendredi, 10:00–19:00 / samedi, 10:00–19:00 / dimanche, Fermé", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", 4.030351161956787, 49.25590515136719)
+(1, "Magasin Fossier", "Maison Fossier", "biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", 4.030351161956787, 49.25590515136719)
 
 /* INSERT QUERY NO: 1 */
 ,
@@ -1624,12 +1624,15 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 UPDATE shop SET type = REPLACE(type, '', null) WHERE type = '';
 UPDATE shop SET brand = REPLACE(brand, '', null) WHERE brand = '';
 UPDATE shop SET address = REPLACE(address, '', null) WHERE address = '';
-UPDATE shop SET opening_hours = REPLACE(opening_hours, '', null) WHERE opening_hours = '';
+UPDATE shop SET opening_hours = REPLACE(opening_hours, '', null);
 UPDATE shop SET website = REPLACE(website, '', null) WHERE website = '';
 UPDATE shop SET email = REPLACE(email, '', null) WHERE email = '';
 UPDATE shop SET phone = REPLACE(phone, '', null) WHERE phone = '';
 UPDATE shop SET fb_page = REPLACE(fb_page, '', null) WHERE fb_page = '';
 UPDATE shop SET insta_page = REPLACE(insta_page, '', null) WHERE insta_page = '';
+ALTER TABLE shop MODIFY COLUMN opening_hours json;
+UPDATE shop SET opening_hours = '{"lundi": "14:00–19:00", "mardi": "10:00–19:00", "mercredi": "10:00–19:00", "jeudi": "10:00–19:00", "vendredi": "10:00–19:00", "samedi": "10:00–19:00", "dimanche": "fermé"}' where opening_hours is NULL;
+
 
 --
 -- Index pour les tables exportées
