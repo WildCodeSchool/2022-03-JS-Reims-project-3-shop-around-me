@@ -2247,3 +2247,33 @@ ALTER TABLE `user`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `shop_user`
+--
+
+CREATE TABLE `shop_user` (
+  `shop_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_product_shop_shop
+        FOREIGN KEY (shop_id)
+        REFERENCES shop(id),
+  `user_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_product_shop_user
+        FOREIGN KEY (user_id)
+        REFERENCES user(id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `user_shop`
+--
+
+INSERT INTO `shop_user` (`shop_id`,`user_id`) VALUES
+(1, 1),
+(4, 1),
+(321, 1),
+(1, 2);
+
+-- --------------------------------------------------------
