@@ -7,6 +7,7 @@ import {
   faCircleInfo,
   faUserXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import { useAuthContext } from "../contexts/AuthContext";
 import logo from "../assets/images/logo_alone.png";
 
 const accountMenu = [
@@ -43,14 +44,21 @@ const accountMenu = [
 ];
 
 export default function MyAccount() {
+  const { loginData, setLoginData } = useAuthContext();
+  const { firstname } = loginData.user;
+
+  const handleLogout = () => {
+    setLoginData({
+      isLoggedIn: false,
+      user: {},
+    });
+  };
+
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide text-[#4F4E47]">
       <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
-      <p className=" text-2xl">Bonjour utilisateur !</p>
-      <p className="text-m mb-8 leading-4">
-        D'ici vous pouvez accèder à toutes vos informations et modifier vos
-        préférences.
-      </p>
+      <p className=" text-2xl ">Bonjour {firstname} !</p>
+      <p className=" text-m mb-8">Votre compte.</p>
 
       <ul>
         {accountMenu.map((menu) => (
@@ -66,6 +74,7 @@ export default function MyAccount() {
       <button
         type="button"
         className="text-m mt-8 py-3 border-solid border-2 border-red-600 text-red-600 font-bold rounded focus:outline-none focus:shadow-outline"
+        onClick={handleLogout}
       >
         Se déconnecter
       </button>
