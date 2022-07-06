@@ -6,7 +6,10 @@ function Fund() {
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide">
       <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
       <p className=" text-2xl text-[#4F4E47]">Votre cagnotte</p>
-      <p className=" text-m text-[#4F4E47] mb-8"> </p>
+      <p className=" text-m text-[#4F4E47] mb-8 leading-4">
+        Présentez votre QR code à votre commerçant participant pour cumuler ou
+        dépenser votre cashback.
+      </p>
 
       <picture className="self-center justify-self-center mt-24 mb-16">
         <img
