@@ -1,18 +1,43 @@
 /* eslint-disable react/jsx-props-no-spreading */
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useAuthContext } from "../contexts/AuthContext";
 import VerticalLogo from "./VerticalLogo";
 
 export default function LoginForm() {
+  const { loginData, setLoginData } = useAuthContext();
   const {
     register,
     formState: { errors },
+    getValues,
   } = useForm();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { email, password } = getValues();
+    axios
+      .post(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/login`,
+        { email, password }
+      )
+      .then((res) => {
+        setLoginData({ ...res.data, isLoggedIn: true });
+      });
+  };
+
+  useEffect(() => {
+    if (loginData.isLoggedIn) {
+      navigate("/home");
+    }
+  });
 
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 gap-y-4 tracking-wide text-[#4F4E47]">
       <VerticalLogo />
-      <form className="flex flex-col">
+      <form className="flex flex-col" onSubmit={handleSubmit}>
         <p className="text-2xl">Bienvenue !</p>
         <p className="text-m mb-8 leading-4">
           Connectez-vous ou inscrivez-vous pour accèder à vos boutiques

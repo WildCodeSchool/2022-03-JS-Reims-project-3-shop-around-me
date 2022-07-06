@@ -26,6 +26,10 @@ export default function ShopList() {
     return s.charAt(0).toUpperCase() + s.slice(1);
   };
 
+  const removeUnderscores = (s) => {
+    return s.replace(/_/g, " ");
+  };
+
   useEffect(() => {
     getResults();
   }, []);
@@ -42,8 +46,8 @@ export default function ShopList() {
       <ul className="mb-16">
         {Object.keys(results).map((type) => (
           <li key={type}>
-            <h2 className="px-8 py-4 text-lg font-bold bg-[#9c958e]">
-              {capitalize(type)}
+            <h2 className="p-4 text-lg font-bold bg-[#9c958e]">
+              {removeUnderscores(capitalize(type))}
             </h2>
             <ul className="px-12 my-6">
               {results[type].map((shop) => (

@@ -1,4 +1,6 @@
 const express = require("express");
+const passport = require("passport");
+const GenerateToken = require("./services/GenerateToken");
 const { hashPassword } = require("./services/PasswordHashing");
 const { validateUser } = require("./validators/UserValidator");
 const { validateKeyword } = require("./validators/KeywordValidator");
@@ -67,5 +69,7 @@ router.get("/users/:id", UserController.read);
 router.put("/users/:id", UserController.edit);
 router.post("/users", validateUser, hashPassword, UserController.add);
 router.delete("/users/:id", UserController.delete);
+
+router.post("/login", passport.authenticate("local"), GenerateToken);
 
 module.exports = router;
