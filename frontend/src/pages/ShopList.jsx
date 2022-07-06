@@ -40,7 +40,7 @@ export default function ShopList() {
         <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
         <p className=" text-2xl">Catégories</p>
         <p className="text-m mb-8 leading-4">
-          Retrouvez toutes les boutiques triées par catégories.
+          Retrouvez toutes les boutiques autour de vous, triées par catégories.
         </p>
       </section>
       <ul className="mb-16">
@@ -48,10 +48,10 @@ export default function ShopList() {
           .sort()
           .map((type) => (
             <li key={type}>
-              <h2 className="p-4 text-lg font-bold bg-[#9c958e]">
+              <h2 className="py-4 px-8 text-lg font-bold bg-[#9c958e]">
                 {capitalize(type)}
               </h2>
-              <ul className="ml-6 my-4">
+              <ul className="ml-12 my-4">
                 {results[type].sort(alphabetize).map((shop) => (
                   <li className="my-2" key={shop.id}>
                     <Link to="/shopDetails">{shop.name}</Link>
