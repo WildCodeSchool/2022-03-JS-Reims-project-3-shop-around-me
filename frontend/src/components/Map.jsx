@@ -2,6 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import propTypes from "prop-types";
 import useGeolocation from "react-hook-geolocation";
 import "leaflet/dist/leaflet.css";
+import * as L from "leaflet";
 
 const position = (geolocation) => {
   if (geolocation.error || !geolocation.latitude || !geolocation.longitude) {
@@ -16,6 +17,20 @@ function Map({ searchValue, results }) {
   const userPosition = position(userGeolocation);
   const shopPosition = [];
   results.forEach((result) => shopPosition.push([result.y, result.x]));
+
+  const LeafIcon = L.Icon.extend({
+    options: {},
+  });
+
+  const orangeIcon = new LeafIcon({
+    iconUrl:
+      "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E5%8D%B1|EDB02B|EDB02B",
+  });
+
+  const greenIcon = new LeafIcon({
+    iconUrl:
+      "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E5%8D%B1|CBC37B|CBC37B",
+  });
 
   return (
     <section className="flex flex-col text-center">
@@ -32,13 +47,21 @@ function Map({ searchValue, results }) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {results.map((result, index) => (
-          <Marker key={result.id} position={shopPosition[index]}>
-            <Popup>{result.name}</Popup>
+          <Marker
+            key={result.id}
+            position={shopPosition[index]}
+            icon={orangeIcon}
+            color="#EDB02B"
+          >
+            <Popup>
+              {result.name} :<br />
+              {result.address}
+            </Popup>
           </Marker>
         ))}
         {userPosition && (
-          <Marker position={userPosition}>
-            <Popup>Your position.</Popup>
+          <Marker position={userPosition} icon={greenIcon}>
+            <Popup>Votre position.</Popup>
           </Marker>
         )}
       </MapContainer>
