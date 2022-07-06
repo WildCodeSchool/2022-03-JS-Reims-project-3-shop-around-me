@@ -5,7 +5,7 @@ class UserManager extends AbstractManager {
 
   find(id) {
     return this.connection.query(
-      `select id, firstname, lastname, birthdate, gender, zipcode, city, email from ${UserManager.table} where id = ?`,
+      `select id, firstname, lastname, birthdate, gender, zipcode, city, email, password from ${UserManager.table} where id = ?`,
       [id]
     );
   }
@@ -19,7 +19,7 @@ class UserManager extends AbstractManager {
   findByEmail(email) {
     return this.connection
       .query(
-        `select id, firstname, lastname, birthdate, gender, zipcode, city, email from ${UserManager.table} where email = ?`,
+        `select id, firstname, lastname, birthdate, gender, zipcode, city, email, password from ${UserManager.table} where email = ?`,
         [email]
       )
       .then(([results]) => results[0]);
@@ -43,18 +43,8 @@ class UserManager extends AbstractManager {
 
   update(user) {
     return this.connection.query(
-      `update ${UserManager.table} set firstname = ?, lastname = ?, birthdate = ?, gender = ?, zipcode = ?, city = ?, email = ?, password = ? where id = ?`,
-      [
-        user.firstname,
-        user.lastname,
-        user.birthdate,
-        user.gender,
-        user.zipcode,
-        user.city,
-        user.email,
-        user.password,
-        user.id,
-      ]
+      `update ${UserManager.table} set ? where id = ?`,
+      [user, user.id]
     );
   }
 }
