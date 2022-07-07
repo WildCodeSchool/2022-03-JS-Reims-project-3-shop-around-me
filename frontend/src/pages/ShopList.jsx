@@ -54,7 +54,7 @@ export default function ShopList() {
               <ul className="ml-12 my-4">
                 {results[type].sort(alphabetize).map((shop) => (
                   <li className="my-2" key={shop.id}>
-                    <Link to="/shopDetails">{shop.name}</Link>
+                    <Link to={`/shops/${shop.id}`}>{shop.name}</Link>
                   </li>
                 ))}
               </ul>
