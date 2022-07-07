@@ -35,7 +35,7 @@ function Map({ searchValue, results, userGeolocation }) {
 
   return (
     <section className="flex flex-col text-center">
-      <h1 className="m-2">Votre résultat pour: {searchValue}</h1>
+      <p className="m-2 general-text">Votre résultat pour: {searchValue}</p>
       {userPosition ? (
         <MapContainer
           zoom={15}
