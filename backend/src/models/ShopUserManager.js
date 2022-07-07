@@ -24,7 +24,7 @@ class ShopUserManager extends AbstractManager {
   insert(shopUser) {
     return this.connection.query(
       `insert into ${ShopUserManager.table} (shop_id, user_id) values (?, ?)`,
-      [shopUser.shop_id, shopUser.keyword_id]
+      [shopUser.shop_id, shopUser.user_id]
     );
   }
 }
