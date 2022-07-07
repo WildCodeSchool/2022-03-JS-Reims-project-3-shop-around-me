@@ -5,7 +5,7 @@ import {
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import fossier from "../assets/images/fossier.png";
@@ -36,7 +36,7 @@ export default function ShopDetails() {
         type="button"
         className="text-m max-w-[33%] mb-4 py-1 border-solid border-2 rounded-full border-green-900 text-green-900 font-bold focus:outline-none focus:shadow-outline "
       >
-        Y aller
+        <Link to={`/itenary/${shop.x}/${shop.y}`}>Y aller</Link>
       </button>
       <img
         src={fossier}

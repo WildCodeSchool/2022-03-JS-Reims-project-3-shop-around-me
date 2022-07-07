@@ -9,7 +9,7 @@ import Fund from "../components/Fund";
 import InscriptionForm from "../components/InscriptionForm";
 import LoginForm from "../components/LoginForm";
 import ShopDetails from "../components/ShopDetails";
-import Test from "../pages/Test";
+import Itenary from "../pages/Itenary";
 import { useAuthContext } from "../contexts/AuthContext";
 
 // Place all routes here
@@ -23,7 +23,7 @@ const protectedRoutes = [
   { path: "/", component: <LoginForm /> },
   { path: "/shops/:id", component: <ShopDetails /> },
   { path: "/shopList", component: <ShopList /> },
-  { path: "/map/:x/:y", component: <Test /> },
+  { path: "/itenary/:x/:y", component: <Itenary /> },
 ];
 
 function Router({ children }) {
