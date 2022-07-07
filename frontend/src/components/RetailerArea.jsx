@@ -74,7 +74,7 @@ export default function RetailerArea() {
   const [search, setSearch] = useState("");
 
   return (
-    <main className="grid place-items-center block uppercase tracking-wide text-[#4F4E47] mb-2">
+    <main className="grid place-items-center uppercase tracking-wide text-[#4F4E47] mb-2">
       <HorizontalLogo />
       <section className="flex flex-col justify-center w-4/5">
         <h1 className="text-xl font-bold tracking-wide mb-6 mt-4 text-center">
