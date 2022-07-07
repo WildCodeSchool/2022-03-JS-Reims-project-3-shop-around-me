@@ -9,7 +9,7 @@ class ShopUserManager extends AbstractManager {
 
   findByUserId(userId) {
     return this.connection.query(
-      `select * from  ${ShopUserManager.table} where user_id = ?`,
+      `select distinct shop_id, shop.name, shop.img_url from shop inner join shop_user on shop.id = shop_id inner join user on user.id = user_id where user_id = ?`,
       [userId]
     );
   }
