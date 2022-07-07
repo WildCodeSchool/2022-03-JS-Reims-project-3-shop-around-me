@@ -5,7 +5,7 @@ import {
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import fossier from "../assets/images/fossier.png";
@@ -64,6 +64,9 @@ export default function ShopDetails() {
           </a>
         </li>
       </ul>
+      <Link to={`/map/${shop.x}/${shop.y}`}>
+        <p>Y aller</p>
+      </Link>
     </section>
   );
 }

@@ -5,7 +5,7 @@ import PersonalData from "../pages/PersonalData";
 import Fund from "../components/Fund";
 import LoginForm from "../components/LoginForm";
 import MyAccount from "../pages/MyAccount";
-// import Fav from "../components/Fav";
+import Fav from "../components/Fav";
 import InscriptionForm from "../components/InscriptionForm";
 import ShopDetails from "../components/ShopDetails";
 import ShopList from "../pages/ShopList";
@@ -17,12 +17,13 @@ const protectedRoutes = [
   { path: "/home", component: <Home /> },
   { path: "/account", component: <MyAccount /> },
   { path: "/account/mydata", component: <PersonalData /> },
-  { path: "/fav", component: <Test /> },
+  { path: "/fav", component: <Fav /> },
   { path: "/funds", component: <Fund /> },
   { path: "/inscription", component: <InscriptionForm /> },
   { path: "/", component: <LoginForm /> },
   { path: "/shops/:id", component: <ShopDetails /> },
   { path: "/shopList", component: <ShopList /> },
+  { path: "/map/:x/:y", component: <Test /> },
 ];
 
 function Router({ children }) {
