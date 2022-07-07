@@ -8,8 +8,8 @@ import {
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import fossier from "../assets/images/fossier.png";
-import logo from "../assets/images/logo_alone.png";
+import storeLogo from "../assets/images/store.png";
+import logoAlone from "../assets/images/logo_alone.png";
 
 export default function ShopDetails() {
   const { id } = useParams();
@@ -30,7 +30,7 @@ export default function ShopDetails() {
 
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide text-[#4F4E47]">
-      <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
+      <img src={logoAlone} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
       {shop && (
         <>
           <p className=" text-2xl">{shop.name}</p>
@@ -42,18 +42,24 @@ export default function ShopDetails() {
             Y aller
           </button>
           <img
-            src={fossier}
+            src={shop.img_url ? shop.img_url : storeLogo}
             alt={`${shop.name} façade`}
-            className="my-5 border-2 border-[#4F4E47] rounded-lg"
+            className={
+              shop.img_url
+                ? "my-5 border-2 border-[#4F4E47] rounded-lg"
+                : "rounded-lg px-16 pt-4 pb-8"
+            }
           />
           <section className="columns-2 text-center">
             <ul>
               Contact
               <li className="general-text">
-                <FontAwesomeIcon icon={faEnvelope} /> : {shop.email}
+                <FontAwesomeIcon icon={faEnvelope} /> :{" "}
+                {shop.email ? shop.email : "à renseigner"}
               </li>
               <li className="general-text">
-                <FontAwesomeIcon icon={faPhone} /> : {shop.phone}
+                <FontAwesomeIcon icon={faPhone} /> :{" "}
+                {shop.phone ? shop.phone : "à renseigner"}
               </li>
               <li className="general-text">
                 <a href={shop.fb_page} target="blank">
@@ -76,25 +82,40 @@ export default function ShopDetails() {
               {" "}
               Horaires
               <li className="general-text">
-                Lundi : {shop.opening_hours.lundi}
+                Lundi :{" "}
+                {shop.opening_hours ? shop.opening_hours.lundi : "à renseigner"}
               </li>
               <li className="general-text">
-                Mardi : {shop.opening_hours.mardi}
+                Mardi :{" "}
+                {shop.opening_hours ? shop.opening_hours.mardi : "à renseigner"}
               </li>
               <li className="general-text">
-                Mercredi : {shop.opening_hours.mercredi}
+                Mercredi :{" "}
+                {shop.opening_hours
+                  ? shop.opening_hours.mercredi
+                  : "à renseigner"}
               </li>
               <li className="general-text">
-                Mercredi : {shop.opening_hours.jeudi}
+                Mercredi :{" "}
+                {shop.opening_hours ? shop.opening_hours.jeudi : "à renseigner"}
               </li>
               <li className="general-text">
-                Vendredi : {shop.opening_hours.vendredi}
+                Vendredi :{" "}
+                {shop.opening_hours
+                  ? shop.opening_hours.vendredi
+                  : "à renseigner"}
               </li>
               <li className="general-text">
-                Samedi : {shop.opening_hours.samedi}
+                Samedi :{" "}
+                {shop.opening_hours
+                  ? shop.opening_hours.samedi
+                  : "à renseigner"}
               </li>
               <li className="general-text">
-                Dimanche : {shop.opening_hours.dimanche}
+                Dimanche :{" "}
+                {shop.opening_hours
+                  ? shop.opening_hours.dimanche
+                  : "à renseigner"}
               </li>
             </ul>
           </section>
