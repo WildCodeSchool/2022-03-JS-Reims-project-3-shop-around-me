@@ -68,6 +68,7 @@ router.delete(
 );
 
 router.get("/shop_user", ShopUserController.browse);
+router.get("/shop_user/:id", ShopUserController.read);
 router.post("/shop_user", validateShopUser, ShopUserController.add);
 router.delete(
   "/shop_user/shops/:shop_id/user/:user_id",

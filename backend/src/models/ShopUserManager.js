@@ -1,10 +1,17 @@
 const AbstractManager = require("./AbstractManager");
 
 class ShopUserManager extends AbstractManager {
-  static table = "shop-user";
+  static table = "shop_user";
 
   findAll() {
     return this.connection.query(`select * from  ${ShopUserManager.table}`);
+  }
+
+  findByUserId(userId) {
+    return this.connection.query(
+      `select * from  ${ShopUserManager.table} where user_id = ?`,
+      [userId]
+    );
   }
 
   delete(shopId, userId) {

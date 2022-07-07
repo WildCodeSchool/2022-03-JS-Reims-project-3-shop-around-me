@@ -13,6 +13,19 @@ class ShopUserController {
       });
   };
 
+  static read = (req, res) => {
+    const { id } = req.params;
+    models.shop_user
+      .findByUserId(id)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static add = (req, res) => {
     const shopUser = req.body;
 
