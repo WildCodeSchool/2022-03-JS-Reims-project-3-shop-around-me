@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import fossier from "../assets/images/fossier.png";
+import logo from "../assets/images/logo_alone.png";
 
 export default function ShopDetails() {
   const { id } = useParams();
@@ -28,61 +29,77 @@ export default function ShopDetails() {
   useEffect(() => getShop, []);
 
   return (
-    <section className="mb-[4.5rem]">
+    <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide text-[#4F4E47]">
+      <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
       {shop && (
-        <div>
-          <h1 className="text-center my-6 text-3xl">{shop.name}</h1>
+        <>
+          <p className=" text-2xl">{shop.name}</p>
+          <p className=" text-m mb-2 leading-4">{shop.address}</p>
+          <button
+            type="button"
+            className="text-m max-w-[33%] mb-4 py-1 border-solid border-2 rounded-full border-green-900 text-green-900 font-bold focus:outline-none focus:shadow-outline "
+          >
+            Y aller
+          </button>
           <img
             src={fossier}
             alt={`${shop.name} façade`}
-            className="my-5 border-2 border-black max-w-[85%] mx-auto rounded-lg"
+            className="my-5 border-2 border-[#4F4E47] rounded-lg"
           />
-
-          <ul>
-            <li className="shedules">Lundi : {shop.opening_hours.lundi}</li>
-            <li className="shedules">Mardi : {shop.opening_hours.mardi}</li>
-            <li className="shedules">
-              Mercredi : {shop.opening_hours.mercredi}
-            </li>
-            <li className="shedules">Mercredi : {shop.opening_hours.jeudi}</li>
-            <li className="shedules">
-              Vendredi : {shop.opening_hours.vendredi}
-            </li>
-            <li className="shedules">Samedi : {shop.opening_hours.samedi}</li>
-            <li className="shedules">
-              Dimanche : {shop.opening_hours.dimanche}
-            </li>
-          </ul>
-
-          <ul className="flex justify-between mx-4 my-6">
-            <li>
-              <FontAwesomeIcon icon={faEnvelope} className="contact-icons" /> :{" "}
-              {shop.email}
-            </li>
-            <li>
-              <FontAwesomeIcon icon={faPhone} className="contact-icons" /> :{" "}
-              {shop.phone}
-            </li>
-          </ul>
-          <ul className="flex justify-evenly my-4">
-            <li className="link-icons">
-              <a href={shop.fb_page} target="blank">
-                <FontAwesomeIcon icon={faFacebook} />
-              </a>
-            </li>
-            <li className="link-icons">
-              <a href={shop.insta_page} target="blank">
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
-            </li>
-            <li className="link-icons">
-              <a href={shop.website} target="blank">
-                <FontAwesomeIcon icon={faGlobe} />
-              </a>
-            </li>
-          </ul>
-        </div>
+          <section className="columns-2 text-center">
+            <ul>
+              Contact
+              <li className="general-text">
+                <FontAwesomeIcon icon={faEnvelope} /> : {shop.email}
+              </li>
+              <li className="general-text">
+                <FontAwesomeIcon icon={faPhone} /> : {shop.phone}
+              </li>
+              <li className="general-text">
+                <a href={shop.fb_page} target="blank">
+                  <FontAwesomeIcon icon={faFacebook} /> : Facebook
+                </a>
+              </li>
+              <li className="general-text">
+                <a href={shop.insta_page} target="blank">
+                  <FontAwesomeIcon icon={faInstagram} /> : Instagram
+                </a>
+              </li>
+              <li className="general-text">
+                <a href={shop.website} target="blank">
+                  <FontAwesomeIcon icon={faGlobe} /> : Website
+                </a>
+              </li>
+            </ul>
+            <br />
+            <ul>
+              {" "}
+              Horaires
+              <li className="general-text">
+                Lundi : {shop.opening_hours.lundi}
+              </li>
+              <li className="general-text">
+                Mardi : {shop.opening_hours.mardi}
+              </li>
+              <li className="general-text">
+                Mercredi : {shop.opening_hours.mercredi}
+              </li>
+              <li className="general-text">
+                Mercredi : {shop.opening_hours.jeudi}
+              </li>
+              <li className="general-text">
+                Vendredi : {shop.opening_hours.vendredi}
+              </li>
+              <li className="general-text">
+                Samedi : {shop.opening_hours.samedi}
+              </li>
+              <li className="general-text">
+                Dimanche : {shop.opening_hours.dimanche}
+              </li>
+            </ul>
+          </section>
+        </>
       )}
-    </section>
+    </main>
   );
 }
