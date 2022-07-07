@@ -1631,7 +1631,9 @@ UPDATE shop SET phone = REPLACE(phone, '', null) WHERE phone = '';
 UPDATE shop SET fb_page = REPLACE(fb_page, '', null) WHERE fb_page = '';
 UPDATE shop SET insta_page = REPLACE(insta_page, '', null) WHERE insta_page = '';
 ALTER TABLE shop MODIFY COLUMN opening_hours json;
-UPDATE shop SET opening_hours = '{"lundi": "14:00–19:00", "mardi": "10:00–19:00", "mercredi": "10:00–19:00", "jeudi": "10:00–19:00", "vendredi": "10:00–19:00", "samedi": "10:00–19:00", "dimanche": "fermé"}' where opening_hours is NULL;
+UPDATE shop SET opening_hours = '{"lundi": "14:00–19:00", "mardi": "10:00–19:00", "mercredi": "10:00–19:00", "jeudi": "10:00–19:00", "vendredi": "10:00–19:00", "samedi": "10:00–19:00", "dimanche": "fermé"}' where id=1;
+ALTER TABLE shop ADD img_url VARCHAR(255);
+UPDATE shop SET img_url = "https://www.fossier.fr/img/cms/magasins-min.png" WHERE id=1;
 
 
 --
