@@ -23,10 +23,25 @@ export default function ShopDetails() {
         }/shops/${id}`
       )
       .then((response) => response.data)
-      .then((data) => setShop(data));
+      .then((data) =>
+        axios
+          .get(
+            `${
+              import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+            }/address/reverse/?lon=${data.x}&lat=${data.y}`
+          )
+          .then((response) => {
+            setShop({
+              ...data,
+              address: response.data.features[0].properties.label,
+            });
+          })
+      );
   };
 
-  useEffect(() => getShop, []);
+  useEffect(() => {
+    getShop();
+  }, []);
 
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide text-[#4F4E47]">
