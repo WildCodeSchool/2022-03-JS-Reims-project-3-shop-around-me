@@ -16,7 +16,7 @@ export default function SearchBar() {
       .get(
         `${
           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-        }/shops/?search=${searchValue.current.value}`
+        }/shops/?search=${searchValue.current?.value.split(" ")[0]}`
       )
       .then((response) => response.data)
       .then((data) => {
@@ -24,12 +24,12 @@ export default function SearchBar() {
       });
   };
 
-  useEffect(() => addressesConversion(), [JSON.stringify(results)]);
-
   const handleSubmit = (event) => {
     event.preventDefault();
     return searchValue.current?.value.length > 1 && getResults();
   };
+
+  useEffect(() => addressesConversion(), [JSON.stringify(results)]);
 
   return (
     <main
