@@ -46,7 +46,7 @@ CREATE TABLE `shop` (
 --
 
 INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `website`, `email`, `phone`, `fb_page`, `insta_page`, `x`, `y`) VALUES
-(1, "Magasin Fossier", "Maison Fossier", "biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", 4.030351161956787, 49.25590515136719)
+(1, "Magasin Fossier", "Maison Fossier", "biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", 4.030900226012637, 49.25594501951917)
 
 /* INSERT QUERY NO: 1 */
 ,
