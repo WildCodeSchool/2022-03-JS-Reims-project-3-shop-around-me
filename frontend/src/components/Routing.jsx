@@ -4,10 +4,12 @@ import L from "leaflet";
 import propTypes from "prop-types";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
 import "leaflet-routing-machine";
+import "lrm-graphhopper";
 import { useMap } from "react-leaflet";
 
 L.Marker.prototype.options.icon = L.icon({
-  iconUrl: "https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png",
+  iconUrl:
+    "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E5%8D%B1|EDB02B|EDB02B",
 });
 
 export default function Routing({ geolocation }) {
@@ -20,7 +22,8 @@ export default function Routing({ geolocation }) {
     const routingControl = L.Routing.control({
       waypoints: [L.latLng(geolocation[0], geolocation[1]), L.latLng(y, x)],
       routeWhileDragging: true,
-    }).addTo(map);
+      router: L.Routing.graphHopper("03c941ab-b75d-42ef-8621-ff99d86c0abb"),
+    });
 
     // eslint-disable-next-line consistent-return
     return () => map.removeControl(routingControl);
