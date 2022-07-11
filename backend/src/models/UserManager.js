@@ -5,21 +5,21 @@ class UserManager extends AbstractManager {
 
   find(id) {
     return this.connection.query(
-      `select id, firstname, lastname, birthdate, gender, zipcode, city, email, password from ${UserManager.table} where id = ?`,
+      `select id, firstname, lastname, DATE_FORMAT(birthdate, "%d/%m/%Y") as birthdate, gender, zipcode, city, email, password from ${UserManager.table} where id = ?`,
       [id]
     );
   }
 
   findAll() {
     return this.connection.query(
-      `select id, firstname, lastname, birthdate, gender, zipcode, city, email from ${UserManager.table}`
+      `select id, firstname, lastname, DATE_FORMAT(birthdate, "%d/%m/%Y") as birthdate, gender, zipcode, city, email from ${UserManager.table}`
     );
   }
 
   findByEmail(email) {
     return this.connection
       .query(
-        `select id, firstname, lastname, birthdate, gender, zipcode, city, email, password from ${UserManager.table} where email = ?`,
+        `select id, firstname, lastname, DATE_FORMAT(birthdate, "%d/%m/%Y") as birthdate, gender, zipcode, city, email, password from ${UserManager.table} where email = ?`,
         [email]
       )
       .then(([results]) => results[0]);
@@ -27,7 +27,7 @@ class UserManager extends AbstractManager {
 
   insert(user) {
     return this.connection.query(
-      `insert into ${UserManager.table} (firstname, lastname, birthdate, gender, zipcode, city, email, password) values (?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${UserManager.table} (firstname, lastname, DATE_FORMAT(birthdate, "%d/%m/%Y") as birthdate, gender, zipcode, city, email, password) values (?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         user.firstname,
         user.lastname,
