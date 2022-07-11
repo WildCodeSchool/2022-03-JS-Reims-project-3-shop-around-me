@@ -11,6 +11,15 @@ import {
 function Navbar() {
   const location = useLocation();
   const noNavbarPaths = ["/", "/inscription"];
+  const createNavLink = ({ id, icon, url, style = "" }) => {
+    return (
+      <li key={id} className={`text-white text-2xl ${style}`}>
+        <Link to={url}>
+          <FontAwesomeIcon icon={icon} />
+        </Link>
+      </li>
+    );
+  };
   const navBarMenu = [
     {
       id: 1,
@@ -26,6 +35,8 @@ function Navbar() {
       id: 3,
       icon: faPiggyBank,
       url: "/funds",
+      style:
+        "bg-white text-3xl p-8 rounded-full border-[3px] border-[#4F4E47] border-solid text-[#4F4E46]",
     },
     {
       id: 4,
@@ -41,13 +52,7 @@ function Navbar() {
   return noNavbarPaths.includes(location.pathname) ? null : (
     <nav className="fixed h-[8vh] w-screen bottom-0 bg-[#4F4E47]">
       <ul className="flex items-center justify-evenly h-[8vh]">
-        {navBarMenu.map((menu) => (
-          <li key={menu.id} className="mr-4 text-white text-2xl">
-            <Link to={menu.url}>
-              <FontAwesomeIcon icon={menu.icon} />
-            </Link>
-          </li>
-        ))}
+        {navBarMenu.map((menu) => createNavLink(menu))}
       </ul>
     </nav>
   );
