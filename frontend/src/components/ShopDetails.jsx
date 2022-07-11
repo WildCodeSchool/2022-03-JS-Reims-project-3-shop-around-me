@@ -66,7 +66,7 @@ export default function ShopDetails() {
             }
           />
           <section className="columns-2 text-center">
-            <ul>
+            <ul className="text-left">
               Contact
               <li className="general-text">
                 <FontAwesomeIcon icon={faEnvelope} /> :{" "}
@@ -93,7 +93,7 @@ export default function ShopDetails() {
               </li>
             </ul>
             <br />
-            <ul>
+            <ul className="text-left">
               {" "}
               Horaires
               <li className="general-text">
