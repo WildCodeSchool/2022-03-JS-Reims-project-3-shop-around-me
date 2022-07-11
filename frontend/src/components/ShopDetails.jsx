@@ -5,7 +5,7 @@ import {
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import storeLogo from "../assets/images/store.png";
@@ -15,8 +15,8 @@ export default function ShopDetails() {
   const { id } = useParams();
   const [shop, setShop] = useState();
 
-  // const navigate = useNavigate();
-  // const precedent = () => navigate(-1);
+  const navigate = useNavigate();
+  const precedent = () => navigate(-1);
 
   const getShop = () => {
     axios
@@ -57,6 +57,7 @@ export default function ShopDetails() {
             <button
               type="button"
               className="text-m w-[5rem] mr-2 pt-3 pb-2 border-solid border-2 rounded-full border-[#4F4E47] text-[#4F4E47] focus:outline-none focus:shadow-outline leading-none"
+              onClick={precedent}
             >
               ←
             </button>
