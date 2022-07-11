@@ -77,8 +77,8 @@ export default function ShopDetails() {
                 : "my-8 rounded-lg px-16"
             }
           />
-          <section className="columns-2 text-center">
-            <ul>
+          <section className="columns-2 text-center mb-10">
+            <ul className="text-left">
               Contact
               <li className="general-text">
                 <FontAwesomeIcon icon={faEnvelope} /> :{" "}
@@ -105,7 +105,7 @@ export default function ShopDetails() {
               </li>
             </ul>
             <br />
-            <ul>
+            <ul className="text-left">
               {" "}
               Horaires
               <li className="general-text">

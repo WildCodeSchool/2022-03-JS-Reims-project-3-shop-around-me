@@ -24,6 +24,7 @@ export default function LoginForm() {
         { email, password }
       )
       .then((res) => {
+        res.data.user.fund = 1.93;
         setLoginData({ ...res.data, isLoggedIn: true });
       });
   };

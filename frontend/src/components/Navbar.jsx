@@ -9,8 +9,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useAddress } from "../contexts/AddressContext";
 
-const link = (icon, url, clickHandler) => (
-  <li className="mr-4 text-white text-2xl">
+const link = (icon, url, clickHandler, style = "") => (
+  <li className={`mr-4 text-white text-2xl ${style}`}>
     <Link to={url} onClick={clickHandler}>
       <FontAwesomeIcon icon={icon} />
     </Link>
@@ -27,7 +27,12 @@ function Navbar() {
       <ul className="flex items-center justify-evenly h-[8vh]">
         {link(faHouse, "/home", () => setResults([]))}
         {link(faStore, "/shopList")}
-        {link(faPiggyBank, "/funds")}
+        {link(
+          faPiggyBank,
+          "/funds",
+          "",
+          "bg-white text-3xl p-8 rounded-full border-[3px] border-[#4F4E47] border-solid text-[#4F4E46]"
+        )}
         {link(faHeart, "/fav")}
         {link(faUser, "/account")}
       </ul>
