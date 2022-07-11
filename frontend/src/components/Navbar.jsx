@@ -7,52 +7,34 @@ import {
   faHouse,
   faPiggyBank,
 } from "@fortawesome/free-solid-svg-icons";
+import { useAddress } from "../contexts/AddressContext";
+
+const link = (icon, url, clickHandler, style = "") => (
+  <li className={`text-white text-2xl ${style}`}>
+    <Link to={url} onClick={clickHandler}>
+      <FontAwesomeIcon icon={icon} />
+    </Link>
+  </li>
+);
 
 function Navbar() {
   const location = useLocation();
   const noNavbarPaths = ["/", "/inscription"];
-  const createNavLink = ({ id, icon, url, style = "" }) => {
-    return (
-      <li key={id} className={`text-white text-2xl ${style}`}>
-        <Link to={url}>
-          <FontAwesomeIcon icon={icon} />
-        </Link>
-      </li>
-    );
-  };
-  const navBarMenu = [
-    {
-      id: 1,
-      icon: faHouse,
-      url: "/home",
-    },
-    {
-      id: 2,
-      icon: faStore,
-      url: "/shopList",
-    },
-    {
-      id: 3,
-      icon: faPiggyBank,
-      url: "/funds",
-      style:
-        "bg-white text-3xl p-8 rounded-full border-[3px] border-[#4F4E47] border-solid text-[#4F4E46]",
-    },
-    {
-      id: 4,
-      icon: faHeart,
-      url: "/fav",
-    },
-    {
-      id: 5,
-      icon: faUser,
-      url: "/account",
-    },
-  ];
+  const { setResults } = useAddress();
+
   return noNavbarPaths.includes(location.pathname) ? null : (
     <nav className="fixed h-[8vh] w-screen bottom-0 bg-[#4F4E47]">
       <ul className="flex items-center justify-evenly h-[8vh]">
-        {navBarMenu.map((menu) => createNavLink(menu))}
+        {link(faHouse, "/home", () => setResults([]))}
+        {link(faStore, "/shopList")}
+        {link(
+          faPiggyBank,
+          "/funds",
+          "",
+          "bg-white text-3xl p-8 rounded-full border-[3px] border-[#4F4E47] border-solid text-[#4F4E46]"
+        )}
+        {link(faHeart, "/fav")}
+        {link(faUser, "/account")}
       </ul>
     </nav>
   );
