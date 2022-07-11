@@ -10,7 +10,7 @@ import {
 import { useAddress } from "../contexts/AddressContext";
 
 const link = (icon, url, clickHandler, style = "") => (
-  <li className={`mr-4 text-white text-2xl ${style}`}>
+  <li className={`text-white text-2xl ${style}`}>
     <Link to={url} onClick={clickHandler}>
       <FontAwesomeIcon icon={icon} />
     </Link>
