@@ -2213,7 +2213,6 @@ INSERT INTO `shop_user` (`shop_id`,`user_id`) VALUES
 (1, 2),
 (4, 2),
 (5, 2),
-(6, 2),
 (7, 2),
 (8, 2),
 (451, 2),
