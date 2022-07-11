@@ -35,7 +35,8 @@ function Navbar() {
       id: 3,
       icon: faPiggyBank,
       url: "/funds",
-      style: "text-5xl",
+      style:
+        "bg-white text-3xl p-8 rounded-full border-[3px] border-[#4F4E47] border-solid text-[#4F4E46]",
     },
     {
       id: 4,
