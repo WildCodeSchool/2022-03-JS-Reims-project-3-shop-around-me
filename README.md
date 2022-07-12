@@ -1,9 +1,44 @@
-## Concept
+# Wild Code School (Reims) - Project 3 - Shop Around Me
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+## Dates
+
+From 23rd May to 27th July 2022
+
+## Concept :
+
+- The Shop Around Me web app in a few words : "Find the product you are looking for in a store near you".
+- Three main features :
+  1/ A search engine
+  2/ A stores map as the search result
+  3/ An updated pot that can be used in these stores
+
+## Team :
+
+Developer team :
+Alexandra De Brito, Théo Depelsemacker, Simon Duc, Valentin Morette.
+
+Partner :
+Anne-Laure Petit-Gats Gervais, CEO of Shop Around Me.
+
+## Goals :
+
+- A database model was designed and updated throughout the project
+- The design of the application is consistent and respects the partner's brand guidelines
+- The API respects the REST architecture
+- The application is created using a front-end framework
+- The code is well structured and DRY
+- The application is functional and has no major errors
+- The code is available on Github
+- The application meets the partner's expectations
+- The team has respected the principles of agile methods
 
 ## Setup & Use
+
+### Support
+
+This template is meant to serve as a foundation for every project following the React-Express-MySQL stack, as learned in Wild Code School.
+It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+
 
 ### Project Initialization
 
@@ -20,8 +55,6 @@ It's pre-configured with a set of tools which'll help students produce industry-
 - `dev-back` : Starts the Express backend server
 - `lint` : Runs validation tools, and refuses unclean code (will be executed on every _commit_)
 - `fix` : Fixes linter errors (run it if `lint` growls on your code !)
-
-## FAQ
 
 ### Tools
 
