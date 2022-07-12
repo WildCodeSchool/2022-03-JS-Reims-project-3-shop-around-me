@@ -22,7 +22,10 @@ export default function Fav() {
       </p>
       <div className="flex flex-row flex-wrap gap-x-4 gap-y-4 justify-center">
         {allFav.map((favorite) => (
-          <figure className="flex flex-col items-center max-w-[30%]">
+          <figure
+            key={favorite.name}
+            className="flex flex-col items-center max-w-[30%]"
+          >
             <img src={favorite.img} alt="favoris" />
             <figcaption className="text-center">{favorite.name}</figcaption>
           </figure>
