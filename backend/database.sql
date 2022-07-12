@@ -1606,7 +1606,7 @@ contact.eklipsshop@gmail.com', '', 'https://www.facebook.com/Eklips-shop-1087923
 )
 ,
 (
-453, 'Galeries Lafayette Reims', '', 'vêtements', '33-45 Rue de Vesle, 51100 Reims', '', '', '', '', '', '', 4.023271083831787, 49.25151443481445
+453, 'Galeries Lafayette Reims', '', 'vêtements', '33-45 Rue de Vesle, 51100 Reims', '', '', '', '', '', '', 4.0294103, 49.2536065
 );
 
 
