@@ -1,12 +1,12 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import propTypes from "prop-types";
-import { useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet";
+import { useEffect } from "react";
 import { useGeolocationContext } from "../contexts/GeolocationContext";
 
 function Map({ searchValue, results }) {
-  const userGeolocation = useGeolocationContext();
+  const { userGeolocation } = useGeolocationContext();
   const shopPosition = [];
   results.forEach((result) => shopPosition.push([result.y, result.x]));
 
