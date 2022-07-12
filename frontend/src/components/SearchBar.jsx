@@ -29,11 +29,20 @@ export default function SearchBar() {
     return searchValue.current?.value.length > 1 && getResults();
   };
 
-  const alphabetize = (a, b) => {
-    return a.name.localeCompare(b.name);
+  const distanceProperty = () => {
+    results.forEach((element) => {
+      const distance =
+        Math.abs(element.y - userGeolocation.latitude) +
+        Math.abs(element.x - userGeolocation.longitude);
+      // eslint-disable-next-line no-param-reassign
+      element.distance = distance;
+    });
   };
 
-  useEffect(() => addressesConversion(), [JSON.stringify(results)]);
+  useEffect(() => {
+    addressesConversion();
+    distanceProperty();
+  }, [JSON.stringify(results)]);
 
   return (
     <main
@@ -71,17 +80,19 @@ export default function SearchBar() {
         />
       )}
       <ul>
-        {results.sort(alphabetize).map((result) => (
-          <li
-            key={result.id}
-            className="text-[#4F4E47] bg-white
+        {results
+          .sort((a, b) => a.distance - b.distance)
+          .map((result) => (
+            <li
+              key={result.id}
+              className="text-[#4F4E47] bg-white
               ml-4 mr-4 min-w-[90vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
-          >
-            <Link to={`/shops/${result.id}`}>
-              {result.name} <br /> {result.address}
-            </Link>
-          </li>
-        ))}
+            >
+              <Link to={`/shops/${result.id}`}>
+                {result.name} <br /> {result.address}
+              </Link>
+            </li>
+          ))}
       </ul>
     </main>
   );
