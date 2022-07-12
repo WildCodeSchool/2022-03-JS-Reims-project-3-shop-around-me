@@ -15,6 +15,11 @@ export default function PersonnalData() {
   const { loginData, setLoginData } = useAuthContext();
   const { user } = loginData;
 
+  const convertDateFRtoUS = (date) => {
+    const dateArray = date.split("/");
+    return `${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`;
+  };
+
   const setUser = (userObject) => {
     setLoginData({ ...loginData, user: userObject });
   };
@@ -33,12 +38,16 @@ export default function PersonnalData() {
   };
 
   const putUser = () => {
+    const userData = {
+      ...getValues(),
+      birthdate: convertDateFRtoUS(getValues().birthdate),
+    };
     axios
       .put(
         `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users/${
           user.id
         }`,
-        getValues()
+        userData
       )
       .then((response) => response);
   };
@@ -46,7 +55,6 @@ export default function PersonnalData() {
   useEffect(() => {
     getUser();
   }, [user]);
-  // Waiting for the authentification to be done so I can access all the informations
 
   const handleSave = (e) => {
     e.preventDefault();
