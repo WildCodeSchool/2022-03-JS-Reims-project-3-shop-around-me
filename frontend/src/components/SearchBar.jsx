@@ -52,7 +52,7 @@ export default function SearchBar() {
               id="search"
               type="text"
               name="search"
-              placeholder="Tapez: 'Biscuit Roses de Reims'"
+              placeholder="Rechercher un produit, une marque ou une boutique"
               ref={searchValue}
             />
           </label>
