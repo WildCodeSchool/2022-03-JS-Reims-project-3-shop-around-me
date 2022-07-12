@@ -255,7 +255,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 33 */
 ,
 (
-37, 'Boulagerie Frédéric Hardy', '', 'boulangeries', '', '', 'https://www.boulangerie51.org/boulangerie-hardy-frederic-sarl-b-h-c-reims-163.html', '+33 3 26 47 68 81', 'frederichardy@neuf.fr', '', '', 4.0326377, 49.2577514996288
+37, 'Boulangerie Frédéric Hardy', '', 'boulangeries', '', '', 'https://www.boulangerie51.org/boulangerie-hardy-frederic-sarl-b-h-c-reims-163.html', '+33 3 26 47 68 81', 'frederichardy@neuf.fr', '', '', 4.0326377, 49.2577514996288
 )
 
 /* INSERT QUERY NO: 34 */
