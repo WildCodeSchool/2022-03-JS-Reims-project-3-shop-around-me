@@ -52,7 +52,7 @@ export default function ShopList() {
             <li key={type}>
               <details>
                 <summary className="list-none my-2">
-                  <div className="py-4 px-8 text-lg font-bold bg-[#9c958e] cursor-pointer flex justify-between">
+                  <div className="py-4 px-8 text-lg font-bold bg-[hsl(30,7%,71%)] cursor-pointer flex justify-between">
                     {capitalize(type)} <FontAwesomeIcon icon={faAngleDown} />
                   </div>
                 </summary>
