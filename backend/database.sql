@@ -1623,6 +1623,9 @@ ALTER TABLE shop MODIFY COLUMN opening_hours json;
 UPDATE shop SET opening_hours = '{"lundi": "14:00–19:00", "mardi": "10:00–19:00", "mercredi": "10:00–19:00", "jeudi": "10:00–19:00", "vendredi": "10:00–19:00", "samedi": "10:00–19:00", "dimanche": "fermé"}' where id=1;
 ALTER TABLE shop ADD img_url VARCHAR(255);
 UPDATE shop SET img_url = "https://www.fossier.fr/img/cms/magasins-min.png" WHERE id=1;
+UPDATE shop SET img_url = "https://lh3.googleusercontent.com/p/AF1QipNkdrJowhQRCkixPry47Q-GzQ-PXpLnABHHASdh=w1080-h608-p-no-v0" WHERE id=4;
+UPDATE shop SET img_url = "https://medias.nicolas.com/media/sys_master/images/h01/he9/9465104039966.png" WHERE id=5;
+
 
 
 --
@@ -2173,6 +2176,41 @@ ALTER TABLE `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `shop_user`
+--
+
+CREATE TABLE `shop_user` (
+  `shop_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_shop_user_shop
+        FOREIGN KEY (shop_id)
+        REFERENCES shop(id),
+  `user_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_shop_user_user
+        FOREIGN KEY (user_id)
+        REFERENCES user(id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `shop_user`
+--
+
+INSERT INTO `shop_user` (`shop_id`,`user_id`) VALUES
+(1, 1),
+(4, 1),
+(5, 1),
+(1, 2),
+(4, 2),
+(5, 2);
+
+-- --------------------------------------------------------
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
