@@ -34,7 +34,7 @@ export default function SearchBar() {
   return (
     <main
       className={`grid place-items-center mb-14 ${
-        results && results.length > 0 ? "" : "h-[100vh]"
+        results && results.length > 0 ? "" : "mt-[50%]"
       }`}
     >
       <div className="flex flex-col justify-center items-center">

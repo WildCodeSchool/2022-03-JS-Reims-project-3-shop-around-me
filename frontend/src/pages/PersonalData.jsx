@@ -371,7 +371,7 @@ export default function PersonnalData() {
           {editUser === true ? (
             <button
               type="button"
-              className="text-sm py-3 ml-2 mr-2 mb-12 border-solid border-2 border-green-900 text-green-900 font-bold rounded focus:outline-none focus:shadow-outline"
+              className="text-sm py-3 ml-2 mr-2 mb-12 border-solid border-2 border-[#255f29] text-[#255f29] font-bold rounded focus:outline-none focus:shadow-outline"
               onClick={handleSave}
             >
               Valider mes modifications
@@ -379,7 +379,7 @@ export default function PersonnalData() {
           ) : (
             <button
               type="button"
-              className="text-sm py-3 ml-2 mr-2 mb-12 border-solid border-2 border-red-600 text-red-600 font-bold rounded focus:outline-none focus:shadow-outline"
+              className="text-sm py-3 ml-2 mr-2 mb-12 border-solid border-2 border-[#5f2525] text-[#5f2525] font-bold rounded focus:outline-none focus:shadow-outline"
               onClick={handleEdit}
             >
               Modifier mes informations

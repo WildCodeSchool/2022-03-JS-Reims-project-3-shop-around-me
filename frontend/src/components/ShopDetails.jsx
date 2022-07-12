@@ -63,7 +63,7 @@ export default function ShopDetails() {
             </button>
             <button
               type="button"
-              className="text-m w-[5rem] pt-3 pb-2 border-solid border-2 rounded-full border-green-900 text-green-900 focus:outline-none focus:shadow-outline leading-none"
+              className="text-m w-[5rem] pt-3 pb-2 border-solid border-2 rounded-full border-[#255f29] text-[#255f29] focus:outline-none focus:shadow-outline leading-none"
             >
               Y aller
             </button>

@@ -73,7 +73,7 @@ export default function MyAccount() {
       </ul>
       <button
         type="button"
-        className="text-m mt-8 py-3 border-solid border-2 border-red-600 text-red-600 font-bold rounded focus:outline-none focus:shadow-outline"
+        className="text-m mt-8 py-3 border-solid border-2 border-[#5f2525] text-[#5f2525] font-bold rounded focus:outline-none focus:shadow-outline"
         onClick={handleLogout}
       >
         Se déconnecter
