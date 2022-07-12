@@ -255,7 +255,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 33 */
 ,
 (
-37, 'Boulagerie Frédéric Hardy', '', 'boulangeries', '', '', 'https://www.boulangerie51.org/boulangerie-hardy-frederic-sarl-b-h-c-reims-163.html', '+33 3 26 47 68 81', 'frederichardy@neuf.fr', '', '', 4.0326377, 49.2577514996288
+37, 'Boulangerie Frédéric Hardy', '', 'boulangeries', '', '', 'https://www.boulangerie51.org/boulangerie-hardy-frederic-sarl-b-h-c-reims-163.html', '+33 3 26 47 68 81', 'frederichardy@neuf.fr', '', '', 4.0326377, 49.2577514996288
 )
 
 /* INSERT QUERY NO: 34 */
@@ -1606,7 +1606,7 @@ contact.eklipsshop@gmail.com', '', 'https://www.facebook.com/Eklips-shop-1087923
 )
 ,
 (
-453, 'Galeries Lafayette Reims', '', 'vêtements', '33-45 Rue de Vesle, 51100 Reims', '', '', '', '', '', '', 4.023271083831787, 49.25151443481445
+453, 'Galeries Lafayette Reims', '', 'vêtements', '33-45 Rue de Vesle, 51100 Reims', '', '', '', '', '', '', 4.0294103, 49.2536065
 );
 
 
