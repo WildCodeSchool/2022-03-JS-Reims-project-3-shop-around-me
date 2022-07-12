@@ -11,7 +11,7 @@ L'application web Shop Around Me en une phrase : "Trouvez les produits que vous 
 Les trois fonctionnalités principales :
 - Un moteur de recherche
 - Une carte des magasins comme résultat de la recherche
-- Une cagnotte mise à jour utilisables dans ces magasins
+- Une cagnotte mise à jour utilisable dans ces magasins
 
 ## Equipe :
 
