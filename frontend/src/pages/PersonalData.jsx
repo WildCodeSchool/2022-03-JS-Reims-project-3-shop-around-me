@@ -65,7 +65,7 @@ export default function PersonnalData() {
         Mes informations
       </h2>
       {user && (
-        <form className="flex flex-col">
+        <form className="flex flex-col mb-3">
           <div className="form-structure">
             <label htmlFor="grid-firstname">
               Prénom
