@@ -29,6 +29,10 @@ export default function SearchBar() {
     return searchValue.current?.value.length > 1 && getResults();
   };
 
+  const alphabetize = (a, b) => {
+    return a.name.localeCompare(b.name);
+  };
+
   useEffect(() => addressesConversion(), [JSON.stringify(results)]);
 
   return (
@@ -67,7 +71,7 @@ export default function SearchBar() {
         />
       )}
       <ul>
-        {results.map((result) => (
+        {results.sort(alphabetize).map((result) => (
           <li
             key={result.id}
             className="text-[#4F4E47] bg-white
