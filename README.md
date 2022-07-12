@@ -6,8 +6,9 @@ From 23rd May to 27th July 2022
 
 ## Concept :
 
-- The Shop Around Me web app in a few words : "Find the product you are looking for in a store near you".
-- Three main features :
+The Shop Around Me web app in a few words : "Find the product you are looking for in a store near you".
+
+Three main features :
   1/ A search engine
   2/ A stores map as the search result
   3/ An updated pot that can be used in these stores
@@ -15,10 +16,17 @@ From 23rd May to 27th July 2022
 ## Team :
 
 Developer team :
-Alexandra De Brito, Théo Depelsemacker, Simon Duc, Valentin Morette.
+- [Alexandra De Brito](https://github.com/Alexandra-Rdrgs "Alexandra De Brito")
+- [Théo Depelsemacker](https://github.com/theoDep "Théo Depelsemacker")
+- [Simon Duc](https://github.com/Simon-Duc "Simon Duc")
+- [Valentin Morette](https://github.com/Valentin-Morette "Valentin Morette")
 
 Partner :
-Anne-Laure Petit-Gats Gervais, CEO of Shop Around Me.
+- Anne-Laure Petit-Gats Gervais, CEO of Shop Around Me.
+
+Instructors :
+- Romain Guillemot
+- Robin Jonval
 
 ## Goals :
 
