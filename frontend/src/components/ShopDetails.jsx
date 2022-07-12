@@ -5,7 +5,7 @@ import {
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import storeLogo from "../assets/images/store.png";
@@ -65,7 +65,7 @@ export default function ShopDetails() {
               type="button"
               className="text-m w-[5rem] pt-3 pb-2 border-solid border-2 rounded-full border-green-900 text-green-900 focus:outline-none focus:shadow-outline leading-none"
             >
-              Y aller
+              <Link to={`/itenary/${shop.x}/${shop.y}`}>Y aller</Link>
             </button>
           </div>
           <img

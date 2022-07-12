@@ -1,18 +1,12 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import propTypes from "prop-types";
+import { useEffect } from "react";
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet";
+import { useGeolocationContext } from "../contexts/GeolocationContext";
 
-const position = (geolocation) => {
-  if (geolocation.error || !geolocation.latitude || !geolocation.longitude) {
-    return null;
-  }
-
-  return [geolocation.latitude, geolocation.longitude];
-};
-
-function Map({ searchValue, results, userGeolocation }) {
-  const userPosition = position(userGeolocation);
+function Map({ searchValue, results }) {
+  const userGeolocation = useGeolocationContext();
   const shopPosition = [];
   results.forEach((result) => shopPosition.push([result.y, result.x]));
 
@@ -30,13 +24,15 @@ function Map({ searchValue, results, userGeolocation }) {
       "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E5%8D%B1|CBC37B|CBC37B",
   });
 
+  useEffect(() => {}, [userGeolocation]);
+
   return (
     <section className="flex flex-col text-center">
       <p className="m-2 general-text">Votre résultat pour: {searchValue}</p>
-      {userPosition ? (
+      {userGeolocation ? (
         <MapContainer
           zoom={15}
-          center={userPosition}
+          center={userGeolocation}
           scrollWheelZoom={false}
           style={{ height: "600px", width: "800px" }}
           className="rounded-xl border-solid border border-gray-200 max-w-[90vw] max-h-[45vh]"
@@ -50,7 +46,6 @@ function Map({ searchValue, results, userGeolocation }) {
               key={result.id}
               position={shopPosition[index]}
               icon={orangeIcon}
-              color="#EDB02B"
             >
               <Popup>
                 {result.name} :<br />
@@ -58,8 +53,8 @@ function Map({ searchValue, results, userGeolocation }) {
               </Popup>
             </Marker>
           ))}
-          {userPosition && (
-            <Marker position={userPosition} icon={greenIcon}>
+          {userGeolocation && (
+            <Marker position={userGeolocation} icon={greenIcon}>
               <Popup>Votre position.</Popup>
             </Marker>
           )}
@@ -91,7 +86,6 @@ function Map({ searchValue, results, userGeolocation }) {
 Map.propTypes = {
   searchValue: propTypes.string.isRequired,
   results: propTypes.shape.isRequired,
-  userGeolocation: propTypes.shape.isRequired,
 };
 
 export default Map;

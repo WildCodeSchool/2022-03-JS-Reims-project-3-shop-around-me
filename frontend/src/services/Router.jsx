@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Home from "../pages/Home";
 import MyAccount from "../pages/MyAccount";
 import PersonalData from "../pages/PersonalData";
+import Itenary from "../pages/Itenary";
 import ShopList from "../pages/ShopList";
 import Fav from "../components/Fav";
 import Fund from "../components/Fund";
@@ -22,6 +23,7 @@ const protectedRoutes = [
   { path: "/", component: <LoginForm /> },
   { path: "/shops/:id", component: <ShopDetails /> },
   { path: "/shopList", component: <ShopList /> },
+  { path: "/itenary/:x/:y", component: <Itenary /> },
 ];
 
 function Router({ children }) {

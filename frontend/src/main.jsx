@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import { GeolocationContextProvider } from "./contexts/GeolocationContext";
 import { AuthContextProvider } from "./contexts/AuthContext";
 
 import App from "./App";
@@ -11,10 +11,12 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <AuthContextProvider>
-      <AddressContextProvider>
-        <App />
-      </AddressContextProvider>
-    </AuthContextProvider>
+    <GeolocationContextProvider>
+      <AuthContextProvider>
+        <AddressContextProvider>
+          <App />
+        </AddressContextProvider>
+      </AuthContextProvider>
+    </GeolocationContextProvider>
   </React.StrictMode>
 );
