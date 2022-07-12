@@ -85,7 +85,43 @@ function Map({ searchValue, results }) {
 
 Map.propTypes = {
   searchValue: propTypes.string.isRequired,
-  results: propTypes.shape.isRequired,
+  results: propTypes.arrayOf(
+    propTypes.shape({
+      address: propTypes.string,
+      brand: propTypes.string,
+      email: propTypes.string,
+      fb_page: propTypes.string,
+      id: propTypes.number,
+      insta_page: propTypes.string,
+      name: propTypes.string,
+      opening_hours: propTypes.shape({
+        dimanche: propTypes.string,
+        jeudi: propTypes.string,
+        lundi: propTypes.string,
+        mardi: propTypes.string,
+        mercredi: propTypes.string,
+        samedi: propTypes.string,
+        vendredi: propTypes.string,
+      }),
+
+      phone: propTypes.string,
+      type: propTypes.string,
+      website: propTypes.string,
+      x: propTypes.number,
+      y: propTypes.number,
+    })
+  ).isRequired,
+  userGeolocation: propTypes.shape({
+    accuracy: propTypes.number,
+    altitude: propTypes.number,
+    altitudeAccuracy: propTypes.number,
+    heading: propTypes.number,
+    latitude: propTypes.number,
+    longitude: propTypes.number,
+    speed: propTypes.number,
+    timestamp: propTypes.number,
+    error: propTypes.string,
+  }).isRequired,
 };
 
 export default Map;

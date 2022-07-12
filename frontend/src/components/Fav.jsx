@@ -1,45 +1,17 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
-import { useAuthContext } from "../contexts/AuthContext";
 import logo from "../assets/images/logo_alone.png";
 
 export default function Fav() {
-  const [fav, setFav] = useState([]);
-  const { loginData, setLoginData } = useAuthContext();
-  const { user } = loginData;
-  // eslint-disable-next-line no-unused-vars
-  const setUser = (userObject) => {
-    setLoginData({ ...loginData, user: userObject });
-  };
-  const getFavorite = () => {
-    axios
-      .get(
-        `${
-          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-        }/shop_user/${user.id}`
-      )
-      .then((response) => setFav(response.data));
-  };
-
-  const removeFavorite = (shopId) => {
-    axios
-      .delete(
-        `${
-          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-        }/shop_user/shops/${shopId}/user/${user.id}`
-      )
-      .then((response) => response.data);
-  };
-
-  useEffect(() => {
-    getFavorite();
-  }, [fav]);
-
-  const handleRemove = (shopId) => {
-    removeFavorite(shopId);
-  };
+  const allFav = [
+    { img: logo, name: "Magasin Fossier" },
+    { img: logo, name: "Au temps des cerises" },
+    { img: logo, name: "Le clos simon" },
+    { img: logo, name: "La petite malle" },
+    { img: logo, name: "Pas à pas" },
+    { img: logo, name: "Petit colin" },
+    { img: logo, name: "Brice" },
+    { img: logo, name: "Etam" },
+    { img: logo, name: "Camaïeu" },
+  ];
 
   return (
     <section className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide">
@@ -48,29 +20,14 @@ export default function Fav() {
       <p className=" text-m text-[#4F4E47] mb-8 leading-4">
         Enregistrez vos boutiques favorites et retrouvez-les rapidement.
       </p>
-      <div className="flex flex-col gap-x-4 gap-y-4 mb-16 text-[#4F4E47]">
-        {fav.map((favorite) => (
+      <div className="flex flex-row flex-wrap gap-x-4 gap-y-4 justify-center">
+        {allFav.map((favorite) => (
           <figure
-            key={favorite.shop_id}
-            className="flex w-[100%] mt-1 mb-1 justify-between items-center bg-white rounded-lg p-2"
+            key={favorite.name}
+            className="flex flex-col items-center max-w-[30%]"
           >
-            <img
-              src={favorite.img_url}
-              alt="favori"
-              className="clip-circle w-[86px] h-[86px] object-cover"
-            />
-            <figcaption className=" self-center justify-self-center text-m leading-4 max-w-[75%]">
-              {favorite.name}
-            </figcaption>
-            <button
-              type="button"
-              onClick={() => handleRemove(favorite.shop_id)}
-            >
-              <FontAwesomeIcon
-                icon={faHeartSolid}
-                className="text-2xl text-red-700 mr-3"
-              />
-            </button>
+            <img src={favorite.img} alt="favoris" />
+            <figcaption className="text-center">{favorite.name}</figcaption>
           </figure>
         ))}
       </div>
