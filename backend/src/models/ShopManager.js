@@ -17,8 +17,9 @@ class ShopManager extends AbstractManager {
       WHERE ${KeywordManager.table}.keyword_name 
       LIKE ? OR ${ProductManager.table}.name LIKE ? 
       OR ${ProductManager.table}.brand LIKE ? 
+      OR s.name LIKE ?
       AND ${ProductShopManager.table}.shop_id = s.id`,
-      [`%${search}%`, `%${search}%`, `%${search}%`]
+      [`%${search}%`, `%${search}%`, `%${search}%`, `%${search}%`]
     );
   }
 
