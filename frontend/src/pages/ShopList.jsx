@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import logo from "../assets/images/logo_alone.png";
 
 export default function ShopList() {
@@ -39,7 +41,7 @@ export default function ShopList() {
       <section className="px-8 pt-8">
         <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
         <p className=" text-2xl">Catégories</p>
-        <p className="text-m mb-8 leading-4">
+        <p className="text-m mb-6 leading-4">
           Retrouvez toutes les boutiques autour de vous, triées par catégories.
         </p>
       </section>
@@ -48,16 +50,20 @@ export default function ShopList() {
           .sort()
           .map((type) => (
             <li key={type}>
-              <h2 className="py-4 px-8 text-lg font-bold bg-[#9c958e]">
-                {capitalize(type)}
-              </h2>
-              <ul className="ml-12 my-4">
-                {results[type].sort(alphabetize).map((shop) => (
-                  <li className="my-2" key={shop.id}>
-                    <Link to="/shopDetails">{shop.name}</Link>
-                  </li>
-                ))}
-              </ul>
+              <details>
+                <summary className="list-none my-2">
+                  <div className="py-4 px-8 text-lg font-bold bg-[#9c958e] cursor-pointer flex justify-between">
+                    {capitalize(type)} <FontAwesomeIcon icon={faAngleDown} />
+                  </div>
+                </summary>
+                <ul className="ml-12 my-4">
+                  {results[type].sort(alphabetize).map((shop) => (
+                    <li className="my-2" key={shop.id}>
+                      <Link to={`/shops/${shop.id}`}>{shop.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
             </li>
           ))}
       </ul>

@@ -1,22 +1,22 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import useGeolocation from "react-hook-geolocation";
 import VerticalLogo from "./VerticalLogo";
 import HorizontalLogo from "./HorizontalLogo";
 import Map from "./Map";
+import { useAddress } from "../contexts/AddressContext";
 
 export default function SearchBar() {
   const searchValue = useRef();
   const userGeolocation = useGeolocation();
-
-  const [results, setResults] = useState([]);
+  const { results, setResults, addressesConversion } = useAddress();
   const getResults = () => {
     axios
       .get(
         `${
           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-        }/shops/?search=${searchValue.current.value}`
+        }/shops/?search=${searchValue.current?.value.split(" ")[0]}`
       )
       .then((response) => response.data)
       .then((data) => {
@@ -24,39 +24,12 @@ export default function SearchBar() {
       });
   };
 
-  useEffect(() => {
-    Promise.all(
-      results.map((result) =>
-        // is the address completed in this shop table element ?
-        result.address
-          ? // if so, we return an object with the shop's address in the same format as the api-adresse.data.gouv address object
-            {
-              data: {
-                features: [{ properties: { label: result.address } }],
-              },
-            }
-          : // if not, we return an object with the shop's address thanks to api-adresse.data.gouv address object
-            axios.get(
-              `${
-                import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-              }/address/reverse/?lon=${result.x}&lat=${result.y}`
-            )
-      )
-    ).then((responses) => {
-      setResults(
-        results.map((result, index) => ({
-          // we return an object with the shop's information, plus the address that we got from the api-adresse.data.gouv format object
-          ...result,
-          address: responses[index].data.features[0].properties.label,
-        }))
-      );
-    });
-  }, [JSON.stringify(results)]);
-
   const handleSubmit = (event) => {
     event.preventDefault();
     return searchValue.current?.value.length > 1 && getResults();
   };
+
+  useEffect(() => addressesConversion(), [JSON.stringify(results)]);
 
   return (
     <main

@@ -5,7 +5,7 @@ import {
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import storeLogo from "../assets/images/store.png";
@@ -15,6 +15,9 @@ export default function ShopDetails() {
   const { id } = useParams();
   const [shop, setShop] = useState();
 
+  const navigate = useNavigate();
+  const precedent = () => navigate(-1);
+
   const getShop = () => {
     axios
       .get(
@@ -23,10 +26,25 @@ export default function ShopDetails() {
         }/shops/${id}`
       )
       .then((response) => response.data)
-      .then((data) => setShop(data));
+      .then((data) =>
+        axios
+          .get(
+            `${
+              import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+            }/address/reverse/?lon=${data.x}&lat=${data.y}`
+          )
+          .then((response) => {
+            setShop({
+              ...data,
+              address: response.data.features[0].properties.label,
+            });
+          })
+      );
   };
 
-  useEffect(() => getShop, []);
+  useEffect(() => {
+    getShop();
+  }, []);
 
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide text-[#4F4E47]">
@@ -35,23 +53,32 @@ export default function ShopDetails() {
         <>
           <p className=" text-2xl">{shop.name}</p>
           <p className=" text-m mb-2 leading-4">{shop.address}</p>
-          <button
-            type="button"
-            className="text-m max-w-[33%] mb-4 py-1 border-solid border-2 rounded-full border-green-900 text-green-900 font-bold focus:outline-none focus:shadow-outline "
-          >
-            Y aller
-          </button>
+          <div>
+            <button
+              type="button"
+              className="text-m w-[5rem] mr-2 pt-3 pb-2 border-solid border-2 rounded-full border-[#4F4E47] text-[#4F4E47] focus:outline-none focus:shadow-outline leading-none"
+              onClick={precedent}
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              className="text-m w-[5rem] pt-3 pb-2 border-solid border-2 rounded-full border-green-900 text-green-900 focus:outline-none focus:shadow-outline leading-none"
+            >
+              Y aller
+            </button>
+          </div>
           <img
             src={shop.img_url ? shop.img_url : storeLogo}
             alt={`${shop.name} façade`}
             className={
               shop.img_url
-                ? "my-5 border-2 border-[#4F4E47] rounded-lg"
-                : "rounded-lg px-16 pt-4 pb-8"
+                ? "my-8 border-2 border-[#4F4E47] rounded-lg"
+                : "my-8 rounded-lg px-16"
             }
           />
-          <section className="columns-2 text-center">
-            <ul>
+          <section className="columns-2 text-center mb-10">
+            <ul className="text-left">
               Contact
               <li className="general-text">
                 <FontAwesomeIcon icon={faEnvelope} /> :{" "}
@@ -78,7 +105,7 @@ export default function ShopDetails() {
               </li>
             </ul>
             <br />
-            <ul>
+            <ul className="text-left">
               {" "}
               Horaires
               <li className="general-text">

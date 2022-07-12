@@ -2,7 +2,6 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import propTypes from "prop-types";
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet";
-import { useEffect } from "react";
 
 const position = (geolocation) => {
   if (geolocation.error || !geolocation.latitude || !geolocation.longitude) {
@@ -30,8 +29,6 @@ function Map({ searchValue, results, userGeolocation }) {
     iconUrl:
       "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E5%8D%B1|CBC37B|CBC37B",
   });
-
-  useEffect(() => {}, [userPosition]);
 
   return (
     <section className="flex flex-col text-center">
