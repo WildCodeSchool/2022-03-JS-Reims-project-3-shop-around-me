@@ -1,6 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import propTypes from "prop-types";
 import "leaflet/dist/leaflet.css";
+import { Link } from "react-router-dom";
 import * as L from "leaflet";
 
 const position = (geolocation) => {
@@ -35,7 +36,7 @@ function Map({ searchValue, results, userGeolocation }) {
       <p className="m-2 general-text">Votre résultat pour: {searchValue}</p>
       {userPosition ? (
         <MapContainer
-          zoom={14}
+          zoom={15}
           center={userPosition}
           scrollWheelZoom={false}
           style={{ height: "600px", width: "800px" }}
@@ -53,8 +54,10 @@ function Map({ searchValue, results, userGeolocation }) {
               color="#EDB02B"
             >
               <Popup>
-                {result.name} :<br />
-                {result.address}
+                <Link to={`/shops/${result.id}`}>
+                  {result.name} :<br />
+                  {result.address}
+                </Link>
               </Popup>
             </Marker>
           ))}
