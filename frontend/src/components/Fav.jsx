@@ -57,7 +57,7 @@ export default function Fav() {
             <img
               src={favorite.img_url}
               alt="favori"
-              className="clip-circle w-[86px] justify-start"
+              className="clip-circle w-[86px] h-[86px] object-cover"
             />
             <figcaption className=" self-center justify-self-center text-m leading-4 max-w-[75%]">
               {favorite.name}
@@ -68,7 +68,7 @@ export default function Fav() {
             >
               <FontAwesomeIcon
                 icon={faHeartSolid}
-                className="text-2xl text-red-700"
+                className="text-2xl text-red-700 mr-3"
               />
             </button>
           </figure>

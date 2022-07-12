@@ -1634,6 +1634,9 @@ ALTER TABLE shop MODIFY COLUMN opening_hours json;
 UPDATE shop SET opening_hours = '{"lundi": "14:00–19:00", "mardi": "10:00–19:00", "mercredi": "10:00–19:00", "jeudi": "10:00–19:00", "vendredi": "10:00–19:00", "samedi": "10:00–19:00", "dimanche": "fermé"}' where id=1;
 ALTER TABLE shop ADD img_url VARCHAR(255);
 UPDATE shop SET img_url = "https://www.fossier.fr/img/cms/magasins-min.png" WHERE id=1;
+UPDATE shop SET img_url = "https://lh3.googleusercontent.com/p/AF1QipNkdrJowhQRCkixPry47Q-GzQ-PXpLnABHHASdh=w1080-h608-p-no-v0" WHERE id=4;
+UPDATE shop SET img_url = "https://medias.nicolas.com/media/sys_master/images/h01/he9/9465104039966.png" WHERE id=5;
+
 
 
 --
@@ -2212,11 +2215,7 @@ INSERT INTO `shop_user` (`shop_id`,`user_id`) VALUES
 (5, 1),
 (1, 2),
 (4, 2),
-(5, 2),
-(7, 2),
-(8, 2),
-(451, 2),
-(452, 2);
+(5, 2);
 
 -- --------------------------------------------------------
 
