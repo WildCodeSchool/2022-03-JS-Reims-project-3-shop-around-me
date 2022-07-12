@@ -9,9 +9,9 @@ From 23rd May to 27th July 2022
 The Shop Around Me web app in a few words : "Find the product you are looking for in a store near you".
 
 Three main features :
-  1/ A search engine
-  2/ A stores map as the search result
-  3/ An updated pot that can be used in these stores
+- A search engine
+- A stores map as the search result
+- An updated pot that can be used in these stores
 
 ## Team :
 
@@ -46,7 +46,6 @@ Instructors :
 
 This template is meant to serve as a foundation for every project following the React-Express-MySQL stack, as learned in Wild Code School.
 It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
-
 
 ### Project Initialization
 
