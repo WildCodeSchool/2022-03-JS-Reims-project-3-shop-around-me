@@ -7,18 +7,18 @@ import logo from "../assets/images/logo_alone.png";
 
 export default function Fav() {
   const [fav, setFav] = useState([]);
-  const { loginData, setLoginData } = useAuthContext();
-  const { user } = loginData;
-  // eslint-disable-next-line no-unused-vars
-  const setUser = (userObject) => {
-    setLoginData({ ...loginData, user: userObject });
-  };
+  const {
+    loginData: {
+      user: { id },
+    },
+  } = useAuthContext();
+
   const getFavorite = () => {
     axios
       .get(
         `${
           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-        }/shop_user/${user.id}`
+        }/shop_user/${id}`
       )
       .then((response) => setFav(response.data));
   };
@@ -28,7 +28,7 @@ export default function Fav() {
       .delete(
         `${
           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-        }/shop_user/shops/${shopId}/user/${user.id}`
+        }/shop_user/shops/${shopId}/user/${id}`
       )
       .then((response) => response.data);
   };
@@ -57,7 +57,7 @@ export default function Fav() {
             <img
               src={favorite.img_url}
               alt="favori"
-              className="clip-circle w-[86px] h-[86px] object-cover"
+              className="clip-circle w-[86px] h-[86px] justify-start"
             />
             <figcaption className=" self-center justify-self-center text-m leading-4 max-w-[75%]">
               {favorite.name}
