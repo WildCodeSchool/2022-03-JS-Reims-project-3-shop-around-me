@@ -51,19 +51,19 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 1 */
 ,
 (
-2, 'Boutique officielle du Stade de Reims Stade Auguste Delaune', '', 'vêtements', '33 Chaussée Bocquaine, 51100 Reims', '', '', '', '', '', '', 4.025034427642822, 49.24589157104492
+2, 'Boutique officielle du Stade de Reims Stade Auguste Delaune', '', 'vêtements', '33 Chaussée Bocquaine, 51100 Reims', '{"lundi": "fermé", "mardi": "fermé", "mercredi": "10:00–12:00 14:00-18:00", "jeudi": "10:00–12:00 14:00-18:00", "vendredi": "10:00–12:00 14:00-18:00", "samedi": "10:00–12:00 14:00-18:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', 'boutique@stade-de-reims.com', '08.91.02.49.33', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.025034427642822, 49.24589157104492
 )
 ,
 (
-3, 'Boutique officielle du Stade de Reims Centre-ville', '', 'vêtements', '1 Rue Chanzy, 51100 Reims', '', '', '', '', '', '', 4.032470703125, 49.25199890136719
+3, 'Boutique officielle du Stade de Reims Centre-ville', '', 'vêtements', '1 Rue Chanzy, 51100 Reims', '{"lundi": "fermé", "mardi": "13:00-18:00", "mercredi": "13:00-18:00", "jeudi": "13:00-18:00", "vendredi": "13:00-18:00", "samedi": "13:00-19:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', 'boutique@stade-de-reims.com', '08.91.02.49.33', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.032470703125, 49.25199890136719
 )
 ,
 (
-4, 'Mojito Skateshop', '', 'vêtements', '15 Rue du Clou-dans-le-Fer, 51100 Reims', '', '', '', '', '', '', 4.0282211, 49.255123138427734
+4, 'Mojito Skateshop', '', 'vêtements', '15 Rue du Clou-dans-le-Fer, 51100 Reims', '{"lundi": "10:00-12:00 14:00-19:00", "mardi": "10:00-12:00 14:00-19:00", "mercredi": "10:00-19:00", "jeudi": "10:00-12:00 14:00-19:00", "vendredi": "10:00-12:00 14:00-19:00", "samedi": "10:00-19:00", "dimanche": "fermé"}', 'https://www.mojito-skateshop.com/', 'mojitoskateshop@gmail.com', '03.26.04.54.95', 'https://www.facebook.com/mojito.skateshop/', 'https://www.instagram.com/mojitoskateshop/', 4.0282211, 49.255123138427734
 )
 ,
 (
-5, 'Nicolas', 'Nicolas', 'alcool', '', '', '', '', '', '', '', 4.0282211, 49.2555462996293
+5, 'Nicolas', 'Nicolas', 'alcool', '16 Rue de l Étape, 51100 Reims', '{"lundi": "fermé", "mardi": "09:30-13:00 14:30-19:30", "mercredi": "09:30-13:00 14:30-19:30", "jeudi": "09:30-13:00 14:30-19:30", "vendredi": "09:30-13:00 14:30-19:30", "samedi": "09:30-19:30", "dimanche": "09:30-12:30"}', 'https://www.nicolas.com/', '', '03.26.88.55.38', 'https://www.facebook.com/CaveNicolasReims/', '', 4.0282211, 49.2555462996293
 )
 
 /* INSERT QUERY NO: 2 */
