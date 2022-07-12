@@ -90,8 +90,8 @@ function Map({ searchValue, results, userGeolocation }) {
 
 Map.propTypes = {
   searchValue: propTypes.string.isRequired,
-  results: propTypes.shape.isRequired,
-  userGeolocation: propTypes.shape.isRequired,
+  results: propTypes.arrayOf(propTypes.shape).isRequired,
+  userGeolocation: propTypes.objectOf(propTypes.shape).isRequired,
 };
 
 export default Map;
