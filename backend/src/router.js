@@ -68,7 +68,6 @@ router.delete(
 router.get("/users", UserController.browse);
 router.get("/users/:id", UserController.read);
 router.put("/users/:id", validateUser, UserController.edit);
-router.post("/users", validateUser, hashPassword, UserController.add);
 router.delete("/users/:id", UserController.delete);
 
 router.get("/address/reverse", (req, res) => {
@@ -82,6 +81,12 @@ router.get("/address/reverse", (req, res) => {
 });
 
 router.post("/login", passport.authenticate("local"), GenerateToken);
-router.post("/signup", hashPassword, AddTokenToBody, UserController.add);
+router.post(
+  "/signup",
+  validateUser,
+  hashPassword,
+  AddTokenToBody,
+  UserController.add
+);
 
 module.exports = router;
