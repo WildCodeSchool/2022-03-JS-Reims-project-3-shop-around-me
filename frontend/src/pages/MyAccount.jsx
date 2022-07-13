@@ -3,9 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPiggyBank,
   faUser,
+  faUsers,
   faGears,
   faCircleInfo,
-  faUserXmark,
+  faHouse,
+  faEnvelope,
+  faLock,
 } from "@fortawesome/free-solid-svg-icons";
 import { useAuthContext } from "../contexts/AuthContext";
 import logo from "../assets/images/logo_alone.png";
@@ -13,7 +16,7 @@ import logo from "../assets/images/logo_alone.png";
 const accountMenu = [
   {
     id: 1,
-    categorie: "Mon Shop Around",
+    categorie: "Mon Shop around me",
     titles: [
       {
         id: 1,
@@ -30,19 +33,19 @@ const accountMenu = [
       {
         id: 1,
         title: "Mes données personnelles",
-        url: "/account/info",
+        url: "/account/personaldata",
         icon: faUser,
       },
       {
         id: 2,
         title: "Mes adresses",
-        url: "/account/address",
-        icon: faUser,
+        url: "/account/",
+        icon: faHouse,
       },
       {
         id: 3,
         title: "Paramètres du compte",
-        url: "/account/orders",
+        url: "/account/",
         icon: faGears,
       },
     ],
@@ -55,13 +58,13 @@ const accountMenu = [
         id: 1,
         title: "Préférence de communication",
         url: "/account/info",
-        icon: faCircleInfo,
+        icon: faEnvelope,
       },
       {
         id: 2,
         title: "Préférence de gestion de données",
         url: "/account/info",
-        icon: faCircleInfo,
+        icon: faLock,
       },
     ],
   },
@@ -71,15 +74,15 @@ const accountMenu = [
     titles: [
       {
         id: 1,
-        title: "À propod de l'application",
+        title: "À propos de Shop around me",
         url: "/account/info",
-        icon: faUserXmark,
+        icon: faUsers,
       },
       {
         id: 2,
         title: "Aide et contact",
         url: "/account/info",
-        icon: faUserXmark,
+        icon: faCircleInfo,
       },
     ],
   },
@@ -118,7 +121,6 @@ export default function MyAccount() {
           ))}
         </ul>
       ))}
-
       <button
         type="button"
         className="text-m mb-16 mt-4 py-3 border-solid border-2 border-red-600 text-red-600 font-bold rounded focus:outline-none focus:shadow-outline"
