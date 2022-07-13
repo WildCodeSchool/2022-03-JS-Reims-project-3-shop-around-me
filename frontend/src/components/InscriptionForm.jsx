@@ -221,7 +221,7 @@ export default function InscriptionForm() {
                 placeholder="Paris"
                 {...register("city", {
                   value: newUser.city,
-                  required: false,
+                  required: true,
                   minLength: 3,
                   maxLength: 80,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
@@ -254,7 +254,7 @@ export default function InscriptionForm() {
                 placeholder="75020"
                 {...register("zipcode", {
                   value: newUser.zipcode,
-                  required: false,
+                  required: true,
                   minLength: 4,
                   maxLength: 8,
                   pattern: /^[0-9]{3,}$/,
