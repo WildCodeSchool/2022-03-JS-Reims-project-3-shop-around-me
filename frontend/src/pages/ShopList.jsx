@@ -45,7 +45,7 @@ export default function ShopList() {
           Retrouvez toutes les boutiques autour de vous, triées par catégories.
         </p>
       </section>
-      <ul className="mb-16">
+      <ul className="mb-18">
         {Object.keys(results)
           .sort()
           .map((type) => (

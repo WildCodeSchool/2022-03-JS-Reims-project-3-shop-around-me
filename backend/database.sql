@@ -45,25 +45,25 @@ CREATE TABLE `shop` (
 -- Contenu de la table `shop`
 --
 
-INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `website`, `email`, `phone`, `fb_page`, `insta_page`, `x`, `y`) VALUES
-(1, "Magasin Fossier", "Maison Fossier", "biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", 4.030900226012637, 49.25594501951917)
+INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `website`, `phone`, `email`, `fb_page`, `insta_page`, `x`, `y`) VALUES
+(1, "Magasin Fossier", "Maison Fossier", "biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "", "http://www.fossier.fr/", "0326475984", "fossier@fossier.fr", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", 4.030900226012637, 49.25594501951917)
 
 /* INSERT QUERY NO: 1 */
 ,
 (
-2, 'Boutique officielle du Stade de Reims Stade Auguste Delaune', '', 'vêtements', '33 Chaussée Bocquaine, 51100 Reims', '{"lundi": "fermé", "mardi": "fermé", "mercredi": "10:00–12:00 14:00-18:00", "jeudi": "10:00–12:00 14:00-18:00", "vendredi": "10:00–12:00 14:00-18:00", "samedi": "10:00–12:00 14:00-18:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', 'boutique@stade-de-reims.com', '08.91.02.49.33', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.025034427642822, 49.24589157104492
+2, 'Boutique officielle du Stade de Reims Stade Auguste Delaune', '', 'vêtements', '33 Chaussée Bocquaine, 51100 Reims', '{"lundi": "fermé", "mardi": "fermé", "mercredi": "10:00–12:00 14:00-18:00", "jeudi": "10:00–12:00 14:00-18:00", "vendredi": "10:00–12:00 14:00-18:00", "samedi": "10:00–12:00 14:00-18:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', '08.91.02.49.33', 'boutique@stade-de-reims.com', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.025034427642822, 49.24589157104492
 )
 ,
 (
-3, 'Boutique officielle du Stade de Reims Centre-ville', '', 'vêtements', '1 Rue Chanzy, 51100 Reims', '{"lundi": "fermé", "mardi": "13:00-18:00", "mercredi": "13:00-18:00", "jeudi": "13:00-18:00", "vendredi": "13:00-18:00", "samedi": "13:00-19:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', 'boutique@stade-de-reims.com', '08.91.02.49.33', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.032470703125, 49.25199890136719
+3, 'Boutique officielle du Stade de Reims Centre-ville', '', 'vêtements', '1 Rue Chanzy, 51100 Reims', '{"lundi": "fermé", "mardi": "13:00-18:00", "mercredi": "13:00-18:00", "jeudi": "13:00-18:00", "vendredi": "13:00-18:00", "samedi": "13:00-19:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', '08.91.02.49.33', 'boutique@stade-de-reims.com', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.032470703125, 49.25199890136719
 )
 ,
 (
-4, 'Mojito Skateshop', '', 'vêtements', '15 Rue du Clou-dans-le-Fer, 51100 Reims', '{"lundi": "10:00-12:00 14:00-19:00", "mardi": "10:00-12:00 14:00-19:00", "mercredi": "10:00-19:00", "jeudi": "10:00-12:00 14:00-19:00", "vendredi": "10:00-12:00 14:00-19:00", "samedi": "10:00-19:00", "dimanche": "fermé"}', 'https://www.mojito-skateshop.com/', 'mojitoskateshop@gmail.com', '03.26.04.54.95', 'https://www.facebook.com/mojito.skateshop/', 'https://www.instagram.com/mojitoskateshop/', 4.0282211, 49.255123138427734
+4, 'Mojito Skateshop', '', 'vêtements', '15 Rue du Clou-dans-le-Fer, 51100 Reims', '{"lundi": "10:00-12:00 14:00-19:00", "mardi": "10:00-12:00 14:00-19:00", "mercredi": "10:00-19:00", "jeudi": "10:00-12:00 14:00-19:00", "vendredi": "10:00-12:00 14:00-19:00", "samedi": "10:00-19:00", "dimanche": "fermé"}', 'https://www.mojito-skateshop.com/', '03.26.04.54.95', 'mojitoskateshop@gmail.com', 'https://www.facebook.com/mojito.skateshop/', 'https://www.instagram.com/mojitoskateshop/', 4.0282211, 49.255123138427734
 )
 ,
 (
-5, 'Nicolas', 'Nicolas', 'alcool', '16 Rue de l Étape, 51100 Reims', '{"lundi": "fermé", "mardi": "09:30-13:00 14:30-19:30", "mercredi": "09:30-13:00 14:30-19:30", "jeudi": "09:30-13:00 14:30-19:30", "vendredi": "09:30-13:00 14:30-19:30", "samedi": "09:30-19:30", "dimanche": "09:30-12:30"}', 'https://www.nicolas.com/', '', '03.26.88.55.38', 'https://www.facebook.com/CaveNicolasReims/', '', 4.0282211, 49.2555462996293
+5, 'Nicolas', 'Nicolas', 'alcool', '16 Rue de l Étape, 51100 Reims', '{"lundi": "fermé", "mardi": "09:30-13:00 14:30-19:30", "mercredi": "09:30-13:00 14:30-19:30", "jeudi": "09:30-13:00 14:30-19:30", "vendredi": "09:30-13:00 14:30-19:30", "samedi": "09:30-19:30", "dimanche": "09:30-12:30"}', 'https://www.nicolas.com/', '03.26.88.55.38', '', 'https://www.facebook.com/CaveNicolasReims/', '', 4.0282211, 49.2555462996293
 )
 
 /* INSERT QUERY NO: 2 */
@@ -255,7 +255,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 33 */
 ,
 (
-37, 'Boulagerie Frédéric Hardy', '', 'boulangeries', '', '', 'https://www.boulangerie51.org/boulangerie-hardy-frederic-sarl-b-h-c-reims-163.html', '+33 3 26 47 68 81', 'frederichardy@neuf.fr', '', '', 4.0326377, 49.2577514996288
+37, 'Boulangerie Frédéric Hardy', '', 'boulangeries', '', '', 'https://www.boulangerie51.org/boulangerie-hardy-frederic-sarl-b-h-c-reims-163.html', '+33 3 26 47 68 81', 'frederichardy@neuf.fr', '', '', 4.0326377, 49.2577514996288
 )
 
 /* INSERT QUERY NO: 34 */
@@ -1606,7 +1606,7 @@ contact.eklipsshop@gmail.com', '', 'https://www.facebook.com/Eklips-shop-1087923
 )
 ,
 (
-453, 'Galeries Lafayette Reims', '', 'vêtements', '33-45 Rue de Vesle, 51100 Reims', '', '', '', '', '', '', 4.023271083831787, 49.25151443481445
+453, 'Galeries Lafayette Reims', '', 'vêtements', '33-45 Rue de Vesle, 51100 Reims', '', '', '', '', '', '', 4.0294103, 49.2536065
 );
 
 
@@ -1623,6 +1623,9 @@ ALTER TABLE shop MODIFY COLUMN opening_hours json;
 UPDATE shop SET opening_hours = '{"lundi": "14:00–19:00", "mardi": "10:00–19:00", "mercredi": "10:00–19:00", "jeudi": "10:00–19:00", "vendredi": "10:00–19:00", "samedi": "10:00–19:00", "dimanche": "fermé"}' where id=1;
 ALTER TABLE shop ADD img_url VARCHAR(255);
 UPDATE shop SET img_url = "https://www.fossier.fr/img/cms/magasins-min.png" WHERE id=1;
+UPDATE shop SET img_url = "https://lh3.googleusercontent.com/p/AF1QipNkdrJowhQRCkixPry47Q-GzQ-PXpLnABHHASdh=w1080-h608-p-no-v0" WHERE id=4;
+UPDATE shop SET img_url = "https://medias.nicolas.com/media/sys_master/images/h01/he9/9465104039966.png" WHERE id=5;
+
 
 
 --
@@ -2173,6 +2176,41 @@ ALTER TABLE `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `shop_user`
+--
+
+CREATE TABLE `shop_user` (
+  `shop_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_shop_user_shop
+        FOREIGN KEY (shop_id)
+        REFERENCES shop(id),
+  `user_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_shop_user_user
+        FOREIGN KEY (user_id)
+        REFERENCES user(id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `shop_user`
+--
+
+INSERT INTO `shop_user` (`shop_id`,`user_id`) VALUES
+(1, 1),
+(4, 1),
+(5, 1),
+(1, 2),
+(4, 2),
+(5, 2);
+
+-- --------------------------------------------------------
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
