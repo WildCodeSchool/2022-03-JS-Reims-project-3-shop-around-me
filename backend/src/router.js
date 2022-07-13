@@ -67,7 +67,7 @@ router.delete(
 
 router.get("/users", UserController.browse);
 router.get("/users/:id", UserController.read);
-router.put("/users/:id", UserController.edit);
+router.put("/users/:id", validateUser, UserController.edit);
 router.post("/users", validateUser, hashPassword, UserController.add);
 router.delete("/users/:id", UserController.delete);
 
