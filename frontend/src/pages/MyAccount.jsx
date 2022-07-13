@@ -21,7 +21,7 @@ const accountMenu = [
       {
         id: 1,
         title: "Historique cagnotte",
-        url: "/account/info",
+        url: "/account/",
         icon: faPiggyBank,
       },
     ],
@@ -33,7 +33,7 @@ const accountMenu = [
       {
         id: 1,
         title: "Mes données personnelles",
-        url: "/account/personaldata",
+        url: "/account/mydata",
         icon: faUser,
       },
       {
@@ -57,13 +57,13 @@ const accountMenu = [
       {
         id: 1,
         title: "Préférence de communication",
-        url: "/account/info",
+        url: "/account/",
         icon: faEnvelope,
       },
       {
         id: 2,
         title: "Préférence de gestion de données",
-        url: "/account/info",
+        url: "/account/",
         icon: faLock,
       },
     ],
@@ -75,13 +75,13 @@ const accountMenu = [
       {
         id: 1,
         title: "À propos de Shop around me",
-        url: "/account/info",
+        url: "/account/",
         icon: faUsers,
       },
       {
         id: 2,
         title: "Aide et contact",
-        url: "/account/info",
+        url: "/account/",
         icon: faCircleInfo,
       },
     ],
