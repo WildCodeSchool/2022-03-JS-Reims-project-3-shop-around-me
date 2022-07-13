@@ -68,23 +68,15 @@ export default function Fav() {
                 </figcaption>
               </div>
             </Link>
-            <div className="flex flex-col h-[86px] justify-center">
-              <Link to={`/shops/${favorite.shop_id}`}>
-                <div className="min-h-[30px]" />
-              </Link>
-              <button
-                type="button"
-                onClick={() => handleRemove(favorite.shop_id)}
-              >
-                <FontAwesomeIcon
-                  icon={faHeartSolid}
-                  className="text-2xl text-red-700 mr-5"
-                />
-              </button>
-              <Link to={`/shops/${favorite.shop_id}`}>
-                <div className="min-h-[30px]" />
-              </Link>
-            </div>
+            <button
+              type="button"
+              onClick={() => handleRemove(favorite.shop_id)}
+            >
+              <FontAwesomeIcon
+                icon={faHeartSolid}
+                className="text-2xl text-red-700 mr-5"
+              />
+            </button>
           </figure>
         ))}
       </div>
