@@ -27,7 +27,7 @@ class UserManager extends AbstractManager {
 
   insert(user) {
     return this.connection.query(
-      `insert into ${UserManager.table} (firstname, lastname, DATE_FORMAT(birthdate, "%d/%m/%Y") as birthdate, gender, zipcode, city, email, password) values (?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${UserManager.table} (firstname, lastname, birthdate, gender, zipcode, city, email, password) values (?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         user.firstname,
         user.lastname,
