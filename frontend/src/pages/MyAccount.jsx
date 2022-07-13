@@ -104,7 +104,7 @@ export default function MyAccount() {
       <section className="px-8 pt-8">
         <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
         <p className=" text-2xl">Bonjour {firstname} !</p>
-        <p className=" text-m mb-8">Votre compte.</p>
+        <p className=" text-lg mb-8">Voici votre compte.</p>
       </section>
       {accountMenu.map((menu) => (
         <ul>
@@ -123,7 +123,7 @@ export default function MyAccount() {
       ))}
       <button
         type="button"
-        className="text-m mt-4 mb-16 py-3 border-solid border-2 border-[#5f2525] text-[#5f2525] font-bold rounded focus:outline-none focus:shadow-outline"
+        className="text-m mt-4 mb-16 py-3 mx-8 border-solid border-2 border-[#5f2525] text-[#5f2525] font-bold rounded focus:outline-none focus:shadow-outline"
         onClick={handleLogout}
       >
         Se déconnecter
