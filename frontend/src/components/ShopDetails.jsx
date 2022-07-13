@@ -15,11 +15,12 @@ import logoAlone from "../assets/images/logo_alone.png";
 import { useAuthContext } from "../contexts/AuthContext";
 
 export default function ShopDetails() {
-  const { id } = useParams();
-  const [shop, setShop] = useState();
-
   const navigate = useNavigate();
   const precedent = () => navigate(-1);
+
+  const { id } = useParams();
+
+  const [shop, setShop] = useState();
 
   const getShop = () => {
     axios
@@ -29,6 +30,7 @@ export default function ShopDetails() {
         }/shops/${id}`
       )
       .then((response) => response.data)
+
       .then((data) =>
         axios
           .get(
@@ -45,12 +47,17 @@ export default function ShopDetails() {
       );
   };
 
+  useEffect(() => {
+    getShop();
+  }, []);
+
   const [fav, setFav] = useState([]);
+
   const {
     loginData: { user },
   } = useAuthContext();
 
-  const getFavorites = () => {
+  const getFavorite = () => {
     axios
       .get(
         `${
@@ -74,40 +81,55 @@ export default function ShopDetails() {
       .then((response) => response.data);
   };
 
-  useEffect(() => {
-    getShop();
-  }, []);
-
-  useEffect(() => {
-    getFavorites();
-  }, [fav]);
+  const addFavorite = () => {
+    axios
+      .post(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/shop_user/`,
+        {
+          shop_id: parseInt(id, 10),
+          user_id: parseInt(user.id, 10),
+        }
+      )
+      .then((response) => response.data);
+  };
 
   const handleRemove = () => {
     removeFavorite(id);
   };
+
+  const handleAdd = () => {
+    addFavorite(id);
+  };
+
+  useEffect(() => {
+    getFavorite();
+  }, [fav]);
 
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide text-[#4F4E47]">
       <img src={logoAlone} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
       {shop && (
         <>
-          <p className=" text-2xl">{shop.name}</p>
-          {fav && isFavorite() ? (
-            <button type="button" onClick={handleRemove}>
-              <FontAwesomeIcon
-                icon={faHeartSolid}
-                className="text-2xl text-red-700 mr-3"
-              />
-            </button>
-          ) : (
-            <button type="button">
-              <FontAwesomeIcon
-                icon={faHeartEmpty}
-                className="text-2xl text-red-700 mr-3"
-              />
-            </button>
-          )}
-
+          <div className="flex">
+            <p className=" text-2xl mr-2">{shop.name}</p>
+            {fav && isFavorite() ? (
+              <button type="button" onClick={handleRemove}>
+                <FontAwesomeIcon
+                  icon={faHeartSolid}
+                  className="text-2xl text-red-700 mr-3"
+                />
+              </button>
+            ) : (
+              <button type="button" onClick={handleAdd}>
+                <FontAwesomeIcon
+                  icon={faHeartEmpty}
+                  className="text-2xl text-red-700 mr-3"
+                />
+              </button>
+            )}
+          </div>
           <p className=" text-m mb-2 leading-4">{shop.address}</p>
           <div>
             <button
@@ -136,7 +158,7 @@ export default function ShopDetails() {
           <section className="columns-2 text-center mb-10">
             <ul className="text-left">
               Contact
-              <li className="general-text">
+              <li className="general-text string-wrap">
                 <FontAwesomeIcon icon={faEnvelope} /> :{" "}
                 {shop.email ? shop.email : "à renseigner"}
               </li>
