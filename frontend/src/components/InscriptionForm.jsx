@@ -230,6 +230,9 @@ export default function InscriptionForm() {
                 className="form-input"
               />{" "}
             </label>
+            {errors?.city?.type === "required" && (
+              <p className="error-handler">Ce champ est requis.</p>
+            )}
             {errors?.city?.type === "minLength" && (
               <p className="error-handler">
                 Le nom de votre ville ne peut pas faire moins de 3 caractères.
@@ -263,6 +266,9 @@ export default function InscriptionForm() {
                 className="form-input"
               />{" "}
             </label>
+            {errors?.zipcode?.type === "required" && (
+              <p className="error-handler">Ce champ est requis.</p>
+            )}
             {errors?.zipcode?.type === "minLength" && (
               <p className="error-handler">
                 Votre code postal ne peut pas faire moins de 4 caractères.
