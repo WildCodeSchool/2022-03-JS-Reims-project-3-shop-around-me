@@ -79,7 +79,7 @@ export default function SearchBar() {
           userGeolocation={userGeolocation}
         />
       )}
-      <ul>
+      <ul className="mb-3">
         {results
           .sort((a, b) => a.distance - b.distance)
           .map((result) => (
