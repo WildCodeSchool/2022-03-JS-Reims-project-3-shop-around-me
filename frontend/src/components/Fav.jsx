@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { useAuthContext } from "../contexts/AuthContext";
@@ -54,13 +55,15 @@ export default function Fav() {
             key={favorite.shop_id}
             className="flex w-[100%] mt-1 mb-1 justify-between items-center bg-white rounded-lg p-2"
           >
-            <img
-              src={favorite.img_url}
-              alt="favori"
-              className="clip-circle w-[86px] h-[86px] justify-start"
-            />
+            <Link to={`/shops/${favorite.shop_id}`}>
+              <img
+                src={favorite.img_url}
+                alt="favori"
+                className="clip-circle w-[86px] h-[86px] justify-start"
+              />
+            </Link>
             <figcaption className=" self-center justify-self-center text-m leading-4 max-w-[75%]">
-              {favorite.name}
+              <Link to={`/shops/${favorite.shop_id}`}>{favorite.name}</Link>
             </figcaption>
             <button
               type="button"
