@@ -53,27 +53,38 @@ export default function Fav() {
         {fav.map((favorite) => (
           <figure
             key={favorite.shop_id}
-            className="flex w-[100%] mt-1 mb-1 justify-between items-center bg-white rounded-lg p-2"
+            className="flex w-[100%] mt-1 mb-1 justify-between items-center bg-white rounded-lg"
           >
-            <Link to={`/shops/${favorite.shop_id}`}>
-              <img
-                src={favorite.img_url}
-                alt="favori"
-                className="clip-circle w-[86px] h-[86px] justify-start"
-              />
+            <Link to={`/shops/${favorite.shop_id}`} className="min-w-[85%]">
+              <div className="flex items-center p-2">
+                <img
+                  src={favorite.img_url}
+                  alt="favori"
+                  className="clip-circle w-[86px] h-[86px]"
+                />
+
+                <figcaption className="text-m leading-4 max-w-[75%] ml-4">
+                  {favorite.name}
+                </figcaption>
+              </div>
             </Link>
-            <figcaption className=" self-center justify-self-center text-m leading-4 max-w-[75%]">
-              <Link to={`/shops/${favorite.shop_id}`}>{favorite.name}</Link>
-            </figcaption>
-            <button
-              type="button"
-              onClick={() => handleRemove(favorite.shop_id)}
-            >
-              <FontAwesomeIcon
-                icon={faHeartSolid}
-                className="text-2xl text-red-700 mr-3"
-              />
-            </button>
+            <div className="flex flex-col h-[86px] justify-center">
+              <Link to={`/shops/${favorite.shop_id}`}>
+                <div className="min-h-[30px]" />
+              </Link>
+              <button
+                type="button"
+                onClick={() => handleRemove(favorite.shop_id)}
+              >
+                <FontAwesomeIcon
+                  icon={faHeartSolid}
+                  className="text-2xl text-red-700 mr-5"
+                />
+              </button>
+              <Link to={`/shops/${favorite.shop_id}`}>
+                <div className="min-h-[30px]" />
+              </Link>
+            </div>
           </figure>
         ))}
       </div>
