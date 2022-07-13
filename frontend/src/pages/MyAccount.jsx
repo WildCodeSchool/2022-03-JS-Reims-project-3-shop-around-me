@@ -114,7 +114,10 @@ export default function MyAccount() {
           {menu.titles.map((title) => (
             <li className="ml-12 my-4 text-lg" key={title.id}>
               <Link to={title.url}>
-                <FontAwesomeIcon icon={title.icon} className="mr-4 text-xl" />
+                <FontAwesomeIcon
+                  icon={title.icon}
+                  className="mr-4 w-[24px] h-[24px]"
+                />
                 {title.title}
               </Link>
             </li>
