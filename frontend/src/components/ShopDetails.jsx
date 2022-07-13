@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import storeLogo from "../assets/images/store.png";
 import logoAlone from "../assets/images/logo_alone.png";
+import { useAuthContext } from "../contexts/AuthContext";
 
 export default function ShopDetails() {
   const { id } = useParams();
@@ -44,9 +45,32 @@ export default function ShopDetails() {
       );
   };
 
+  const [fav, setFav] = useState([]);
+  const {
+    loginData: { user },
+  } = useAuthContext();
+
+  const getFavorites = () => {
+    axios
+      .get(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/shop_user/${user.id}`
+      )
+      .then((response) => setFav(response.data));
+  };
+
+  const isFavorite = () => {
+    return fav.some((favorite) => favorite.shop_id === parseInt(id, 10));
+  };
+
   useEffect(() => {
     getShop();
   }, []);
+
+  useEffect(() => {
+    getFavorites();
+  }, [fav]);
 
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide text-[#4F4E47]">
@@ -54,19 +78,21 @@ export default function ShopDetails() {
       {shop && (
         <>
           <p className=" text-2xl">{shop.name}</p>
-          <button type="button">
-            <FontAwesomeIcon
-              icon={faHeartSolid}
-              className="text-2xl text-red-700 mr-3"
-            />
-          </button>
-
-          <button type="button">
-            <FontAwesomeIcon
-              icon={faHeartEmpty}
-              className="text-2xl text-red-700 mr-3"
-            />
-          </button>
+          {fav && isFavorite() ? (
+            <button type="button">
+              <FontAwesomeIcon
+                icon={faHeartSolid}
+                className="text-2xl text-red-700 mr-3"
+              />
+            </button>
+          ) : (
+            <button type="button">
+              <FontAwesomeIcon
+                icon={faHeartEmpty}
+                className="text-2xl text-red-700 mr-3"
+              />
+            </button>
+          )}
 
           <p className=" text-m mb-2 leading-4">{shop.address}</p>
           <div>
