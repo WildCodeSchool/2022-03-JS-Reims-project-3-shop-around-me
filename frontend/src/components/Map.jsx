@@ -31,7 +31,7 @@ function Map({ searchValue, results }) {
       <p className="m-2 general-text">Votre résultat pour: {searchValue}</p>
       {userGeolocation ? (
         <MapContainer
-          zoom={15}
+          zoom={14}
           center={userGeolocation}
           scrollWheelZoom={false}
           style={{ height: "600px", width: "800px" }}

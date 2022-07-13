@@ -50,3 +50,7 @@ h1 {
     clip-path: circle(38% at 50% 50%);
   }
 }
+
+.string-wrap {
+  overflow-wrap: break-word;
+}
