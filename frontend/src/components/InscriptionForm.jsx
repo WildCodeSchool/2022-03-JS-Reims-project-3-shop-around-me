@@ -1,10 +1,25 @@
 /* eslint-disable react/jsx-props-no-spreading */
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import logo from "../assets/images/logo_alone.png";
+import { useAuthContext } from "../contexts/AuthContext";
 
 export default function InscriptionForm() {
+  const userTemplate = {
+    firstname: "",
+    lastname: "",
+    birthdate: "",
+    gender: "",
+    city: "",
+    zipcode: "",
+    password: "",
+    confirmPassword: "",
+  };
+  const [newUser, setNewUser] = useState(userTemplate);
+  const { loginData, setLoginData } = useAuthContext();
+
   const {
     register,
     formState,
@@ -13,16 +28,42 @@ export default function InscriptionForm() {
     getValues,
   } = useForm();
 
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setNewUser({ ...newUser, [e.target.name]: e.target.value });
+  };
+
   const { isSubmitSuccessful } = formState;
 
+  const convertDateFRtoUS = (date) => {
+    const dateArray = date.split("/");
+    return `${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`;
+  };
+
   const postUser = () => {
+    const { confirmPassword, ...data } = getValues();
+    const user = {
+      ...data,
+      birthdate: convertDateFRtoUS(data.birthdate),
+    };
     axios
       .post(
-        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/users`,
-        getValues()
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/signup`,
+        user
       )
-      .then((response) => response);
+      .then((res) => {
+        const { password, token, ...others } = res.data;
+        const userWithFunds = { ...others, fund: 1.93 };
+        setLoginData({ user: userWithFunds, token, isLoggedIn: true });
+      });
   };
+
+  useEffect(() => {
+    if (loginData.isLoggedIn) {
+      navigate("/home");
+    }
+  });
 
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide">
@@ -45,10 +86,12 @@ export default function InscriptionForm() {
                 type="text"
                 placeholder="Jane"
                 {...register("firstname", {
+                  value: newUser.firstname,
                   required: true,
                   minLength: 2,
                   maxLength: 50,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
+                  onChange: handleChange,
                 })}
                 className="form-input"
                 id="grid-firstname"
@@ -80,10 +123,12 @@ export default function InscriptionForm() {
                 type="text"
                 placeholder="Doe"
                 {...register("lastname", {
+                  value: newUser.lastname,
                   required: true,
                   minLength: 2,
                   maxLength: 50,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
+                  onChange: handleChange,
                 })}
                 className="form-input"
                 id="grid-lastname"
@@ -113,10 +158,13 @@ export default function InscriptionForm() {
               Date de naissance
               <input
                 type="text"
-                placeholder="2000/01/01"
+                placeholder="JJ/MM/AAAA"
                 {...register("birthdate", {
+                  value: newUser.birthdate,
                   required: true,
-                  pattern: /^(\d{4})(\/|-)(\d{1,2})(\/|-)(\d{1,2})$/,
+                  pattern:
+                    /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
+                  onChange: handleChange,
                 })}
                 className="form-input"
                 id="grid-birthdate"
@@ -127,7 +175,7 @@ export default function InscriptionForm() {
             )}
             {errors?.birthdate?.type === "pattern" && (
               <p className="error-handler">
-                Merci de respecter le format suivant : "aaaa/mm/jj".
+                Merci de respecter le format suivant : "jj/mm/aaaa".
               </p>
             )}
           </div>
@@ -137,7 +185,11 @@ export default function InscriptionForm() {
               <div className="relative">
                 <select
                   name="gender"
-                  {...register("gender", { required: true })}
+                  {...register("gender", {
+                    value: newUser.gender,
+                    required: true,
+                    onChange: handleChange,
+                  })}
                   className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 >
                   <option value="female">Femme</option>
@@ -168,14 +220,19 @@ export default function InscriptionForm() {
                 type="text"
                 placeholder="Paris"
                 {...register("city", {
-                  required: false,
+                  value: newUser.city,
+                  required: true,
                   minLength: 3,
                   maxLength: 80,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
+                  onChange: handleChange,
                 })}
                 className="form-input"
               />{" "}
             </label>
+            {errors?.city?.type === "required" && (
+              <p className="error-handler">Ce champ est requis.</p>
+            )}
             {errors?.city?.type === "minLength" && (
               <p className="error-handler">
                 Le nom de votre ville ne peut pas faire moins de 3 caractères.
@@ -199,14 +256,19 @@ export default function InscriptionForm() {
                 type="text"
                 placeholder="75020"
                 {...register("zipcode", {
-                  required: false,
+                  value: newUser.zipcode,
+                  required: true,
                   minLength: 4,
                   maxLength: 8,
                   pattern: /^[0-9]{3,}$/,
+                  onChange: handleChange,
                 })}
                 className="form-input"
               />{" "}
             </label>
+            {errors?.zipcode?.type === "required" && (
+              <p className="error-handler">Ce champ est requis.</p>
+            )}
             {errors?.zipcode?.type === "minLength" && (
               <p className="error-handler">
                 Votre code postal ne peut pas faire moins de 4 caractères.
@@ -230,10 +292,12 @@ export default function InscriptionForm() {
                 type="text"
                 placeholder="jane.doe@gmail.com"
                 {...register("email", {
+                  value: newUser.email,
                   required: true,
                   minLength: 10,
                   maxLength: 100,
                   pattern: /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,5}/i,
+                  onChange: handleChange,
                 })}
                 className="form-input"
               />{" "}
@@ -263,11 +327,13 @@ export default function InscriptionForm() {
               <input
                 type="password"
                 {...register("password", {
+                  value: newUser.password,
                   required: true,
                   minLength: 8,
                   maxLength: 100,
                   pattern:
                     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+                  onChange: handleChange,
                 })}
                 className="form-input"
               />
@@ -291,35 +357,43 @@ export default function InscriptionForm() {
             )}
           </div>
           <div className="form-structure">
-            <label htmlFor="password">
+            <label htmlFor="confirmPassword">
               Confirmation de mot de passe
               <input
                 type="password"
-                {...register("password", {
+                {...register("confirmPassword", {
+                  value: newUser.confirmPassword,
                   required: true,
                   minLength: 8,
                   maxLength: 100,
                   pattern:
                     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+                  onChange: handleChange,
                 })}
                 className="form-input"
               />
             </label>
-            {errors?.password?.type === "required" && (
+            {errors?.confirmPassword?.type === "required" && (
               <p className="error-handler">Ce champ est requis.</p>
             )}
-            {errors?.password?.type === "minLength" && (
+            {errors?.confirmPassword?.type === "minLength" && (
               <p className="error-handler">
                 Votre mot de passe est trop court.
               </p>
             )}
-            {errors?.password?.type === "maxLength" && (
+            {errors?.confirmPassword?.type === "maxLength" && (
               <p className="error-handler">Votre mot de passe est trop long.</p>
             )}
-            {errors?.password?.type === "pattern" && (
+            {errors?.confirmPassword?.type === "pattern" && (
               <p className="error-handler">
                 Votre mot de passe doit au moins comporter une lettre en
                 majuscule, une en minuscule, un chiffre et un caractère spécial.
+              </p>
+            )}
+            {newUser.confirmPassword !== newUser.password && (
+              <p className="error-handler">
+                'Votre mot de passe et votre confirmation de mot de passe ne
+                correspondent pas.'
               </p>
             )}
           </div>

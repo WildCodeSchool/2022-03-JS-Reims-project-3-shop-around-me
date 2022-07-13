@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@joi/date": "^2.1.0",
     "argon2": "^0.28.5",
     "axios": "^0.27.2",
     "cookie-parser": "^1.4.6",

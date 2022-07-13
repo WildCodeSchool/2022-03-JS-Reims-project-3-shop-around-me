@@ -8,12 +8,14 @@ export default function PersonnalData() {
   const {
     register,
     formState: { errors },
+    handleSubmit,
     getValues,
   } = useForm();
 
   const [editUser, setEditedUser] = useState(false);
   const { loginData, setLoginData } = useAuthContext();
   const { user } = loginData;
+  const [personnalData, setPersonnalData] = useState({ ...user });
 
   const convertDateFRtoUS = (date) => {
     const dateArray = date.split("/");
@@ -56,8 +58,7 @@ export default function PersonnalData() {
     getUser();
   }, [user]);
 
-  const handleSave = (e) => {
-    e.preventDefault();
+  const handleSave = () => {
     setEditedUser(false);
     putUser();
   };
@@ -67,13 +68,17 @@ export default function PersonnalData() {
     setEditedUser(true);
   };
 
+  const handleChange = (e) => {
+    setPersonnalData({ ...personnalData, [e.target.name]: e.target.value });
+  };
+
   return (
     <main className=" flex flex-col gap-y-6 w-screen shadow-md rounded px-8 pt-6 pb-8">
       <h2 className="text-xl text-center font-bold uppercase text-[#4F4E47]">
         Mes informations
       </h2>
       {user && (
-        <form className="flex flex-col mb-3">
+        <form className="flex flex-col" onSubmit={handleSubmit(handleSave)}>
           <div className="form-structure">
             <label htmlFor="grid-firstname">
               Prénom
@@ -81,16 +86,15 @@ export default function PersonnalData() {
                 type="text"
                 placeholder="Jane"
                 {...register("firstname", {
+                  value: personnalData.firstname,
                   required: true,
                   minLength: 2,
                   maxLength: 50,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
+                  onChange: handleChange,
                 })}
-                className={!editUser ? "form-input bg-slate-300" : "form-input"}
-                id="firstname"
-                name="firstname"
                 disabled={!editUser}
-                value={!editUser ? user.firstname : undefined}
+                className={!editUser ? "form-input bg-slate-300" : "form-input"}
               />
             </label>
             {errors?.firstname?.type === "required" && (
@@ -119,16 +123,15 @@ export default function PersonnalData() {
                 type="text"
                 placeholder="Doe"
                 {...register("lastname", {
+                  value: personnalData.lastname,
                   required: true,
                   minLength: 2,
                   maxLength: 50,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
+                  onChange: handleChange,
                 })}
                 className={!editUser ? "form-input bg-slate-300" : "form-input"}
-                id="lastname"
-                name="lastname"
                 disabled={!editUser}
-                value={!editUser ? user.lastname : undefined}
               />
             </label>
             {errors?.lastname?.type === "required" && (
@@ -155,17 +158,16 @@ export default function PersonnalData() {
               Date de naissance
               <input
                 type="text"
-                placeholder="01/01/2000"
+                placeholder="JJ/MM/AAAA"
                 {...register("birthdate", {
+                  value: personnalData.birthdate,
                   required: true,
                   pattern:
                     /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/,
+                  onChange: handleChange,
                 })}
                 className={!editUser ? "form-input bg-slate-300" : "form-input"}
-                id="birthdate"
-                name="birthdate"
                 disabled={!editUser}
-                value={!editUser ? user.birthdate : undefined}
               />
             </label>
             {errors?.birthdate?.type === "required" && (
@@ -181,12 +183,13 @@ export default function PersonnalData() {
             <label htmlFor="grid-gender">
               Genre
               <select
-                {...register("gender", { required: true })}
+                {...register("gender", {
+                  value: personnalData.gender,
+                  required: true,
+                  onChange: handleChange,
+                })}
                 className={!editUser ? "form-input bg-slate-300" : "form-input"}
-                id="gender"
-                name="gender"
                 disabled={!editUser}
-                value={!editUser ? user.gender : undefined}
               >
                 <option value="select">Séléction...</option>
                 <option value="female">Femme</option>
@@ -207,16 +210,15 @@ export default function PersonnalData() {
                 type="text"
                 placeholder="Paris"
                 {...register("city", {
+                  value: personnalData.city,
                   required: false,
                   minLength: 3,
                   maxLength: 80,
                   pattern: /^([ \u00c0-\u01ffa-zA-Z'-])+$/i,
+                  onChange: handleChange,
                 })}
                 className={!editUser ? "form-input bg-slate-300" : "form-input"}
-                id="city"
-                name="city"
                 disabled={!editUser}
-                value={!editUser ? user.city : undefined}
               />{" "}
             </label>
             {errors?.city?.type === "minLength" && (
@@ -242,16 +244,15 @@ export default function PersonnalData() {
                 type="text"
                 placeholder="75020"
                 {...register("zipcode", {
+                  value: personnalData.zipcode,
                   required: false,
                   minLength: 4,
                   maxLength: 8,
                   pattern: /^[0-9]{3,}$/,
+                  onChange: handleChange,
                 })}
                 className={!editUser ? "form-input bg-slate-300" : "form-input"}
-                id="zipcode"
-                name="zipcode"
                 disabled={!editUser}
-                value={!editUser ? user.zipcode : undefined}
               />{" "}
             </label>
             {errors?.zipcode?.type === "minLength" && (
@@ -277,16 +278,15 @@ export default function PersonnalData() {
                 type="text"
                 placeholder="jane.doe@gmail.com"
                 {...register("email", {
+                  value: personnalData.email,
                   required: true,
                   minLength: 10,
                   maxLength: 100,
                   pattern: /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,5}/i,
+                  onChange: handleChange,
                 })}
                 className={!editUser ? "form-input bg-slate-300" : "form-input"}
-                id="email"
-                name="email"
                 disabled={!editUser}
-                value={!editUser ? user.email : undefined}
               />{" "}
             </label>
 
@@ -309,81 +309,12 @@ export default function PersonnalData() {
               </p>
             )}
           </div>
-          <div className="form-structure">
-            <label htmlFor="password">
-              Mot de passe
-              <input
-                type="password"
-                placeholder="●●●●●●●●●"
-                {...register("password", {
-                  required: true,
-                  minLength: 8,
-                  maxLength: 100,
-                  pattern:
-                    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
-                })}
-                className={!editUser ? "form-input bg-slate-300" : "form-input"}
-                id="password"
-                name="password"
-                disabled={!editUser}
-              />
-            </label>
-            {errors?.password?.type === "required" && (
-              <p className="error-handler">Ce champ est requis.</p>
-            )}
-            {errors?.password?.type === "minLength" && (
-              <p className="error-handler">
-                Votre mot de passe est trop court.
-              </p>
-            )}
-            {errors?.password?.type === "maxLength" && (
-              <p className="error-handler">Votre mot de passe est trop long.</p>
-            )}
-            {errors?.password?.type === "pattern" && (
-              <p className="error-handler">
-                Votre mot de passe doit au moins comporter une lettre en
-                majuscule, une en minuscule, un chiffre et un caractère spécial.
-              </p>
-            )}
-          </div>
-          <div className="form-structure">
-            <label htmlFor="passwordconfirmation">
-              Confirmation de mot de passe
-              <input
-                type="password"
-                placeholder="●●●●●●●●●"
-                className={!editUser ? "form-input bg-slate-300" : "form-input"}
-                id="passwordconfirmation"
-                name="passwordconfirmation"
-                disabled={!editUser}
-              />
-            </label>
-            {errors?.passwordconfirmation?.type === "required" && (
-              <p className="error-handler">Ce champ est requis.</p>
-            )}
-            {errors?.passwordconfirmation?.type === "minLength" && (
-              <p className="error-handler">
-                Votre mot de passe est trop court.
-              </p>
-            )}
-            {errors?.passwordconfirmation?.type === "maxLength" && (
-              <p className="error-handler">Votre mot de passe est trop long.</p>
-            )}
-            {errors?.passwordconfirmation?.type === "pattern" && (
-              <p className="error-handler">
-                Votre mot de passe doit au moins comporter une lettre en
-                majuscule, une en minuscule, un chiffre et un caractère spécial.
-              </p>
-            )}
-          </div>
           {editUser === true ? (
-            <button
-              type="button"
-              className="text-sm py-3 ml-2 mr-2 mb-12 border-solid border-2 border-[#255f29] text-[#255f29] font-bold rounded focus:outline-none focus:shadow-outline"
-              onClick={handleSave}
-            >
-              Valider mes modifications
-            </button>
+            <input
+              type="submit"
+              value="Valider mes modifications"
+              className="text-sm py-3 ml-2 mr-2 mb-12 border-solid border-2 border-green-900 text-green-900 font-bold rounded focus:outline-none focus:shadow-outline"
+            />
           ) : (
             <button
               type="button"
