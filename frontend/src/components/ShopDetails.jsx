@@ -64,6 +64,16 @@ export default function ShopDetails() {
     return fav.some((favorite) => favorite.shop_id === parseInt(id, 10));
   };
 
+  const removeFavorite = () => {
+    axios
+      .delete(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/shop_user/shops/${id}/user/${user.id}`
+      )
+      .then((response) => response.data);
+  };
+
   useEffect(() => {
     getShop();
   }, []);
@@ -72,6 +82,10 @@ export default function ShopDetails() {
     getFavorites();
   }, [fav]);
 
+  const handleRemove = () => {
+    removeFavorite(id);
+  };
+
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide text-[#4F4E47]">
       <img src={logoAlone} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
@@ -79,7 +93,7 @@ export default function ShopDetails() {
         <>
           <p className=" text-2xl">{shop.name}</p>
           {fav && isFavorite() ? (
-            <button type="button">
+            <button type="button" onClick={handleRemove}>
               <FontAwesomeIcon
                 icon={faHeartSolid}
                 className="text-2xl text-red-700 mr-3"
