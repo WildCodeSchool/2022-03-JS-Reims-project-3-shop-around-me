@@ -1,7 +1,7 @@
 const express = require("express");
 const axios = require("axios");
 const passport = require("passport");
-const GenerateToken = require("./services/GenerateToken");
+const { GenerateToken, AddTokenToBody } = require("./services/GenerateToken");
 const { hashPassword } = require("./services/PasswordHashing");
 const { validateUser } = require("./validators/UserValidator");
 const { validateKeyword } = require("./validators/KeywordValidator");
@@ -82,5 +82,6 @@ router.get("/address/reverse", (req, res) => {
 });
 
 router.post("/login", passport.authenticate("local"), GenerateToken);
+router.post("/signup", hashPassword, AddTokenToBody, UserController.add);
 
 module.exports = router;
