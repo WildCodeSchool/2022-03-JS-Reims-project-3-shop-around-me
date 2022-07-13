@@ -4,7 +4,9 @@ import {
   faGlobe,
   faPhone,
   faEnvelope,
+  faHeart as faHeartSolid,
 } from "@fortawesome/free-solid-svg-icons";
+import { faHeart as faHeartEmpty } from "@fortawesome/free-regular-svg-icons";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -52,6 +54,20 @@ export default function ShopDetails() {
       {shop && (
         <>
           <p className=" text-2xl">{shop.name}</p>
+          <button type="button">
+            <FontAwesomeIcon
+              icon={faHeartSolid}
+              className="text-2xl text-red-700 mr-3"
+            />
+          </button>
+
+          <button type="button">
+            <FontAwesomeIcon
+              icon={faHeartEmpty}
+              className="text-2xl text-red-700 mr-3"
+            />
+          </button>
+
           <p className=" text-m mb-2 leading-4">{shop.address}</p>
           <div>
             <button
