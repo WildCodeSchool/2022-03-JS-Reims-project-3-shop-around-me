@@ -8,7 +8,7 @@ import Fav from "../components/Fav";
 import Fund from "../components/Fund";
 import InscriptionForm from "../components/InscriptionForm";
 import LoginForm from "../components/LoginForm";
-import Itenary from "../pages/Itenary";
+import Itinerary from "../pages/Itinerary";
 import ShopDetails from "../components/ShopDetails";
 import { useAuthContext } from "../contexts/AuthContext";
 
@@ -23,7 +23,7 @@ const protectedRoutes = [
   { path: "/", component: <LoginForm /> },
   { path: "/shops/:id", component: <ShopDetails /> },
   { path: "/shopList", component: <ShopList /> },
-  { path: "/itenary/:x/:y", component: <Itenary /> },
+  { path: "/itinerary/:x/:y", component: <Itinerary /> },
 ];
 
 function Router({ children }) {

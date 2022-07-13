@@ -65,7 +65,7 @@ export default function ShopDetails() {
               type="button"
               className="text-m w-[5rem] pt-3 pb-2 border-solid border-2 rounded-full border-[#255f29] text-[#255f29] focus:outline-none focus:shadow-outline leading-none"
             >
-              <Link to={`/itenary/${shop.x}/${shop.y}`}>Y aller</Link>
+              <Link to={`/itinerary/${shop.x}/${shop.y}`}>Y aller</Link>
             </button>
           </div>
           <img
