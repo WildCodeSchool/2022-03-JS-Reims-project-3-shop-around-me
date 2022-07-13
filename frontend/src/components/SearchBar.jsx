@@ -29,12 +29,25 @@ export default function SearchBar() {
     return searchValue.current?.value.length > 1 && getResults();
   };
 
-  useEffect(() => addressesConversion(), [JSON.stringify(results)]);
+  const distanceProperty = () => {
+    results.forEach((element) => {
+      const distance =
+        Math.abs(element.y - userGeolocation.latitude) +
+        Math.abs(element.x - userGeolocation.longitude);
+      // eslint-disable-next-line no-param-reassign
+      element.distance = distance;
+    });
+  };
+
+  useEffect(() => {
+    addressesConversion();
+    distanceProperty();
+  }, [JSON.stringify(results)]);
 
   return (
     <main
       className={`grid place-items-center mb-14 ${
-        results && results.length > 0 ? "" : "h-[100vh]"
+        results && results.length > 0 ? "" : "mt-[50%]"
       }`}
     >
       <div className="flex flex-col justify-center items-center">
@@ -52,7 +65,7 @@ export default function SearchBar() {
               id="search"
               type="text"
               name="search"
-              placeholder="Tapez: 'Biscuit Roses de Reims'"
+              placeholder="Rechercher un produit, une marque ou une boutique"
               ref={searchValue}
             />
           </label>
@@ -66,18 +79,20 @@ export default function SearchBar() {
           userGeolocation={userGeolocation}
         />
       )}
-      <ul>
-        {results.map((result) => (
-          <li
-            key={result.id}
-            className="text-[#4F4E47] bg-white
+      <ul className="mb-3">
+        {results
+          .sort((a, b) => a.distance - b.distance)
+          .map((result) => (
+            <li
+              key={result.id}
+              className="text-[#4F4E47] bg-white
               ml-4 mr-4 min-w-[90vw] min-h-[5vh] border-solid border border-dark-gray-500 rounded-3xl m-4 p-4"
-          >
-            <Link to={`/shops/${result.id}`}>
-              {result.name} <br /> {result.address}
-            </Link>
-          </li>
-        ))}
+            >
+              <Link to={`/shops/${result.id}`}>
+                {result.name} <br /> {result.address}
+              </Link>
+            </li>
+          ))}
       </ul>
     </main>
   );

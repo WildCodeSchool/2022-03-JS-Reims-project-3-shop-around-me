@@ -4,19 +4,23 @@ import {
   faGlobe,
   faPhone,
   faEnvelope,
+  faHeart as faHeartSolid,
 } from "@fortawesome/free-solid-svg-icons";
-import { useParams, useNavigate } from "react-router-dom";
+import { faHeart as faHeartEmpty } from "@fortawesome/free-regular-svg-icons";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import storeLogo from "../assets/images/store.png";
 import logoAlone from "../assets/images/logo_alone.png";
+import { useAuthContext } from "../contexts/AuthContext";
 
 export default function ShopDetails() {
-  const { id } = useParams();
-  const [shop, setShop] = useState();
-
   const navigate = useNavigate();
   const precedent = () => navigate(-1);
+
+  const { id } = useParams();
+
+  const [shop, setShop] = useState();
 
   const getShop = () => {
     axios
@@ -26,6 +30,7 @@ export default function ShopDetails() {
         }/shops/${id}`
       )
       .then((response) => response.data)
+
       .then((data) =>
         axios
           .get(
@@ -46,12 +51,85 @@ export default function ShopDetails() {
     getShop();
   }, []);
 
+  const [fav, setFav] = useState([]);
+
+  const {
+    loginData: { user },
+  } = useAuthContext();
+
+  const getFavorite = () => {
+    axios
+      .get(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/shop_user/${user.id}`
+      )
+      .then((response) => setFav(response.data));
+  };
+
+  const isFavorite = () => {
+    return fav.some((favorite) => favorite.shop_id === parseInt(id, 10));
+  };
+
+  const removeFavorite = () => {
+    axios
+      .delete(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/shop_user/shops/${id}/user/${user.id}`
+      )
+      .then((response) => response.data);
+  };
+
+  const addFavorite = () => {
+    axios
+      .post(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/shop_user/`,
+        {
+          shop_id: parseInt(id, 10),
+          user_id: parseInt(user.id, 10),
+        }
+      )
+      .then((response) => response.data);
+  };
+
+  const handleRemove = () => {
+    removeFavorite(id);
+  };
+
+  const handleAdd = () => {
+    addFavorite(id);
+  };
+
+  useEffect(() => {
+    getFavorite();
+  }, [fav]);
+
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide text-[#4F4E47]">
       <img src={logoAlone} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
       {shop && (
         <>
-          <p className=" text-2xl">{shop.name}</p>
+          <div className="flex">
+            <p className=" text-2xl mr-2">{shop.name}</p>
+            {fav && isFavorite() ? (
+              <button type="button" onClick={handleRemove}>
+                <FontAwesomeIcon
+                  icon={faHeartSolid}
+                  className="text-2xl text-red-700 mr-3"
+                />
+              </button>
+            ) : (
+              <button type="button" onClick={handleAdd}>
+                <FontAwesomeIcon
+                  icon={faHeartEmpty}
+                  className="text-2xl text-red-700 mr-3"
+                />
+              </button>
+            )}
+          </div>
           <p className=" text-m mb-2 leading-4">{shop.address}</p>
           <div>
             <button
@@ -63,9 +141,9 @@ export default function ShopDetails() {
             </button>
             <button
               type="button"
-              className="text-m w-[5rem] pt-3 pb-2 border-solid border-2 rounded-full border-green-900 text-green-900 focus:outline-none focus:shadow-outline leading-none"
+              className="text-m w-[5rem] pt-3 pb-2 border-solid border-2 rounded-full border-[#255f29] text-[#255f29] focus:outline-none focus:shadow-outline leading-none"
             >
-              Y aller
+              <Link to={`/itinerary/${shop.x}/${shop.y}`}>Y aller</Link>
             </button>
           </div>
           <img
@@ -80,7 +158,7 @@ export default function ShopDetails() {
           <section className="columns-2 text-center mb-10">
             <ul className="text-left">
               Contact
-              <li className="general-text">
+              <li className="general-text string-wrap">
                 <FontAwesomeIcon icon={faEnvelope} /> :{" "}
                 {shop.email ? shop.email : "à renseigner"}
               </li>

@@ -34,11 +34,13 @@ function Fund() {
         />
       </picture>
       <div className="amount-container text-center">
-        <p className="text-4xl self-center">{user?.fund?.toFixed(2)}€</p>
+        <p className="text-4xl self-center text-[#4F4E47]">
+          {user?.fund?.toFixed(2)} €
+        </p>
         <button type="button" onClick={refresh}>
           <FontAwesomeIcon
             icon={faArrowsRotate}
-            className="w-[48px] h-[48px] m-8"
+            className="w-[48px] h-[48px] m-8 text-[#4F4E47]"
           />
         </button>
       </div>

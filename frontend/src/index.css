@@ -13,7 +13,7 @@
 }
 
 body {
-  background-color: #bcb4ac;
+  background-color: hsl(30, 11%, 80%);
   font-family: "nimbus";
 }
 
@@ -43,4 +43,14 @@ h1 {
   .product-type {
     @apply flex justify-center items-center text-gray-700 text-center font-bold text-sm shadow-[0_2px_20px_0px_rgba(27,40,54,0.15)] rounded max-w-[40%] p-1.5 ml-2 mr-2;
   }
+}
+
+@layer utilities {
+  .clip-circle {
+    clip-path: circle(38% at 50% 50%);
+  }
+}
+
+.string-wrap {
+  overflow-wrap: break-word;
 }

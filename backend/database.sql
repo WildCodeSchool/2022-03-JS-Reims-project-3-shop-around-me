@@ -45,25 +45,25 @@ CREATE TABLE `shop` (
 -- Contenu de la table `shop`
 --
 
-INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `website`, `email`, `phone`, `fb_page`, `insta_page`, `x`, `y`) VALUES
-(1, "Magasin Fossier", "Maison Fossier", "biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "", "http://www.fossier.fr/", "fossier@fossier.fr", "0326475984", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", 4.030900226012637, 49.25594501951917)
+INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `website`, `phone`, `email`, `fb_page`, `insta_page`, `x`, `y`) VALUES
+(1, "Magasin Fossier", "Maison Fossier", "biscuit", "25 Cr Jean-Baptiste Langlet, 51100 Reims", "", "http://www.fossier.fr/", "0326475984", "fossier@fossier.fr", "https://www.facebook.com/biscuitsfossier", "https://www.instagram.com/biscuitsfossier/", 4.030900226012637, 49.25594501951917)
 
 /* INSERT QUERY NO: 1 */
 ,
 (
-2, 'Boutique officielle du Stade de Reims Stade Auguste Delaune', '', 'vêtements', '33 Chaussée Bocquaine, 51100 Reims', '', '', '', '', '', '', 4.025034427642822, 49.24589157104492
+2, 'Boutique officielle du Stade de Reims Stade Auguste Delaune', '', 'vêtements', '33 Chaussée Bocquaine, 51100 Reims', '{"lundi": "fermé", "mardi": "fermé", "mercredi": "10:00–12:00 14:00-18:00", "jeudi": "10:00–12:00 14:00-18:00", "vendredi": "10:00–12:00 14:00-18:00", "samedi": "10:00–12:00 14:00-18:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', '08.91.02.49.33', 'boutique@stade-de-reims.com', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.025034427642822, 49.24589157104492
 )
 ,
 (
-3, 'Boutique officielle du Stade de Reims Centre-ville', '', 'vêtements', '1 Rue Chanzy, 51100 Reims', '', '', '', '', '', '', 4.032470703125, 49.25199890136719
+3, 'Boutique officielle du Stade de Reims Centre-ville', '', 'vêtements', '1 Rue Chanzy, 51100 Reims', '{"lundi": "fermé", "mardi": "13:00-18:00", "mercredi": "13:00-18:00", "jeudi": "13:00-18:00", "vendredi": "13:00-18:00", "samedi": "13:00-19:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', '08.91.02.49.33', 'boutique@stade-de-reims.com', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.032470703125, 49.25199890136719
 )
 ,
 (
-4, 'Mojito Skateshop', '', 'vêtements', '15 Rue du Clou-dans-le-Fer, 51100 Reims', '', '', '', '', '', '', 4.0282211, 49.255123138427734
+4, 'Mojito Skateshop', '', 'vêtements', '15 Rue du Clou-dans-le-Fer, 51100 Reims', '{"lundi": "10:00-12:00 14:00-19:00", "mardi": "10:00-12:00 14:00-19:00", "mercredi": "10:00-19:00", "jeudi": "10:00-12:00 14:00-19:00", "vendredi": "10:00-12:00 14:00-19:00", "samedi": "10:00-19:00", "dimanche": "fermé"}', 'https://www.mojito-skateshop.com/', '03.26.04.54.95', 'mojitoskateshop@gmail.com', 'https://www.facebook.com/mojito.skateshop/', 'https://www.instagram.com/mojitoskateshop/', 4.0282211, 49.255123138427734
 )
 ,
 (
-5, 'Nicolas', 'Nicolas', 'alcool', '', '', '', '', '', '', '', 4.0282211, 49.2555462996293
+5, 'Nicolas', 'Nicolas', 'alcool', '16 Rue de l Étape, 51100 Reims', '{"lundi": "fermé", "mardi": "09:30-13:00 14:30-19:30", "mercredi": "09:30-13:00 14:30-19:30", "jeudi": "09:30-13:00 14:30-19:30", "vendredi": "09:30-13:00 14:30-19:30", "samedi": "09:30-19:30", "dimanche": "09:30-12:30"}', 'https://www.nicolas.com/', '03.26.88.55.38', '', 'https://www.facebook.com/CaveNicolasReims/', '', 4.0282211, 49.2555462996293
 )
 
 /* INSERT QUERY NO: 2 */
@@ -255,7 +255,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 33 */
 ,
 (
-37, 'Boulagerie Frédéric Hardy', '', 'boulangeries', '', '', 'https://www.boulangerie51.org/boulangerie-hardy-frederic-sarl-b-h-c-reims-163.html', '+33 3 26 47 68 81', 'frederichardy@neuf.fr', '', '', 4.0326377, 49.2577514996288
+37, 'Boulangerie Frédéric Hardy', '', 'boulangeries', '', '', 'https://www.boulangerie51.org/boulangerie-hardy-frederic-sarl-b-h-c-reims-163.html', '+33 3 26 47 68 81', 'frederichardy@neuf.fr', '', '', 4.0326377, 49.2577514996288
 )
 
 /* INSERT QUERY NO: 34 */
@@ -345,7 +345,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 51 */
 ,
 (
-55, 'Norgil Institut d''Expertise Capillaire', '', 'beauté', '', '', '', '', '', '', '', 4.0485813, 49.2581207996287
+55, 'Norgil Institut d Expertise Capillaire', '', 'beauté', '', '', '', '', '', '', '', 4.0485813, 49.2581207996287
 )
 
 /* INSERT QUERY NO: 52 */
@@ -609,13 +609,13 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 139 */
 ,
 (
-143, 'Maison Dallet', '', 'chocolateries', '47 Cours Jean-Baptiste Langlet', '', '', '', '', '', '', 4.02973336615391, 49.2571007956441
+143, 'Maison Dallet', '', 'chocolateries', '47 Cours Jean-Baptiste Langlet', '{"lundi": "fermé", "mardi": "09:30-19:00", "mercredi": "09:30-19:00", "jeudi": "09:30-19:00", "vendredi": "09:30-19:00", "samedi": "09:00-19:00", "dimanche": "fermé"}', 'https:/www.chocolat-vincentdallet.fr', '', '03.26.35.40.53', 'https://www.facebook.com/PatisserieChocolaterieDallet/', 'instagram.com/chocolat51/?hl=fr', 4.02973336615391, 49.2571007956441
 )
 
 /* INSERT QUERY NO: 142 */
 ,
 (
-146, 'Princesse tam.tam', 'Princesse tam.tam', 'vêtements', '', '', '', '', '', '', '', 4.0299491, 49.2537603996297
+146, 'Princesse tam.tam', 'Princesse tam.tam', 'vêtements', '27 Rue de Vesle, 51100 Reims', '{"lundi": "14:00-19:00", "mardi": "10:00-19:00", "mercredi": "10:00-19:00", "jeudi": "10:00-19:00", "vendredi": "10:00-19:00", "samedi": "10:00-19:00", "dimanche": "fermé"}', 'https://www.princessetamtam.com/', '', '03.26.89.29.94', '', '', 4.0299491, 49.2537603996297
 )
 
 /* INSERT QUERY NO: 143 */
@@ -627,25 +627,13 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 144 */
 ,
 (
-148, 'K-Way', 'K-Way', 'vêtements', '', '', '', '', '', '', '', 4.0290294, 49.2557984996292
+148, 'K-Way', 'K-Way', 'vêtements', '30 Rue du Cadran Saint-Pierre, 51100 Reims', '{"lundi": "14:00-19:00", "mardi": "10:00-12:30 13:30-19:00", "mercredi": "10:00-12:30 13:30-19:00", "jeudi": "10:00-12:30 13:30-19:00", "vendredi": "10:00-12:30 13:30-19:00", "samedi": "10:00-19:00", "dimanche": "fermé"}', 'https://www.k-way.fr/', '', '03.26.24.65.99', 'https://www.facebook.com/KwayReims/', '', 4.0290294, 49.2557984996292
 )
 
 /* INSERT QUERY NO: 145 */
 ,
 (
-149, 'Parano', '', 'vêtements', '', '', '', '', '', '', '', 4.0272459, 49.25272549963
-)
-
-/* INSERT QUERY NO: 146 */
-,
-(
-150, '1 2 3', '', 'vêtements', '', '', '', '', '', '', '', 4.0279999, 49.2530021996299
-)
-
-/* INSERT QUERY NO: 147 */
-,
-(
-151, 'Desigual', 'Desigual', 'vêtements', '', '', '', '', '', '', '', 4.0289227, 49.2533518996298
+149, 'Parano', '', 'vêtements', '91 Rue de Vesle, 51100 Reims', '', '', '', '', '', '', 4.0272459, 49.25272549963
 )
 
 /* INSERT QUERY NO: 148 */
@@ -693,7 +681,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 155 */
 ,
 (
-159, 'Seen', '', 'vêtements', '', '', '', '', '', '', '', 4.0329055, 49.256608899629
+159, 'Seen', '', 'vêtements', '19 Place du Forum, 51100 Reims', '{"lundi": "14:00-19:00", "mardi": "10:00-12:00 14:00-19:00", "mercredi": "10:00-12:00 14:00-19:00", "jeudi": "10:00-12:00 14:00-19:00", "vendredi": "10:00-12:00 14:00-19:00", "samedi": "10:00-19:00", "dimanche": "fermé"}', 'https://linecl-seen.fr/', 'contact@linecl-seen.fr', '03.26.78.10.80', 'https://www.facebook.com/linecl.seen.reims', 'https://www.instagram.com/explore/locations/420291992/linecl-seen/?hl=fr', 4.0329055, 49.256608899629
 )
 
 /* INSERT QUERY NO: 156 */
@@ -759,7 +747,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 166 */
 ,
 (
-170, 'Liu Jo', 'Liu Jo', 'vêtements', '', '', 'http://luiront.com', '+33 326063828', '', '', '', 4.0318425, 49.256597899629
+170, 'Liu Jo', 'Liu Jo', 'vêtements', '22 Cours Jean Baptiste Langlet, 51100 Reims', '{"lundi": "14:00-19:00", "mardi": "10:00-19:00", "mercredi": "10:00-19:00", "jeudi": "10:00-19:00", "vendredi": "10:00-19:00", "samedi": "10:00-19:00", "dimanche": "fermé"}', 'https://luijo.com', '','+33.3.26.06.38.28', '', 'https://www.instagram.com/liujoreims/', 4.0318425, 49.256597899629
 )
 
 /* INSERT QUERY NO: 167 */
@@ -777,7 +765,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 169 */
 ,
 (
-173, 'The North Face', 'The North Face', 'vêtements', '', '', '', '', '', '', '', 4.0299424, 49.2550964996294
+173, 'The North Face', 'The North Face', 'vêtements', '46 Rue des Élus, 51100 Reims', '{"lundi": "10:30-19:00", "mardi": "10:30-19:00", "mercredi": "10:30-19:00", "jeudi": "10:30-19:00", "vendredi": "10:30-19:00", "samedi": "10:30-19:00", "dimanche": "fermé"}', 'https://www.thenorthface.fr','09.53.47.92.46', '', '', '', 4.0299424, 49.2550964996294
 )
 
 /* INSERT QUERY NO: 170 */
@@ -795,7 +783,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 172 */
 ,
 (
-176, 'Caviar', '', 'vêtements', '', '', '', '', '', '', '', 4.0297553, 49.2560232996292
+176, 'Caviar', '', 'vêtements', '16 Rue du Cadran Saint-Pierre, 51100 Reims', '{"lundi": "14:00-19:00", "mardi": "10:00-19:00", "mercredi": "10:00-19:00", "jeudi": "10:00-19:00", "vendredi": "10:00-19:00", "samedi": "10:00-19:00", "dimanche": "fermé"}', '', '', '03.26.40.19.19', 'https://www.facebook.com/boutiquecaviar/', 'https://www.instagram.com/caviar_reims/', 4.0297553, 49.2560232996292
 )
 
 /* INSERT QUERY NO: 173 */
@@ -1143,7 +1131,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 255 */
 ,
 (
-259, 'Fleur de Sel', '', 'fleuristes', '', '', '', '', '', '', '', 4.0253793, 49.2660693996267
+259, 'Fleur de Sel', '', 'fleuristes', '87 Avenue de Laon , 51100 Reims', '{"lundi": "fermé", "mardi": "09:00-12:00 14:00-19:00", "mercredi": "09:00-12:00 14:00-19:00", "jeudi": "09:00-12:00 14:00-19:00", "vendredi": "09:00-12:00 14:00-19:00", "samedi": "09:30-12:30 14:00-19:30", "dimanche": "09:30-13:00"}', 'https://www.fleurdesel-reims.com/', '', '03.26.06.30.89', 'https://www.facebook.com/Fleur-de-sel-Reims-1006030219498840/', '', 4.0253793, 49.2660693996267
 )
 
 /* INSERT QUERY NO: 256 */
@@ -1497,7 +1485,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 407 */
 ,
 (
-411, 'Line''CL', '', 'chaussures', '', '', '', '', '', '', '', 4.03369333091715, 49.2569517933122
+411, 'Line CL', '', 'chaussures', '', '', '', '', '', '', '', 4.03369333091715, 49.2569517933122
 )
 
 /* INSERT QUERY NO: 408 */
@@ -1605,19 +1593,20 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 446 */
 ,
 (
-450, 'Boutique Guy Degrenne', '', 'vin', '', '', 'http://guydegrenne.fr', '+33 3 26 06 86 39', '', '', '', 4.0261481, 49.2523205996301
+450, 'Boutique Guy Degrenne', '', 'vin', '113 Rue de Vesle, 51100 Reims', '', 'http://guydegrenne.fr', '+33 3 26 06 86 39', '', '', '', 4.0261481, 49.2523205996301
 )
 ,
 (
-451, 'Lacoste Reims centre-ville', '', 'vêtements', '31 Rue des Élus, 51100 Reims', '', '', '', '', '', '', 4.0302512, 49.2549803
+451, 'Lacoste Reims centre-ville', '', 'vêtements', '31 Rue des Élus, 51100 Reims', '{"lundi": "14:00-19:00", "mardi": "10:00-19:00", "mercredi": "10:00-19:00", "jeudi": "10:00-19:00", "vendredi": "10:00-19:00", "samedi": "10:00-19:00", "dimanche": "fermé"}', 'https://www.lacoste.com/', '', '03.26.84.77.26', '', '', 4.0302512, 49.2549803
 )
 ,
 (
-452, 'Eklips', '', 'vêtements', '7 Rue des Élus, 51100 Reims', '', '', '', '', '', '', 4.031376838684082, 49.2554817199707
+452, 'Eklips', '', 'vêtements', '7 Rue des Élus, 51100 Reims', '{"lundi": "fermé", "mardi": "10:00-19:00", "mercredi": "10:00-19:00", "jeudi": "10:00-19:00", "vendredi": "10:00-19:00", "samedi": "10:00-19:00", "dimanche": "fermé"}', 'https://www.eklips-shop.com/', '
+contact.eklipsshop@gmail.com', '', 'https://www.facebook.com/Eklips-shop-108792324251747/', 'https://www.instagram.com/eklipsshop/', 4.031376838684082, 49.2554817199707
 )
 ,
 (
-453, 'Galeries Lafayette Reims', '', 'vêtements', '33-45 Rue de Vesle, 51100 Reims', '', '', '', '', '', '', 4.023271083831787, 49.25151443481445
+453, 'Galeries Lafayette Reims', '', 'vêtements', '33-45 Rue de Vesle, 51100 Reims', '', '', '', '', '', '', 4.0294103, 49.2536065
 );
 
 
@@ -1634,6 +1623,9 @@ ALTER TABLE shop MODIFY COLUMN opening_hours json;
 UPDATE shop SET opening_hours = '{"lundi": "14:00–19:00", "mardi": "10:00–19:00", "mercredi": "10:00–19:00", "jeudi": "10:00–19:00", "vendredi": "10:00–19:00", "samedi": "10:00–19:00", "dimanche": "fermé"}' where id=1;
 ALTER TABLE shop ADD img_url VARCHAR(255);
 UPDATE shop SET img_url = "https://www.fossier.fr/img/cms/magasins-min.png" WHERE id=1;
+UPDATE shop SET img_url = "https://lh3.googleusercontent.com/p/AF1QipNkdrJowhQRCkixPry47Q-GzQ-PXpLnABHHASdh=w1080-h608-p-no-v0" WHERE id=4;
+UPDATE shop SET img_url = "https://medias.nicolas.com/media/sys_master/images/h01/he9/9465104039966.png" WHERE id=5;
+
 
 
 --
@@ -2184,6 +2176,41 @@ ALTER TABLE `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `shop_user`
+--
+
+CREATE TABLE `shop_user` (
+  `shop_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_shop_user_shop
+        FOREIGN KEY (shop_id)
+        REFERENCES shop(id),
+  `user_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_shop_user_user
+        FOREIGN KEY (user_id)
+        REFERENCES user(id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `shop_user`
+--
+
+INSERT INTO `shop_user` (`shop_id`,`user_id`) VALUES
+(1, 1),
+(4, 1),
+(5, 1),
+(1, 2),
+(4, 2),
+(5, 2);
+
+-- --------------------------------------------------------
+
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+

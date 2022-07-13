@@ -392,7 +392,7 @@ export default function InscriptionForm() {
             )}
           </div>
           <input
-            className="text-m mt-4 mb-8 py-3 border-solid border-2 border-green-900 text-green-900 font-bold rounded focus:outline-none focus:shadow-outline"
+            className="text-m mt-4 mb-8 py-3 border-solid border-2 border-[#255f29] text-[#255f29] font-bold rounded focus:outline-none focus:shadow-outline"
             type="submit"
           />
         </div>
