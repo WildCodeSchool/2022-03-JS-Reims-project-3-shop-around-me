@@ -45,12 +45,8 @@ export default function SearchBar() {
   }, [JSON.stringify(results)]);
 
   return (
-    <main
-      className={`grid place-items-center mb-14 ${
-        results && results.length > 0 ? "" : "mt-[50%]"
-      }`}
-    >
-      <div className="flex flex-col justify-center items-center">
+    <main className="mb-24">
+      <div className="flex flex-col justify-center items-center mt-20 small-height:mt-0">
         {results && results.length > 0 ? <HorizontalLogo /> : <VerticalLogo />}
         <form
           className="flex rounded-3xl border-solid border border-gray-200 w-min p-2 hover:bg-gray-100 bg-white"
@@ -65,7 +61,7 @@ export default function SearchBar() {
               id="search"
               type="text"
               name="search"
-              placeholder="Rechercher un produit, une marque ou une boutique"
+              placeholder="Rechercher un produit, une marque..."
               ref={searchValue}
             />
           </label>
