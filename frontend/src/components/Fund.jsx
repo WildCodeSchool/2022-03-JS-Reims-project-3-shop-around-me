@@ -19,18 +19,23 @@ function Fund() {
   };
 
   return (
-    <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide">
-      <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
+    <main className="flex flex-col px-8 pt-8 tracking-wide">
+      <img
+        src={logo}
+        alt="logo"
+        className="max-w-[4rem] mr-2 mb-8 small-phone:hidden"
+      />
       <p className=" text-2xl text-[#4F4E47]">Votre cagnotte</p>
-      <p className=" text-m text-[#4F4E47] mb-8 leading-4">
+      <p className=" text-m text-[#4F4E47] leading-4 small-phone:hidden">
         Présentez votre QR code à votre commerçant participant pour cumuler ou
         dépenser votre cashback.
       </p>
 
-      <picture className="self-center justify-self-center mt-24 mb-16">
+      <picture className="self-center justify-self-center mt-8 mb-4">
         <img
           src="https://chart.googleapis.com/chart?cht=qr&chl=Shop%20Around%20Me&chs=180x180&choe=UTF-8&chld=L|2%27%20rel=%27nofollow"
           alt="qr code"
+          className="small-phone:w-[150px]"
         />
       </picture>
       <div className="amount-container text-center">
@@ -40,7 +45,7 @@ function Fund() {
         <button type="button" onClick={refresh}>
           <FontAwesomeIcon
             icon={faArrowsRotate}
-            className="w-[48px] h-[48px] m-8 text-[#4F4E47]"
+            className="w-[48px] h-[48px] m-8 text-[#4F4E47] small-phone:m-4"
           />
         </button>
       </div>
