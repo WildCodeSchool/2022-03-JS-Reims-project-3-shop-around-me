@@ -51,11 +51,8 @@ export default function Fav() {
       </p>
       <ul className="flex flex-col gap-x-4 gap-y-4 mb-16 text-[#4F4E47]">
         {fav.map((favorite) => (
-          <li key={favorite.id}>
-            <figure
-              key={favorite.shop_id}
-              className="flex w-[100%] mt-1 mb-1 justify-between items-center bg-white rounded-lg"
-            >
+          <li key={favorite.shop_id}>
+            <figure className="flex w-[100%] mt-1 mb-1 justify-between items-center bg-white rounded-lg">
               <Link to={`/shops/${favorite.shop_id}`} className="min-w-[85%]">
                 <div className="flex items-center p-2">
                   <img
