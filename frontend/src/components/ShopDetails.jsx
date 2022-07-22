@@ -155,7 +155,7 @@ export default function ShopDetails() {
                 : "my-8 rounded-lg px-16"
             }
           />
-          <section className="columns-2 text-center mb-10">
+          <section className="columns-2 text-center mb-16 flex items-start justify-between">
             <ul className="text-left">
               Contact
               <li className="general-text string-wrap">
