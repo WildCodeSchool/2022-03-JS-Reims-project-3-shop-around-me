@@ -107,7 +107,7 @@ export default function MyAccount() {
         <p className=" text-lg mb-8">Voici votre compte.</p>
       </section>
       {accountMenu.map((menu) => (
-        <ul>
+        <ul key={menu.id}>
           <p className="py-4 px-8 text-xl font-bold bg-[hsl(30,7%,71%)] cursor-pointer">
             {menu.categorie}
           </p>
