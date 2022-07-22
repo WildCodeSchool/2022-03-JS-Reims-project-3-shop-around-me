@@ -35,7 +35,7 @@ export default function PersonnalData() {
       )
       .then((response) => response)
       .then((data) => {
-        setUser(data.data);
+        setUser({ ...data.data, fund: user.fund });
       });
   };
 
