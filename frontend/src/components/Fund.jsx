@@ -4,19 +4,8 @@ import { useAuthContext } from "../contexts/AuthContext";
 import logo from "../assets/images/logo_alone.png";
 
 function Fund() {
-  const { loginData, setLoginData } = useAuthContext();
+  const { loginData, refresh } = useAuthContext();
   const { user } = loginData;
-
-  // For demo purpose, we increase the fund every time the user clicks on the button
-  const refresh = () => {
-    setLoginData({
-      ...loginData,
-      user: {
-        ...loginData.user,
-        fund: loginData.user.fund + 4.95,
-      },
-    });
-  };
 
   return (
     <main className="flex flex-col px-8 pt-8 tracking-wide">

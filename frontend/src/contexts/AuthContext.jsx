@@ -6,7 +6,21 @@ const AuthContext = createContext();
 export function AuthContextProvider({ children }) {
   const [loginData, setLoginData] = useState([]);
 
-  const value = useMemo(() => ({ loginData, setLoginData }), [loginData]);
+  // For demo purpose, we increase the fund every time the user clicks on the button
+  const refresh = () => {
+    setLoginData({
+      ...loginData,
+      user: {
+        ...loginData.user,
+        fund: loginData.user.fund + 4.95,
+      },
+    });
+  };
+
+  const value = useMemo(
+    () => ({ loginData, setLoginData, refresh }),
+    [loginData, refresh]
+  );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
