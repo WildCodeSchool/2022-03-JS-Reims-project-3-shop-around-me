@@ -45,8 +45,12 @@ export default function SearchBar() {
   }, [JSON.stringify(results)]);
 
   return (
-    <main className="mb-24">
-      <div className="flex flex-col justify-center items-center mt-20 small-height:mt-0">
+    <main className="items-center">
+      <div
+        className={`flex flex-col justify-center items-center ${
+          results.length > 0 ? "mt-0" : "mt-20"
+        } small-height:mt-0`}
+      >
         {results && results.length > 0 ? <HorizontalLogo /> : <VerticalLogo />}
         <form
           className="flex rounded-3xl border-solid border border-gray-200 w-min p-2 hover:bg-gray-100 bg-white"

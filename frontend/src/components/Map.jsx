@@ -27,7 +27,7 @@ function Map({ searchValue, results }) {
   useEffect(() => {}, [userGeolocation]);
 
   return (
-    <section className="flex flex-col text-center">
+    <section className="flex flex-col items-center">
       <p className="m-2 general-text">Votre résultat pour: {searchValue}</p>
       {userGeolocation ? (
         <MapContainer
