@@ -37,7 +37,7 @@ export default function ShopList() {
   }, []);
 
   return (
-    <main className="flex flex-col w-screen tracking-wide text-[#4F4E47]">
+    <main className="flex flex-col tracking-wide text-[#4F4E47]">
       <section className="px-8 pt-8">
         <img src={logo} alt="logo" className="max-w-[4rem] mr-2 mb-8" />
         <p className=" text-2xl">Catégories</p>
@@ -45,7 +45,7 @@ export default function ShopList() {
           Retrouvez toutes les boutiques autour de vous, triées par catégories.
         </p>
       </section>
-      <ul className="mb-18">
+      <ul className="pb-24">
         {Object.keys(results)
           .sort()
           .map((type) => (
