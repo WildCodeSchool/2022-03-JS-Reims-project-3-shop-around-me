@@ -23,8 +23,8 @@ function Navbar() {
   const { setResults } = useAddress();
 
   return noNavbarPaths.includes(location.pathname) ? null : (
-    <nav className="fixed h-[8vh] w-screen bottom-0 bg-[#4F4E47]">
-      <ul className="flex items-center justify-evenly h-[8vh]">
+    <nav className="fixed h-[3rem] w-screen bottom-0 bg-[#4F4E47] small-height:hidden">
+      <ul className="flex items-center justify-evenly h-[3rem]">
         {link(faPiggyBank, "/funds")}
         {link(faStore, "/shopList")}
         {link(

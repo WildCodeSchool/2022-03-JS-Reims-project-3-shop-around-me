@@ -49,37 +49,36 @@ export default function Fav() {
       <p className=" text-m text-[#4F4E47] mb-8 leading-4">
         Enregistrez vos boutiques favorites et retrouvez-les rapidement.
       </p>
-      <div className="flex flex-col gap-x-4 gap-y-4 mb-16 text-[#4F4E47]">
+      <ul className="flex flex-col gap-x-4 gap-y-4 mb-16 text-[#4F4E47]">
         {fav.map((favorite) => (
-          <figure
-            key={favorite.shop_id}
-            className="flex w-[100%] mt-1 mb-1 justify-between items-center bg-white rounded-lg"
-          >
-            <Link to={`/shops/${favorite.shop_id}`} className="min-w-[85%]">
-              <div className="flex items-center p-2">
-                <img
-                  src={favorite.img_url}
-                  alt="favori"
-                  className="clip-circle w-[86px] h-[86px]"
-                />
+          <li key={favorite.shop_id}>
+            <figure className="flex w-[100%] mt-1 mb-1 justify-between items-center bg-white rounded-lg">
+              <Link to={`/shops/${favorite.shop_id}`} className="min-w-[85%]">
+                <div className="flex items-center p-2">
+                  <img
+                    src={favorite.img_url}
+                    alt="favori"
+                    className="rounded-full aspect-square w-16"
+                  />
 
-                <figcaption className="text-m leading-4 max-w-[75%] ml-4">
-                  {favorite.name}
-                </figcaption>
-              </div>
-            </Link>
-            <button
-              type="button"
-              onClick={() => handleRemove(favorite.shop_id)}
-            >
-              <FontAwesomeIcon
-                icon={faHeartSolid}
-                className="text-2xl text-red-700 mr-5"
-              />
-            </button>
-          </figure>
+                  <figcaption className="text-m leading-4 max-w-[75%] ml-4">
+                    {favorite.name}
+                  </figcaption>
+                </div>
+              </Link>
+              <button
+                type="button"
+                onClick={() => handleRemove(favorite.shop_id)}
+              >
+                <FontAwesomeIcon
+                  icon={faHeartSolid}
+                  className="text-2xl text-red-700 mr-5"
+                />
+              </button>
+            </figure>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }
