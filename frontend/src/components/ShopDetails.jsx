@@ -155,16 +155,16 @@ export default function ShopDetails() {
                 : "my-8 rounded-lg px-16"
             }
           />
-          <section className="columns-2 text-center mb-10">
+          <section className="flex columns-2 gap-1 text-center pb-20 justify-evenly">
             <ul className="text-left">
               Contact
               <li className="general-text string-wrap">
                 <FontAwesomeIcon icon={faEnvelope} /> :{" "}
-                {shop.email ? shop.email : "à renseigner"}
+                {shop.email ? shop.email : "n.c."}
               </li>
               <li className="general-text">
                 <FontAwesomeIcon icon={faPhone} /> :{" "}
-                {shop.phone ? shop.phone : "à renseigner"}
+                {shop.phone ? shop.phone : "n.c."}
               </li>
               <li className="general-text">
                 <a href={shop.fb_page} target="blank">
@@ -187,40 +187,30 @@ export default function ShopDetails() {
               {" "}
               Horaires
               <li className="general-text">
-                Lundi :{" "}
-                {shop.opening_hours ? shop.opening_hours.lundi : "à renseigner"}
+                Lundi : {shop.opening_hours ? shop.opening_hours.lundi : "n.c."}
               </li>
               <li className="general-text">
-                Mardi :{" "}
-                {shop.opening_hours ? shop.opening_hours.mardi : "à renseigner"}
-              </li>
-              <li className="general-text">
-                Mercredi :{" "}
-                {shop.opening_hours
-                  ? shop.opening_hours.mercredi
-                  : "à renseigner"}
+                Mardi : {shop.opening_hours ? shop.opening_hours.mardi : "n.c."}
               </li>
               <li className="general-text">
                 Mercredi :{" "}
-                {shop.opening_hours ? shop.opening_hours.jeudi : "à renseigner"}
+                {shop.opening_hours ? shop.opening_hours.mercredi : "n.c."}
+              </li>
+              <li className="general-text">
+                Mercredi :{" "}
+                {shop.opening_hours ? shop.opening_hours.jeudi : "n.c."}
               </li>
               <li className="general-text">
                 Vendredi :{" "}
-                {shop.opening_hours
-                  ? shop.opening_hours.vendredi
-                  : "à renseigner"}
+                {shop.opening_hours ? shop.opening_hours.vendredi : "n.c."}
               </li>
               <li className="general-text">
                 Samedi :{" "}
-                {shop.opening_hours
-                  ? shop.opening_hours.samedi
-                  : "à renseigner"}
+                {shop.opening_hours ? shop.opening_hours.samedi : "n.c."}
               </li>
               <li className="general-text">
                 Dimanche :{" "}
-                {shop.opening_hours
-                  ? shop.opening_hours.dimanche
-                  : "à renseigner"}
+                {shop.opening_hours ? shop.opening_hours.dimanche : "n.c."}
               </li>
             </ul>
           </section>
