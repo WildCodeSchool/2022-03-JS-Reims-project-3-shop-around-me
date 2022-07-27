@@ -34,7 +34,7 @@ function Fund() {
         <button type="button" onClick={refresh}>
           <FontAwesomeIcon
             icon={faArrowsRotate}
-            className="w-[48px] h-[48px] m-8 text-[#4F4E47] small-phone:m-4"
+            className="w-[48px] h-[48px] m-3 text-[#4F4E47] small-phone:m-3"
           />
         </button>
       </div>
