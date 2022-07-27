@@ -400,6 +400,7 @@ export default function InscriptionForm() {
           <input
             className="text-m mt-4 mb-8 py-3 border-solid border-2 border-[#255f29] text-[#255f29] font-bold rounded focus:outline-none focus:shadow-outline"
             type="submit"
+            value="Valider l'inscription"
           />
         </div>
         <p className="text-center text-sm">
