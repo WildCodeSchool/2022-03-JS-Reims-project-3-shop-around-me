@@ -83,7 +83,7 @@ export default function LoginForm() {
           )}
           <label
             htmlFor="checkbox"
-            className="normal-case mb-4 text-[18px] flex"
+            className="normal-case mb-3 text-[18px] flex"
           >
             <input
               id="checkbox"
@@ -96,7 +96,7 @@ export default function LoginForm() {
         </div>
         <input
           type="submit"
-          className="text-m mt-4 py-3 border-solid border-2 border-[#255f29] text-[#255f29] font-bold rounded focus:outline-none focus:shadow-outline"
+          className="text-m py-3 border-solid border-2 border-[#255f29] text-[#255f29] font-bold rounded focus:outline-none focus:shadow-outline"
           value="Se connecter"
         />
       </form>
