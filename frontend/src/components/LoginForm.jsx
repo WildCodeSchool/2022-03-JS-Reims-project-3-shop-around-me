@@ -47,7 +47,7 @@ export default function LoginForm() {
         <div className="form-structure text-[#4F4E47] ">
           <label
             htmlFor="email"
-            className="block uppercase tracking-wide text-xs font-bold mb-4"
+            className="block uppercase tracking-wide text-sm font-bold mb-4"
           >
             Email
             <input
@@ -65,7 +65,7 @@ export default function LoginForm() {
           )}
           <label
             htmlFor="password"
-            className="block uppercase tracking-wide  text-sm font-bold mb-4"
+            className="block uppercase tracking-wide text-sm font-bold mb-4"
           >
             Mot de passe
             <input
@@ -81,22 +81,31 @@ export default function LoginForm() {
               Ce champ est requis.
             </p>
           )}
-          <label htmlFor="checkbox" className=" normal-case ml-2 mb-4">
-            <input type="checkbox" value="" className="checkbox mt-2" />
-            Resté connecté(e)
+          <label
+            htmlFor="checkbox"
+            className="normal-case mb-4 text-[18px] flex"
+          >
+            <input
+              id="checkbox"
+              type="checkbox"
+              value=""
+              className="checkbox mr-2 text-m"
+            />
+            Rester connecté(e)
           </label>
         </div>
         <input
           type="submit"
           className="text-m mt-4 py-3 border-solid border-2 border-[#255f29] text-[#255f29] font-bold rounded focus:outline-none focus:shadow-outline"
+          value="Se connecter"
         />
       </form>
-      <p>
-        Vous n’avez pas de compte ? {}
+      <div className="flex flex-col">
+        <p>Vous n’avez pas de compte ? {}</p>
         <Link to="/inscription" className="underline underline-offset-1">
           Inscrivez-vous ici
         </Link>
-      </p>
+      </div>
     </main>
   );
 }
