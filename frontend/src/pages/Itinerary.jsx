@@ -1,10 +1,9 @@
 import { MapContainer, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useGeolocationContext } from "../contexts/GeolocationContext";
 import Routing from "../components/Routing";
 
 export default function Itinerary() {
-  const { userGeolocation } = useGeolocationContext();
+  const userGeolocation = [49.255, 4.03];
 
   return (
     userGeolocation && (

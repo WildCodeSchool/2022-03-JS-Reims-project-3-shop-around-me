@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import useGeolocation from "react-hook-geolocation";
 import VerticalLogo from "./VerticalLogo";
 import HorizontalLogo from "./HorizontalLogo";
 import Map from "./Map";
@@ -9,7 +8,6 @@ import { useAddress } from "../contexts/AddressContext";
 
 export default function SearchBar() {
   const searchValue = useRef();
-  const userGeolocation = useGeolocation();
   const { results, setResults, addressesConversion } = useAddress();
   const getResults = () => {
     axios
@@ -29,11 +27,13 @@ export default function SearchBar() {
     return searchValue.current?.value.length > 1 && getResults();
   };
 
+  const userGeolocation = [49.255, 4.03];
+
   const distanceProperty = () => {
     results.forEach((element) => {
       const distance =
-        Math.abs(element.y - userGeolocation.latitude) +
-        Math.abs(element.x - userGeolocation.longitude);
+        Math.abs(element.y - userGeolocation[0]) +
+        Math.abs(element.x - userGeolocation[1]);
       // eslint-disable-next-line no-param-reassign
       element.distance = distance;
     });
