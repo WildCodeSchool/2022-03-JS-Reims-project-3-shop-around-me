@@ -78,7 +78,7 @@ export default function ShopDetails() {
           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
         }/shop_user/shops/${id}/user/${user.id}`
       )
-      .then((response) => response.data);
+      .then(() => getFavorite());
   };
 
   const addFavorite = () => {
@@ -92,7 +92,7 @@ export default function ShopDetails() {
           user_id: parseInt(user.id, 10),
         }
       )
-      .then((response) => response.data);
+      .then(() => getFavorite());
   };
 
   const handleRemove = () => {
@@ -105,7 +105,7 @@ export default function ShopDetails() {
 
   useEffect(() => {
     getFavorite();
-  }, [fav]);
+  }, []);
 
   return (
     <main className="flex flex-col w-screen px-8 pt-8 pb-8 tracking-wide text-[#4F4E47]">

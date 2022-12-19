@@ -31,12 +31,12 @@ export default function Fav() {
           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
         }/shop_user/shops/${shopId}/user/${id}`
       )
-      .then((response) => response.data);
+      .then(() => getFavorite());
   };
 
   useEffect(() => {
     getFavorite();
-  }, [fav]);
+  }, []);
 
   const handleRemove = (shopId) => {
     removeFavorite(shopId);
