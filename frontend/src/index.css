@@ -26,13 +26,13 @@ h1 {
     @apply text-red-600 normal-case text-xs font-normal italic;
   }
   .form-input {
-    @apply appearance-none block w-full bg-gray-200 text-[#4F4E47] border border-gray-200 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 max-w-lg;
+    @apply appearance-none block w-[15rem] bg-gray-200 text-[#4F4E47] border border-gray-200 rounded mt-2 py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 max-w-[20rem];
   }
   .form-label {
     @apply block uppercase tracking-wide text-[#4F4E47] text-sm font-bold mb-4;
   }
   .form-structure {
-    @apply w-full mb-6 text-gray-700 font-bold uppercase text-sm;
+    @apply w-full text-gray-700 font-bold uppercase text-sm;
   }
   .general-text {
     @apply text-[#4F4E47] text-sm;
