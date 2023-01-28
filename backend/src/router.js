@@ -11,6 +11,7 @@ const {
 } = require("./validators/KeywordProductValidator");
 const { validateProductShop } = require("./validators/ProductShopValidator");
 const { validateShopUser } = require("./validators/ShopUserValidator");
+const ShopContentRange = require("./services/ShopContentRange");
 
 const {
   ItemController,
@@ -31,7 +32,7 @@ router.put("/items/:id", ItemController.edit);
 router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
-router.get("/shops", ShopController.browse);
+router.get("/shops", ShopContentRange, ShopController.browse);
 router.get("/shops/:id", ShopController.read);
 router.put("/shops/:id", ShopController.edit);
 router.post("/shops", ShopController.add);

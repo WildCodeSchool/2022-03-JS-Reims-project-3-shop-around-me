@@ -7,7 +7,10 @@ class ShopController {
     if (req.query.search != null) {
       promise = models.shop.findByQuery(req.query.search);
     } else {
-      promise = models.shop.findAll();
+      promise = models.shop.findByPage(
+        parseInt(req.query.min, 10),
+        parseInt(req.query.max, 10)
+      );
     }
 
     promise

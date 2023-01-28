@@ -1646,7 +1646,7 @@ ALTER TABLE `shop`
 -- AUTO_INCREMENT pour la table `shop`
 --
 ALTER TABLE `shop`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=454;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
@@ -1844,11 +1844,13 @@ CREATE TABLE `keyword_product` (
   `product_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_keyword_product_product
         FOREIGN KEY (product_id)
-        REFERENCES product(id),
+        REFERENCES product(id)
+        ON DELETE CASCADE,
   `keyword_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_keyword_product_keyword
         FOREIGN KEY (keyword_id)
         REFERENCES keyword(id)
+        ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -2043,11 +2045,13 @@ CREATE TABLE `product_shop` (
   `shop_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_product_shop_shop
         FOREIGN KEY (shop_id)
-        REFERENCES shop(id),
+        REFERENCES shop(id)
+        ON DELETE CASCADE,
   `product_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_product_shop_product
         FOREIGN KEY (product_id)
         REFERENCES product(id)
+        ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -2187,11 +2191,13 @@ CREATE TABLE `shop_user` (
   `shop_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_shop_user_shop
         FOREIGN KEY (shop_id)
-        REFERENCES shop(id),
+        REFERENCES shop(id)
+        ON DELETE CASCADE,
   `user_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_shop_user_user
         FOREIGN KEY (user_id)
         REFERENCES user(id)
+        ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
