@@ -10,7 +10,7 @@ export default function ShopsList() {
       {isSmall ? (
         <SimpleList
           primaryText={(record) => record.name}
-          secondaryText={(record) => record.id}
+          secondaryText={(record) => record.address}
           tertiaryText={(record) => record.type}
         />
       ) : (
