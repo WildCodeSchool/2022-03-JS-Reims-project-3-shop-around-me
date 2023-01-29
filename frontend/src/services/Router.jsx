@@ -11,6 +11,7 @@ import LoginForm from "../components/LoginForm";
 import Itinerary from "../pages/Itinerary";
 import ShopDetails from "../components/ShopDetails";
 import { useAuthContext } from "../contexts/AuthContext";
+import AdminPanel from "../pages/AdminPanel";
 
 // Place all routes here
 const protectedRoutes = [
@@ -46,6 +47,7 @@ function Router({ children }) {
       {children}
       <Routes>
         <Route path="/" element={<LoginForm />} />
+        <Route path="/admin/*" element={<AdminPanel />} />
         <Route path="/inscription" element={<InscriptionForm />} />
         {protectedRoutes.map((route) =>
           protectedRoute(route.path, route.component, route.path)

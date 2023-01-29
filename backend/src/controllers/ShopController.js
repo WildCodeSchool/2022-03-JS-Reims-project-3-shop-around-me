@@ -4,13 +4,21 @@ class ShopController {
   static browse = (req, res) => {
     let promise = null;
 
-    if (req.query.search != null) {
+    if (req.query.search) {
       promise = models.shop.findByQuery(req.query.search);
-    } else {
+    } else if (req.query.filter !== "undefined") {
+      promise = models.shop.findByFilter(
+        req.query.filter,
+        parseInt(req.query.min, 10),
+        parseInt(req.query.max, 10)
+      );
+    } else if (req.query.min) {
       promise = models.shop.findByPage(
         parseInt(req.query.min, 10),
         parseInt(req.query.max, 10)
       );
+    } else {
+      promise = models.shop.findAll();
     }
 
     promise

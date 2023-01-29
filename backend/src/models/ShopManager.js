@@ -9,8 +9,22 @@ class ShopManager extends AbstractManager {
 
   findByPage(min, max) {
     return this.connection.query(
-      `SELECT * FROM ${ShopManager.table} LIMIT ? OFFSET ? `,
+      `SELECT * FROM ${ShopManager.table} LIMIT ? OFFSET ?`,
       [max - min, min]
+    );
+  }
+
+  findByFilter(filter, min, max) {
+    return this.connection.query(
+      `SELECT * FROM ${ShopManager.table} WHERE name LIKE ? OR brand LIKE ? OR type LIKE ? OR address LIKE ? LIMIT ? OFFSET ?`,
+      [
+        `%${filter}%`,
+        `%${filter}%`,
+        `%${filter}%`,
+        `%${filter}%`,
+        max - min,
+        min,
+      ]
     );
   }
 

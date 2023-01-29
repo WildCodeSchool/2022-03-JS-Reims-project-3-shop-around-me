@@ -6,7 +6,10 @@ const httpClient = fetchUtils.fetchJson;
 const dataProvider = {
   getList: (resource, params) => {
     const { page, perPage } = params.pagination;
-    const query = `min=${(page - 1) * perPage}&max=${page * perPage}`;
+    const { name } = params.filter;
+    const query = `filter=${name}&min=${(page - 1) * perPage}&max=${
+      page * perPage
+    }`;
     const url = `${apiUrl}/${resource}?${query}`;
 
     return httpClient(url).then(({ headers, json }) => ({

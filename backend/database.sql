@@ -51,11 +51,11 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 1 */
 ,
 (
-2, 'Boutique officielle du Stade de Reims Stade Auguste Delaune', '', 'vêtements', '33 Chaussée Bocquaine, 51100 Reims', '{"lundi": "fermé", "mardi": "fermé", "mercredi": "10:00–12:00 14:00-18:00", "jeudi": "10:00–12:00 14:00-18:00", "vendredi": "10:00–12:00 14:00-18:00", "samedi": "10:00–12:00 14:00-18:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', '08.91.02.49.33', 'boutique@stade-de-reims.com', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.025034427642822, 49.24589157104492
+2, 'Boutique officielle SDR Delaune', 'Stade de Reims', 'vêtements', '33 Chaussée Bocquaine, 51100 Reims', '{"lundi": "fermé", "mardi": "fermé", "mercredi": "10:00–12:00 14:00-18:00", "jeudi": "10:00–12:00 14:00-18:00", "vendredi": "10:00–12:00 14:00-18:00", "samedi": "10:00–12:00 14:00-18:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', '08.91.02.49.33', 'boutique@stade-de-reims.com', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.025034427642822, 49.24589157104492
 )
 ,
 (
-3, 'Boutique officielle du Stade de Reims Centre-ville', '', 'vêtements', '1 Rue Chanzy, 51100 Reims', '{"lundi": "fermé", "mardi": "13:00-18:00", "mercredi": "13:00-18:00", "jeudi": "13:00-18:00", "vendredi": "13:00-18:00", "samedi": "13:00-19:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', '08.91.02.49.33', 'boutique@stade-de-reims.com', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.032470703125, 49.25199890136719
+3, 'Boutique officielle SDR Centre', 'Stade de Reims', 'vêtements', '1 Rue Chanzy, 51100 Reims', '{"lundi": "fermé", "mardi": "13:00-18:00", "mercredi": "13:00-18:00", "jeudi": "13:00-18:00", "vendredi": "13:00-18:00", "samedi": "13:00-19:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', '08.91.02.49.33', 'boutique@stade-de-reims.com', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.032470703125, 49.25199890136719
 )
 ,
 (
@@ -144,12 +144,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 18, 'Boulangerie des Lys', '', 'boulangeries', '', '', '', '+33 3 26 47 78 12', '', '', '', 4.02913267249238, 49.2518044828373
 )
 
-/* INSERT QUERY NO: 15 */
-,
-(
-19, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.0159376, 49.2359531996341
-)
-
 /* INSERT QUERY NO: 16 */
 ,
 (
@@ -174,18 +168,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 23, 'La Fournée Croquante', '', 'boulangeries', '', '', '', '+33 3 26 24 83 93', '', '', '', 4.0384706, 49.2471095996314
 )
 
-/* INSERT QUERY NO: 20 */
-,
-(
-24, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.03298427411872, 49.2690730644921
-)
-
-/* INSERT QUERY NO: 21 */
-,
-(
-25, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.0547903, 49.2553088996294
-)
-
 /* INSERT QUERY NO: 22 */
 ,
 (
@@ -202,12 +184,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 ,
 (
 28, 'Boulangerie Pâtisserie Amoud', '', 'boulangeries', '', '', '', '+33 3 26 85 05 84', '', '', '', 4.0229779, 49.2757896996243
-)
-
-/* INSERT QUERY NO: 25 */
-,
-(
-29, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.0510542, 49.2669470996265
 )
 
 /* INSERT QUERY NO: 26 */
@@ -260,12 +236,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 
 /* INSERT QUERY NO: 34 */
 ,
-(
-38, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.0243023, 49.2589557996284
-)
 
-/* INSERT QUERY NO: 35 */
-,
 (
 39, 'Boulangerie Patisserie Laurent Lamaix', '', 'boulangeries', '', '', '', '+33 3 26 47 03 06', '', '', '', 4.0264835, 49.264741799627
 )
@@ -290,12 +261,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 
 /* INSERT QUERY NO: 39 */
 ,
-(
-43, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.0244948, 49.2886724996211
-)
 
-/* INSERT QUERY NO: 40 */
-,
 (
 44, 'Boulangerie Dufresne', '', 'boulangeries', '', '', '', '', '', '', '', 4.0459509, 49.2437416996322
 )
@@ -326,12 +292,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 
 /* INSERT QUERY NO: 45 */
 ,
-(
-49, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.0160005, 49.236141199634
-)
 
-/* INSERT QUERY NO: 46 */
-,
 (
 50, 'Case à Pain', '', 'boulangeries', '', '', '', '', '', '', '', 4.0622305, 49.2462057996316
 )
@@ -582,11 +543,6 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 95, 'Au Gourmet des Halles', '', 'boucheries', '', '', '', '', '', '', '', 4.0314341, 49.2592954996284
 )
 
-/* INSERT QUERY NO: 92 */
-,
-(
-96, '', '', 'boucheries', '', '', '', '', '', '', '', 4.0247104, 49.2886863996211
-)
 
 /* INSERT QUERY NO: 93 */
 ,
@@ -596,12 +552,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 
 /* INSERT QUERY NO: 94 */
 ,
-(
-98, '', '', 'boucheries', '', '', '', '', '', '', '', 4.0201991, 49.2721147996252
-)
 
-/* INSERT QUERY NO: 95 */
-,
 (
 99, 'François Léau', '', 'boucheries', '', '', '', '+33 3 26 05 23 46', '', '', '', 4.0366445, 49.25256839963
 )
@@ -698,12 +649,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 
 /* INSERT QUERY NO: 158 */
 ,
-(
-162, '', '', 'vêtements', '', '', '', '', '', '', '', 4.04444127372286, 49.2594051544454
-)
 
-/* INSERT QUERY NO: 159 */
-,
 (
 163, 'Camaïeu', 'Camaïeu', 'vêtements', '', '', '', '', '', '', '', 4.0291049, 49.2537422996297
 )
