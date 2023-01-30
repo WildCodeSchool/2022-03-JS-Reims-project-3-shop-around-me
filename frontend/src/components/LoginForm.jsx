@@ -20,8 +20,11 @@ export default function LoginForm() {
     const { email, password } = getValues();
     axios
       .post(
-        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/login`,
-        { email, password }
+        "/api/login",
+        { email, password },
+        {
+          withCredentials: true,
+        }
       )
       .then((res) => {
         res.data.user.fund = 1.93;
