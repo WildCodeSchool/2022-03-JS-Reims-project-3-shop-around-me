@@ -1,28 +1,10 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-const session = require("express-session");
-const passport = require("passport");
+const cookieParser = require("cookie-parser");
 const router = require("./router");
 
 const app = express();
-
-const initializePassport = require("./config/passport");
-
-initializePassport(passport);
-
-// Session
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
-
-// Passport
-app.use(passport.initialize());
-app.use(passport.session());
 
 // use some application-level middlewares
 app.use(
@@ -31,6 +13,8 @@ app.use(
     optionsSuccessStatus: 200,
   })
 );
+
+app.use(cookieParser());
 
 app.use(express.json());
 
