@@ -1,6 +1,7 @@
 const express = require("express");
 const axios = require("axios");
 const handleLogin = require("./services/HandleLogin");
+const handleRefresh = require("./services/HandleRefresh");
 const { hashPassword } = require("./services/PasswordHashing");
 const { validateUser } = require("./validators/UserValidator");
 const { validateKeyword } = require("./validators/KeywordValidator");
@@ -91,5 +92,6 @@ router.get("/address/reverse", (req, res) => {
 
 router.post("/login", handleLogin);
 router.post("/signup", validateUser, hashPassword, UserController.add);
+router.post("/refresh", handleRefresh);
 
 module.exports = router;
