@@ -20,8 +20,11 @@ export default function LoginForm() {
     const { email, password } = getValues();
     axios
       .post(
-        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/login`,
-        { email, password }
+        "/api/login",
+        { email, password },
+        {
+          withCredentials: true,
+        }
       )
       .then((res) => {
         res.data.user.fund = 1.93;
@@ -36,18 +39,22 @@ export default function LoginForm() {
   });
 
   return (
-    <main className="flex flex-col w-screen px-8 pt-8 pb-8 gap-y-4 tracking-wide text-[#4F4E47]">
+    <main className="flex flex-col w-screen px-8 gap-y-4 tracking-wide text-[#4F4E47] text-center">
       <VerticalLogo />
-      <form className="flex flex-col" onSubmit={handleSubmit}>
+      <form className="flex flex-col items-center" onSubmit={handleSubmit}>
         <p className="text-2xl">Bienvenue !</p>
         <p className="text-m mb-8 leading-4">
           Connectez-vous ou inscrivez-vous pour accèder à vos boutiques
           favorites ainsi qu'à votre cagnotte.
         </p>
-        <div className="form-structure text-[#4F4E47] ">
+        <p className="text-xl mb-8 leading-4">
+          /!\ Si vous souhaitez simplement tester le site, appuyer sur le bouton
+          de connexion. /!\
+        </p>
+        <div className="form-structure text-[#4F4E47] flex flex-col items-center">
           <label
             htmlFor="email"
-            className="block uppercase tracking-wide text-xs font-bold mb-4"
+            className="uppercase tracking-wide text-xs font-bold mb-4"
           >
             Email
             <input
@@ -56,6 +63,7 @@ export default function LoginForm() {
                 required: true,
               })}
               className="form-input"
+              value="john.doe@shoparoundme.com"
             />
           </label>
           {errors?.email?.type === "required" && (
@@ -65,7 +73,7 @@ export default function LoginForm() {
           )}
           <label
             htmlFor="password"
-            className="block uppercase tracking-wide  text-sm font-bold mb-4"
+            className="uppercase tracking-wide  text-sm font-bold mb-4"
           >
             Mot de passe
             <input
@@ -74,6 +82,7 @@ export default function LoginForm() {
                 required: true,
               })}
               className="form-input"
+              value="password"
             />
           </label>
           {errors?.password?.type === "required" && (
@@ -81,14 +90,15 @@ export default function LoginForm() {
               Ce champ est requis.
             </p>
           )}
-          <label htmlFor="checkbox" className=" normal-case ml-2 mb-4">
-            <input type="checkbox" value="" className="checkbox mt-2" />
-            Resté connecté(e)
+          <label htmlFor="checkbox" className=" normal-case flex mb-2">
+            <input type="checkbox" value="" className="checkbox mr-2" />
+            <p>Resté connecté(e)</p>
           </label>
         </div>
         <input
           type="submit"
-          className="text-m mt-4 py-3 border-solid border-2 border-[#255f29] text-[#255f29] font-bold rounded focus:outline-none focus:shadow-outline"
+          value="Se connecter"
+          className="text-lg border-solid border-2 border-[#255f29] text-[#255f29] font-bold rounded focus:outline-none focus:shadow-outline w-[10rem]"
         />
       </form>
       <p>

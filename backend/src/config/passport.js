@@ -1,49 +1,69 @@
 require("dotenv").config();
+const passport = require("passport");
 const Localstrategy = require("passport-local").Strategy;
 const JWTStrategy = require("passport-jwt").Strategy;
-const ExtractJWT = require("passport-jwt").ExtractJwt;
 const { verifyPassword } = require("../services/PasswordHashing");
 const models = require("../models");
 
-const initialize = (passport) => {
-  const authenticateUser = async (email, password, done) => {
-    try {
-      const user = await models.user.findByEmail(email);
-      if (!user) {
-        return done(null, false, { message: "Incorrect email" });
-      }
-      if (await verifyPassword(password, user.password)) {
-        return done(null, user, { message: "Logged in successfully" });
-      }
-      return done(null, false, { message: "Incorrect password" });
-    } catch (error) {
-      return done(error);
-    }
-  };
+const cookieExtractor = (req) => {
+  let jwt;
 
-  const authenticateJWT = (jwtPayload, done) => {
-    const user = jwtPayload;
-    return done(null, user);
-  };
+  if (req && req.cookies) jwt = req.cookies.refreshToken;
 
-  passport.use(new Localstrategy({ usernameField: "email" }, authenticateUser));
-
-  passport.use(
-    new JWTStrategy(
-      {
-        jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-        secretOrKey: process.env.JWT_SECRET,
-      },
-      authenticateJWT
-    )
-  );
-
-  passport.serializeUser((user, done) => {
-    done(null, user.id);
-  });
-  passport.deserializeUser((id, done) => {
-    done(null, models.user.find(id));
-  });
+  return jwt;
 };
 
-module.exports = initialize;
+const authenticateUser = async (email, password, done) => {
+  try {
+    const user = await models.user.findByEmail(email);
+    if (!user) {
+      return done(null, false, { message: "Incorrect email" });
+    }
+    if (await verifyPassword(password, user.password)) {
+      return done(null, user, { message: "Logged in successfully" });
+    }
+    return done(null, false, { message: "Incorrect password" });
+  } catch (error) {
+    return done(error);
+  }
+};
+
+const authenticateJWT = async (payload, done) => {
+  if (!payload) return done(null, false, { message: "No token found" });
+
+  const { email } = payload;
+
+  try {
+    const user = await models.user.findByEmail(email);
+    if (!user) {
+      return done(null, false, { message: "Invalid Token" });
+    }
+    return done(null, user, { message: "Token is valid" });
+  } catch (error) {
+    return done(error);
+  }
+};
+
+/** New Local Strategy */
+passport.use(
+  new Localstrategy(
+    {
+      usernameField: "email",
+      passwordField: "password",
+    },
+    authenticateUser
+  )
+);
+
+/** New JWT Strategy */
+passport.use(
+  new JWTStrategy(
+    {
+      jwtFromRequest: cookieExtractor,
+      secretOrKey: process.env.JWT_SECRET,
+    },
+    authenticateJWT
+  )
+);
+
+module.exports = passport;
