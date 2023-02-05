@@ -81,6 +81,26 @@ class UserController {
         res.sendStatus(500);
       });
   };
+
+  static editSavings = (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    let { savings } = req.body;
+    savings = parseInt(savings, 10);
+
+    models.user
+      .updateSavings(id, savings)
+      .then(([result]) => {
+        if (result.affectedRows === 0) {
+          res.sendStatus(404);
+        } else {
+          res.sendStatus(204);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
 }
 
 module.exports = UserController;
