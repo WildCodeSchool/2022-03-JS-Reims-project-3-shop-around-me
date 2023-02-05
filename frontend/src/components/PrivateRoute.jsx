@@ -17,7 +17,6 @@ export default function PrivateRoute({ component: Component, ...props }) {
         );
 
         if (res.status === 200) {
-          res.data.user.fund = 1.93;
           setLoginData({ ...res.data });
         }
       } catch (e) {
