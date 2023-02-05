@@ -11,21 +11,25 @@ const handleLogin = (req, res) => {
       });
     }
 
-    const { email, firstname } = user;
+    const { password: _, ...userData } = user;
 
-    const userData = { email, firstname };
+    const tokenData = { email: userData.email, id: userData.id };
 
-    const accessToken = jwt.sign(userData, process.env.JWT_SECRET, {
+    const accessToken = jwt.sign(tokenData, process.env.JWT_SECRET, {
       expiresIn: "15m",
     });
     res.cookie("accessToken", accessToken, { httpOnly: true });
 
-    const refreshToken = jwt.sign({ email }, process.env.JWT_SECRET, {
-      expiresIn: "7d",
-    });
+    const refreshToken = jwt.sign(
+      { email: tokenData.email },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "7d",
+      }
+    );
     res.cookie("refreshToken", refreshToken, { httpOnly: true });
 
-    return res.sendStatus(200);
+    return res.status(200).json({ user: userData });
   })(req, res);
 };
 
