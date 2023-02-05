@@ -78,6 +78,7 @@ router.delete(
 router.get("/users", UserController.browse);
 router.get("/users/:id", UserController.read);
 router.put("/users/:id", validateUser, UserController.edit);
+router.put("/users/:id/savings", UserController.edit);
 router.delete("/users/:id", UserController.delete);
 
 router.get("/address/reverse", (req, res) => {
