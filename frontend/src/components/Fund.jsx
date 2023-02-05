@@ -29,7 +29,7 @@ function Fund() {
       </picture>
       <div className="amount-container text-center">
         <p className="text-4xl self-center text-[#4F4E47]">
-          {user?.fund?.toFixed(2)} €
+          {user && !user.savings.isNaN && (user.savings / 100).toFixed(2)} €
         </p>
         <button type="button" onClick={refresh}>
           <FontAwesomeIcon
