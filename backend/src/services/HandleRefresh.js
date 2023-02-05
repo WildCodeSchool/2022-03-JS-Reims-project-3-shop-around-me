@@ -4,20 +4,33 @@ require("dotenv").config();
 
 const handleRefresh = (req, res) => {
   passport.authenticate("jwt", { session: false }, (err, user) => {
-    const { email, firstname } = user;
+    if (err || !user) {
+      return res.status(400).json({
+        message: "Something went wrong",
+        user,
+      });
+    }
 
-    const accessToken = jwt.sign({ email, firstname }, process.env.JWT_SECRET, {
+    const { password: _, ...userData } = user;
+
+    const tokenData = { email: userData.email, id: userData.id };
+
+    const accessToken = jwt.sign(tokenData, process.env.JWT_SECRET, {
       expiresIn: "15m",
     });
 
-    const refreshToken = jwt.sign({ email }, process.env.JWT_SECRET, {
-      expiresIn: "2d",
-    });
+    const refreshToken = jwt.sign(
+      { email: tokenData.email },
+      process.env.JWT_SECRET,
+      {
+        expiresIn: "2d",
+      }
+    );
 
     res.cookie("accessToken", accessToken, { httpOnly: true });
     res.cookie("refreshToken", refreshToken, { httpOnly: true });
 
-    return res.sendStatus(200);
+    return res.status(200).json({ user: userData });
   })(req, res);
 };
 

@@ -7,7 +7,7 @@ import { useAuthContext } from "../contexts/AuthContext";
 import VerticalLogo from "./VerticalLogo";
 
 export default function LoginForm() {
-  const { loginData, setLoginData } = useAuthContext();
+  const { setLoginData } = useAuthContext();
   const {
     register,
     formState: { errors },
@@ -27,16 +27,34 @@ export default function LoginForm() {
         }
       )
       .then((res) => {
-        res.data.user.fund = 1.93;
-        setLoginData({ ...res.data, isLoggedIn: true });
+        if (res.status === 200) {
+          res.data.user.fund = 1.93;
+          setLoginData({ ...res.data });
+          navigate("/home");
+        }
       });
   };
 
   useEffect(() => {
-    if (loginData.isLoggedIn) {
-      navigate("/home");
-    }
-  });
+    const checkAuth = async () => {
+      try {
+        const res = await axios.post(
+          "/api/refresh",
+          {},
+          { withCredentials: true }
+        );
+
+        if (res.status === 200) {
+          res.data.user.fund = 1.93;
+          setLoginData({ ...res.data });
+          navigate("/home");
+        }
+        // eslint-disable-next-line no-empty
+      } catch (err) {}
+    };
+
+    checkAuth();
+  }, []);
 
   return (
     <main className="flex flex-col w-screen px-8 gap-y-4 tracking-wide text-[#4F4E47] text-center">

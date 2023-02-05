@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 import Home from "../pages/Home";
 import MyAccount from "../pages/MyAccount";
@@ -10,35 +10,28 @@ import InscriptionForm from "../components/InscriptionForm";
 import LoginForm from "../components/LoginForm";
 import Itinerary from "../pages/Itinerary";
 import ShopDetails from "../components/ShopDetails";
-import { useAuthContext } from "../contexts/AuthContext";
+import PrivateRoute from "../components/PrivateRoute";
 
 // Place all routes here
 const protectedRoutes = [
-  { path: "/home", component: <Home /> },
-  { path: "/account", component: <MyAccount /> },
-  { path: "/account/mydata", component: <PersonalData /> },
-  { path: "/fav", component: <Fav /> },
-  { path: "/funds", component: <Fund /> },
-  { path: "/inscription", component: <InscriptionForm /> },
-  { path: "/", component: <LoginForm /> },
-  { path: "/shops/:id", component: <ShopDetails /> },
-  { path: "/shopList", component: <ShopList /> },
-  { path: "/itinerary/:x/:y", component: <Itinerary /> },
+  { path: "/home", component: Home },
+  { path: "/account", component: MyAccount },
+  { path: "/account/mydata", component: PersonalData },
+  { path: "/fav", component: Fav },
+  { path: "/funds", component: Fund },
+  { path: "/inscription", component: InscriptionForm },
+  { path: "/shops/:id", component: ShopDetails },
+  { path: "/shopList", component: ShopList },
+  { path: "/itinerary/:x/:y", component: Itinerary },
 ];
 
 function Router({ children }) {
-  const { loginData } = useAuthContext();
-
-  const protect = (element) => {
-    if (!loginData.isLoggedIn) {
-      return <Navigate to="/" />;
-    }
-
-    return element;
-  };
-
   const protectedRoute = (path, element, key) => (
-    <Route key={key} path={path} element={protect(element)} />
+    <Route
+      key={key}
+      path={path}
+      element={<PrivateRoute component={element} />}
+    />
   );
 
   return (
