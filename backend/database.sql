@@ -2142,20 +2142,19 @@ CREATE TABLE `user` (
   `lastname` varchar(50) NOT NULL,
   `birthdate` date NOT NULL,
   `gender` varchar(20) NOT NULL,
-  `city`varchar(80),
-  `zipcode`varchar(8),
+  `city` varchar(80),
+  `zipcode` varchar(8),
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `token` LONGTEXT NOT NULL
+  `savings` int(4) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `user`
 --
 
-INSERT INTO `user` (`id`, `firstname`, `lastname`, `birthdate`, `gender`, `zipcode`, `city`, `email`, `password`, `token`) VALUES
-(1, "Nibor", "Valjen", "1995-03-14", "male", "51100", "Reims", "nibor@wild.com", "$argon2id$v=19$m=65536,t=5,p=1$kyt4+/e/n/CfttAPLi0Fqw$axBWlUeK/GKrTE5tXYY5mgT20+KxGklsKudf3F7qGFg", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZmlyc3RuYW1lIjoiSm9obiIsImxhc3RuYW1lIjoiRG9lIiwiYmlydGhkYXRlIjoiMTk4OS0xMi0zMVQyMzowMDowMC4wMDBaIiwiZ2VuZGVyIjoibWFsZSIsInppcGNvZGUiOiI1MTEwMCIsImNpdHkiOiJSZWltcyIsImVtYWlsIjoiam9obi5kb2VAc2hvcGFyb3VuZG1lLmNvbSIsInBhc3N3b3JkIjoiJGFyZ29uMmlkJHY9MTkkbT02NTUzNix0PTUscD0xJDdtVmdpdll0V25zZ0VsSWljSWZkYUEkZitZTy94a1ZlTjlSb3ZTMEc5dFhvajNURTZrWlRvajNoejM0bG5LMFJicyIsImlhdCI6MTY1NzAwNjA5NX0.j-SD_3xN-9t25udxRk0WDHoUkODB-iZg-R_Thb1z_7w"),
-(2, "John", "Doe", "1990-01-01", "male", "51100", "Reims", "john.doe@shoparoundme.com", "$argon2id$v=19$m=65536,t=5,p=1$7mVgivYtWnsgElIicIfdaA$f+YO/xkVeN9RovS0G9tXoj3TE6kZToj3hz34lnK0Rbs", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZmlyc3RuYW1lIjoiSm9obiIsImxhc3RuYW1lIjoiRG9lIiwiYmlydGhkYXRlIjoiMTk4OS0xMi0zMVQyMzowMDowMC4wMDBaIiwiZ2VuZGVyIjoibWFsZSIsInppcGNvZGUiOiI1MTEwMCIsImNpdHkiOiJSZWltcyIsImVtYWlsIjoiam9obi5kb2VAc2hvcGFyb3VuZG1lLmNvbSIsInBhc3N3b3JkIjoiJGFyZ29uMmlkJHY9MTkkbT02NTUzNix0PTUscD0xJDdtVmdpdll0V25zZ0VsSWljSWZkYUEkZitZTy94a1ZlTjlSb3ZTMEc5dFhvajNURTZrWlRvajNoejM0bG5LMFJicyIsImlhdCI6MTY1NzAwNjA5NX0.j-SD_3xN-9t25udxRk0WDHoUkODB-iZg-R_Thb1z_7w");
+INSERT INTO `user` (`id`, `firstname`, `lastname`, `birthdate`, `gender`, `zipcode`, `city`, `email`, `password`, `savings`) VALUES
+(1, "John", "Doe", "1990-01-01", "male", "51100", "Reims", "john.doe@shoparoundme.com", "$argon2id$v=19$m=65536,t=5,p=1$7mVgivYtWnsgElIicIfdaA$f+YO/xkVeN9RovS0G9tXoj3TE6kZToj3hz34lnK0Rbs", 5);
 
 --
 -- Index pour les tables exportées
@@ -2201,10 +2200,7 @@ CREATE TABLE `shop_user` (
 INSERT INTO `shop_user` (`shop_id`,`user_id`) VALUES
 (1, 1),
 (4, 1),
-(5, 1),
-(1, 2),
-(4, 2),
-(5, 2);
+(5, 1);
 
 -- --------------------------------------------------------
 
