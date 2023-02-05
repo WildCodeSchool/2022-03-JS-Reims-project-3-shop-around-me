@@ -28,7 +28,6 @@ export default function LoginForm() {
       )
       .then((res) => {
         if (res.status === 200) {
-          res.data.user.fund = 1.93;
           setLoginData({ ...res.data });
           navigate("/home");
         }
@@ -45,7 +44,6 @@ export default function LoginForm() {
         );
 
         if (res.status === 200) {
-          res.data.user.fund = 1.93;
           setLoginData({ ...res.data });
           navigate("/home");
         }
