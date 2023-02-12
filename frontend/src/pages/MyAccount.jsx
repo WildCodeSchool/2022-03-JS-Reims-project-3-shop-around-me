@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPiggyBank,
@@ -89,14 +90,13 @@ const accountMenu = [
 ];
 
 export default function MyAccount() {
-  const { loginData, setLoginData } = useAuthContext();
+  const { loginData } = useAuthContext();
   const { firstname } = loginData.user;
+  const navigate = useNavigate();
 
-  const handleLogout = () => {
-    setLoginData({
-      isLoggedIn: false,
-      user: {},
-    });
+  const handleLogout = async () => {
+    await axios.post("/api/logout", { withCredentials: true });
+    navigate("/");
   };
 
   return (
