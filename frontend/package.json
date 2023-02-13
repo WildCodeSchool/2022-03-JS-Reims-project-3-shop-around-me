@@ -25,7 +25,9 @@
     "react-hook-form": "^7.31.3",
     "react-hook-geolocation": "^1.0.11",
     "react-leaflet": "^4.0.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "react-admin": "^4.7.1",
+    "@mui/material": "^5.11.5"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",

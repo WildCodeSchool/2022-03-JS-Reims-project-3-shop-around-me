@@ -51,11 +51,11 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 1 */
 ,
 (
-2, 'Boutique officielle du Stade de Reims Stade Auguste Delaune', '', 'vêtements', '33 Chaussée Bocquaine, 51100 Reims', '{"lundi": "fermé", "mardi": "fermé", "mercredi": "10:00–12:00 14:00-18:00", "jeudi": "10:00–12:00 14:00-18:00", "vendredi": "10:00–12:00 14:00-18:00", "samedi": "10:00–12:00 14:00-18:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', '08.91.02.49.33', 'boutique@stade-de-reims.com', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.025034427642822, 49.24589157104492
+2, 'Boutique officielle SDR Delaune', 'Stade de Reims', 'vêtements', '33 Chaussée Bocquaine, 51100 Reims', '{"lundi": "fermé", "mardi": "fermé", "mercredi": "10:00–12:00 14:00-18:00", "jeudi": "10:00–12:00 14:00-18:00", "vendredi": "10:00–12:00 14:00-18:00", "samedi": "10:00–12:00 14:00-18:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', '08.91.02.49.33', 'boutique@stade-de-reims.com', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.025034427642822, 49.24589157104492
 )
 ,
 (
-3, 'Boutique officielle du Stade de Reims Centre-ville', '', 'vêtements', '1 Rue Chanzy, 51100 Reims', '{"lundi": "fermé", "mardi": "13:00-18:00", "mercredi": "13:00-18:00", "jeudi": "13:00-18:00", "vendredi": "13:00-18:00", "samedi": "13:00-19:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', '08.91.02.49.33', 'boutique@stade-de-reims.com', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.032470703125, 49.25199890136719
+3, 'Boutique officielle SDR Centre', 'Stade de Reims', 'vêtements', '1 Rue Chanzy, 51100 Reims', '{"lundi": "fermé", "mardi": "13:00-18:00", "mercredi": "13:00-18:00", "jeudi": "13:00-18:00", "vendredi": "13:00-18:00", "samedi": "13:00-19:00", "dimanche": "fermé"}', 'http://boutique.stade-de-reims.com/', '08.91.02.49.33', 'boutique@stade-de-reims.com', 'https://www.facebook.com/SDROFFICIELLE', 'https://www.instagram.com/stadedereims/', 4.032470703125, 49.25199890136719
 )
 ,
 (
@@ -69,541 +69,492 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 2 */
 ,
 (
-6, 'Champagne Henri Abelé', '', 'alcool', '', '', '', '', '', '', '', 4.0476558330436, 49.2488371319464
+6, 'Champagne Henri Abelé', '', 'alcool', '50 Rue de Sillery, 51100 Reims', '', '', '', '', '', '', 4.0476558330436, 49.2488371319464
 )
 
 /* INSERT QUERY NO: 3 */
 ,
 (
-7, 'Maison de Champagne Louis Roderer', '', 'alcool', '', '', '', '', '', '', '', 4.03553404856429, 49.2600001456078
+7, 'Maison de Champagne Louis Roderer', '', 'alcool', '21 Bd Lundy, 51100 Reims', '', '', '', '', '', '', 4.03553404856429, 49.2600001456078
 )
 
 /* INSERT QUERY NO: 4 */
 ,
 (
-8, 'Vin et Plaqomusophiles', '', 'alcool', '', '', '', '08 99 86 54 45', '', '', '', 4.0362629, 49.248616299631
+8, 'Vin et Plaqomusophiles', '', 'alcool', 'Reims', '', '', '08 99 86 54 45', '', '', '', 4.0362629, 49.248616299631
 )
 
 /* INSERT QUERY NO: 5 */
 ,
 (
-9, 'Cave des Sacres', '', 'alcool', '', '', '', '', '', '', '', 4.0328038, 49.2529802996299
+9, 'Cave des Sacres', '', 'alcool', 'Reims', '', '', '', '', '', '', 4.0328038, 49.2529802996299
 )
 
 /* INSERT QUERY NO: 6 */
 ,
 (
-10, 'Cave Balourdet', '', 'alcool', '', '', 'http://balourdet.fr', '+33 3 26 82 15 69', '', '', '', 4.0409329, 49.2512253996303
+10, 'Cave Balourdet', '', 'alcool', 'Reims', '', 'http://balourdet.fr', '+33 3 26 82 15 69', '', '', '', 4.0409329, 49.2512253996303
 )
 
 /* INSERT QUERY NO: 7 */
 ,
 (
-11, 'Le Parvis', '', 'alcool', '', '', '', '', '', '', '', 4.0319395, 49.2532466996298
+11, 'Le Parvis', '', 'alcool', 'Reims', '', '', '', '', '', '', 4.0319395, 49.2532466996298
 )
 
 /* INSERT QUERY NO: 8 */
 ,
 (
-12, 'Champagne Lanson', '', 'alcool', '', '', '', '', '', '', '', 4.01925654654676, 49.2428342760272
+12, 'Champagne Lanson', '', 'alcool', 'Reims', '', '', '', '', '', '', 4.01925654654676, 49.2428342760272
 )
 
 /* INSERT QUERY NO: 9 */
 ,
 (
-13, 'Les Délices Champenoises', '', 'alcool', '', '', '', '', '', '', '', 4.0318606, 49.2531985996299
+13, 'Les Délices Champenoises', '', 'alcool', 'Reims', '', '', '', '', '', '', 4.0318606, 49.2531985996299
 )
 
 /* INSERT QUERY NO: 10 */
 ,
 (
-14, 'La Cave Colbery', '', 'alcool', '', '', 'http://cave-colbert.com', '+33 326362116', '', '', '', 4.0329924, 49.256871599629
+14, 'La Cave Colbery', '', 'alcool', 'Reims', '', 'http://cave-colbert.com', '+33 326362116', '', '', '', 4.0329924, 49.256871599629
 )
 
 /* INSERT QUERY NO: 11 */
 ,
 (
-15, 'Pix''Hall', '', 'appareils', '', '', 'http://www.pixhall.fr/magasin-pixhall/reims.html', '+33 3 26 87 52 74', '', '', '', 4.00306042698135, 49.2740819314093
+15, 'Pix''Hall', '', 'appareils', 'Reims', '', 'http://www.pixhall.fr/magasin-pixhall/reims.html', '+33 3 26 87 52 74', '', '', '', 4.00306042698135, 49.2740819314093
 )
 
 /* INSERT QUERY NO: 12 */
 ,
 (
-16, 'Europlex', '', 'appareils', '43 Avenue Nationale', '', 'http://www.europlex.fr', '', '', '', '', 4.0076906, 49.2865328996217
+16, 'Europlex', '', 'appareils', '43 Avenue Nationale 51100 Reims', '', 'http://www.europlex.fr', '', '', '', '', 4.0076906, 49.2865328996217
 )
 
 /* INSERT QUERY NO: 13 */
 ,
 (
-17, 'Le Jeune', '', 'boulangeries', '', '', '', '', '', '', '', 4.0149919, 49.2491013996309
+17, 'Le Jeune', '', 'boulangeries', 'Reims', '', '', '', '', '', '', 4.0149919, 49.2491013996309
 )
 
 /* INSERT QUERY NO: 14 */
 ,
 (
-18, 'Boulangerie des Lys', '', 'boulangeries', '', '', '', '+33 3 26 47 78 12', '', '', '', 4.02913267249238, 49.2518044828373
-)
-
-/* INSERT QUERY NO: 15 */
-,
-(
-19, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.0159376, 49.2359531996341
+18, 'Boulangerie des Lys', '', 'boulangeries', 'Reims', '', '', '+33 3 26 47 78 12', '', '', '', 4.02913267249238, 49.2518044828373
 )
 
 /* INSERT QUERY NO: 16 */
 ,
 (
-20, 'Le Fournil du Jard', '', 'boulangeries', '', '', '', '+33 3 26 35 85 55', '', '', '', 4.0308914, 49.2474971996313
+20, 'Le Fournil du Jard', '', 'boulangeries', 'Reims', '', '', '+33 3 26 35 85 55', '', '', '', 4.0308914, 49.2474971996313
 )
 
 /* INSERT QUERY NO: 17 */
 ,
 (
-21, 'La Mie Câline', 'La Mie Câline', 'boulangeries', '', '', '', '', '', '', '', 4.027943, 49.2539291996297
+21, 'La Mie Câline', 'La Mie Câline', 'boulangeries', 'Reims', '', '', '', '', '', '', 4.027943, 49.2539291996297
 )
 
 /* INSERT QUERY NO: 18 */
 ,
 (
-22, 'Le Four à Bois', '', 'boulangeries', '', '', 'http://zunic.fr', '+33 3 26 47 40 20', '', '', '', 4.02692754995335, 49.2529234388108
+22, 'Le Four à Bois', '', 'boulangeries', 'Reims', '', 'http://zunic.fr', '+33 3 26 47 40 20', '', '', '', 4.02692754995335, 49.2529234388108
 )
 
 /* INSERT QUERY NO: 19 */
 ,
 (
-23, 'La Fournée Croquante', '', 'boulangeries', '', '', '', '+33 3 26 24 83 93', '', '', '', 4.0384706, 49.2471095996314
-)
-
-/* INSERT QUERY NO: 20 */
-,
-(
-24, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.03298427411872, 49.2690730644921
-)
-
-/* INSERT QUERY NO: 21 */
-,
-(
-25, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.0547903, 49.2553088996294
+23, 'La Fournée Croquante', '', 'boulangeries', 'Reims', '', '', '+33 3 26 24 83 93', '', '', '', 4.0384706, 49.2471095996314
 )
 
 /* INSERT QUERY NO: 22 */
 ,
 (
-26, 'La Briocherie', '', 'boulangeries', '', '', '', '', '', '', '', 4.02637427863624, 49.2552248769132
+26, 'La Briocherie', '', 'boulangeries', 'Reims', '', '', '', '', '', '', 4.02637427863624, 49.2552248769132
 )
 
 /* INSERT QUERY NO: 23 */
 ,
 (
-27, 'Case à Pain Forum', '', 'boulangeries', '', '', 'https://case-a-pain.fr/nos-magasins/', '+33 3 26 84 92 93', '', '', '', 4.0327256, 49.2560311996292
+27, 'Case à Pain Forum', '', 'boulangeries', 'Reims', '', 'https://case-a-pain.fr/nos-magasins/', '+33 3 26 84 92 93', '', '', '', 4.0327256, 49.2560311996292
 )
 
 /* INSERT QUERY NO: 24 */
 ,
 (
-28, 'Boulangerie Pâtisserie Amoud', '', 'boulangeries', '', '', '', '+33 3 26 85 05 84', '', '', '', 4.0229779, 49.2757896996243
-)
-
-/* INSERT QUERY NO: 25 */
-,
-(
-29, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.0510542, 49.2669470996265
+28, 'Boulangerie Pâtisserie Amoud', '', 'boulangeries', 'Reims', '', '', '+33 3 26 85 05 84', '', '', '', 4.0229779, 49.2757896996243
 )
 
 /* INSERT QUERY NO: 26 */
 ,
 (
-30, 'Boulangerie L''Arbre à Pains', '', 'boulangeries', '43 Ter Avenue Nationale', '', '', '+33 3 26 09 26 98', '', '', '', 4.007484, 49.2867078996216
+30, 'Boulangerie L''Arbre à Pains', '', 'boulangeries', '43 Ter Avenue Nationale 51100 Reims', '', '', '+33 3 26 09 26 98', '', '', '', 4.007484, 49.2867078996216
 )
 
 /* INSERT QUERY NO: 27 */
 ,
 (
-31, 'La Boîte à Pain', '', 'boulangeries', '', '', '', '', '', '', '', 4.0475671, 49.260593399628
+31, 'La Boîte à Pain', '', 'boulangeries', 'Reims', '', '', '', '', '', '', 4.0475671, 49.260593399628
 )
 
 /* INSERT QUERY NO: 28 */
 ,
 (
-32, 'L''Artisane', '', 'boulangeries', '', '', '', '+33 6 67 69 36 11', '', '', '', 4.0162059, 49.223947099637
+32, 'L''Artisane', '', 'boulangeries', 'Reims', '', '', '+33 6 67 69 36 11', '', '', '', 4.0162059, 49.223947099637
 )
 
 /* INSERT QUERY NO: 29 */
 ,
 (
-33, 'Boulangerie Petit', '', 'boulangeries', '', '', '', '33326090917', '', '', '', 4.0254883, 49.2696819996258
+33, 'Boulangerie Petit', '', 'boulangeries', 'Reims', '', '', '33326090917', '', '', '', 4.0254883, 49.2696819996258
 )
 
 /* INSERT QUERY NO: 30 */
 ,
 (
-34, 'Boulangerie Pâtisserie', '', 'boulangeries', '', '', '', '', '', '', '', 4.0542913, 49.2630154996274
+34, 'Boulangerie Pâtisserie', '', 'boulangeries', 'Reims', '', '', '', '', '', '', 4.0542913, 49.2630154996274
 )
 
 /* INSERT QUERY NO: 31 */
 ,
 (
-35, 'La Flamande', '', 'boulangeries', '', '', '', '', '', '', '', 4.0426869, 49.2584513996286
+35, 'La Flamande', '', 'boulangeries', 'Reims', '', '', '', '', '', '', 4.0426869, 49.2584513996286
 )
 
 /* INSERT QUERY NO: 32 */
 ,
 (
-36, 'La Gourmandise', '', 'boulangeries', '', '', '', '', '', '', '', 4.0218614, 49.2247895996368
+36, 'La Gourmandise', '', 'boulangeries', 'Reims', '', '', '', '', '', '', 4.0218614, 49.2247895996368
 )
 
 /* INSERT QUERY NO: 33 */
 ,
 (
-37, 'Boulangerie Frédéric Hardy', '', 'boulangeries', '', '', 'https://www.boulangerie51.org/boulangerie-hardy-frederic-sarl-b-h-c-reims-163.html', '+33 3 26 47 68 81', 'frederichardy@neuf.fr', '', '', 4.0326377, 49.2577514996288
+37, 'Boulangerie Frédéric Hardy', '', 'boulangeries', 'Reims', '', 'https://www.boulangerie51.org/boulangerie-hardy-frederic-sarl-b-h-c-reims-163.html', '+33 3 26 47 68 81', 'frederichardy@neuf.fr', '', '', 4.0326377, 49.2577514996288
 )
 
 /* INSERT QUERY NO: 34 */
 ,
-(
-38, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.0243023, 49.2589557996284
-)
 
-/* INSERT QUERY NO: 35 */
-,
 (
-39, 'Boulangerie Patisserie Laurent Lamaix', '', 'boulangeries', '', '', '', '+33 3 26 47 03 06', '', '', '', 4.0264835, 49.264741799627
+39, 'Boulangerie Patisserie Laurent Lamaix', '', 'boulangeries', 'Reims', '', '', '+33 3 26 47 03 06', '', '', '', 4.0264835, 49.264741799627
 )
 
 /* INSERT QUERY NO: 36 */
 ,
 (
-40, 'La Pétrisane', '', 'boulangeries', '', '', '', '+33 326400730', '', '', '', 4.0400999, 49.2575897996288
+40, 'La Pétrisane', '', 'boulangeries', 'Reims', '', '', '+33 326400730', '', '', '', 4.0400999, 49.2575897996288
 )
 
 /* INSERT QUERY NO: 37 */
 ,
 (
-41, 'Aux Fruits de la Moisson', '', 'boulangeries', '', '', '', '', '', '', '', 4.0515378, 49.248496999631
+41, 'Aux Fruits de la Moisson', '', 'boulangeries', 'Reims', '', '', '', '', '', '', 4.0515378, 49.248496999631
 )
 
 /* INSERT QUERY NO: 38 */
 ,
 (
-42, 'Fisher', 'Fischer', 'boulangeries', '', '', 'https://fischer1913.com', '+333 26 23 33 76', '', '', '', 4.0202844, 49.2614135996278
+42, 'Fisher', 'Fischer', 'boulangeries', 'Reims', '', 'https://fischer1913.com', '+333 26 23 33 76', '', '', '', 4.0202844, 49.2614135996278
 )
 
 /* INSERT QUERY NO: 39 */
 ,
-(
-43, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.0244948, 49.2886724996211
-)
 
-/* INSERT QUERY NO: 40 */
-,
 (
-44, 'Boulangerie Dufresne', '', 'boulangeries', '', '', '', '', '', '', '', 4.0459509, 49.2437416996322
+44, 'Boulangerie Dufresne', '', 'boulangeries', 'Reims', '', '', '', '', '', '', 4.0459509, 49.2437416996322
 )
 
 /* INSERT QUERY NO: 41 */
 ,
 (
-45, 'Boulangerie des Halles', '', 'boulangeries', '', '', '', '', '', '', '', 4.0317037, 49.2593822996283
+45, 'Boulangerie des Halles', '', 'boulangeries', 'Reims', '', '', '', '', '', '', 4.0317037, 49.2593822996283
 )
 
 /* INSERT QUERY NO: 42 */
 ,
 (
-46, 'Boulangerie Louise', 'Boulangerie Louise', 'boulangeries', '', '', 'https://www.boulangerielouise.com', '', '', '', '', 4.0838624, 49.240180099633
+46, 'Boulangerie Louise', 'Boulangerie Louise', 'boulangeries', 'Reims', '', 'https://www.boulangerielouise.com', '', '', '', '', 4.0838624, 49.240180099633
 )
 
 /* INSERT QUERY NO: 43 */
 ,
 (
-47, 'La Huche à Pain', '', 'boulangeries', '', '', '', '+33 326478727', '', '', '', 4.0348863, 49.2508265996305
+47, 'La Huche à Pain', '', 'boulangeries', 'Reims', '', '', '+33 326478727', '', '', '', 4.0348863, 49.2508265996305
 )
 
 /* INSERT QUERY NO: 44 */
 ,
 (
-48, 'La Fournée d''Hugo', '', 'boulangeries', '', '', '', '', '', '', '', 4.0266022, 49.2134283996396
+48, 'La Fournée d''Hugo', '', 'boulangeries', 'Reims', '', '', '', '', '', '', 4.0266022, 49.2134283996396
 )
 
 /* INSERT QUERY NO: 45 */
 ,
-(
-49, '', '', 'boulangeries', '', '', '', '', '', '', '', 4.0160005, 49.236141199634
-)
 
-/* INSERT QUERY NO: 46 */
-,
 (
-50, 'Case à Pain', '', 'boulangeries', '', '', '', '', '', '', '', 4.0622305, 49.2462057996316
+50, 'Case à Pain', '', 'boulangeries', 'Reims', '', '', '', '', '', '', 4.0622305, 49.2462057996316
 )
 
 /* INSERT QUERY NO: 47 */
 ,
 (
-51, 'Les gourmandises de Marido', '', 'boulangeries', '', '', '', '+33 3 26 40 54 69', '', '', '', 4.0291187, 49.2538631996297
+51, 'Les gourmandises de Marido', '', 'boulangeries', 'Reims', '', '', '+33 3 26 40 54 69', '', '', '', 4.0291187, 49.2538631996297
 )
 
 /* INSERT QUERY NO: 51 */
 ,
 (
-55, 'Norgil Institut d Expertise Capillaire', '', 'beauté', '', '', '', '', '', '', '', 4.0485813, 49.2581207996287
+55, 'Norgil Institut d Expertise Capillaire', '', 'beauté', 'Reims', '', '', '', '', '', '', 4.0485813, 49.2581207996287
 )
 
 /* INSERT QUERY NO: 52 */
 ,
 (
-56, 'Meggan', '', 'beauté', '', '', '', '', '', '', '', 4.030358, 49.2535870996298
+56, 'Meggan', '', 'beauté', 'Reims', '', '', '', '', '', '', 4.030358, 49.2535870996298
 )
 
 /* INSERT QUERY NO: 53 */
 ,
 (
-57, 'Marie LaurEsthétisur', '', 'beauté', '', '', '', '+33 3 26 87 66 60', '', '', '', 4.0339235, 49.244599299632
+57, 'Marie LaurEsthétisur', '', 'beauté', 'Reims', '', '', '+33 3 26 87 66 60', '', '', '', 4.0339235, 49.244599299632
 )
 
 /* INSERT QUERY NO: 54 */
 ,
 (
-58, 'Ongle Beauté', '', 'beauté', '', '', '', '+33 3 26 05 79 80', '', '', '', 4.0375343, 49.2482180996311
+58, 'Ongle Beauté', '', 'beauté', 'Reims', '', '', '+33 3 26 05 79 80', '', '', '', 4.0375343, 49.2482180996311
 )
 
 /* INSERT QUERY NO: 55 */
 ,
 (
-59, 'Institut Oran’g', '', 'beauté', '', '', 'http://institut-Orange.com', '+33 3 26 82 85 82', '', '', '', 4.0402118, 49.248494499631
+59, 'Institut Oran’g', '', 'beauté', 'Reims', '', 'http://institut-Orange.com', '+33 3 26 82 85 82', '', '', '', 4.0402118, 49.248494499631
 )
 
 /* INSERT QUERY NO: 56 */
 ,
 (
-60, 'Guinot', '', 'beauté', '', '', '', '', '', '', '', 4.0336031, 49.256886099629
+60, 'Guinot', '', 'beauté', 'Reims', '', '', '', '', '', '', 4.0336031, 49.256886099629
 )
 
 /* INSERT QUERY NO: 57 */
 ,
 (
-61, 'Yves Rocher', 'Yves Rocher', 'beauté', '', '', '', '', '', '', '', 4.0281848, 49.2534053996298
+61, 'Yves Rocher', 'Yves Rocher', 'beauté', 'Reims', '', '', '', '', '', '', 4.0281848, 49.2534053996298
 )
 
 /* INSERT QUERY NO: 58 */
 ,
 (
-62, 'L''Onglerie', '', 'beauté', '', '', '', '', '', '', '', 4.0469023, 49.2599267996282
+62, 'L''Onglerie', '', 'beauté', 'Reims', '', '', '', '', '', '', 4.0469023, 49.2599267996282
 )
 
 /* INSERT QUERY NO: 59 */
 ,
 (
-63, 'Coco Nails & beauté', '', 'beauté', '', '', 'https://dreambodyinstitut.wixsite.com/dreambodyreims', '+33 3 26 03 66 07', '', '', '', 4.0467524, 49.2571446996289
+63, 'Coco Nails & beauté', '', 'beauté', 'Reims', '', 'https://dreambodyinstitut.wixsite.com/dreambodyreims', '+33 3 26 03 66 07', '', '', '', 4.0467524, 49.2571446996289
 )
 
 /* INSERT QUERY NO: 60 */
 ,
 (
-64, 'Instant de Sérénité', '', 'beauté', '', '', 'http://instantdeserenite-reims.fr/', '', '', '', '', 4.0382368, 49.2422823996325
+64, 'Instant de Sérénité', '', 'beauté', 'Reims', '', 'http://instantdeserenite-reims.fr/', '', '', '', '', 4.0382368, 49.2422823996325
 )
 
 /* INSERT QUERY NO: 61 */
 ,
 (
-65, 'Stylforme', '', 'beauté', '', '', 'http://stylforme.com', '+33 326402394', '', '', '', 4.0273092, 49.2523243996301
+65, 'Stylforme', '', 'beauté', 'Reims', '', 'http://stylforme.com', '+33 326402394', '', '', '', 4.0273092, 49.2523243996301
 )
 
 /* INSERT QUERY NO: 62 */
 ,
 (
-66, 'Pb CosmeticS', '', 'beauté', '', '', '', '', '', '', '', 4.0292713, 49.2543102996296
+66, 'Pb CosmeticS', '', 'beauté', 'Reims', '', '', '', '', '', '', 4.0292713, 49.2543102996296
 )
 
 /* INSERT QUERY NO: 63 */
 ,
 (
-67, 'Parashop', '', 'beauté', '', '', '', '', '', '', '', 4.0264053060672, 49.2550754106135
+67, 'Parashop', '', 'beauté', 'Reims', '', '', '', '', '', '', 4.0264053060672, 49.2550754106135
 )
 
 /* INSERT QUERY NO: 64 */
 ,
 (
-68, 'Natur’Elles', '', 'beauté', '', '', '', '', '', '', '', 4.0443444, 49.2634396996273
+68, 'Natur’Elles', '', 'beauté', 'Reims', '', '', '', '', '', '', 4.0443444, 49.2634396996273
 )
 
 /* INSERT QUERY NO: 65 */
 ,
 (
-69, 'Les 2 font la Paire', '', 'beauté', '', '', '', '', '', '', '', 4.0331967, 49.256716699629
+69, 'Les 2 font la Paire', '', 'beauté', 'Reims', '', '', '', '', '', '', 4.0331967, 49.256716699629
 )
 
 /* INSERT QUERY NO: 66 */
 ,
 (
-70, 'Influences d''Orient', '', 'beauté', '', '', 'http://www.influencedorient.fr/', '33326770390', '', '', '', 4.01896593194016, 49.2619039964511
+70, 'Influences d''Orient', '', 'beauté', 'Reims', '', 'http://www.influencedorient.fr/', '33326770390', '', '', '', 4.01896593194016, 49.2619039964511
 )
 
 /* INSERT QUERY NO: 67 */
 ,
 (
-71, 'L & LUI Minceur', '', 'beauté', '', '', '', '', '', '', '', 4.0337705, 49.2512690996303
+71, 'L & LUI Minceur', '', 'beauté', 'Reims', '', '', '', '', '', '', 4.0337705, 49.2512690996303
 )
 
 /* INSERT QUERY NO: 68 */
 ,
 (
-72, 'Les Soins de Pauline', '', 'beauté', '', '', '', '+33 326868186', '', '', '', 4.0356439, 49.2542016996296
+72, 'Les Soins de Pauline', '', 'beauté', 'Reims', '', '', '+33 326868186', '', '', '', 4.0356439, 49.2542016996296
 )
 
 /* INSERT QUERY NO: 69 */
 ,
 (
-73, 'Ma Boîte à Beauté', '', 'beauté', '', '', 'http://maboitameabeauté.fr', '+33 3 51 42 18 97', '', '', '', 4.0438162, 49.2429269996324
+73, 'Ma Boîte à Beauté', '', 'beauté', 'Reims', '', 'http://maboitameabeauté.fr', '+33 3 51 42 18 97', '', '', '', 4.0438162, 49.2429269996324
 )
 
 /* INSERT QUERY NO: 70 */
 ,
 (
-74, 'Les Loges du Regard', '', 'beauté', '', '', '', '', '', '', '', 4.03109613218508, 49.2476203804547
+74, 'Les Loges du Regard', '', 'beauté', 'Reims', '', '', '', '', '', '', 4.03109613218508, 49.2476203804547
 )
 
 /* INSERT QUERY NO: 71 */
 ,
 (
-75, 'L’Institut de l’Ongle', '', 'beauté', '', '', '', '+33 326471863', '', '', '', 4.0248318, 49.2522932996301
+75, 'L’Institut de l’Ongle', '', 'beauté', 'Reims', '', '', '+33 326471863', '', '', '', 4.0248318, 49.2522932996301
 )
 
 /* INSERT QUERY NO: 72 */
 ,
 (
-76, 'Clair de Femme', '', 'beauté', '', '', '', '', '', '', '', 4.021369, 49.2579427996287
+76, 'Clair de Femme', '', 'beauté', 'Reims', '', '', '', '', '', '', 4.021369, 49.2579427996287
 )
 
 /* INSERT QUERY NO: 73 */
 ,
 (
-77, 'Cycles Hubert', '', 'bicycle', '', '', 'https://www.hubert-cycles.com/', '+33 3 26 09 16 93', 'info@hubert-cycles.com', '', '', 4.0273719, 49.2783271996237
+77, 'Cycles Hubert', '', 'bicycle', 'Reims', '', 'https://www.hubert-cycles.com/', '+33 3 26 09 16 93', 'info@hubert-cycles.com', '', '', 4.0273719, 49.2783271996237
 )
 
 /* INSERT QUERY NO: 74 */
 ,
 (
-78, 'Vél''Oxygène', '', 'bicycle', '', '', 'http://reims.fubicy.org', '', 'reims@fubicy.org', '', '', 4.0348953, 49.2264258996364
+78, 'Vél''Oxygène', '', 'bicycle', 'Reims', '', 'http://reims.fubicy.org', '', 'reims@fubicy.org', '', '', 4.0348953, 49.2264258996364
 )
 
 /* INSERT QUERY NO: 75 */
 ,
 (
-79, 'France Loisir', '', 'livres', '', '', '', '', '', '', '', 4.0300556, 49.2547250996295
+79, 'France Loisir', '', 'livres', 'Reims', '', '', '', '', '', '', 4.0300556, 49.2547250996295
 )
 
 /* INSERT QUERY NO: 76 */
 ,
 (
-80, 'Échoppe de Relieur d''Art (Yves Laporte)', '', 'livres', '', '', '', '', '', '', '', 4.0264971, 49.2676551996263
+80, 'Échoppe de Relieur d''Art (Yves Laporte)', '', 'livres', 'Reims', '', '', '', '', '', '', 4.0264971, 49.2676551996263
 )
 
 /* INSERT QUERY NO: 77 */
 ,
 (
-81, 'La Procure', 'La Procure', 'livres', '', '', '', '', '', '', '', 4.0331659, 49.2550215996294
+81, 'La Procure', 'La Procure', 'livres', 'Reims', '', '', '', '', '', '', 4.0331659, 49.2550215996294
 )
 
 /* INSERT QUERY NO: 78 */
 ,
 (
-82, 'Amory', '', 'livres', '', '', '', '+33 326474621', '', '', '', 4.042117, 49.2582322996286
+82, 'Amory', '', 'livres', 'Reims', '', '', '+33 326474621', '', '', '', 4.042117, 49.2582322996286
 )
 
 /* INSERT QUERY NO: 79 */
 ,
 (
-83, 'Fnac', 'Fnac', 'livres', '', '', 'http://fnac.com/', '', '', '', '', 4.02581951537573, 49.2550049796707
+83, 'Fnac', 'Fnac', 'livres', 'Reims', '', 'http://fnac.com/', '', '', '', '', 4.02581951537573, 49.2550049796707
 )
 
 /* INSERT QUERY NO: 80 */
 ,
 (
-84, 'Bibliotheme', '', 'livres', '', '', '', '+33 326884342', '', '', '', 4.033831, 49.2560095996292
+84, 'Bibliotheme', '', 'livres', 'Reims', '', '', '+33 326884342', '', '', '', 4.033831, 49.2560095996292
 )
 
 /* INSERT QUERY NO: 81 */
 ,
 (
-85, 'Le Bouquiniste', '', 'livres', '', '', '', '', '', '', '', 4.028887, 49.2550248996294
+85, 'Le Bouquiniste', '', 'livres', 'Reims', '', '', '', '', '', '', 4.028887, 49.2550248996294
 )
 
 /* INSERT QUERY NO: 82 */
 ,
 (
-86, 'Bazarine', '', 'livres', '', '', '', '', '', '', '', 4.0340091, 49.2500735996306
+86, 'Bazarine', '', 'livres', 'Reims', '', '', '', '', '', '', 4.0340091, 49.2500735996306
 )
 
 /* INSERT QUERY NO: 83 */
 ,
 (
-87, 'Senses Brewing', '', 'brasseries', '', '', 'https://www.sensesbrewing.com', '', '', 'https://www.facebook.com/SensesBrewing/', '', 4.0409294, 49.2666856996265
+87, 'Senses Brewing', '', 'brasseries', 'Reims', '', 'https://www.sensesbrewing.com', '', '', 'https://www.facebook.com/SensesBrewing/', '', 4.0409294, 49.2666856996265
 )
 
 /* INSERT QUERY NO: 85 */
 ,
 (
-89, 'Boucherie  Hippodrome', '', 'boucheries', '', '', '', '', '', '', '', 4.0045289, 49.2373608996337
+89, 'Boucherie  Hippodrome', '', 'boucheries', 'Reims', '', '', '', '', '', '', 4.0045289, 49.2373608996337
 )
 
 /* INSERT QUERY NO: 86 */
 ,
 (
-90, 'Le Comptoir des Viandes', '', 'boucheries', '', '', '', '', '', '', '', 4.0461993, 49.2600501996282
+90, 'Le Comptoir des Viandes', '', 'boucheries', 'Reims', '', '', '', '', '', '', 4.0461993, 49.2600501996282
 )
 
 /* INSERT QUERY NO: 87 */
 ,
 (
-91, 'Maison Audinot', '', 'boucheries', '', '', 'http://maisonaudinot.fr', '970355064', 'contact@maisonaudinot.fr', '', '', 4.0125542, 49.2439862996321
+91, 'Maison Audinot', '', 'boucheries', 'Reims', '', 'http://maisonaudinot.fr', '970355064', 'contact@maisonaudinot.fr', '', '', 4.0125542, 49.2439862996321
 )
 
 /* INSERT QUERY NO: 88 */
 ,
 (
-92, 'Boucherie Thierry Brezillon', '', 'boucheries', '', '', '', '', '', '', '', 4.0317312, 49.2593190996284
+92, 'Boucherie Thierry Brezillon', '', 'boucheries', 'Reims', '', '', '', '', '', '', 4.0317312, 49.2593190996284
 )
 
 /* INSERT QUERY NO: 89 */
 ,
 (
-93, 'Pâté Croute Piquet''s', '', 'boucheries', '67 Avenue Nationale', '', '', '', '', '', '', 4.0045991, 49.2896213996209
+93, 'Pâté Croute Piquet''s', '', 'boucheries', '67 Avenue Nationale 51100 Reims', '', '', '', '', '', '', 4.0045991, 49.2896213996209
 )
 
 /* INSERT QUERY NO: 90 */
 ,
 (
-94, 'Ets Denis & Cie', '', 'boucheries', '', '', 'http://denis.fr', '+33 326400752', '', '', '', 4.0312502, 49.2596195996283
+94, 'Ets Denis & Cie', '', 'boucheries', 'Reims', '', 'http://denis.fr', '+33 326400752', '', '', '', 4.0312502, 49.2596195996283
 )
 
 /* INSERT QUERY NO: 91 */
 ,
 (
-95, 'Au Gourmet des Halles', '', 'boucheries', '', '', '', '', '', '', '', 4.0314341, 49.2592954996284
+95, 'Au Gourmet des Halles', '', 'boucheries', 'Reims', '', '', '', '', '', '', 4.0314341, 49.2592954996284
 )
 
-/* INSERT QUERY NO: 92 */
-,
-(
-96, '', '', 'boucheries', '', '', '', '', '', '', '', 4.0247104, 49.2886863996211
-)
 
 /* INSERT QUERY NO: 93 */
 ,
 (
-97, 'Pâté Croûte Piquet''S', '', 'boucheries', '', '', 'https://patecroutepiquets.fr/', '+33 3 26 84 93 20', '', '', '', 4.0489412, 49.260693599628
+97, 'Pâté Croûte Piquet''S', '', 'boucheries', 'Reims', '', 'https://patecroutepiquets.fr/', '+33 3 26 84 93 20', '', '', '', 4.0489412, 49.260693599628
 )
 
 /* INSERT QUERY NO: 94 */
 ,
-(
-98, '', '', 'boucheries', '', '', '', '', '', '', '', 4.0201991, 49.2721147996252
-)
 
-/* INSERT QUERY NO: 95 */
-,
 (
-99, 'François Léau', '', 'boucheries', '', '', '', '+33 3 26 05 23 46', '', '', '', 4.0366445, 49.25256839963
+99, 'François Léau', '', 'boucheries', 'Reims', '', '', '+33 3 26 05 23 46', '', '', '', 4.0366445, 49.25256839963
 )
 
 /* INSERT QUERY NO: 139 */
@@ -621,7 +572,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 143 */
 ,
 (
-147, 'Outlet', '', 'vêtements', '', '', '', '', '', '', '', 4.029494, 49.2541834996296
+147, 'Outlet', '', 'vêtements', 'Reims', '', '', '', '', '', '', 4.029494, 49.2541834996296
 )
 
 /* INSERT QUERY NO: 144 */
@@ -639,31 +590,31 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 148 */
 ,
 (
-152, 'Celio', 'Celio', 'vêtements', '', '', '', '', '', '', '', 4.02577333823231, 49.2552018244568
+152, 'Celio', 'Celio', 'vêtements', 'Reims', '', '', '', '', '', '', 4.02577333823231, 49.2552018244568
 )
 
 /* INSERT QUERY NO: 149 */
 ,
 (
-153, 'Magnum', '', 'vêtements', '', '', '', '', '', '', '', 4.0288282, 49.2546997996295
+153, 'Magnum', '', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0288282, 49.2546997996295
 )
 
 /* INSERT QUERY NO: 150 */
 ,
 (
-154, 'Fashion', '', 'vêtements', '', '', '', '', '', '', '', 4.0301755, 49.2536223996298
+154, 'Fashion', '', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0301755, 49.2536223996298
 )
 
 /* INSERT QUERY NO: 151 */
 ,
 (
-155, 'À l’Entrechat', '', 'vêtements', '', '', '', '', '', '', '', 4.0314781, 49.2588828996285
+155, 'À l’Entrechat', '', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0314781, 49.2588828996285
 )
 
 /* INSERT QUERY NO: 152 */
 ,
 (
-156, 'Casting', '', 'vêtements', '', '', '', '+33 326899179', '', '', '', 4.0314846, 49.2565139996291
+156, 'Casting', '', 'vêtements', 'Reims', '', '', '+33 326899179', '', '', '', 4.0314846, 49.2565139996291
 )
 
 /* INSERT QUERY NO: 153 */
@@ -675,7 +626,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 154 */
 ,
 (
-158, 'A louer (Ex : C Collection)', '', 'vêtements', '', '', '', '', '', '', '', 4.0303848, 49.2535518996298
+158, 'A louer (Ex : C Collection)', '', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0303848, 49.2535518996298
 )
 
 /* INSERT QUERY NO: 155 */
@@ -687,61 +638,56 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 156 */
 ,
 (
-160, 'Brice', 'Brice', 'vêtements', '', '', '', '', '', '', '', 4.02627017525768, 49.2555237102394
+160, 'Brice', 'Brice', 'vêtements', 'Reims', '', '', '', '', '', '', 4.02627017525768, 49.2555237102394
 )
 
 /* INSERT QUERY NO: 157 */
 ,
 (
-161, 'W-boutique', '', 'vêtements', '', '', 'https://www.wboutique-saintjames.com/', '+33 3 26 88 40 33', '', '', '', 4.0314989, 49.2557131996292
+161, 'W-boutique', '', 'vêtements', 'Reims', '', 'https://www.wboutique-saintjames.com/', '+33 3 26 88 40 33', '', '', '', 4.0314989, 49.2557131996292
 )
 
 /* INSERT QUERY NO: 158 */
 ,
-(
-162, '', '', 'vêtements', '', '', '', '', '', '', '', 4.04444127372286, 49.2594051544454
-)
 
-/* INSERT QUERY NO: 159 */
-,
 (
-163, 'Camaïeu', 'Camaïeu', 'vêtements', '', '', '', '', '', '', '', 4.0291049, 49.2537422996297
+163, 'Camaïeu', 'Camaïeu', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0291049, 49.2537422996297
 )
 
 /* INSERT QUERY NO: 160 */
 ,
 (
-164, 'Ivana', '', 'vêtements', '', '', '', '', '', '', '', 4.0284714, 49.2560076996292
+164, 'Ivana', '', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0284714, 49.2560076996292
 )
 
 /* INSERT QUERY NO: 161 */
 ,
 (
-165, 'Etam', 'Etam', 'vêtements', '', '', '', '', '', '', '', 4.0298531, 49.2537238996297
+165, 'Etam', 'Etam', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0298531, 49.2537238996297
 )
 
 /* INSERT QUERY NO: 162 */
 ,
 (
-166, 'Jules', 'Jules', 'vêtements', '', '', '', '', '', '', '', 4.0283899, 49.2534818996298
+166, 'Jules', 'Jules', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0283899, 49.2534818996298
 )
 
 /* INSERT QUERY NO: 163 */
 ,
 (
-167, 'Sergent Major', 'Sergent Major', 'vêtements', '', '', '', '', '', '', '', 4.0263498143331, 49.2552297175195
+167, 'Sergent Major', 'Sergent Major', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0263498143331, 49.2552297175195
 )
 
 /* INSERT QUERY NO: 164 */
 ,
 (
-168, 'Cotélac', 'Cotélac', 'vêtements', '', '', '', '', '', '', '', 4.02669, 49.2538342996297
+168, 'Cotélac', 'Cotélac', 'vêtements', 'Reims', '', '', '', '', '', '', 4.02669, 49.2538342996297
 )
 
 /* INSERT QUERY NO: 165 */
 ,
 (
-169, 'La Bobida', '', 'vêtements', '', '', 'http://labovida.com', '+33 3 26 40 58 01', '', '', '', 4.0256274, 49.2521510996301
+169, 'La Bobida', '', 'vêtements', 'Reims', '', 'http://labovida.com', '+33 3 26 40 58 01', '', '', '', 4.0256274, 49.2521510996301
 )
 
 /* INSERT QUERY NO: 166 */
@@ -759,7 +705,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 168 */
 ,
 (
-172, 'Armand Thiery', 'Armand Thiery', 'vêtements', '', '', '', '', '', '', '', 4.0301123, 49.2541191996296
+172, 'Armand Thiery', 'Armand Thiery', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0301123, 49.2541191996296
 )
 
 /* INSERT QUERY NO: 169 */
@@ -777,7 +723,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 171 */
 ,
 (
-175, 'Cop.Copine', '', 'vêtements', '', '', 'https://www.cop-copine.com/boutiques/cop-copine-reims', '+33 326616595', '', '', '', 4.0289967, 49.2549708996294
+175, 'Cop.Copine', '', 'vêtements', 'Reims', '', 'https://www.cop-copine.com/boutiques/cop-copine-reims', '+33 326616595', '', '', '', 4.0289967, 49.2549708996294
 )
 
 /* INSERT QUERY NO: 172 */
@@ -789,73 +735,73 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 173 */
 ,
 (
-177, 'IKKS Women', '', 'vêtements', '', '', '', '+33 326257931', '', '', '', 4.0294053, 49.2545976996295
+177, 'IKKS Women', '', 'vêtements', 'Reims', '', '', '+33 326257931', '', '', '', 4.0294053, 49.2545976996295
 )
 
 /* INSERT QUERY NO: 174 */
 ,
 (
-178, 'Izac', '', 'vêtements', '', '', 'https://boutiques.izac.fr/costume-chemise/boutique-izac-reims-2675/', '', '', '', '', 4.02934571487363, 49.2559474803035
+178, 'Izac', '', 'vêtements', 'Reims', '', 'https://boutiques.izac.fr/costume-chemise/boutique-izac-reims-2675/', '', '', '', '', 4.02934571487363, 49.2559474803035
 )
 
 /* INSERT QUERY NO: 175 */
 ,
 (
-179, 'Wazabi', '', 'vêtements', '', '', 'http://WAZABI-Shop.com', '+33 326860941', '', '', '', 4.026214, 49.2908671996206
+179, 'Wazabi', '', 'vêtements', 'Reims', '', 'http://WAZABI-Shop.com', '+33 326860941', '', '', '', 4.026214, 49.2908671996206
 )
 
 /* INSERT QUERY NO: 176 */
 ,
 (
-180, 'Cyrillus', 'Cyrillus', 'vêtements', '', '', '', '', '', '', '', 4.0303102, 49.2562262996291
+180, 'Cyrillus', 'Cyrillus', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0303102, 49.2562262996291
 )
 
 /* INSERT QUERY NO: 177 */
 ,
 (
-181, 'Couture by SH', '', 'vêtements', '', '', 'http://www.couturebysh.com', '', '', '', '', 4.03642545664549, 49.2255526272561
+181, 'Couture by SH', '', 'vêtements', 'Reims', '', 'http://www.couturebysh.com', '', '', '', '', 4.03642545664549, 49.2255526272561
 )
 
 /* INSERT QUERY NO: 178 */
 ,
 (
-182, 'Christel VI', '', 'vêtements', '', '', '', '', '', '', '', 4.0262064, 49.2901754996208
+182, 'Christel VI', '', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0262064, 49.2901754996208
 )
 
 /* INSERT QUERY NO: 179 */
 ,
 (
-183, 'Marie Alice Création', '', 'vêtements', '', '', '', '', '', '', '', 4.0444448, 49.2593566996283
+183, 'Marie Alice Création', '', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0444448, 49.2593566996283
 )
 
 /* INSERT QUERY NO: 180 */
 ,
 (
-184, 'La Femme s''entête', '', 'vêtements', '', '', 'https://www.lafemmesentete.fr/', '+33 3 10 16 58 17', '', '', '', 4.0368374, 49.25251459963
+184, 'La Femme s''entête', '', 'vêtements', 'Reims', '', 'https://www.lafemmesentete.fr/', '+33 3 10 16 58 17', '', '', '', 4.0368374, 49.25251459963
 )
 
 /* INSERT QUERY NO: 181 */
 ,
 (
-185, 'Moto Expert', '', 'vêtements', '', '', 'http://Dady-moto.com', '+33 326086400', '', '', '', 4.02492969999365, 49.2915984497087
+185, 'Moto Expert', '', 'vêtements', 'Reims', '', 'http://Dady-moto.com', '+33 326086400', '', '', '', 4.02492969999365, 49.2915984497087
 )
 
 /* INSERT QUERY NO: 182 */
 ,
 (
-186, 'Nokomis', '', 'vêtements', '', '', '', '', '', '', '', 4.0332217, 49.256774899629
+186, 'Nokomis', '', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0332217, 49.256774899629
 )
 
 /* INSERT QUERY NO: 183 */
 ,
 (
-187, 'Damart', 'Damart', 'vêtements', '', '', 'http://damart.fr', '+33 3 26 40 43 67', '', '', '', 4.0264322, 49.2524310996301
+187, 'Damart', 'Damart', 'vêtements', 'Reims', '', 'http://damart.fr', '+33 3 26 40 43 67', '', '', '', 4.0264322, 49.2524310996301
 )
 
 /* INSERT QUERY NO: 184 */
 ,
 (
-188, 'Mim', '', 'vêtements', '', '', '', '', '', '', '', 4.02569726100785, 49.2551086664611
+188, 'Mim', '', 'vêtements', 'Reims', '', '', '', '', '', '', 4.02569726100785, 49.2551086664611
 )
 
 /* INSERT QUERY NO: 185 */
@@ -867,19 +813,19 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 186 */
 ,
 (
-190, 'Mille et Une Excuses', '', 'vêtements', '', '', '', '', '', '', '', 4.02458559129959, 49.252623574675
+190, 'Mille et Une Excuses', '', 'vêtements', 'Reims', '', '', '', '', '', '', 4.02458559129959, 49.252623574675
 )
 
 /* INSERT QUERY NO: 187 */
 ,
 (
-191, 'Comptoir des Cotonniers', 'Comptoir des Cotonniers', 'vêtements', '', '', '', '', '', '', '', 4.02866952707646, 49.2554547959272
+191, 'Comptoir des Cotonniers', 'Comptoir des Cotonniers', 'vêtements', 'Reims', '', '', '', '', '', '', 4.02866952707646, 49.2554547959272
 )
 
 /* INSERT QUERY NO: 188 */
 ,
 (
-192, 'Ding Fring', '', 'vêtements', '', '', 'https://www.dingfring-nordest-iledefrance.fr', '+33 3 23 53 43 72', '', '', '', 4.0227375, 49.2179010996385
+192, 'Ding Fring', '', 'vêtements', 'Reims', '', 'https://www.dingfring-nordest-iledefrance.fr', '+33 3 23 53 43 72', '', '', '', 4.0227375, 49.2179010996385
 )
 
 /* INSERT QUERY NO: 189 */
@@ -891,7 +837,7 @@ INSERT INTO `shop` (`id`, `name`, `brand`, `type`, `address`, `opening_hours`, `
 /* INSERT QUERY NO: 190 */
 ,
 (
-194, 'Petit Bateau', 'Petit Bateau', 'vêtements', '', '', '', '', '', '', '', 4.0282682, 49.2544706996295
+194, 'Petit Bateau', 'Petit Bateau', 'vêtements', 'Reims', '', '', '', '', '', '', 4.0282682, 49.2544706996295
 )
 
 /* INSERT QUERY NO: 191 */
@@ -1646,7 +1592,7 @@ ALTER TABLE `shop`
 -- AUTO_INCREMENT pour la table `shop`
 --
 ALTER TABLE `shop`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=454;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
@@ -1844,11 +1790,13 @@ CREATE TABLE `keyword_product` (
   `product_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_keyword_product_product
         FOREIGN KEY (product_id)
-        REFERENCES product(id),
+        REFERENCES product(id)
+        ON DELETE CASCADE,
   `keyword_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_keyword_product_keyword
         FOREIGN KEY (keyword_id)
         REFERENCES keyword(id)
+        ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -2043,11 +1991,13 @@ CREATE TABLE `product_shop` (
   `shop_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_product_shop_shop
         FOREIGN KEY (shop_id)
-        REFERENCES shop(id),
+        REFERENCES shop(id)
+        ON DELETE CASCADE,
   `product_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_product_shop_product
         FOREIGN KEY (product_id)
         REFERENCES product(id)
+        ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -2186,11 +2136,13 @@ CREATE TABLE `shop_user` (
   `shop_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_shop_user_shop
         FOREIGN KEY (shop_id)
-        REFERENCES shop(id),
+        REFERENCES shop(id)
+        ON DELETE CASCADE,
   `user_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_shop_user_user
         FOREIGN KEY (user_id)
         REFERENCES user(id)
+        ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

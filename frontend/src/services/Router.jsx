@@ -11,6 +11,7 @@ import LoginForm from "../components/LoginForm";
 import Itinerary from "../pages/Itinerary";
 import ShopDetails from "../components/ShopDetails";
 import PrivateRoute from "../components/PrivateRoute";
+import AdminPanel from "../pages/AdminPanel";
 
 // Place all routes here
 const protectedRoutes = [
@@ -23,6 +24,7 @@ const protectedRoutes = [
   { path: "/shops/:id", component: ShopDetails },
   { path: "/shopList", component: ShopList },
   { path: "/itinerary/:x/:y", component: Itinerary },
+  { path: "/admin/*", component: AdminPanel },
 ];
 
 function Router({ children }) {

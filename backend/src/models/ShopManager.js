@@ -7,6 +7,27 @@ const KeywordManager = require("./KeywordManager");
 class ShopManager extends AbstractManager {
   static table = "shop";
 
+  findByPage(min, max) {
+    return this.connection.query(
+      `SELECT * FROM ${ShopManager.table} LIMIT ? OFFSET ?`,
+      [max - min, min]
+    );
+  }
+
+  findByFilter(filter, min, max) {
+    return this.connection.query(
+      `SELECT * FROM ${ShopManager.table} WHERE name LIKE ? OR brand LIKE ? OR type LIKE ? OR address LIKE ? LIMIT ? OFFSET ?`,
+      [
+        `%${filter}%`,
+        `%${filter}%`,
+        `%${filter}%`,
+        `%${filter}%`,
+        max - min,
+        min,
+      ]
+    );
+  }
+
   findByQuery(search) {
     return this.connection.query(
       `SELECT DISTINCT s.id, s.name, s.brand, s.type, s.address, s.opening_hours, s.website, s.email, s.phone, s.fb_page, s.insta_page, x, y FROM ${ShopManager.table} s
@@ -25,13 +46,12 @@ class ShopManager extends AbstractManager {
 
   insert(shop) {
     return this.connection.query(
-      `insert into ${ShopManager.table} (name, brand, type, adress, opening_hours, website, email, phone, fb_page, insta_page, x, y) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${ShopManager.table} (name, brand, type, address, website, email, phone, fb_page, insta_page, x, y, img_url) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         shop.name,
         shop.brand,
         shop.type,
-        shop.adress,
-        shop.opening_hours,
+        shop.address,
         shop.website,
         shop.email,
         shop.phone,
@@ -39,14 +59,29 @@ class ShopManager extends AbstractManager {
         shop.insta_page,
         shop.x,
         shop.y,
+        shop.img_url,
       ]
     );
   }
 
   update(shop) {
     return this.connection.query(
-      `UPDATE ${ShopManager.table} SET ? WHERE id = ?`,
-      [shop, shop.id]
+      `UPDATE ${ShopManager.table} SET name = ?, brand = ?, type = ?, address = ?, website = ?, email = ?, phone = ?, fb_page = ?, insta_page = ?, x = ?, y = ?, img_url = ? WHERE id = ?`,
+      [
+        shop.name,
+        shop.brand,
+        shop.type,
+        shop.address,
+        shop.website,
+        shop.email,
+        shop.phone,
+        shop.fb_page,
+        shop.insta_page,
+        shop.x,
+        shop.y,
+        shop.img_url,
+        shop.id,
+      ]
     );
   }
 }
