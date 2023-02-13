@@ -18,7 +18,11 @@ const handleLogin = (req, res) => {
     const accessToken = jwt.sign(tokenData, process.env.JWT_SECRET, {
       expiresIn: "15m",
     });
-    res.cookie("accessToken", accessToken, { httpOnly: true });
+    res.cookie("accessToken", accessToken, {
+      httpOnly: true,
+      sameSite: "None",
+      secure: true,
+    });
 
     const refreshToken = jwt.sign(
       { email: tokenData.email },
@@ -27,7 +31,11 @@ const handleLogin = (req, res) => {
         expiresIn: "7d",
       }
     );
-    res.cookie("refreshToken", refreshToken, { httpOnly: true });
+    res.cookie("refreshToken", refreshToken, {
+      httpOnly: true,
+      sameSite: "None",
+      secure: true,
+    });
 
     return res.status(200).json({ user: userData });
   })(req, res);

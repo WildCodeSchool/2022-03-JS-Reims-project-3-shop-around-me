@@ -27,8 +27,16 @@ const handleRefresh = (req, res) => {
       }
     );
 
-    res.cookie("accessToken", accessToken, { httpOnly: true });
-    res.cookie("refreshToken", refreshToken, { httpOnly: true });
+    res.cookie("accessToken", accessToken, {
+      httpOnly: true,
+      sameSite: "None",
+      secure: true,
+    });
+    res.cookie("refreshToken", refreshToken, {
+      httpOnly: true,
+      sameSite: "None",
+      secure: true,
+    });
 
     return res.status(200).json({ user: userData });
   })(req, res);
